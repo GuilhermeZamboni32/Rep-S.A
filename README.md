@@ -5,40 +5,40 @@ Repositório para guadar os arquivos da S.A
 
 ================================ Requisitos Funcionais =================================
 
-1.1.1. Cadastro e Login de Usuários Prioridade: 
+1.1.1. Cadastro e Login de adiministrador e profissionais Prioridade: 
 
  O sistema deve permitir que pacientes e profissionais de saúde criem contas individuais e façam login usando suas credenciais.
 
 
 
- 1.1.2. Agendamento de Consultas e Exames Prioridade:
+ 1.1.2. Agendamento de Consultas  Prioridade:
 
-O sistema deve permitir que pacientes visualizem a disponibilidade de datas e horários para consultas e exames, selecionem e agendem essas consultas. 
+O sistema deve permitir que adiministrador visualizem a disponibilidade de datas e horários para agendamento. 
 
 
 
 1.1.3. Histórico de Agendamentos Prioridade:
 
-O sistema deve manter um histórico de todos os agendamentos passados e futuros de cada paciente, permitindo que eles visualizem esses dados. 
+O sistema deve manter um histórico de todos os agendamentos passados e futuros de cada cliente, permitindo que eles visualizem esses dados. 
 
 
 
-1.1.4. Gerenciamento de Agenda pelos Profissionais de Saúde Prioridade: 
+1.1.4. Gerenciamento de Agenda pelos adiministradores Prioridade: 
 
-O sistema deve fornecer um painel de administração para profissionais de saúde, permitindo que visualizem e alterem sua disponibilidade. 
+O sistema deve fornecer um painel de administração , permitindo que visualizem e alterem sua disponibilidade. 
 
 
 
 
 1.1.5. Notificações Prioridade:
 
-O sistema deve enviar notificações por e-mail ou SMS aos pacientes sobre seus agendamentos e às equipes de saúde sobre alterações nas agendas.
+O sistema deve enviar notificações por e-mail ou SMS aos clientes sobre seus agendamentos e os profisionais sobre alterações nas agendas.
 
 
 
-1.1.6. Atualização de Dados do Usuário 
+1.1.6. Atualização de Dados do profissionais 
 
-O sistema deve permitir que usuários (pacientes e profissionais de saúde) atualizem suas informações pessoais, como endereço, telefone e dados de contato.
+O sistema deve permitir que o adiministrador  atualize suas informações pessoais e dos profissionais, como endereço, telefone e dados de contato.
 
 
 
