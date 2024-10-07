@@ -1,79 +1,85 @@
 import React from 'react'
 import './Pagina_Inicial.css'
-import './Cadastro'
 
-const Pagina_Inicial = () => {
+function Pagina_Inicial(){
 
-  const AcessoCadastrar = () => {
-    // Função para redirecionar para a página de cadastro
-  };
-
-  const AcessoLogar = () => {
-    // Função para redirecionar para a página de login
-  };
-
-  const Sobre = () => {
-    document.getElementById('sobre').style.display = 'block';
-    document.getElementById('servicos').style.display = 'none';
-    document.getElementById('agendamento').style.display = 'none';
-  };
-
-  const Servicos = () => {
-    document.getElementById('sobre').style.display = 'none';
-    document.getElementById('servicos').style.display = 'block';
-    document.getElementById('agendamento').style.display = 'none';
-  };
-
-  const Agendamento = () => {
-    document.getElementById('sobre').style.display = 'none';
-    document.getElementById('servicos').style.display = 'none';
-    document.getElementById('agendamento').style.display = 'block';
-  };
-
+ 
   return (
-    <div id="container">
-      <div id="divtopo">
-        <div id="topoesquerda">
-          <img id="logo" src="logoOficial.png" alt="Logo Oficial" />
+    <>
+    
+      <header>
+        <div className="container">
+          <h1 className="logo">Agenda Online</h1>
         </div>
-
-        <div id="topodireita">
-        <button onClick={() => setPagina(<Cadastro />)}>Cadastro</button>
-          
+        <div className="topo-esquerda">
+          <nav>
+            <ul>
+              <li><a href="#servicos">Serviços</a></li>
+              <li><a href="#sobre">Sobre</a></li>
+              <li><a href="#contato">Contato</a></li>
+            </ul>
+          </nav>
         </div>
-      </div>
+      </header>
 
-      <div id="divmeio">
-        {/* Conteúdo central da página */}
-      </div>
+      
+      <section className="hero">
+        <div className="container">
+          <h2>Gerencie seus agendamentos de forma simples e eficiente!</h2>
+          <p>Facilite sua gestão de compromissos com uma plataforma moderna e prática.</p>
+          <a href="#cadastro" className="btn">Cadastre-se</a>
+          <a href="#login" className="btn">Login</a>
+        </div>
+      </section>
 
-      <div id="divbaixo">
-        <button id="botaoSobre" className="meu-botao" onClick={Sobre}>
-          Sobre
-        </button>
-        <button id="botaoServicos" className="meu-botao" onClick={Servicos}>
-          Serviços
-        </button>
-        <button id="botaoAgendamento" className="meu-botao" onClick={Agendamento}>
-          Agendamento
-        </button>
-      </div>
+      
+      <section id="servicos" className="section">
+        <div className="container">
+          <h2>Nossos Serviços</h2>
+          <div className="cards">
+            <div className="card">
+              <h3>Agendamentos Simples</h3>
+              <p>Organize seus compromissos com facilidade e flexibilidade, sem complicações.</p>
+            </div>
+            <div className="card">
+              <h3>Notificações Inteligentes</h3>
+              <p>Receba notificações e lembretes automáticos sobre seus agendamentos.</p>
+            </div>
+            <div className="card">
+              <h3>Histórico Completo</h3>
+              <p>Acesse o histórico de todos os seus compromissos sempre que precisar.</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      <div id="texto">
-        <label id="sobre" style={{ display: 'block' }}>
-          A SUS Consultas é uma plataforma especializada em facilitar o agendamento de consultas em postos de saúde pública. Com um sistema moderno e eficiente, oferecemos uma plataforma intuitiva para que os pacientes possam marcar suas consultas de forma rápida e prática. Nosso objetivo é reduzir o tempo de espera e proporcionar um atendimento de qualidade, contribuindo para a melhoria dos serviços de saúde.
-        </label>
+      
+      <section id="sobre" className="section">
+        <div className="container">
+          <h2>Sobre Nós</h2>
+          <p>O <strong>Agenda Online</strong> foi criado para facilitar o gerenciamento de agendamentos entre clientes e profissionais de diversos setores. Nossa missão é simplificar o processo, eliminando a necessidade de ferramentas manuais e tornando a gestão de compromissos mais eficiente e prática.</p>
+          <p><strong>Autores:</strong> Guilherme Zamboni Menegacio, Jonathan Stulp Zoz, Thiago Quadra Arnold, Júlia Cabral Gomes</p>
+          <p><strong>Florianópolis, Setembro de 2024</strong></p>
+        </div>
+      </section>
 
-        <label id="servicos" style={{ display: 'none' }}>
-          Na SUS Consultas, oferecemos uma gama de serviços dedicados a facilitar o acesso aos cuidados de saúde pública. Nosso principal serviço é o agendamento online de consultas em postos de saúde, proporcionando conveniência e eficiência aos pacientes. Nosso portal também permite o acompanhamento de histórico de consultas, proporcionando um controle completo para os pacientes e os profissionais de saúde.
-        </label>
+      
+      <section id="contato" className="section">
+        <div className="container">
+          <h2>Entre em Contato</h2>
+          <p>Para dúvidas ou suporte, entre em contato conosco:</p>
+          <p><strong>Email:</strong> suporte@agendaonline.com</p>
+          <p><strong>Telefone:</strong> (48) 1234-5678</p>
+        </div>
+      </section>
 
-        <label id="agendamento" style={{ display: 'none' }}>
-          Na SUS Consultas, agendar suas consultas em postos de saúde pública é fácil e rápido. Nosso processo começa com o acesso ao nosso portal online, onde o paciente pode criar uma conta pessoal. Após o cadastro, basta escolher a opção "Agendar Consulta" na página de perfil e escolher o serviço desejado. Após a escolha do serviço, basta selecionar a data disponível no calendário e agendar sua consulta. Lembrando que as datas são disponibilizadas por semanas, sendo que cada dia possui no máximo 10 fichas para atendimento e cada paciente só pode agendar uma única consulta por dia.
-        </label>
-      </div>
-    </div>
-  );
-};
+      <footer>
+        <div className="container">
+          <p>&copy; 2024 Agenda Online. Todos os direitos reservados.</p>
+        </div>
+      </footer>
+    </>  
+  )
+}
 
 export default Pagina_Inicial;

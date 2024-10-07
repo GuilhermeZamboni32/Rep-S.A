@@ -1,2 +1,16 @@
-# Rep-S.A
-Repositório para guadar os arquivos da S.A
+# Template para projeto React
+
+Template para projeto React, contendo:
+- Contexto global com useContext;
+- Roteamento de páginas com react-router-dom
+
+Ideal para usar como base para começar um projeto React depois do almoço.
+
+
+
+instalar as dependencias
+===
+npm install
+===
+npm run dev
+===
