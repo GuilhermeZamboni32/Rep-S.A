@@ -1,0 +1,166 @@
+:root {
+  --cor1: #03045e;
+  --cor2: #0077b6;
+  --cor3: #00b4d8;
+  --cor4: #90e0ef;
+  --cor5: #caf0f8;
+}
+
+.perfil-Body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  width: 100vw;
+  margin-top: 90px; /* Espaço para compensar a altura do topo fixo */
+}
+
+.perfil-container {
+  width: 100%;
+  padding: 0;
+  color: white;
+}
+
+.perfil-topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--cor1);
+  padding: 30px;
+  width: 100vw;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.header-icon {
+  cursor: pointer;
+  width: 50px;
+}
+
+.perfil-topo-direita button {
+  background-color: var(--cor2);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.perfil-topo-direita button:hover {
+  background-color: var(--cor3);
+}
+
+.perfil-meio {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+  width: 100vw;
+  background-color: var(--cor3);
+  box-sizing: border-box;
+}
+
+.perfil-meio-esquerda {
+  flex: 0 0 30%;
+}
+
+.perfil-meio-direita {
+  flex: 0 0 60%;
+  background-color: var(--cor3);
+}
+
+.secao-perfil {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--cor2);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.foto-perfil img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.perfil-info-user input {
+  display: block;
+  margin: 10px 0;
+  padding: 12px;
+  width: 90%;
+  border: 0;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+}
+
+.input {
+  background-color: var(--cor4);
+  color: var(--cor1);
+}
+
+.button {
+  background-color: var(--cor3);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: var(--cor3);
+}
+
+.cards-section {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  background-color: var(--cor3);
+  margin-top: 20px;
+}
+
+.grupo-input {
+  background-color: var(--cor2);
+  padding: 15px;
+  width: 100%;
+}
+
+.input-pesquisa {
+  background-color: var(--cor4);
+  border-radius: 7px;
+  border: 2px solid var(--cor1);
+  color: var(--cor1);
+}
+
+.info-item {
+  border: 1px solid #000000;
+  padding: 15px;
+  border-radius: 5px;
+  margin: 8px;
+  width: 100%;
+  max-width: 200px;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  background-color: #90e0ef;
+}
+
+.info-item p {
+  margin: 5px 0;
+  background-color: #00b4d8;
+}
+
+.perfil-baixo {
+  width: 100vw;
+  background-color: var(--cor2);
+  padding: 4%;
+  box-sizing: border-box;
+}
