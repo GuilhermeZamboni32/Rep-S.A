@@ -25,7 +25,8 @@ function TelaInicial() {
         </div>
 
         <div className='meio'>
-          h
+          <h1>Seja bem-vindo ao nosso site de agendamentos!</h1>
+
           
         </div>
 

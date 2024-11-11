@@ -10,6 +10,7 @@ function Navbar() {
         <Link to="/Agua">Água</Link>
         <Link to="/Pagina_Inicial">pagina_inicial</Link>
         <Link to="/cadastro">Cadastro</Link>
+        
     </nav>
   )
 }

@@ -7,11 +7,11 @@ function TelaPerfil() {
   const navigate = useNavigate();
   const [isEditing, setIsEditing] = useState(false);
   const [userInfo, setUserInfo] = useState({
-    nome: "Nome Completo",
-    cpf: "000.000.000-00",
-    nascimento: "2000-01-01",
-    endereco: "Endereço",
-    senha: "******",
+    nome: "",
+    cpf: "",
+    nascimento: "",
+    endereco: "",
+    senha: "",
   });
 
   const handleEdit = () => setIsEditing(!isEditing);
@@ -49,11 +49,11 @@ function TelaPerfil() {
           </div>
 
           <form className="perfil-info-user">
-            <input className='input' type="text" name="nome" value={userInfo.nome} onChange={handleChange} disabled={!isEditing} placeholder="Nome completo" />
-            <input className='input' type="date" name="nascimento" value={userInfo.nascimento} onChange={handleChange} disabled={!isEditing} />
-            <input className='input' type="text" name="cpf" value={userInfo.cpf} onChange={handleChange} disabled={!isEditing} placeholder="CPF" />
-            <input className='input' type="text" name="endereco" value={userInfo.endereco} onChange={handleChange} disabled={!isEditing} placeholder="Endereço" />
-            <input className='input' type="password" name="senha" value={userInfo.senha} onChange={handleChange} disabled={!isEditing} placeholder="Senha" />
+            <input className='input-user' type="text" name="nome" value={userInfo.nome} onChange={handleChange} disabled={!isEditing} placeholder="Nome completo" />
+            <input className='input-user' type="date" name="nascimento" value={userInfo.nascimento} onChange={handleChange} disabled={!isEditing} />
+            <input className='input-user' type="text" name="cpf" value={userInfo.cpf} onChange={handleChange} disabled={!isEditing} placeholder="CPF" />
+            <input className='input-user' type="text" name="endereco" value={userInfo.endereco} onChange={handleChange} disabled={!isEditing} placeholder="Endereço" />
+            <input className='input-user' type="password" name="senha" value={userInfo.senha} onChange={handleChange} disabled={!isEditing} placeholder="Senha" />
           </form>
 
           <button className="button" onClick={handleEdit}>

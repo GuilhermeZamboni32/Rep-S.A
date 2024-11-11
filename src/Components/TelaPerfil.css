@@ -62,10 +62,12 @@
   width: 100vw;
   background-color: var(--cor3);
   box-sizing: border-box;
+  
 }
 
 .perfil-meio-esquerda {
   flex: 0 0 30%;
+  margin-top: 20px;
 }
 
 .perfil-meio-direita {
@@ -100,8 +102,8 @@
   background-color: #f0f0f0;
 }
 
-.input {
-  background-color: var(--cor4);
+.input-user{
+  background-color: var(--cor1);
   color: var(--cor1);
 }
 

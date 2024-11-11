@@ -9,7 +9,8 @@ function Cadastro() {
   const [endereco, setEndereco] = useState('');
   const [senha, setSenha] = useState('');
   const [confirmarSenha, setConfirmarSenha] = useState('');
-  const [showPopup, setShowPopup] = useState(false); // Estado para controlar o popup
+  const [showPopup, setShowPopup] = useState(false);
+  const [popupMessage, setPopupMessage] = useState(''); // Estado para mensagem do popup
   
   const navigate = useNavigate();
 
@@ -17,7 +18,8 @@ function Cadastro() {
     e.preventDefault();
 
     if (senha !== confirmarSenha) {
-      alert('As senhas não coincidem');
+      setPopupMessage('As senhas não conferem! Confira se as senhas estão corretas.');
+      setShowPopup(true); // Exibe o popup com mensagem de erro
       return;
     }
 
@@ -31,12 +33,15 @@ function Cadastro() {
 
     console.log('Dados de Cadastro:', dadosCadastro);
 
+    setPopupMessage('Cadastro realizado com sucesso! Você será redirecionado para a página de login.');
     setShowPopup(true); // Exibe o popup de confirmação
   };
 
   const handlePopupClose = () => {
     setShowPopup(false); // Fecha o popup
-    navigate('/login'); // Redireciona para a página de login
+    if (popupMessage.includes('sucesso')) {
+      navigate('/login'); // Redireciona para a página de login se o cadastro for bem-sucedido
+    }
   };
 
   return (
@@ -115,8 +120,8 @@ function Cadastro() {
         {showPopup && (
           <div className="popup-overlay">
             <div className="popup-content">
-              <h3>Cadastro realizado com sucesso!</h3>
-              <p>Seu cadastro foi concluído. Você será redirecionado para a página de login.</p>
+              <h3>{popupMessage.includes('sucesso') ? 'Cadastro realizado com sucesso!' : 'Erro!'}</h3>
+              <p>{popupMessage}</p>
               <button onClick={handlePopupClose}>OK</button>
             </div>
           </div>

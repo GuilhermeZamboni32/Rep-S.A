@@ -6,15 +6,6 @@
   --cor5: #caf0f8; 
 
 }
-/*outra paleta de coras
---cor6: #ffddadff;
---cor7: #ebe270ff;
---cor8: #9ea960ff;
---cor9: #5c301eff;
---cor10: #de7d8fff;
-*/
-
-
 
 
 .body {
@@ -23,10 +14,10 @@
   justify-content: flex-start; 
   align-items: center;
   min-height: 100vh; 
-  background-image: url('img-fundo.jpg');
+  background-image: url('imagem-fundo.jfif');
   background-repeat: no-repeat;
   background-size: cover; 
-          background-position: center; 
+  background-position: center; 
 }
 
     .container {
@@ -67,7 +58,7 @@
           align-items: center; 
           width: 100%; 
           height: 400px; 
-          
+          color: var(--cor5);
           background-size: cover; 
           background-position: center; 
           background-repeat: no-repeat; 
@@ -179,22 +170,23 @@
 }
 
   .cadastro-body {
-    background-color: var(--cor2);
+    background-image: url('imagem-fundo.jfif');
     width: 100vw;
     height: 100vh;
     margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    mask-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; 
   }
 
     .cadastro-container {
-      background-color: var(--cor2);
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 20px;
+      
+      width: 100%; 
+      padding: 0; 
+      box-sizing: border-box; 
     }
 
     .cadastro-topo {
@@ -246,7 +238,8 @@
               }
 
                   .cadastro-botao-voltar{
-                    background-color: var(--cor2);
+                    background-color: var(--cor3);
+                    color: var(--cor5);
                   }
 
                   .cadastro-botao-voltar {
@@ -272,14 +265,17 @@
           
           
       .cadastro-meio {
-        background-color: var(--cor2);
+        
         width: 100%;
         height: auto;
         display: flex;
         justify-content: center;
         align-items: center;
         padding: 20px;
+        margin-top: 80px;
       }
+     
+      
       
           .cadastro-info {
             background-color: var(--cor3);
@@ -422,24 +418,22 @@
 }
 
 .login-body {
-  background-color: var(--cor2);
-  width: 100vw;
-  height: 100vh;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  background-image: url('imagem-fundo.jfif');
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    mask-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; 
 }
 
 .login-container {
-  background-color: var(--cor2);
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-  margin-top: 60px; 
-  margin-bottom: 60px; 
+  width: 100%; 
+  padding: 0; 
+  box-sizing: border-box; 
 }
 
 .login-topo {
@@ -486,7 +480,7 @@
 }
 
 .login-meio {
-  background-color: var(--cor2);
+  
   width: 100%;
   height: auto;
   display: flex;
@@ -553,7 +547,7 @@
 }
 
 .login-baixo {
-  background-color: var(--cor2);
+  
   width: 100%;
   height: 60px;
   text-align: center;

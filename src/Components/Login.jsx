@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './CssNovo.css';
+import './TelaADM'
 
 function Login() {
-  const [showPopup, setShowPopup] = useState(false); // Estado para controlar o popup
+  const [cpf, setCpf] = useState('');
+  const [senha, setSenha] = useState('');
+  const [showPopup, setShowPopup] = useState(false); 
   const navigate = useNavigate();
 
   const handleCadastroRedirect = () => {
@@ -16,14 +19,18 @@ function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Lógica de autenticação, se necessário
 
-    setShowPopup(true); // Exibe o popup de sucesso do login
+    
+    if (senha === "ADM") {
+      navigate('/TelaADM'); 
+    } else {
+      setShowPopup(true); 
+    }
   };
 
   const handlePopupClose = () => {
-    setShowPopup(false); // Fecha o popup
-    navigate('/perfil'); // Redireciona para a tela de perfil
+    setShowPopup(false); 
+    navigate('/perfil'); 
   };
 
   return (
@@ -50,12 +57,16 @@ function Login() {
                 className="input"
                 type="text"
                 placeholder="CPF"
+                value={cpf}
+                onChange={(e) => setCpf(e.target.value)}
                 required
               />
               <input
                 className="input"
                 type="password"
                 placeholder="Senha"
+                value={senha}
+                onChange={(e) => setSenha(e.target.value)}
                 required
               />
               <button type="submit" className="login-botao-login">Login</button>
@@ -74,7 +85,7 @@ function Login() {
         )}
         
         <div className="login-baixo">
-          {/**espaço em branco */}
+          {/** espaço em branco */}
         </div>
       </div>
     </div>
