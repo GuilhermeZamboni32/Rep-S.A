@@ -5,6 +5,8 @@ import { FaMagnifyingGlass } from 'react-icons/fa6';
 
 function BarraPesquisa() {
   const [searchTerm, setSearchTerm] = useState('');
+  const [showModal, setShowModal] = useState(false);
+  const [selectedItem, setSelectedItem] = useState(null);
   const navigate = useNavigate();
 
   const items = [
@@ -31,8 +33,11 @@ function BarraPesquisa() {
   });
 
   const handleViewClick = (item) => {
-    navigate(`/perfil/${item.title}`); // Redireciona para a rota de perfil com o título do item
+    setSelectedItem(item);
+    setShowModal(true);
   };
+
+  const closeModal = () => setShowModal(false);
 
   return (
     <div id="container">
@@ -60,7 +65,7 @@ function BarraPesquisa() {
               <div className="item-content">
                 <h2 className="item-title">{item.title}</h2>
                 <p className="item-description">{item.description}</p>
-                <button className="view-button">
+                <button className="view-button" onClick={() => handleViewClick(item)}>
                   Ver
                 </button>
               </div>
@@ -72,6 +77,18 @@ function BarraPesquisa() {
           </li>
         )}
       </ul>
+
+      {/* Modal */}
+      {showModal && selectedItem && (
+        <div className="janela-modal abrir">
+          <div className="modal">
+            <button className="fechar" onClick={closeModal}>X</button>
+            <h1>{selectedItem.title}</h1>
+            <img src={selectedItem.image} alt={`${selectedItem.title}`} style={{ width: '100%', borderRadius: '10px' }} />
+            <p>{selectedItem.description}</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
