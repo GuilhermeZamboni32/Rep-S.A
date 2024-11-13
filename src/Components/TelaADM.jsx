@@ -43,7 +43,7 @@ function TelaADM() {
           <div className='perfil-meio-esquerda'>
             <div className="secao-perfil">
               <div className='foto-perfil'>
-                <img src="icone-perfil-2.png" alt="Usuário" className="big-image" />
+                <img src="perfil-adm.png" alt="adimin" className="big-image" />
               </div>
               <form className="perfil-info-user">
                 <input 
