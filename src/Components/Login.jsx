@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './CssNovo.css';
-import './TelaADM'
+import './TelaADM';
 
 function Login() {
   const [cpf, setCpf] = useState('');
   const [senha, setSenha] = useState('');
+  const [showPassword, setShowPassword] = useState(false); // Estado para controlar a visualização da senha
   const [showPopup, setShowPopup] = useState(false); 
   const navigate = useNavigate();
 
@@ -20,7 +21,6 @@ function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    
     if (senha === "ADM") {
       navigate('/TelaADM'); 
     } else {
@@ -63,12 +63,21 @@ function Login() {
               />
               <input
                 className="input"
-                type="password"
+                type={showPassword ? "text" : "password"} // Alterna o tipo de input entre texto e senha
                 placeholder="Senha"
                 value={senha}
                 onChange={(e) => setSenha(e.target.value)}
                 required
               />
+              <div className="div-senha">
+                <input
+                  className='mostrar-senha'
+                  type="checkbox"
+                  checked={showPassword}
+                  onChange={() => setShowPassword(!showPassword)}
+                />
+                <label>Mostrar Senha</label>
+              </div>
               <button type="submit" className="login-botao-login">Login</button>
             </form>
           </div>

@@ -9,9 +9,10 @@ function Cadastro() {
   const [endereco, setEndereco] = useState('');
   const [senha, setSenha] = useState('');
   const [confirmarSenha, setConfirmarSenha] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
-  const [popupMessage, setPopupMessage] = useState(''); // Estado para mensagem do popup
-  
+  const [popupMessage, setPopupMessage] = useState('');
+
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
@@ -19,7 +20,7 @@ function Cadastro() {
 
     if (senha !== confirmarSenha) {
       setPopupMessage('As senhas não conferem! Confira se as senhas estão corretas.');
-      setShowPopup(true); // Exibe o popup com mensagem de erro
+      setShowPopup(true);
       return;
     }
 
@@ -34,13 +35,13 @@ function Cadastro() {
     console.log('Dados de Cadastro:', dadosCadastro);
 
     setPopupMessage('Cadastro realizado com sucesso! Você será redirecionado para a página de login.');
-    setShowPopup(true); // Exibe o popup de confirmação
+    setShowPopup(true);
   };
 
   const handlePopupClose = () => {
-    setShowPopup(false); // Fecha o popup
+    setShowPopup(false);
     if (popupMessage.includes('sucesso')) {
-      navigate('/login'); // Redireciona para a página de login se o cadastro for bem-sucedido
+      navigate('/login');
     }
   };
 
@@ -96,22 +97,33 @@ function Cadastro() {
                 onChange={(e) => setEndereco(e.target.value)}
                 required
               />
-              <input
-                className="input"
-                type="password"
-                placeholder="Senha"
-                value={senha}
-                onChange={(e) => setSenha(e.target.value)}
-                required
-              />
-              <input
-                className="input"
-                type="password"
-                placeholder="Confirmar Senha"
-                value={confirmarSenha}
-                onChange={(e) => setConfirmarSenha(e.target.value)}
-                required
-              />
+              <div className="inputs-senhas">
+                <input
+                  className="input"
+                  type={showPassword ? "text" : "password"}
+                  placeholder="Senha"
+                  value={senha}
+                  onChange={(e) => setSenha(e.target.value)}
+                  required
+                />
+                <input
+                  className="input"
+                  type={showPassword ? "text" : "password"}
+                  placeholder="Confirmar Senha"
+                  value={confirmarSenha}
+                  onChange={(e) => setConfirmarSenha(e.target.value)}
+                  required
+                />
+                <label className="label-senha">
+                  <input
+                    className='mostra-senha'
+                    type="checkbox"
+                    checked={showPassword}
+                    onChange={() => setShowPassword(!showPassword)}
+                  />
+                  Mostrar Senha
+                </label>
+              </div>
               <button type="submit" className="cadastro-botao-cadastro">Cadastrar</button>
             </form>
           </div>

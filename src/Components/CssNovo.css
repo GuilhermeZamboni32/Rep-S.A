@@ -331,6 +331,29 @@
                     outline: none;
                   }
 
+                  
+.label-senha {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: var(--cor1);
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.label-senha input[type="checkbox"] {
+  margin-right: 5px;
+  width: 20px;
+  height: 16px;
+  margin-right: 8px; 
+  accent-color: var(--cor2); 
+  cursor: pointer;
+}
+
+.label-senha input[type="checkbox"]:checked {
+  accent-color: var(--cor2); 
+}
+
                   .cadastro-botao-cadastro {
                     background-color: var(--corBotao);
                     color: var(--cor5);
@@ -528,6 +551,28 @@
   border-color: var(--corBotao);
   outline: none;
 }
+
+.div-senha {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: var(--cor1);
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.div-senha input[type="checkbox"] {
+  margin-right: 8px; 
+  width: 16px;
+  height: 16px;
+  accent-color: var(--cor1); 
+  cursor: pointer;
+}
+
+.mostrar-senha input[type="checkbox"]:checked {
+  accent-color: var(--cor2); 
+}
+
 
 .login-botao-login {
   background-color: var(--cor3);

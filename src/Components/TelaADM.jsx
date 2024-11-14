@@ -15,14 +15,27 @@ function TelaADM() {
   });
 
   const handleEdit = () => setIsEditing(!isEditing);
-  const handleChange = (e) => setUserInfo({ ...userInfo, [e.target.name]: e.target.value });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setUserInfo((prevUserInfo) => ({
+      ...prevUserInfo,
+      [name]: value,
+    }));
+  };
+
+  const handleSave = () => {
+    // Aqui você pode adicionar a lógica para salvar as informações editadas, por exemplo, enviando para um backend
+    setIsEditing(false);
+    alert("Informações salvas com sucesso!");
+  };
 
   return (
     <div className='perfil-Body'>
       <div className="perfil-container">
         {/* Topo */}
         <div className='perfil-topo'>
-          <div className='perfiltopo-esquerda'>
+          <div className='perfil-topo-esquerda'>
             <img 
               src="logo-agenda.png" 
               alt="Logo" 
@@ -31,7 +44,7 @@ function TelaADM() {
             />
           </div>
           <div className='perfil-topo-meio'>
-            <h1>Tela de Adimin</h1>
+            <h1>Tela de Administrador</h1>
           </div>
           <div className='perfil-topo-direita'>
             <button className='perfil-botao-login' onClick={() => navigate('/login')}>Voltar</button>
@@ -43,9 +56,9 @@ function TelaADM() {
           <div className='perfil-meio-esquerda'>
             <div className="secao-perfil">
               <div className='foto-perfil'>
-                <img src="perfil-adm.png" alt="adimin" className="big-image" />
+                <img src="perfil-adm.png" alt="Administrador" className="big-image" />
               </div>
-              <form className="perfil-info-user">
+              <form className="perfil-info-user" onSubmit={(e) => e.preventDefault()}>
                 <input 
                   className='input-user' 
                   type="text" 
@@ -91,7 +104,7 @@ function TelaADM() {
                   placeholder="Senha" 
                 />
               </form>
-              <button className="button" onClick={handleEdit}>
+              <button className="button" onClick={isEditing ? handleSave : handleEdit}>
                 {isEditing ? "Salvar" : "Editar"}
               </button>
             </div>
