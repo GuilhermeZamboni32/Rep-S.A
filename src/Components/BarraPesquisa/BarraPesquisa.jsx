@@ -6,6 +6,7 @@ function BarraPesquisa() {
   const [searchTerm, setSearchTerm] = useState('');
   const [showModal, setShowModal] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
+  const [horariosDisponiveis, setHorariosDisponiveis] = useState({});
 
   const items = [
     { title: 'Barbeiro', image: 'barbeiro.jpg', description: 'Nome: João, Idade: 38 Anos' },
@@ -16,7 +17,7 @@ function BarraPesquisa() {
     { title: 'Professor', image: 'professor.png', description: 'Nome: Thiago, Idade: 42 Anos' },
   ];
 
-  const horarios = [
+  const horariosPadrao = [
     '08:00 - 09:00', '09:00 - 10:00', '10:00 - 11:00', '11:00 - 12:00',
     '13:00 - 14:00', '14:00 - 15:00', '15:00 - 16:00', '16:00 - 17:00',
   ];
@@ -34,9 +35,28 @@ function BarraPesquisa() {
   const handleViewClick = (item) => {
     setSelectedItem(item);
     setShowModal(true);
+
+    // Inicializar os horários disponíveis para o funcionário selecionado se ainda não estiver configurado
+    if (!horariosDisponiveis[item.title]) {
+      setHorariosDisponiveis((prev) => ({
+        ...prev,
+        [item.title]: [...horariosPadrao],
+      }));
+    }
   };
 
   const closeModal = () => setShowModal(false);
+
+  const handleHorarioClick = (horario) => {
+    // Marcar o horário como agendado para o funcionário atual
+    setHorariosDisponiveis((prev) => ({
+      ...prev,
+      [selectedItem.title]: prev[selectedItem.title].map((h) =>
+        h === horario ? 'Agendado' : h
+      ),
+    }));
+    alert('Agendamento realizado!');
+  };
 
   return (
     <div id="container">
@@ -87,8 +107,13 @@ function BarraPesquisa() {
             <div className="horarios-container">
               <h3>Horários Disponíveis</h3>
               <div className="grade-horarios">
-                {horarios.map((horario, index) => (
-                  <button key={index} className="botao-horario">
+                {horariosDisponiveis[selectedItem.title]?.map((horario, index) => (
+                  <button
+                    key={index}
+                    className="botao-horario"
+                    onClick={() => horario !== 'Agendado' && handleHorarioClick(horario)}
+                    disabled={horario === 'Agendado'}
+                  >
                     {horario}
                   </button>
                 ))}
