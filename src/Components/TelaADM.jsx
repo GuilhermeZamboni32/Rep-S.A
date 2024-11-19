@@ -31,8 +31,8 @@ function TelaADM() {
   };
 
   return (
-    <div className='perfil-Body'>
-      <div className="perfil-container">
+    <div className='perfil-adm-Body'>
+      <div className="perfil-adm-container">
         {/* Topo */}
         <div className='perfil-topo'>
           <div className='perfil-topo-esquerda'>

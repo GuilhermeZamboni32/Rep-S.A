@@ -84,12 +84,12 @@ body {
 
 .titulo-item {
   font-size: 18px;
-  color: #333;
+  color: var(--cor1);
 }
 
 .descrição-item {
   font-size: 14px;
-  color: #3f3a3a;
+  color: var(--cor1);
 }
 
 .botão-ver {
@@ -169,7 +169,8 @@ body {
 }
 
 .fecha-modal:hover {
-  background-color: #ff1a1a;
+  background-color: var(--cor5);
+  color: var(--cor1);
 }
 
 .horarios-container {

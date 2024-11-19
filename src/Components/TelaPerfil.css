@@ -10,7 +10,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 100vh;
+  min-width: 100vh;
   width: 100vw;
   margin-top: 90px; /* Espaço para compensar a altura do topo fixo */
 }
@@ -165,5 +165,5 @@
   background-color: var(--cor2);
   padding: 4%;
   box-sizing: border-box;
+ 
 }
-
