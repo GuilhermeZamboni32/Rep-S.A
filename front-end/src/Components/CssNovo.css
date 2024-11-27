@@ -40,9 +40,20 @@
           z-index: 1000; 
         }
         
-              .topo-esquerda .logo {
-                width: 50px;
+              .topo-esquerda  {
+                width: 40px;
+                
+                
+              }
+
+              .logo{
+                width: 40px;
                 cursor: pointer;
+              }
+
+              .topo-esquerda-esquerda{
+                width: 10px;
+                
               }
               
               .topo-direita {
@@ -89,6 +100,13 @@
 
         .botoes button:hover {
           background-color: var(--cor2);
+        }
+
+        .espaco-botao{
+          width: 10px;
+        }
+        .espaco{
+          width: 10px;
         }
 
         .baixo {
@@ -208,6 +226,10 @@
           .cadastro-topo-esquerda {
             width: 10%;
           }
+
+              .cadastro-topo-esquerda-esquerda{
+                width: 10px;
+              }
           
           .imagem .logo {
             width: 40px;
@@ -235,6 +257,10 @@
               .cadastro-topo-direita{
                 display: flex;
                 align-items: center;
+              }
+
+              .cadastro-topo-direita-direita{
+                width: 10px;
               }
 
                   .cadastro-botao-voltar{

@@ -28,16 +28,16 @@
   background-color: var(--cor1);
   padding: 30px;
   width: 100vw;
-  box-sizing: border-box;
   position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 10;
 }
 
 .header-icon {
   cursor: pointer;
-  width: 50px;
+  width: 40px;
+}
+
+.perfil-topo-esquerda{
+  width: 10px;
 }
 
 .perfil-topo-direita button {
