@@ -8,7 +8,7 @@ const pool = new Pool({
     host: 'localhost',
     database: 'server', // Nome da sua database
     password: 'senai', // Substitua pela sua senha
-    port: 3000, // Porta padrão do PostgreSQL
+    port: 5432 , // Porta padrão do PostgreSQL
 });
 
 // Habilitar CORS para todas as rotas
@@ -90,7 +90,7 @@ app.delete('/clientes/:id', async (req, res) => {
     }
 });
 
-app.listen(3000, () => {
-    console.log('Servidor rodando na porta 3000');
+app.listen(5432, () => {
+    console.log('Servidor rodando na porta 5432');
 });
 

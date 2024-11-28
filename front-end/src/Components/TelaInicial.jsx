@@ -10,8 +10,8 @@ function TelaInicial() {
     <div className='body'>
       <div className='container'>
         <div className='topo'>
+        <div className='topo-esquerda-esquerda'></div>
           <div className='topo-esquerda' onClick={() => navigate('/')}>
-            <div className='topo-esquerda-esquerda'></div>
             <img src='logo-agenda.png' alt="Logo" className="logo" />
           </div>
 
