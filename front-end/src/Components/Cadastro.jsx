@@ -48,6 +48,7 @@ function Cadastro() {
       <div className="cadastro-container">
         <div className="cadastro-topo">
           <div className="cadastro-topo-esquerda">
+            <div className='cadastro-topo-esquerda-esquerda'></div>
             <div className="imagem">
               <img src="logo-agenda.png" alt="Logo" className="logo" onClick={() => navigate('/')} />
             </div>
@@ -57,6 +58,7 @@ function Cadastro() {
           </div>
           <div className="cadastro-topo-direita">
             <button onClick={() => navigate('/')} className="cadastro-botao-voltar">Voltar</button>
+            <div className='cadastro-topo-direita-direita'></div>
           </div>
         </div>
 

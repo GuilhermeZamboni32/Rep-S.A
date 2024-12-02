@@ -71,7 +71,7 @@ function TelaPerfil() {
         </div>
         </div>
       </div>
-      <div className='perfil-baixo'></div>
+      
     </div>
     </div>
   );

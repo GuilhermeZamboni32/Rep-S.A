@@ -10,6 +10,7 @@ function TelaInicial() {
     <div className='body'>
       <div className='container'>
         <div className='topo'>
+        <div className='topo-esquerda-esquerda'></div>
           <div className='topo-esquerda' onClick={() => navigate('/')}>
             <img src='logo-agenda.png' alt="Logo" className="logo" />
           </div>
@@ -20,7 +21,9 @@ function TelaInicial() {
 
           <div className='topo-direita'>
             <button className='botao' onClick={() => navigate('/cadastro')}>Cadastro</button>
+            <div className='espaco-botao'></div>
             <button className='botao' onClick={() => navigate('/login')}>Login</button>
+            <div className='espaco'></div>
           </div>
         </div>
 

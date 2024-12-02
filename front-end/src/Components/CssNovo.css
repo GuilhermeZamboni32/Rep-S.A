@@ -4,9 +4,7 @@
   --cor3: #00b4d8; 
   --cor4: #90e0ef; 
   --cor5: #caf0f8; 
-
 }
-
 
 .body {
   display: flex;
@@ -20,87 +18,91 @@
   background-position: center; 
 }
 
-    .container {
-      width: 100%; 
-      padding: 0; 
-      box-sizing: border-box; 
-      
-    }
+.container {
+  width: 100%; 
+  padding: 0; 
+  box-sizing: border-box; 
+}
 
-        .topo {
-          display: flex;
-          align-items: center;
-          justify-content: space-between; 
-          width: 100%; 
-          padding: 10px 0; 
-          background-color: var(--cor1); 
-          position: fixed; 
-          top: 0; 
-          left: 0; 
-          z-index: 1000; 
-        }
-        
-              .topo-esquerda .logo {
-                width: 50px;
-                cursor: pointer;
-              }
-              
-              .topo-direita {
-                display: flex;
-                gap: 10px; 
-              }
+.topo {
+  display: flex;
+  align-items: center;
+  width: 100%;  
+  background-color: var(--cor1); 
+  position: fixed; 
+  top: 0;
+  height: 60px; 
+  padding: 5px 0;
+}
 
+.topo-esquerda {
+  width: 50px;
+}
 
+.logo {
+  width: 40px;
+  cursor: pointer;
+}
 
-        .meio {
-          display: flex;
-          justify-content: center;
-          align-items: center; 
-          width: 100%; 
-          height: 400px; 
-          color: var(--cor5);
-          background-size: cover; 
-          background-position: center; 
-          background-repeat: no-repeat; 
-          
-        }
+.topo-meio {
+  flex-grow: 2; /* Faz a div ocupar maior parte do espaço */
+  text-align: center; /* Centraliza o conteúdo */
+}
 
-              .imagem-grande {
-                max-width: 90%;
-                height: auto;
-              }
+.topo-direita {
+  display: flex;
+  gap: 15px; /* Espaçamento entre os botões */
+  margin-right: 20px; /* Margem da borda direita */
+}
 
-        .botoes {
-          display: flex;
-          justify-content: center;
-          gap: 20px;
-          margin: 20px 0;
-        }
+.meio {
+  display: flex;
+  justify-content: flex-end; /* Move a imagem para a direita */
+  align-items: center; 
+  width: 100%; 
+  height: 400px; 
+  color: var(--cor5);
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+}
 
-        .botoes button {
-          padding: 10px 20px;
-          background-color: var(--cor3); 
-          color: white;
-          border: none;
-          border-radius: 4px;
-          cursor: pointer;
-          transition: background-color 0.3s ease;
-        }
+.imagem-grande {
+  max-width: 90%;
+  height: auto;
+  margin-right: 10%; /* Espaçamento da borda direita */
+}
 
-        .botoes button:hover {
-          background-color: var(--cor2);
-        }
+.botoes {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px 0;
+}
 
-        .baixo {
-          display: flex;
-          justify-content: space-around;
-          margin-top: 20px; 
-          width: 100vw; 
-          background-color: rgba(137, 43, 226, 0);
-          padding: 20px 0; 
-          position: relative; 
-          left: calc(-50vw + 50%); 
-        }
+.botoes button {
+  padding: 10px 20px;
+  background-color: var(--cor3); 
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.botoes button:hover {
+  background-color: var(--cor2);
+}
+
+.baixo {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px; 
+  width: 100vw; 
+  background-color: rgba(137, 43, 226, 0);
+  padding: 20px 0; 
+}
+
 
               .quadro {
                 text-align: center;
@@ -194,10 +196,10 @@
       display: flex;
       align-items: center;
       width: 100%;
-      position: absolute; 
+      position: absolute;
       top: 0; 
-      left: 0;
-      padding: 10px 0;
+      height: 60px; 
+      padding: 5px 0; 
     }
 
           .cadastro-topo-esquerda {
@@ -208,6 +210,10 @@
           .cadastro-topo-esquerda {
             width: 10%;
           }
+
+              .cadastro-topo-esquerda-esquerda{
+                width: 10px;
+              }
           
           .imagem .logo {
             width: 40px;
@@ -235,6 +241,10 @@
               .cadastro-topo-direita{
                 display: flex;
                 align-items: center;
+              }
+
+              .cadastro-topo-direita-direita{
+                width: 10px;
               }
 
                   .cadastro-botao-voltar{
@@ -464,11 +474,10 @@
   display: flex;
   align-items: center;
   width: 100%;
-  padding: 10px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 10;
+  position: absolute;
+  top: 0; 
+  height: 60px; 
+  padding: 5px 0;
 }
 
 .login-topo-esquerda, .login-topo-meio, .login-topo-direita {
