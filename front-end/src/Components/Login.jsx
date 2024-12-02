@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import './CssNovo.css';
 import './TelaADM';
 
@@ -9,6 +10,15 @@ function Login() {
   const [showPassword, setShowPassword] = useState(false); // Estado para controlar a visualização da senha
   const [showPopup, setShowPopup] = useState(false); 
   const navigate = useNavigate();
+};
+  const fetchUsuarios = async () => {
+    try {
+        const response = await axios.get('http://localhost:3000/usuarios');
+        setUsuarios(response.data);
+    } catch (error) {
+        console.error('Erro ao buscar Usuarios:', error);
+    }
+
 
   const handleCadastroRedirect = () => {
     navigate('/cadastro');

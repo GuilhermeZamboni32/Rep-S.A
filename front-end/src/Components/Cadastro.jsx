@@ -1,13 +1,10 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import './CssNovo.css';
 
 function Cadastro() {
-  const [nomeCompleto, setNomeCompleto] = useState('');
-  const [dataNascimento, setDataNascimento] = useState('');
-  const [cpf, setCpf] = useState('');
-  const [endereco, setEndereco] = useState('');
-  const [senha, setSenha] = useState('');
+  const [usuario, setusuario] = useState({nome_completo:'', data_nascimento:'',senha_usuario:'' , cpf:'',endereco:'' });
   const [confirmarSenha, setConfirmarSenha] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
@@ -15,27 +12,28 @@ function Cadastro() {
 
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (senha !== confirmarSenha) {
+    if (confirmarSenha !== usuario.senha_usuario  ) {
       setPopupMessage('As senhas não conferem! Confira se as senhas estão corretas.');
       setShowPopup(true);
       return;
     }
 
-    const dadosCadastro = {
-      nomeCompleto,
-      dataNascimento,
-      cpf,
-      endereco,
-      senha,
-    };
+    
+    try {
+      const response = await axios.post('http://localhost:3000/usuarios', usuario);
 
-    console.log('Dados de Cadastro:', dadosCadastro);
-
-    setPopupMessage('Cadastro realizado com sucesso! Você será redirecionado para a página de login.');
-    setShowPopup(true);
+      setPopupMessage('Cadastro realizado com sucesso! Você será redirecionado para a página de login.');
+      setShowPopup(true);
+     
+    } catch (error) {
+      console.error('Erro durante o cadastro:', error.response?.data || error.message);
+      setPopupMessage(error.response?.data?.mensagem || 'Ocorreu um erro durante o cadastro. Por favor, tente novamente.');
+      setShowPopup(true);
+      
+    }
   };
 
   const handlePopupClose = () => {
@@ -69,32 +67,31 @@ function Cadastro() {
                 className="input"
                 type="text"
                 placeholder="Nome Completo"
-                value={nomeCompleto}
-                onChange={(e) => setNomeCompleto(e.target.value)}
+                value={usuario.nome_completo}
+                onChange={(e) => setusuario({ ... usuario, nome_completo: e.target.value})}
                 required
               />
               <input
                 className="input"
                 type="date"
-                placeholder="Data de Nascimento"
-                value={dataNascimento}
-                onChange={(e) => setDataNascimento(e.target.value)}
+                value={usuario.data_nascimento}
+                onChange={(e) => setusuario({ ... usuario, data_nascimento: e.target.value})}
                 required
               />
               <input
                 className="input"
                 type="text"
                 placeholder="CPF"
-                value={cpf}
-                onChange={(e) => setCpf(e.target.value)}
+                value={usuario.cpf}
+                onChange={(e) => setusuario({ ... usuario, cpf: e.target.value})}
                 required
               />
               <input
                 className="input"
                 type="text"
                 placeholder="Endereço"
-                value={endereco}
-                onChange={(e) => setEndereco(e.target.value)}
+                value={usuario.endereco}
+                onChange={(e) => setusuario({ ... usuario, endereco: e.target.value})}
                 required
               />
               <div className="inputs-senhas">
@@ -102,8 +99,9 @@ function Cadastro() {
                   className="input"
                   type={showPassword ? "text" : "password"}
                   placeholder="Senha"
-                  value={senha}
-                  onChange={(e) => setSenha(e.target.value)}
+                  value={usuario.senha_usuario}
+                  onChange={(e) => setusuario({ ... usuario, senha_usuario: e.target.value})}
+                  
                   required
                 />
                 <input
@@ -116,12 +114,12 @@ function Cadastro() {
                 />
                 <label className="label-senha">
                   <input
-                    className='mostra-senha'
+                    className="mostra-senha"
                     type="checkbox"
                     checked={showPassword}
                     onChange={() => setShowPassword(!showPassword)}
                   />
-                  Mostrar Senha
+                  Mostrar senha
                 </label>
               </div>
               <button type="submit" className="cadastro-botao-cadastro">Cadastrar</button>
