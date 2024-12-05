@@ -15,7 +15,16 @@ const pool = new Pool({
 app.use(cors());
 app.use(express.json());
 
-
+//Rota para buscar todos os usuarios
+app.get('/usuarios', async (req, res) => {
+    try {
+        const result = await pool.query('SELECT * FROM usuarios');
+        res.json(result.rows);
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).json({ error: 'Erro ao buscar usuario' });
+    }
+});
 // Rota para adicionar um cliente
 app.post('/usuarios', async (req, res) => {
     const { cpf, senha_usuario, nome_completo, data_nascimento,endereco } = req.body;
@@ -50,6 +59,8 @@ app.put('/usuarios/:id', async (req, res) => {
     }
 });
 
+
+
 // Rota para deletar um cliente
 app.delete('/usuarios/:id', async (req, res) => {
     const { id } = req.params;
@@ -69,17 +80,8 @@ app.listen(3000, () => {
     console.log('Servidor rodando na porta 5432');
 });
 
-/* Rota para buscar todos os usuarios
-app.get('/usuarios', async (req, res) => {
-    try {
-        const result = await pool.query('SELECT * FROM usuarios');
-        res.json(result.rows);
-    } catch (err) {
-        console.error(err.message);
-        res.status(500).json({ error: 'Erro ao buscar usuario' });
-    }
-});
 
+/*
 // Rota para buscar um usuarios por ID
 app.get('/usuarios/:id', async (req, res) => {
     const { id } = req.params;
