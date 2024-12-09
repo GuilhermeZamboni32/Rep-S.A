@@ -99,7 +99,7 @@ function Login() {
                 />
                 <label>Mostrar Senha</label>
               </div>
-              <button type="submit" className="login-botao-login">Login</button>
+              <button className="login-botao-login" onClick={handleCadastroRedirect}>Login</button>
             </form>
           </div>
         </div>
