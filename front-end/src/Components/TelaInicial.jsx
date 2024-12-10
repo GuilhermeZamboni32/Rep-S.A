@@ -2,7 +2,6 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './TelaPerfil.css';
 
-
 function TelaInicial() {
  
 
@@ -15,8 +14,8 @@ function TelaInicial() {
             <img src='logo-agenda.png' alt="Logo" className="logo" />
           </div>
 
-          <div className='topo-meio'>
-            {/**espaço em branco */}
+          <div className="topo-meio">
+            {/* espaço em branco */}
           </div>
 
           <div className='topo-direita'>
@@ -35,16 +34,16 @@ function TelaInicial() {
           
         </div>
 
-        <div className='baixo'>
-          <div className='quadro'>
+        <div className="baixo">
+          <div className="quadro">
             <h3>Filosofia</h3>
             <p>Promover conveniência e organização através de uma plataforma intuitiva, focada no usuário.</p>
           </div>
-          <div className='quadro'>
+          <div className="quadro">
             <h3>Objetivos</h3>
             <p>Simplificar agendamentos, melhorar comunicação, reduzir conflitos e enviar lembretes automáticos.</p>
           </div>
-          <div className='quadro'>
+          <div className="quadro">
             <h3>História</h3>
             <p>Nascido para otimizar compromissos, evoluiu com novas funcionalidades para atender diversos setores.</p>
 

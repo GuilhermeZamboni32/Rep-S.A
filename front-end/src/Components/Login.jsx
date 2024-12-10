@@ -1,17 +1,48 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useContext} from 'react';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import './CssNovo.css';
 import './TelaADM';
+import { GlobalContext } from "../contexts/GlobalContext"
 
 function Login() {
-  const [cpf, setCpf] = useState('');
-  const [senha, setSenha] = useState('');
-  const [showPassword, setShowPassword] = useState(false); // Estado para controlar a visualização da senha
-  const [showPopup, setShowPopup] = useState(false); 
- 
+  const [usuario, setusuario] = useState([]);
+  const [logar, setlogar] = useState({ cpf: '', senha: '' });
+  const [showPassword, setShowPassword] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
+  const navigate = useNavigate();
+  const {usuarioLogado, setUsuarioLogado} = useContext(GlobalContext)
+  const fetchusuario = async () => {
+    try {
+      const response = await axios.get('http://localhost:3000/usuarios');
+      setusuario(response.data);
+    } 
+    catch (error) {
+      console.error('Erro ao buscar Usuarios:', error);
+    }
+  };
+
+  useEffect(() => {
+    fetchusuario();
+  }, []);
+
+  useEffect(() => {
+    console.log(usuario);
+    console.log(logar);
+  }, [logar, usuario]);
 
   const handleCadastroRedirect = () => {
-    navigate('/cadastro');
+    const user = usuario.find((usuarios) => usuarios.cpf === logar.cpf && usuarios.senha_usuario === logar.senha)
+    if (user) {
+      setShowPopup(true);
+      setUsuarioLogado(logar.cpf)
+      navigate('/perfil');
+      return;
+    } else {
+      alert('Usuário ou senha inválidos!');
+      return
+      
+    }
   };
 
   const handleBack = () => {
@@ -20,17 +51,11 @@ function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    if (senha === "ADM") {
-      navigate('/TelaADM'); 
+    if (logar.senha === "ADM") {
+      navigate('/TelaADM');
     } else {
-      setShowPopup(true); 
+      handleCadastroRedirect();
     }
-  };
-
-  const handlePopupClose = () => {
-    setShowPopup(false); 
-    navigate('/perfil'); 
   };
 
   return (
@@ -57,16 +82,16 @@ function Login() {
                 className="input"
                 type="text"
                 placeholder="CPF"
-                value={cpf}
-                onChange={(e) => setCpf(e.target.value)}
+                value={logar.cpf}
+                onChange={(e) => setlogar({ ...logar, cpf: e.target.value})}
                 required
               />
               <input
                 className="input"
-                type={showPassword ? "text" : "password"} // Alterna o tipo de input entre texto e senha
+                type={showPassword ? "text" : "password"}
                 placeholder="Senha"
-                value={senha}
-                onChange={(e) => setSenha(e.target.value)}
+                value={logar.senha}
+                onChange={(e) => setlogar({ ...logar, senha: e.target.value})}
                 required
               />
               <div className="div-senha">
@@ -78,7 +103,7 @@ function Login() {
                 />
                 <label>Mostrar Senha</label>
               </div>
-              <button type="submit" className="login-botao-login">Login</button>
+              <button className="login-botao-login" onClick={handleCadastroRedirect}>Login</button>
             </form>
           </div>
         </div>
@@ -88,17 +113,17 @@ function Login() {
             <div className="popup-content">
               <h3>Login realizado com sucesso!</h3>
               <p>Você será redirecionado para o seu perfil.</p>
-              <button onClick={handlePopupClose}>OK</button>
             </div>
           </div>
         )}
-        
+
         <div className="login-baixo">
-          {/** espaço em branco */}
+          {/* espaço em branco */}
         </div>
       </div>
     </div>
   );
 }
+
 
 export default Login;
