@@ -4,7 +4,7 @@ import './TelaPerfil.css';
 import BarraPesquisa from './BarraPesquisa/BarraPesquisa';
 
 function TelaPerfil() {
-  const navigate = useNavigate();
+  
   const [isEditing, setIsEditing] = useState(false);
   const [userInfo, setUserInfo] = useState({
     nome: "",
@@ -17,26 +17,40 @@ function TelaPerfil() {
   const handleEdit = () => setIsEditing(!isEditing);
   const handleChange = (e) => setUserInfo({ ...userInfo, [e.target.name]: e.target.value });
 
+
+  const handleDelete = () => {
+    if (window.confirm("Tem certeza de que deseja excluir este perfil?")) {
+      // Aqui você pode integrar com o backend para excluir o perfil
+      console.log("Perfil excluído:", userInfo);
+      setUserInfo(null); // Limpa os dados do perfil
+    }
+  };
+
+  if (!userInfo) {
+    return  window.location.href = "/";
+  }
+
+
   return (
     <div className='perfil-Body'>
     <div className="perfil-container">
 
       <div className='perfil-topo'>
         <div className='perfiltopo-esquerda'>
-          <img 
+         {/*<img 
             src="logo-agenda.png" 
             alt="Logo" 
             className="header-icon" 
             onClick={() => window.location.href = "/"} 
-          />
-        </div>
+  />*/}
+  </div>
 
         <div className='perfil-topo-meio'>
           {/** espaço vazio */}
         </div>
         <div className='perfil-topo-direita'>
-
-          <button className='perfil-botao-login' onClick={() => navigate('/login')}>Voltar</button>
+        {/*
+          <button className='perfil-botao-login' onClick={() => navigate('/login')}>Voltar</button>*/}
         </div>
       </div>
         
@@ -56,21 +70,30 @@ function TelaPerfil() {
             <input className='input-user' type="password" name="senha" value={userInfo.senha} onChange={handleChange} disabled={!isEditing} placeholder="Senha" />
           </form>
 
-          <button className="button" onClick={handleEdit}>
-            {isEditing ? "Salvar" : "Editar"}
-          </button>
-        </div>
+
+
+
+          <div className="button-group">
+            <button className="button" onClick={handleEdit}>
+              {isEditing ? "Salvar" : "Editar"}
+            </button>
+            <button className="button" onClick={handleDelete}>Excluir</button>
+            </div>
+
+
+
+
 
         </div>
-
-
-
+        </div>
         <div className='perfil-meio-direita'>
         <div className="cards-section">
           <BarraPesquisa />
         </div>
         </div>
       </div>
+
+      <div className='perfil-baixo'></div>
       
     </div>
     </div>

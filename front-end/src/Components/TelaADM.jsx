@@ -4,7 +4,7 @@ import './TelaADM.css';
 import BarraPesquisa from './BarraPesquisa/BarraPesquisa';
 
 function TelaADM() {
-  const navigate = useNavigate();
+
   const [isEditing, setIsEditing] = useState(false);
   const [userInfo, setUserInfo] = useState({
     nome: "Nome Completo",

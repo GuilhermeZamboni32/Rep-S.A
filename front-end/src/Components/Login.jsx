@@ -8,7 +8,7 @@ function Login() {
   const [senha, setSenha] = useState('');
   const [showPassword, setShowPassword] = useState(false); // Estado para controlar a visualização da senha
   const [showPopup, setShowPopup] = useState(false); 
-  const navigate = useNavigate();
+ 
 
   const handleCadastroRedirect = () => {
     navigate('/cadastro');
@@ -38,15 +38,15 @@ function Login() {
       <div className="login-container">
         <div className="login-topo">
           <div className="login-topo-esquerda">
-            <div className="imagem">
+           {/* <div className="imagem">
               <img src="logo-agenda.png" alt="Logo" className="logo" onClick={() => navigate('/')} />
-            </div>
+             </div>*/}
           </div>
           <div className="login-topo-meio">
-            <h2>Login de Usuário</h2>
+           {/* <h2>Login de Usuário</h2>*/}
           </div>
           <div className="login-topo-direita">
-            <button className="login-botao-voltar" onClick={handleBack}>Voltar</button>
+            
           </div>
         </div>
 

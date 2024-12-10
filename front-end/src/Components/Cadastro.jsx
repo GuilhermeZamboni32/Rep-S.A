@@ -13,7 +13,7 @@ function Cadastro() {
   const [showPopup, setShowPopup] = useState(false);
   const [popupMessage, setPopupMessage] = useState('');
 
-  const navigate = useNavigate();
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -51,15 +51,13 @@ function Cadastro() {
         <div className="cadastro-topo">
           <div className="cadastro-topo-esquerda">
             <div className='cadastro-topo-esquerda-esquerda'></div>
-            <div className="imagem">
-              <img src="logo-agenda.png" alt="Logo" className="logo" onClick={() => navigate('/')} />
-            </div>
+           
           </div>
           <div className="cadastro-topo-meio">
             <h2>Cadastro de Usuário</h2>
           </div>
           <div className="cadastro-topo-direita">
-            <button onClick={() => navigate('/')} className="cadastro-botao-voltar">Voltar</button>
+          
             <div className='cadastro-topo-direita-direita'></div>
           </div>
         </div>
