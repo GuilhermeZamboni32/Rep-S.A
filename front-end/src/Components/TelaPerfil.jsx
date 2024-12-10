@@ -38,17 +38,19 @@ const deleteUser = async (cpf) => {
 
   const handleEdit = () => setIsEditing(!isEditing);
   const handleChange = (e) => setUserInfo({ ...userInfo, [e.target.name]: e.target.value });
+  
   const handleDelete = () => {
     if (window.confirm("Tem certeza de que deseja excluir este perfil?")) {
       // Aqui você pode integrar com o backend para excluir o perfil
       console.log("Perfil excluído:", userInfo);
-      deleteUser; // Limpa os dados do perfil
+      setUserInfo(null); // Limpa os dados do perfil
     }
   };
 
   if (!userInfo) {
     return  window.location.href = "/";
   }
+
   return (
     <div className='perfil-Body'>
     <div className="perfil-container">

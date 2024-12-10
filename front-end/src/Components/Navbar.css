@@ -1,7 +1,25 @@
-.navbar{
+/* src/App.css */
+.navbar {
+    list-style-type: none;
+    padding: 0;
+    background-color: #333;
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 25px;
-    min-width: 100vw;
+}
+
+.navbar li {
+    margin: 10px;
+}
+
+.navbar li button {
+    color: white;
+    background-color: #333;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.navbar li button:hover {
+    background-color: #575757;
+    border-radius: 5px;
 }
