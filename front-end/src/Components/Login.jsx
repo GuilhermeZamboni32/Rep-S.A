@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext} from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './CssNovo.css';
 import './TelaADM';
+import { GlobalContext } from "../contexts/GlobalContext"
 
 function Login() {
   const [usuario, setusuario] = useState([]);
@@ -10,7 +11,7 @@ function Login() {
   const [showPassword, setShowPassword] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
   const navigate = useNavigate();
-
+  const {usuarioLogado, setUsuarioLogado} = useContext(GlobalContext)
   const fetchusuario = async () => {
     try {
       const response = await axios.get('http://localhost:3000/usuarios');
@@ -26,18 +27,21 @@ function Login() {
   }, []);
 
   useEffect(() => {
+    console.log(usuario);
     console.log(logar);
-  }, [logar]);
+  }, [logar, usuario]);
 
   const handleCadastroRedirect = () => {
     const user = usuario.find((usuarios) => usuarios.cpf === logar.cpf && usuarios.senha_usuario === logar.senha)
-    if (!user) {
+    if (user) {
       setShowPopup(true);
+      setUsuarioLogado(logar.cpf)
       navigate('/perfil');
       return;
     } else {
       alert('Usuário ou senha inválidos!');
       return
+      
     }
   };
 

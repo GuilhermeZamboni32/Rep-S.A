@@ -13,7 +13,7 @@ body {
   width: 100vw;
   height: 100vh;
   font-family: Arial, sans-serif;
-  background-color: var(--cor5); /* Cor de fundo padrão */
+  background-image: url('imagem-fundo.jfif'); /* Cor de fundo padrão */
 }
 
 .perfil-Body {
@@ -134,6 +134,13 @@ body {
 
 .button:hover {
   background-color: var(--cor2);
+}
+
+.button-group {
+  display: flex;
+  justify-content: center; 
+  gap: 10px; 
+  margin-top: 10px; 
 }
 
 .cards-section {

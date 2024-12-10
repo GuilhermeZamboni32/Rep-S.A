@@ -1,15 +1,15 @@
 import { createContext, useState } from "react";
-
+import Login from "../Components/Login";
 export const GlobalContext = createContext()
 
 export const GlobalContextProvider = ({children}) => {
-let usuarioLogado = 'Gill Bates'
+const [usuarioLogado, setUsuarioLogado] = useState('');
 //let bairro = 'monte Verde'
-const [bairro, setBairro] = useState('Monte verde')
+
 
 
     return(
-        <GlobalContext.Provider value={{usuarioLogado, bairro, setBairro}}>
+        <GlobalContext.Provider value={{usuarioLogado, setUsuarioLogado}}>
             {children}
         </GlobalContext.Provider>
     )

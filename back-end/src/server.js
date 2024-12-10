@@ -59,6 +59,19 @@ app.put('/usuarios/:id', async (req, res) => {
     }
 });
 
+app.get('/usuarios/:cpf', async (req, res) => {
+    const { cpf } = req.params;
+    try {
+        const result = await pool.query('SELECT * FROM usuarios WHERE cpf = $1', [cpf]);
+        if (result.rows.length === 0) {
+            return res.status(404).json({ error: 'usuario não encontrado' });
+        }
+        res.json(result.rows[0]);
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).json({ error: 'Erro ao buscar usuario' });
+    }
+  });
 
 
 // Rota para deletar um cliente
