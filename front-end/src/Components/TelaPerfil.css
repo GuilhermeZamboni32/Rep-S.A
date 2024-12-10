@@ -136,6 +136,13 @@ body {
   background-color: var(--cor2);
 }
 
+.button-group {
+  display: flex;
+  justify-content: center; 
+  gap: 10px; 
+  margin-top: 10px; 
+}
+
 .cards-section {
   display: flex;
   flex-wrap: wrap;

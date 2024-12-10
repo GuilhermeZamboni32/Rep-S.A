@@ -17,6 +17,18 @@ function TelaPerfil() {
   const handleEdit = () => setIsEditing(!isEditing);
   const handleChange = (e) => setUserInfo({ ...userInfo, [e.target.name]: e.target.value });
 
+  const handleDelete = () => {
+    if (window.confirm("Tem certeza de que deseja excluir este perfil?")) {
+      // Aqui você pode integrar com o backend para excluir o perfil
+      console.log("Perfil excluído:", userInfo);
+      setUserInfo(null); // Limpa os dados do perfil
+    }
+  };
+
+  if (!userInfo) {
+    return  window.location.href = "/";
+  }
+
   return (
     <div className='perfil-Body'>
     <div className="perfil-container">
@@ -56,9 +68,12 @@ function TelaPerfil() {
             <input className='input-user' type="password" name="senha" value={userInfo.senha} onChange={handleChange} disabled={!isEditing} placeholder="Senha" />
           </form>
 
-          <button className="button" onClick={handleEdit}>
-            {isEditing ? "Salvar" : "Editar"}
-          </button>
+          <div className="button-group">
+            <button className="button" onClick={handleEdit}>
+              {isEditing ? "Salvar" : "Editar"}
+            </button>
+            <button className="button" onClick={handleDelete}>Excluir</button>
+            </div>
         </div>
 
         </div>
