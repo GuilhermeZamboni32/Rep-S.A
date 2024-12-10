@@ -1,21 +1,14 @@
 import { createBrowserRouter } from "react-router-dom"; 
-import Home from "../pages/Home";
-import Contato from "../pages/Contato";
-import Generica from "../pages/Generica";
-import Final from "../pages/Final";
-import Agua from "../pages/Agua";
-import Pagina_Inicial from "../Pages/Pagina_Inicial";
-import Cadastro from  "../Pages/Cadastro";
-
+import TelaInicial from "../Components/TelaInicial";
+import Cadastro from "../Components/Cadastro";
+import Login from "../Components/Login";
+import TelaPerfil from "../Components/TelaPerfil";
 
 const router = createBrowserRouter([
-    {path: "/", element: <Home />},
-    {path: "/contato", element: <Contato />},
-    {path: "/generica", element: <Generica />},
-    {path: "/final", element: <Final />},
-    {path: "/agua", element: <Agua />},
-    {path: "/Pagina_Inicial", element: <Pagina_Inicial />},
-    {path: "/cadastro", element: <Cadastro />},
+    {path: "/", element: <TelaInicial />},
+    {path: "/Cadastro", element: <Cadastro />},
+    {path: "/Login", element: <Login />},
+    {path: "/TelaPerfil", element: <TelaPerfil />},
 ])
 
 export default router;

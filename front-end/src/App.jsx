@@ -8,7 +8,6 @@ import TelaADM from './Components/TelaADM';
 import './App.css';
 
 function App() {
-<<<<<<< HEAD
     const [activePage, setActivePage] = useState('TelaInicial');
 
     const renderPage = () => {
@@ -34,19 +33,6 @@ function App() {
             <div className="content">{renderPage()}</div>
         </div>
     );
-=======
-  return (
-    <Router> 
-      <Routes>
-        <Route path="/" element={<TelaInicial />} />
-        <Route path="/cadastro" element={<Cadastro />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/perfil" element={<TelaPerfil />} />
-        <Route path="/TelaADM" element={<TelaADM />} />
-      </Routes>
-    </Router>
-  );
->>>>>>> 23ca9565a6b72da5a552455fdd325a05733d06da
 }
 
 export default App;

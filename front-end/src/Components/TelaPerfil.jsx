@@ -1,44 +1,23 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './TelaPerfil.css';
 import BarraPesquisa from './BarraPesquisa/BarraPesquisa';
-import axios from 'axios';
 
-//const objeto [algo, setAlgo] = ({CoisasDoDatabase})
 function TelaPerfil() {
   
   const [isEditing, setIsEditing] = useState(false);
-  const [userInfo, setUserInfo] = useState({nome_completo: "", cpf: "", data_nascimento: "", endereco: "", senha_usuario: ""});
-  const [selectedUser, setSelectedUser] = useState(null); // Cliente selecionado para edição
-  
-  
-  const fetchuserInfo = async (cpf) => {
-    try {
-        const response = await axios.get(`http://localhost:3000/clientes/${cpf}`);
-        setSelectedUser(response.data); // Seleciona o cliente para edição
-        setUserInfo(response.data); // Preenche o formulário com os dados do cliente
-    } catch (error) {
-        console.error('Erro ao buscar cliente por ID:', error);
-    }
-};
-
-useEffect(() => {
-  fetchuserInfo();
-}, []);
-const deleteUser = async (cpf) => {
-  try {
-      const response = await axios.delete(`http://localhost:3000/usuarios/${cpf}`);
-      if (response.status === 200) {
-          fetchuserInfo(); // Atualiza a lista de clientes após a exclusão
-      }
-  } catch (error) {
-      console.error('Erro ao deletar cliente:', error);
-  }
-};
+  const [userInfo, setUserInfo] = useState({
+    nome: "",
+    cpf: "",
+    nascimento: "",
+    endereco: "",
+    senha: "",
+  });
 
   const handleEdit = () => setIsEditing(!isEditing);
   const handleChange = (e) => setUserInfo({ ...userInfo, [e.target.name]: e.target.value });
-  
+
+
   const handleDelete = () => {
     if (window.confirm("Tem certeza de que deseja excluir este perfil?")) {
       // Aqui você pode integrar com o backend para excluir o perfil
@@ -46,13 +25,6 @@ const deleteUser = async (cpf) => {
       setUserInfo(null); // Limpa os dados do perfil
     }
   };
-
-  if (!userInfo) {
-    return  window.location.href = "/";
-  }
-
-
- 
 
   if (!userInfo) {
     return  window.location.href = "/";
@@ -91,21 +63,26 @@ const deleteUser = async (cpf) => {
           </div>
 
           <form className="perfil-info-user">
-            <input className='input-user' type="text" name="nome" value={userInfo.nome_completo} onChange={handleChange} disabled={!isEditing} placeholder="Nome completo" />
-            <input className='input-user' type="date" name="nascimento" value={userInfo.data_nascimento} onChange={handleChange} disabled={!isEditing} />
+            <input className='input-user' type="text" name="nome" value={userInfo.nome} onChange={handleChange} disabled={!isEditing} placeholder="Nome completo" />
+            <input className='input-user' type="date" name="nascimento" value={userInfo.nascimento} onChange={handleChange} disabled={!isEditing} />
             <input className='input-user' type="text" name="cpf" value={userInfo.cpf} onChange={handleChange} disabled={!isEditing} placeholder="CPF" />
             <input className='input-user' type="text" name="endereco" value={userInfo.endereco} onChange={handleChange} disabled={!isEditing} placeholder="Endereço" />
-            <input className='input-user' type="password" name="senha" value={userInfo.senha_usuario} onChange={handleChange} disabled={!isEditing} placeholder="Senha" />
+            <input className='input-user' type="password" name="senha" value={userInfo.senha} onChange={handleChange} disabled={!isEditing} placeholder="Senha" />
           </form>
+
+
 
 
           <div className="button-group">
             <button className="button" onClick={handleEdit}>
-              {fetchuserInfo ? "Salvar" : "Editar"}
+              {isEditing ? "Salvar" : "Editar"}
             </button>
             <button className="button" onClick={handleDelete}>Excluir</button>
             </div>
-        </div>
+
+
+
+
 
         </div>
         </div>
@@ -119,8 +96,8 @@ const deleteUser = async (cpf) => {
       <div className='perfil-baixo'></div>
       
     </div>
-    
+    </div>
   );
-        }
+}
 
 export default TelaPerfil;

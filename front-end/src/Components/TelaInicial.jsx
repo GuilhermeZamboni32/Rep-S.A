@@ -3,33 +3,33 @@ import { useNavigate } from 'react-router-dom';
 import './TelaPerfil.css';
 
 function TelaInicial() {
- 
+ const navigate = useNavigate () 
 
   return (
     <div className='body'>
       <div className='container'>
         <div className='topo'>
         <div className='topo-esquerda-esquerda'></div>
-          <div className='topo-esquerda' onClick={() =>  useNavigate('/')}>
+         <div className='topo-esquerda' onClick={() =>  useNavigate('/')}>
             <img src='logo-agenda.png' alt="Logo" className="logo" />
-          </div>
+  </div>
 
           <div className="topo-meio">
             {/* espaço em branco */}
           </div>
 
           <div className='topo-direita'>
-            {/*     método antigo       
-            <button className='botao' onClick={() => useNavigate('/cadastro')}>Cadastro</button>
+                
+            <button className='botao' onClick={() => navigate('/Cadastro')}>Cadastro</button>
             <div className='espaco-botao'></div>
-            <button className='botao' onClick={() => useNavigate('/login')}>Login</button>
-            <div className='espaco'></div> */}
+            <button className='botao' onClick={() =>  navigate('/Login')}>Login</button>
+            <div className='espaco'></div> 
           </div>
         </div>
 
         <div className='meio'>
           
-          <h1 className='meio-h1'>Seja bem-vindo ao nosso site de agendamentos!</h1>
+          <h1>Seja bem-vindo ao nosso site de agendamentos!</h1>
 
           
         </div>

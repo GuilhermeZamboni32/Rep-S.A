@@ -4,42 +4,44 @@ import axios from 'axios';
 import './CssNovo.css';
 
 function Cadastro() {
-  const [usuario, setusuario] = useState({nome_completo:'', data_nascimento:'',senha_usuario:'' , cpf:'',endereco:'' });
+  const [usuario, setusuario] = useState({
+    nome_completo: '',
+    data_nascimento: '',
+    senha_usuario: '',
+    cpf: '',
+    endereco: ''
+  });
   const [confirmarSenha, setConfirmarSenha] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
   const [popupMessage, setPopupMessage] = useState('');
-
   
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    if (confirmarSenha !== usuario.senha_usuario  ) {
+    
+    if (confirmarSenha !== usuario.senha_usuario) {
       setPopupMessage('As senhas não conferem! Confira se as senhas estão corretas.');
       setShowPopup(true);
       return;
     }
 
-    
     try {
-      const response = await axios.post('http://localhost:3000/usuarios', usuario);
-
-      setPopupMessage('Cadastro realizado com sucesso! Você será redirecionado para a página de login.');
+      await axios.post('http://localhost:3000/usuarios', usuario);
+      setPopupMessage('Cadastro realizado com sucesso! Você será redirecionado para o perfil.');
       setShowPopup(true);
-     
     } catch (error) {
       console.error('Erro durante o cadastro:', error.response?.data || error.message);
       setPopupMessage(error.response?.data?.mensagem || 'Ocorreu um erro durante o cadastro. Por favor, tente novamente.');
       setShowPopup(true);
-      
     }
   };
 
   const handlePopupClose = () => {
     setShowPopup(false);
     if (popupMessage.includes('sucesso')) {
-      navigate('/login');
+      navigate('/login'); 
     }
   };
 
@@ -48,15 +50,13 @@ function Cadastro() {
       <div className="cadastro-container">
         <div className="cadastro-topo">
           <div className="cadastro-topo-esquerda">
-            <div className='cadastro-topo-esquerda-esquerda'></div>
-           
+            <div className="cadastro-topo-esquerda-esquerda"></div>
           </div>
           <div className="cadastro-topo-meio">
             <h2>Cadastro de Usuário</h2>
           </div>
           <div className="cadastro-topo-direita">
-          
-            <div className='cadastro-topo-direita-direita'></div>
+            <div className="cadastro-topo-direita-direita"></div>
           </div>
         </div>
 
@@ -68,14 +68,14 @@ function Cadastro() {
                 type="text"
                 placeholder="Nome Completo"
                 value={usuario.nome_completo}
-                onChange={(e) => setusuario({ ... usuario, nome_completo: e.target.value})}
+                onChange={(e) => setusuario({ ...usuario, nome_completo: e.target.value })}
                 required
               />
               <input
                 className="input"
                 type="date"
                 value={usuario.data_nascimento}
-                onChange={(e) => setusuario({ ... usuario, data_nascimento: e.target.value})}
+                onChange={(e) => setusuario({ ...usuario, data_nascimento: e.target.value })}
                 required
               />
               <input
@@ -83,7 +83,7 @@ function Cadastro() {
                 type="text"
                 placeholder="CPF"
                 value={usuario.cpf}
-                onChange={(e) => setusuario({ ... usuario, cpf: e.target.value})}
+                onChange={(e) => setusuario({ ...usuario, cpf: e.target.value })}
                 required
               />
               <input
@@ -91,7 +91,7 @@ function Cadastro() {
                 type="text"
                 placeholder="Endereço"
                 value={usuario.endereco}
-                onChange={(e) => setusuario({ ... usuario, endereco: e.target.value})}
+                onChange={(e) => setusuario({ ...usuario, endereco: e.target.value })}
                 required
               />
               <div className="inputs-senhas">
@@ -100,8 +100,7 @@ function Cadastro() {
                   type={showPassword ? "text" : "password"}
                   placeholder="Senha"
                   value={usuario.senha_usuario}
-                  onChange={(e) => setusuario({ ... usuario, senha_usuario: e.target.value})}
-                  
+                  onChange={(e) => setusuario({ ...usuario, senha_usuario: e.target.value })}
                   required
                 />
                 <input

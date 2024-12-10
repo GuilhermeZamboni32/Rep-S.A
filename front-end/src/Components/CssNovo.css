@@ -1,9 +1,9 @@
 :root {
-  --cor1: #03045e; 
-  --cor2: #0077b6; 
-  --cor3: #00b4d8; 
-  --cor4: #90e0ef; 
-  --cor5: #caf0f8; 
+  --cor1: #03045e;
+  --cor2: #0077b6;
+  --cor3: #00b4d8;
+  --cor4: #90e0ef;
+  --cor5: #caf0f8;
   --cor6: #ffffff;
 }
 
@@ -26,16 +26,18 @@
   box-sizing: border-box;
 }
 
-.topo {
+.topo{
   display: flex;
   align-items: center;
   width: 100%;
-  background-color:var(--cor1);
+  background-color: var(--cor1); 
   position: fixed;
   top: 0;
+  left: 0;
   height: 60px;
   padding: 5px 0;
   z-index: 1000; /* Garante que a Navbar fique acima do conteúdo */
+  background-color: var(--cor1); /* Cor de fundo da navbar */
 }
 
 .topo-esquerda {
@@ -72,21 +74,22 @@
   background-color: var(--cor2);
 }
 
-/* Estilos do restante do conteúdo */
 .meio {
   display: flex;
-  justify-content: flex-end; /* Move a imagem para a direita */
-  align-items: center; 
-  width: 100%; 
-  height: 380px; 
+  justify-content: center; /* Move a imagem para a direita */
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 380px;
   color: var(--cor5);
-  background-size: cover; 
-  background-position: center; 
-  background-repeat: no-repeat; 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-top: 10px; /* Cria espaço para a navbar */
 }
 
-.meio-h1{
-  font-size: 48px;
+h1 {
+  text-align: center;
   align-items: center;
 }
 
@@ -120,7 +123,7 @@
 .baixo {
   display: flex;
   justify-content: space-around;
-  margin-top: 20px;
+  
   width: 100vw;
   padding: 20px 0;
 }
@@ -136,48 +139,12 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-              .quadro {
-                text-align: center;
-                background-color: #00b4d891; 
-                color: var(--cor1);
-                padding: 15px;
-                border-radius: 8px;
-                width: 30%; 
-                min-width: 150px; 
-                transition: transform 0.3s ease, box-shadow 0.3s ease;
-              }
-
-              .quadro h3 {
-                font-size: 22px;
-                color: var(--cor1); 
-                margin-bottom: 10px;
-                font-weight: bold;
-              }
-
-              .quadro p {
-                font-size: 15px;
-                color: var(--cor1); 
-                line-height: 1.4;
-              }
-
-              .quadro:hover {
-                transform: translateY(-8px);
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-              }
-
-
-        .botao {
-          background-color: var(--cor3); 
-          color: white;
-          border: none;
-          padding: 10px 15px;
-          cursor: pointer;
-          transition: background-color 0.3s;
-        }
-
-        .botao:hover {
-          background-color: var(--cor2); 
-        }
+.quadro h3 {
+  font-size: 22px;
+  color: var(--cor1);
+  margin-bottom: 10px;
+  font-weight: bold;
+}
 
 .quadro p {
   font-size: 15px;
@@ -202,9 +169,6 @@
 .botao:hover {
   background-color: var(--cor2);
 }
-
-
-
 
 
 
@@ -243,13 +207,13 @@
     }
 
     .cadastro-topo {
-      /*background-color: var(--cor1);*/
+      background-color: var(--cor1);
       display: flex;
       align-items: center;
       width: 100%;
       position: absolute;
       top: 0; 
-      height: 60px; 
+      height: 50px; 
       padding: 5px 0; 
     }
 
@@ -329,7 +293,7 @@
         justify-content: center;
         align-items: center;
         padding: 20px;
-        margin-top: 80px;
+        margin-top: 20px;
       }
      
       
@@ -517,7 +481,7 @@
 }
 
 .login-topo {
-  /*background-color: var(--cor1);*/
+  background-color: var(--cor1);
   display: flex;
   align-items: center;
   width: 100%;
