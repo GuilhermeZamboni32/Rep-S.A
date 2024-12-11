@@ -2,7 +2,7 @@
 
 -- Criar a tabela 'Usuarios'
 CREATE TABLE Usuarios (
-  cpf VARCHAR(14) NOT NULL,
+  cpf VARCHAR(11) Primary key,
   senha_usuario VARCHAR(100) NOT NULL,
   nome_completo TEXT NOT NULL,
   data_nascimento VARCHAR(20) NOT NULL,

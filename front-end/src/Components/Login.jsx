@@ -10,7 +10,7 @@ function Login() {
   const [logar, setlogar] = useState({ cpf: '', senha: '' });
   const [showPassword, setShowPassword] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
-  const navigate = useNavigate();
+  
   const {usuarioLogado, setUsuarioLogado} = useContext(GlobalContext)
   const fetchusuario = async () => {
     try {
@@ -21,6 +21,10 @@ function Login() {
       console.error('Erro ao buscar Usuarios:', error);
     }
   };
+
+  const navigate = useNavigate();
+
+  //console.log (usuarioLogado)
 
   useEffect(() => {
     fetchusuario();
@@ -34,9 +38,10 @@ function Login() {
   const handleCadastroRedirect = () => {
     const user = usuario.find((usuarios) => usuarios.cpf === logar.cpf && usuarios.senha_usuario === logar.senha)
     if (user) {
+      localStorage.setItem('cpf_usuario', usuarioLogado.toString());
       setShowPopup(true);
       setUsuarioLogado(logar.cpf)
-      navigate('/perfil');
+      navigate('/TelaPerfil');
       return;
     } else {
       alert('Usuário ou senha inválidos!');
@@ -44,6 +49,20 @@ function Login() {
       
     }
   };
+
+
+  const number = 42;
+
+// Armazenar como string
+localStorage.setItem('cpf_usuario', number.toString());
+
+// Recuperar e converter de volta para número
+const usuarioLogadocpf = parseInt(localStorage.getItem('cpf_usuario'), 10);
+
+// Verificar o tipo e conteúdo recuperado
+//console.log(retrievedNumber);  // 42
+//console.log(typeof retrievedNumber); 
+
 
   const handleBack = () => {
     navigate(-1);
@@ -63,14 +82,15 @@ function Login() {
       <div className="login-container">
         <div className="login-topo">
           <div className="login-topo-esquerda">
-           {/* <div className="imagem">
-              <img src="logo-agenda.png" alt="Logo" className="logo" onClick={() => navigate('/')} />
-             </div>*/}
+           <div className="imagem">
+              <img src="logo-agenda.png" alt="Logo" className="logo" onClick={() => navigate('/TelaInicial')} />
+             </div>
           </div>
           <div className="login-topo-meio">
            {/* <h2>Login de Usuário</h2>*/}
           </div>
           <div className="login-topo-direita">
+            <button className='button' onClick={() => navigate('/TelaInicial')} >Voltar</button>
             
           </div>
         </div>
@@ -103,7 +123,7 @@ function Login() {
                 />
                 <label>Mostrar Senha</label>
               </div>
-              <button className="login-botao-login" onClick={handleCadastroRedirect}>Login</button>
+              <button className="login-botao-login">Login</button>
             </form>
           </div>
         </div>
@@ -113,6 +133,7 @@ function Login() {
             <div className="popup-content">
               <h3>Login realizado com sucesso!</h3>
               <p>Você será redirecionado para o seu perfil.</p>
+              <button className="login-botao-login" onClick={() => navigate('/TelaPerfil')}>Login</button>
             </div>
           </div>
         )}

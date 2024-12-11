@@ -5,7 +5,7 @@ import Login from "../Components/Login";
 import TelaPerfil from "../Components/TelaPerfil";
 
 const router = createBrowserRouter([
-    {path: "/", element: <TelaInicial />},
+    {path: "/TelaInicial", element: <TelaInicial />},
     {path: "/Cadastro", element: <Cadastro />},
     {path: "/Login", element: <Login />},
     {path: "/TelaPerfil", element: <TelaPerfil />},

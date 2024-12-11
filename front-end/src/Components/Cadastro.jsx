@@ -50,12 +50,17 @@ function Cadastro() {
       <div className="cadastro-container">
         <div className="cadastro-topo">
           <div className="cadastro-topo-esquerda">
-            <div className="cadastro-topo-esquerda-esquerda"></div>
+            <div className="cadastro-topo-esquerda-esquerda">
+            <div className="imagem">
+              <img src="logo-agenda.png" alt="Logo" className="logo" onClick={() => navigate('/TelaInicial')} />
+             </div>
+            </div>
           </div>
           <div className="cadastro-topo-meio">
             <h2>Cadastro de Usuário</h2>
           </div>
           <div className="cadastro-topo-direita">
+          <button className='button' onClick={() => navigate('/TelaInicial')} >Voltar</button>
             <div className="cadastro-topo-direita-direita"></div>
           </div>
         </div>
@@ -121,7 +126,7 @@ function Cadastro() {
                   Mostrar senha
                 </label>
               </div>
-              <button type="submit" className="cadastro-botao-cadastro">Cadastrar</button>
+              <button type="submit" className="cadastro-botao-cadastro"  onClick={() => navigate('/Cadastro')} >Cadastrar</button>
             </form>
           </div>
         </div>
@@ -131,7 +136,7 @@ function Cadastro() {
             <div className="popup-content">
               <h3>{popupMessage.includes('sucesso') ? 'Cadastro realizado com sucesso!' : 'Erro!'}</h3>
               <p>{popupMessage}</p>
-              <button onClick={handlePopupClose}>OK</button>
+              <button onClick={() => navigate('/Login')}>OK</button>
             </div>
           </div>
         )}
