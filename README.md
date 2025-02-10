@@ -8,11 +8,11 @@
 
 ## 🧾 Descrição
 O que projeto faz?<br/>
-Nosso site tem como objetivo ajudar você a adotar uma vida mais saudável, oferecendo dicas práticas de exercícios físicos e sugestões de dietas balanceadas.<br/>
+Nosso site tem como objetivo ajudar você a adotar uma vida mais saudável, oferecendo dicas práticas de exercícios físicos e sugestões de dietas balanceadas.<br/><br/>
 Com oque contribui?<br/>
-Contribui para a melhoria da saúde geral, promovendo uma rotina mais ativa e equilibrada, ajuda a melhorar a qualidade de vida, reduzindo o estresse e aumentando a energia <br/>
+Contribui para a melhoria da saúde geral, promovendo uma rotina mais ativa e equilibrada, ajuda a melhorar a qualidade de vida, reduzindo o estresse e aumentando a energia <br/><br/>
 porque? <br/>
-Porque ao integrar hábitos saudáveis de forma prática e eficiente no seu dia a dia, nosso site apoia você na busca por uma vida mais ativa, com mais disposição e  saude. <br/>
+Porque ao integrar hábitos saudáveis de forma prática e eficiente no seu dia a dia, nosso site apoia você na busca por uma vida mais ativa, com mais disposição e  saude. <br/><br/>
 
 <br/>
 
