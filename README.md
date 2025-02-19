@@ -1,9 +1,11 @@
 # Vida.Fit
 
 <br/>
+<p align="center">
+  <img width="300" height="300" src="https://github.com/GuilhermeZamboni32/Rep-S.A/blob/main/public/Logo_VF.png?raw=true">
+</p>
 
-![Maintaine](https://img.shields.io/badge/Maintained%3F-yes-green.svg)
-
+<br/>
 <br/>
 
 ## 🧾 Descrição
@@ -23,6 +25,8 @@ Porque ao integrar hábitos saudáveis de forma prática e eficiente no seu dia 
 2.Jonathan Stulp Zoz<br/>
 3.Thiago Quadra Arnold<br/>
 4.Vitor Danielli de Oliveira
+
+<br/>
 
 ## ⚙️ Tecnologias utilizadas
 ![Html5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
