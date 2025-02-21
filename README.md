@@ -39,6 +39,46 @@ Porque ao integrar hábitos saudáveis de forma prática e eficiente no seu dia 
 
 <br/>
 
+
+## 📚 Requisitos Funcionais:
+1- Cadastro de usuários:<br/>
+1.1- O sistema deve permitir cadastro com nome,data de nascimento, e-mail e senha.<br/>
+1.2- O sistema deve permitir login com e-mail e senha.<br/>
+1.3- O sistema deve permitir que o usuário possa editar o seu perfil e excluir a sua conta<br/><br/>
+2- Pesquisa, receita e histórico:<br/>
+2.1- O sistema deve permitir que o usuário pesquise receitas por nome ou ingrediente.<br/>
+2.2- O sistema deve oferecer um histórico de pesquisa do usuário.<br/>
+2.3- O sistema deve permitir que os usuários salvem suas receitas favoritas.<br/><br/>
+3- Gerenciamento de Ingredientes e Lista de Compras:<br/>
+3.1- O sistema deve permitir que os usuários montem uma lista de compras baseada nas receitas escolhidas.<br/>
+3.2- O sistema deve sugerir ingredientes alternativos para restrições alimentares.<br/><br/><br/>
+
+
+
+## 👨‍💻 Responsáveis por cada requisito:
+
+### Guilherme Zamboni Menegacio:<br/>
+[1.3] .O sistema deve permitir que o usuário possa editar o seu perfil e excluir a sua conta<br/>
+[2.1] .O sistema deve permitir que o usuário pesquise receitas por nome ou ingrediente.<br/><br/>
+
+### Jonathan Stulp Zoz:<br/>
+[1.1] .O sistema deve permitir cadastro com nome,data de nascimento, e-mail e senha.<br/>
+[2.2] .O sistema deve oferecer um histórico de pesquisa do usuário.<br/><br/>
+
+### Thiago Quadra Arnold:<br/>
+[2.3] .O sistema deve permitir que os usuários salvem suas receitas favoritas.<br/>
+[3.2] .O sistema deve sugerir ingredientes alternativos para restrições alimentares.<br/><br/>
+
+### Vitor Danielli de Oliveira:<br/>
+[1.2] .O sistema deve permitir login com e-mail e senha.<br/>
+[3.1] .O sistema deve permitir que os usuários montem uma lista de compras baseada nas receitas escolhidas.<br/><br/>
+
+
+
+## 💻 Protótipo das tela do Projeto:
+
+
+
 ## 💽 Instrução de instalação
 
 ```bash
