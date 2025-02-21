@@ -1,8 +1,8 @@
-# Vida.Fit
+# Vida+Fit
 
 <br/>
 <p align="center">
-  <img width="300" height="300" src="https://github.com/GuilhermeZamboni32/Rep-S.A/blob/main/public/Logo_VF.png?raw=true">
+  <img width="300" height="300" src="https://github.com/GuilhermeZamboni32/Rep-S.A/blob/main/public/Vida+Fit.png?raw=true">
 </p>
 
 <br/>
@@ -76,6 +76,22 @@ Porque ao integrar hábitos saudáveis de forma prática e eficiente no seu dia 
 
 
 ## 💻 Protótipo das tela do Projeto:
+
+### Tela Inicial
+ <img width="500" height="300" src="https://github.com/GuilhermeZamboni32/Rep-S.A/blob/main/public/Tela%20inicial%20VF.png?raw=true">  <br/>
+ 
+### Tela de Cadastro
+ <img width="500" height="300" src="https://github.com/GuilhermeZamboni32/Rep-S.A/blob/main/public/Tela%20Cadastro%20VF.png?raw=true"> <br/>
+
+### Tela de Login
+ <img width="500" height="300" src="https://github.com/GuilhermeZamboni32/Rep-S.A/blob/main/public/Tela%20Login%20VF.png?raw=true"> <br/>
+
+### Tela de Perfil
+ <img width="500" height="300" src="https://github.com/GuilhermeZamboni32/Rep-S.A/blob/main/public/Tela%20Perfil%20VF.png?raw=true"> <br/>
+
+### Tela de Receitas
+ <img width="500" height="300" src="https://github.com/GuilhermeZamboni32/Rep-S.A/blob/main/public/Tela%20Receitas%20VR.png?raw=true"> <br/>
+ 
 
 
 
