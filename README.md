@@ -77,21 +77,34 @@ Porque ao integrar hábitos saudáveis de forma prática e eficiente no seu dia 
 
 ## 👨‍💻 Responsáveis por cada requisito:
 
+
 ### Guilherme Zamboni Menegacio:<br/>
-[1.3] .O sistema deve permitir que o usuário possa editar o seu perfil e excluir a sua conta<br/>
-[2.1] .O sistema deve permitir que o usuário pesquise receitas por nome ou ingrediente.<br/><br/>
+[1.3]- O sistema deve permitir que o usuário possa editar o seu perfil e excluir a sua conta.<br/>
+[3.1]- O sistema deve mostrar os treinos e dietas dados pelos profissionais.<br/>
+[3.5]- O sistema deve mostrar a progressão do usuário.<br/>
+[4.1]- O sistema deve mostrar a nota do profissional ou aluno de 1 a 5 estrelas.<br/>
 
 ### Jonathan Stulp Zoz:<br/>
-[1.1] .O sistema deve permitir cadastro com nome,data de nascimento, e-mail e senha.<br/>
-[2.2] .O sistema deve oferecer um histórico de pesquisa do usuário.<br/><br/>
+[1.1]- O sistema deve permitir cadastro com nome,data de nascimento, e-mail e senha.<br/>
+[2.1]- O sistema deve permitir acesso ao perfil dos profissionais.<br/>
+[3.3]- O sistema deve poder excluir treinos e dietas antigas.<br/>
+[4.2]- O sistema deve permitir o usuário dar uma nota para o profissional.<br/>
+[4.5]- O sistema deve permitir o profissional comentar sobre o usuário.<br/>
+
 
 ### Thiago Quadra Arnold:<br/>
-[2.3] .O sistema deve permitir que os usuários salvem suas receitas favoritas.<br/>
-[3.2] .O sistema deve sugerir ingredientes alternativos para restrições alimentares.<br/><br/>
+[1.4]- O sistema deve permitir que o usuário se cadastre como profissional desejado.<br/>
+[2.2]- O sistema deve confirmar o profissional desejado.<br/>
+[3.2]- O sistema deve validar se um treino foi concluído ou não.<br/>
+[3.4]- O sistema deve dar a opção de editar os treinos para o profissional.<br/>
+
 
 ### Vitor Danielli de Oliveira:<br/>
-[1.2] .O sistema deve permitir login com e-mail e senha.<br/>
-[3.1] .O sistema deve permitir que os usuários montem uma lista de compras baseada nas receitas escolhidas.<br/><br/>
+[1.2]- O sistema deve permitir login com e-mail e senha.<br/>
+[2.3]- O sistema deve dar opção de filtrar os profissionais por categorias desejadas.<br/>
+[4.3]- O sistema deve permitir o usuário comentar sobre o profissional.<br/>
+[4.4]- O sistema deve permitir o profissional dar uma nota para o usuário.<br/>
+
 
 
 
