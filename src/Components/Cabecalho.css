@@ -1,0 +1,41 @@
+:root{
+    --cor-1: #ffffff;
+    --cor-2: #ff0000;
+    --cor-3: #ff7b00;
+    --cor-4: #fff700;
+    --cor-5: #09ff00;
+    --cor-6: #00fff7;
+    --cor-7: #0400ff;
+    --cor-8: #8000ff;
+    --cor-9: #d400ff;
+    --cor-10: #000000;
+}
+
+.container-cabecalho{
+    background-color: var(--cor-10);
+    color: rgb(0, 0, 0);
+    height: 50px;
+}
+
+    .cabe-esquerda{
+        background-color: var(--cor-2);
+        height: 50px;
+        width: 60px;
+    }
+
+        .logo{
+            height: 30px;
+            width: 30px;
+        }
+
+    .cabe-meio{
+        background-color: var(--cor-3);
+        height: 50px;
+        width: 600px;
+    }
+
+    .cabe-direita{
+        background-color: var(--cor-4);
+        height: 50px;
+        width: 60px;
+    }
