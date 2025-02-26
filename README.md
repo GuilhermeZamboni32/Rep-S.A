@@ -111,19 +111,37 @@ Porque ao integrar hábitos saudáveis de forma prática e eficiente no seu dia 
 ## 💻 Protótipo das tela do Projeto:
 
 ### Tela Inicial
- <img width="500" height="300" src="https://github.com/GuilhermeZamboni32/Rep-S.A/blob/main/public/Tela%20inicial%20VF.png?raw=true">  <br/>
+ <img width="500" height="300" src="https://github.com/GuilhermeZamboni32/Rep-S.A/blob/main/public/Tela%20Inicial.png?raw=true">  <br/>
  
+### Tela Inicial com Frame
+ <img width="500" height="300" src="https://github.com/GuilhermeZamboni32/Rep-S.A/blob/main/public/Tela%20Inicial%20Frame.png?raw=true"> <br/>
+
 ### Tela de Cadastro
- <img width="500" height="300" src="https://github.com/GuilhermeZamboni32/Rep-S.A/blob/main/public/Tela%20Cadastro%20VF.png?raw=true"> <br/>
+ <img width="500" height="300" src="https://github.com/GuilhermeZamboni32/Rep-S.A/blob/main/public/Tela%20Cadastro.png?raw=true"> <br/>
 
 ### Tela de Login
- <img width="500" height="300" src="https://github.com/GuilhermeZamboni32/Rep-S.A/blob/main/public/Tela%20Login%20VF.png?raw=true"> <br/>
+ <img width="500" height="300" src="https://github.com/GuilhermeZamboni32/Rep-S.A/blob/main/public/Tela%20Login.png?raw=true"> <br/>
 
 ### Tela de Perfil
- <img width="500" height="300" src="https://github.com/GuilhermeZamboni32/Rep-S.A/blob/main/public/Tela%20Perfil%20VF.png?raw=true"> <br/>
+ <img width="500" height="300" src="https://github.com/GuilhermeZamboni32/Rep-S.A/blob/main/public/tela%20perfil.png?raw=true"> <br/>
 
-### Tela de Receitas
- <img width="500" height="300" src="https://github.com/GuilhermeZamboni32/Rep-S.A/blob/main/public/Tela%20Receitas%20VR.png?raw=true"> <br/>
+ ### Tela de Edição de Perfil
+ <img width="500" height="300" src="https://github.com/GuilhermeZamboni32/Rep-S.A/blob/main/public/Tela%20De%20Edi%C3%A7%C3%A3o%20de%20Perfil.png?raw=true"> <br/>
+
+ ### Tela de Perfil do Instrutor
+ <img width="500" height="300" src="https://github.com/GuilhermeZamboni32/Rep-S.A/blob/main/public/Tela%20Instrutor.png?raw=true"> <br/>
+
+  ### Tela de Exercicios
+ <img width="500" height="300" src="https://github.com/GuilhermeZamboni32/Rep-S.A/blob/main/public/Tela%20de%20Exercicios.png?raw=true"> <br/>
+
+ ### Tela de Edição de exercicios
+ <img width="500" height="300" src="https://github.com/GuilhermeZamboni32/Rep-S.A/blob/main/public/Tela%20De%20Edi%C3%A7%C3%A3o%20Do%20Instrutor.png?raw=true"> <br/>
+
+  ### Tela de Exercicios que o Intrutor fez
+ <img width="500" height="300" src="https://github.com/GuilhermeZamboni32/Rep-S.A/blob/main/public/Tela%20De%20Exercicios%20Do%20instrutor.png?raw=true"> <br/>
+
+
+ 
  
 
 
