@@ -1,10 +1,10 @@
-import Cabecalho from './Components/Cabecalho'
+import './App.css'
 
 function App() {
  
   return (
     <>
-     <Cabecalho />
+     <h1>Router</h1>
     </>
   )
 }

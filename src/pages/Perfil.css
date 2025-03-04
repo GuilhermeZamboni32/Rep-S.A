@@ -1,0 +1,115 @@
+
+.container-perfil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    background-color: var(--Cor6);
+  }
+  
+  .div-grupo {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    background: var(--Cor5);
+    border-radius: 8px;
+   
+  }
+  
+ 
+  .div-grupo-usuario {
+    background: var(--Cor4);
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+  }
+  .div-img{
+    background-color: var(--Cor1);
+    width: 210px;
+    border-radius: 8px;
+    
+  }
+  
+  .img {
+    width: 200px;
+    border-radius: 8px;
+  }
+
+  .espaco{
+    height: 50px;
+  }
+
+  .perfil-input{
+    gap: 200px;
+    
+    
+  }
+  
+  .texto-inp{
+    width: 100%;
+    margin: 5px 0;
+    background: var(--Cor6);
+    color: var(--Cor4);
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.texto-inp::placeholder {
+    color: var(--Cor4);
+    
+}
+
+.button{
+    background: var(--Cor6);
+    color: var(--Cor4);
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    cursor: pointer;
+}
+button:hover{
+    background-color: var(--Cor5);
+}
+
+  
+  .div-grupo-exercicio, .div-grupo-dieta {
+    background: var(--Cor4);
+    padding: 15px;
+    border-radius: 8px;
+    gap: 200px;
+    width: 300px;
+    
+  }
+  
+  .titulo {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    background-color: var(--Cor3);
+    border-radius: 8px;
+  }
+  
+  .exercicios button, .dieta button {
+    display: block;
+    width: 100%;
+    margin: 5px 0;
+    background: var(--Cor5);
+    color: var(--Cor4);
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+ 
+  
+  .exercicios button:hover, .dieta button:hover {
+    background: var(--Cor6);
+  }
+  

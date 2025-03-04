@@ -1,0 +1,19 @@
+.container-navbar{
+    background-color: var(--Cor1);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 60px;
+     transition: background-color 0.3s ease;
+}
+
+.texto{
+    color: var(--Cor3);
+    transition: color 0.1s ease; 
+}
+
+.texto:hover{
+    color: var(--Cor5);
+}
+
+
