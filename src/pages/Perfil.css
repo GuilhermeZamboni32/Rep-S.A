@@ -1,17 +1,15 @@
 
 .container-perfil {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 90vh;
-    background-color: var(--Cor6);
+  background-color: var(--Cor2);
+  min-height: 100vh;
+  align-items: center;
   }
   
   .div-grupo {
     display: flex;
     gap: 20px;
     padding: 20px;
-    background: var(--Cor5);
+    background: var(--Cor3);
     border-radius: 8px;
    
   }

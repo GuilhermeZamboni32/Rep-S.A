@@ -4,9 +4,9 @@ import './Perfil.css'
 
 function Perfil() {
   return (
-    <div>
-    <Navbar />
+   
     <div className="container-perfil">
+      <Navbar />
         <div className="div-grupo">
           
          
@@ -54,7 +54,7 @@ function Perfil() {
 
         </div>
       </div>
-</div>
+
   )
 }
 

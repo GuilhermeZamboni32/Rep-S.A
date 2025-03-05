@@ -4,3 +4,12 @@
     align-items: center;
     
 }
+
+.div-cadas{
+    background-color: var(--Cor6);
+    height: 704px;
+    width: 1600px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}

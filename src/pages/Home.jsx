@@ -7,11 +7,12 @@ function Home() {
     <div className='container-home'>
     <Navbar />
     
-    <div className='alguma-coisa'>
-     <center><h1>Home</h1></center>
+    <div className='div-atras-visual'>
+      <div className='div-visual-prof'>
 
+        
+      </div>
      
-    
 
     </div>
    

@@ -4,14 +4,15 @@ import "./Cadastro.css"
 
 function Cadastro() {
   return (
-    <div>
-    <Navbar />
+    
     <div className='container-cadastro'>
-      <center><h1>Cadastro</h1></center>
-      
+    <Navbar />
+      <div className='div-cadas'>
+
+
+      </div>
 
     </div>
-</div>
   )
 }
 

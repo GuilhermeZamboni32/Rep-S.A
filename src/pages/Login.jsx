@@ -4,13 +4,13 @@ import "./Login.css"
 
 function Login() {
   return (
-    <div>
-    <Navbar />
+    
     <div className='container-login'>
+      <Navbar />
      <center><h1>Login</h1></center>
 
     </div>
-</div>
+
   
   )
 }
