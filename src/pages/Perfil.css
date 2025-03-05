@@ -1,6 +1,6 @@
 
 .container-perfil {
-  background-color: var(--Cor2);
+  background-color: var(--Cor6);
   min-height: 100vh;
   align-items: center;
   }
@@ -9,7 +9,7 @@
     display: flex;
     gap: 20px;
     padding: 20px;
-    background: var(--Cor3);
+    background: var(--Cor5);
     border-radius: 8px;
    
   }
