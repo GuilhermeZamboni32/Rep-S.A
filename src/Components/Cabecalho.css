@@ -15,12 +15,15 @@
     background-color: var(--cor-10);
     color: rgb(0, 0, 0);
     height: 50px;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
 }
 
     .cabe-esquerda{
         background-color: var(--cor-2);
         height: 50px;
-        width: 60px;
+        width: 70vh;
     }
 
         .logo{
@@ -31,11 +34,20 @@
     .cabe-meio{
         background-color: var(--cor-3);
         height: 50px;
-        width: 600px;
+        width: 70vh;
     }
 
     .cabe-direita{
         background-color: var(--cor-4);
         height: 50px;
-        width: 60px;
+        width: 70vh;
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
     }
+
+        .cabe-button{
+            background-color: var(--cor-5);
+            border-radius: 5px;
+        }

@@ -3,14 +3,19 @@
   background-color: var(--Cor6);
   min-height: 100vh;
   align-items: center;
+  justify-content: center; 
+  
   }
   
   .div-grupo {
+    margin: 100px;
     display: flex;
-    gap: 20px;
+    flex-direction: row;
+    gap: 40px;
     padding: 20px;
     background: var(--Cor5);
     border-radius: 8px;
+    justify-content: center; 
    
   }
   
@@ -25,6 +30,7 @@
     flex-direction: column;
     width: 300px;
   }
+
   .div-img{
     background-color: var(--Cor1);
     width: 210px;
@@ -80,7 +86,6 @@ button:hover{
     background: var(--Cor4);
     padding: 15px;
     border-radius: 8px;
-    gap: 200px;
     width: 300px;
     
   }
@@ -96,7 +101,7 @@ button:hover{
   .exercicios button, .dieta button {
     display: block;
     width: 100%;
-    margin: 5px 0;
+    margin: 20px 0;
     background: var(--Cor5);
     color: var(--Cor4);
     border: none;

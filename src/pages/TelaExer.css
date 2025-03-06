@@ -1,22 +1,80 @@
-.container-telaexer{
-    background-color: var(--Cor1);
+.container-exer{
+    background-color: var(--Cor6);
     min-height: 100vh;
     align-items: center;
     
 }
 
 .div-grup-exer{
-    background-color: var(--Cor6);
-    height: 533px;
-    align-items: center;
+    background-color: var(--Cor5);
+    margin: 100px;
     display: flex;
     flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    border-radius: 16px;
+    justify-content: center; 
    
 }
 
-.div-exer{
-    background-color: var(--Cor5);
+.div-topo{
+    background-color: var(--Cor4);
+    width: 1670px;
+    height: 100px;
+    display: flex;
+    align-items: center;
     border-radius: 8px;
-    height: 500px;
-    width: 1100px;
+    
 }
+.topo-es{
+    background-color: var(--Cor1);
+    width: 200px;
+    height: 50px;
+    margin: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.texto-exer{
+    color: var(--Cor4);
+    margin-top: 5px;
+
+}
+.topo-me{
+    background-color: var(--Cor2);
+    width: 1270px;
+    height: 50px;
+    margin: 10px;
+   
+
+}
+.topo-di{
+    background-color: var(--Cor3);
+    width: 100px;
+    height: 50px;
+    margin: 10px;
+    border-radius: 8px;
+    align-items: center;
+    display: flex;
+    flex-direction: column-reverse;
+
+}
+
+.butoon-voltar{
+    background-color: var(--Cor5);
+    color: var(--Cor4);
+    border-radius: 8px;
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+}
+
+.div-baixo{
+    background-color: var(--Cor4);
+    width: 1670px;
+    height: 500px;
+    border-radius: 8px;
+    
+
+}
+

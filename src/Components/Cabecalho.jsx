@@ -8,10 +8,18 @@ function Cabecalho() {
             <img className='logo' src="Vida+Fit.png" alt="" />
 
             </div>
+
+
             <div className='cabe-meio'>
 
             </div>
+
+
             <div className='cabe-direita'>
+              <button className='cabe-button'>nada</button>
+              <button className='cabe-button'>nada</button>
+              <button className='cabe-button'>nada</button>
+              <button className='cabe-button'>cadastro</button>
 
             </div>
     </div>
