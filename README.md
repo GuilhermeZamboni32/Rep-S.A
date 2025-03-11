@@ -149,7 +149,17 @@ Porque ao integrar hábitos saudáveis de forma prática e eficiente no seu dia 
 ## 💽 Instrução de instalação
 
 ```bash
-npm install
+Front-end:
+1-npm install.
+2-npm install axios.
+3-npm install react-router-dom.
+4-npm install reaci-icons.
+
+
+Back-end:
+1-npm install nodemom.
+2-npm install express.
+
 ```
 
 <br/>
