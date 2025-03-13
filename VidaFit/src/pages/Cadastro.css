@@ -1,14 +1,58 @@
+:root{
+    --Cor1: rgb(2, 6, 25);
+    --Cor2: rgb(43, 45, 66);
+    --Cor3: rgb(141, 153, 174);
+    --Cor4: rgb(236, 240, 242);
+    --Cor5: rgb(239, 35, 59);
+    --Cor6: rgb(179, 5, 34);
+  }
 .container-cadastro{
-    background-color: var(--Cor4);
-    min-height: 100vh;
+    background-color: var(--Cor2);
+    min-height: 100%;
+    height: 100%;
+    width: 100%;
     align-items: center;
     
 }
+.espaco{
+    height: 100vh;
+  }
+
+.cadas-input{
+    gap: 200px;
+    
+    
+}
+.texto-cadas::placeholder {
+    color: var(--Cor4);
+    
+}
+.cadas-inf {
+    background: var(--Cor4);
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+    width: 80vh;
+  }
+.texto-cadas{
+    width: 100%;
+    margin: 15px 0;
+    background: var(--Cor6);
+    color: var(--Cor4);
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
 
 .div-cadas{
-    background-color: var(--Cor6);
-    height: 704px;
-    width: 1600px;
+    background-color: var(--Cor2);
+    height: 100%;
+    width: 100%;
     align-items: center;
     display: flex;
     flex-direction: column;
