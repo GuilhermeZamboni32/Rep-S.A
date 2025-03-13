@@ -48,16 +48,11 @@ function Cadastro() {
               <input className='texto-cadas' type={showPassword ? 'text' : 'password'} placeholder='Comfirmar Senha :' value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
               <div className="espaco"></div>
             </div>
-<<<<<<< HEAD
-
-              <button className='button-cadastro'>cadastrar</button>
-=======
             <div className="checkbox-container">
               <input type="checkbox" checked={showPassword} onChange={(e) => setShowPassword(e.target.checked)}/>
               <label>Mostrar senha</label>
             </div>
               <button className='button' onClick={handleReister}>cadastrar</button>
->>>>>>> eb6948e4fccb04c4626e7314daa9bfdec3231092
           
           </div>
         </div>
