@@ -76,7 +76,7 @@ app.put('/users/:id_user', async (req, res) => {
 
 // Rota para deletar um usuario
 app.delete('/users/:id_user', async (req, res) => {
-    const { idfuncionario } = req.params;
+    const { id_user } = req.params;
     try {
         const result = await pool.query('DELETE FROM users WHERE id_user = $1 RETURNING *', [id_user]);
         if (result.rows.length === 0) {
