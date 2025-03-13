@@ -20,7 +20,7 @@ function Cadastro() {
               <div className="espaco"></div>
             </div>
 
-              <button className='button'>cadastrar</button>
+              <button className='button-cadastro'>cadastrar</button>
           
           </div>
         </div>

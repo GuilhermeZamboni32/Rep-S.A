@@ -24,11 +24,11 @@
     
 }
 .texto-cadas::placeholder {
-    color: var(--Cor4);
+    color: var(--Cor1);
     
 }
 .cadas-inf {
-    background: var(--Cor4);
+    background: var(--Cor6);
     padding: 15px;
     border-radius: 8px;
     text-align: center;
@@ -41,8 +41,8 @@
 .texto-cadas{
     width: 100%;
     margin: 15px 0;
-    background: var(--Cor6);
-    color: var(--Cor4);
+    background: var(--Cor4);
+    color: var(--Cor1);
     border: none;
     padding: 10px;
     border-radius: 5px;
@@ -56,4 +56,13 @@
     align-items: center;
     display: flex;
     flex-direction: column;
+}
+
+.button-cadastro{
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: var(--Cor1);
+    color: var(--Cor3);
+    cursor: pointer;
 }

@@ -1,11 +1,11 @@
-.container-exer{
+.container-exer-edit{
     background-color: var(--Cor2);
     min-height: 100vh;
     align-items: center;
     
 }
 
-.div-grup-exer{
+.div-grup-exer-edit{
     background-color: var(--Cor5);
     margin: 100px;
     display: flex;
@@ -17,7 +17,7 @@
    
 }
 
-.div-topo{
+.div-topo-edit{
     background-color: var(--Cor4);
     width: 1670px;
     height: 100px;
@@ -26,7 +26,7 @@
     border-radius: 8px;
     
 }
-.topo-es{
+.topo-es-edit{
     background-color: var(--Cor1);
     width: 200px;
     height: 50px;
@@ -35,12 +35,12 @@
     text-align: center;
 }
 
-.texto-exer{
+.texto-exer-edit{
     color: var(--Cor4);
     margin-top: 5px;
 
 }
-.topo-me{
+.topo-me-edit{
     
     width: 1200px;
     height: 50px;
@@ -48,7 +48,7 @@
    
 
 }
-.topo-di{
+.topo-di-edit{
    
     width: 100px;
     height: 50px;
@@ -59,7 +59,7 @@
 
 }
 
-.butoon-voltar{
+.butoon-voltar-edit{
     padding: 10px 20px;
     border-radius: 10px;
     border: none;
@@ -68,7 +68,7 @@
     cursor: pointer;
 }
 
-.div-baixo{
+.div-baixo-edit{
     background-color: var(--Cor4);
     width: 1670px;
     height: 500px;
