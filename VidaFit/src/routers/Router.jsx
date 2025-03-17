@@ -6,6 +6,7 @@ import Perfil from "../pages/Perfil";
 import EditPerfil from "../pages/EditPerfil";
 import TelaExer from "../pages/TelaExer";
 import TelaExerEdit from "../pages/TelaExerEdit";
+import Avaliacao from "../pages/Avaliacao";
 //import Profissionais from "../pages/Profissionais";
 
 const router = createBrowserRouter([
@@ -16,7 +17,8 @@ const router = createBrowserRouter([
     {path: "/editperfil", element: <EditPerfil />},
     {path: "/telaexer", element: <TelaExer />},
     {path: "/telaexeredit", element: <TelaExerEdit />},
-   // {path: "/profissionais", element: <Profissionais />},
+//  {path: "/profissionais", element: <Profissionais />},
+    {path: "/avaliacao", element: <Avaliacao />},
 ])
 
 export default router;
