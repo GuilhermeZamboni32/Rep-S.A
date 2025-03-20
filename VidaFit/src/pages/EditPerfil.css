@@ -3,3 +3,112 @@
     min-height: 100vh;
     align-items: center;
 }
+.button-editar{
+background: var(--Cor6);
+color: var(--Cor4);
+border: none;
+border-radius: 8px;
+padding: 10px;
+cursor: pointer;
+}
+.div-grupo-usuario-1{
+  background: var(--Cor4);
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: 30px;
+}
+.div-grupo-1 {
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  background: var(--Cor3);
+  border-radius: 8px;
+  justify-content: center;
+  align-items: center;
+  
+  width: 70%;
+
+  position: absolute;
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+}
+
+.div-inputs1 {
+  background-color: var(--Cor4);
+  padding: 15px; 
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column; 
+  gap: 20px;
+  width: 100%; 
+  margin: 20px 0 ;
+  height: 600px;
+}
+.div-inputs1 input {
+  background-color: var(--Cor2);
+  width: 90%; 
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 16px;
+  box-sizing: border-box;
+  margin: 30px;
+}
+.div-inputs2 {
+  background-color: var(--Cor4);
+  padding: 15px; 
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column; 
+  gap: 20px; 
+  width: 100%; 
+  margin: 20px 0 ;
+  height: 600px;
+}
+.div-inputs2 input {
+  background-color: var(--Cor2);
+  width: 90%; 
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 16px;
+  box-sizing: border-box;
+  margin: 30px;
+}
+.container-buttom{
+  background-color: var(--Cor2);
+  padding: 23px; 
+  border-radius: 8px;
+  display: flex;  
+  justify-content: center;
+  align-items: center; 
+  height: 12vh; 
+  width: 41vh;
+  flex-direction: column;
+
+}
+.texto{
+  margin-top: 5px;
+}
+.container-buttom button{
+  background-color: var(--Cor4);
+  padding: 10px 20px; 
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 10px;
+
+} 
+.butoon-voltar-1{
+background: var(--Cor3);
+border: none;
+border-radius: 8px;
+padding: 10px;
+cursor: pointer;
+}
+
