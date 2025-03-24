@@ -17,7 +17,9 @@ function TelaExer() {
             <div className='topo-me'></div>
 
             <div className='topo-di'>
-              <button className='butoon-voltar'>Voltar</button>
+              <button className='butoon-voltar'>
+                <h1 className='texto-exer'>Voltar</h1>
+                </button>
             </div>
 
           </div>

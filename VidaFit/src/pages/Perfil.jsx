@@ -32,7 +32,12 @@ function Perfil() {
          
 
           <div className="div-grupo-exercicio">
-            <div className="titulo">Grupo de Exercícios</div>
+            <div className="titulo">
+              <h1>  
+              Grupo de Exercícios
+              </h1>
+            </div>
+
             <div className="exercicios">
               <button>Treino A</button>
               <button>Treino B</button>
@@ -44,7 +49,11 @@ function Perfil() {
          
 
           <div className="div-grupo-dieta">
-            <div className="titulo">Grupo de Dieta</div>
+          <div className="titulo">
+              <h1>  
+              Grupo de Dietas
+              </h1>
+            </div>
             <div className="dieta">
               <button>Dieta A</button>
               <button>Dieta B</button>

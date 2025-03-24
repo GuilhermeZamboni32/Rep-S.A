@@ -1,0 +1,127 @@
+
+.container-Ava {
+    background-color: var(--Cor2);
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center; 
+    
+    }
+    
+    .div-grupo-Ava {
+      margin: 100px;
+      display: flex;
+      flex-direction: row;
+      gap: 40px;
+      padding: 20px;
+      background: var(--Cor5);
+      border-radius: 8px;
+      justify-content: center; 
+     
+    }
+    
+   
+    .div-grupo-usuario-Ava {
+      background: var(--Cor4);
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      width: 400px;
+    }
+  
+    .div-img{
+      background-color: var(--Cor1);
+      width: 210px;
+      border-radius: 8px;
+      
+    }
+    
+    .img {
+      width: 200px;
+      border-radius: 8px;
+    }
+  
+    .espaco{
+      height: 50px;
+    }
+  
+    .perfil-input-Ava{
+      gap: 200px;
+      
+      
+    }
+    
+    .texto-inp{
+      width: 100%;
+      margin: 5px 0;
+      background: var(--Cor6);
+      color: var(--Cor4);
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+  }
+  
+  .texto-inp::placeholder {
+      color: var(--Cor4);
+      
+  }
+  
+  .button-Ava{
+      background: var(--Cor6);
+      color: var(--Cor4);
+      border: none;
+      border-radius: 8px;
+      padding: 10px;
+      cursor: pointer;
+  }
+  button:hover{
+      background-color: var(--Cor5);
+  }
+  
+    
+    .div-grupo-Avaliacao{
+      background: var(--Cor4);
+      padding: 15px;
+      border-radius: 8px;
+      width: 1200px;
+      height: 600px;
+      align-items: center;
+      
+      
+    }
+    
+    .titulo-Ava {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 30px;
+      background-color: var(--Cor3);
+      border-radius: 8px;
+    }
+    
+    .Ava-estrela{
+        background-color: var(--Cor1);
+        border-radius: 8px;
+        width: 1166px;
+        height: 200px;
+        margin-bottom: 60px;
+        
+    }
+
+    .Ava-coment{
+        background-color: var(--Cor5);
+        border-radius: 8px;
+        width: 1166px;
+        height: 240px;
+       
+    }
+
+    .titulo-Ava-coment{
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 30px;
+      background-color: var(--Cor6);
+      border-radius: 8px;
+    }

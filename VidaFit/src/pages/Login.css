@@ -1,5 +1,58 @@
 .container-login{
-    background-color: var(--Cor5);
+    background-color: var(--Cor2);
     min-height: 100vh;
     align-items: center;
+    color: var(--Cor3);
+    justify-content: center;
+}
+.center-site{
+    height: 92vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+}
+.container-card{
+    background-color: var(--Cor6);
+    width: 375px;
+    height: 475px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    border-radius: 10px;
+    align-self: center;
+}
+
+.inputs{
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    width: 250px;
+    margin-bottom: 10px;
+}
+
+.botao-login{
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: var(--Cor1);
+    color: var(--Cor3);
+    cursor: pointer;
+}
+
+.checkbox-container{  
+    font: 1em sans-serif;
+
+}
+
+.login-txt{
+    font: 2.2em sans-serif;
+    color: var(--Cor4);
+}
+
+.checkbox{
+    cursor: pointer;
 }

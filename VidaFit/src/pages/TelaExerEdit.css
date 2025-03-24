@@ -1,0 +1,79 @@
+.container-exer-edit{
+    background-color: var(--Cor2);
+    min-height: 100vh;
+    align-items: center;
+    
+}
+
+.div-grup-exer-edit{
+    background-color: var(--Cor5);
+    margin: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    border-radius: 16px;
+    justify-content: center; 
+   
+}
+
+.div-topo-edit{
+    background-color: var(--Cor4);
+    width: 1670px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    
+}
+.topo-es-edit{
+    background-color: var(--Cor1);
+    width: 200px;
+    height: 50px;
+    margin: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.texto-exer-edit{
+    color: var(--Cor4);
+    margin-top: 5px;
+
+}
+.topo-me-edit{
+    
+    width: 1200px;
+    height: 50px;
+    margin: 10px;
+   
+
+}
+.topo-di-edit{
+   
+    width: 100px;
+    height: 50px;
+    margin: 10px;
+    border-radius: 8px;
+    align-items: center;
+    
+
+}
+
+.butoon-voltar-edit{
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: var(--Cor5);
+    color: var(--Cor4);
+    cursor: pointer;
+}
+
+.div-baixo-edit{
+    background-color: var(--Cor4);
+    width: 1670px;
+    height: 500px;
+    border-radius: 8px;
+    
+
+}
+

@@ -1,5 +1,5 @@
 .container-exer{
-    background-color: var(--Cor6);
+    background-color: var(--Cor2);
     min-height: 100vh;
     align-items: center;
     
@@ -41,32 +41,31 @@
 
 }
 .topo-me{
-    background-color: var(--Cor2);
-    width: 1270px;
+    
+    width: 1200px;
     height: 50px;
     margin: 10px;
    
 
 }
 .topo-di{
-    background-color: var(--Cor3);
+   
     width: 100px;
     height: 50px;
     margin: 10px;
     border-radius: 8px;
     align-items: center;
-    display: flex;
-    flex-direction: column-reverse;
+    
 
 }
 
 .butoon-voltar{
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
     background-color: var(--Cor5);
     color: var(--Cor4);
-    border-radius: 8px;
-    width: 100px;
-    height: 100px;
-    margin: 10px;
+    cursor: pointer;
 }
 
 .div-baixo{

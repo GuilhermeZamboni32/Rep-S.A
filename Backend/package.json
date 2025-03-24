@@ -1,6 +1,21 @@
 {
+  "name": "back",
+  "version": "1.0.0",
+  "main": "src.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.21.2",
+    "pg": "^8.14.0"
+  },
+  "devDependencies": {
     "nodemon": "^3.1.9"
   }
 }
