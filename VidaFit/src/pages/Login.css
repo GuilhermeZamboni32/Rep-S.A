@@ -1,5 +1,5 @@
 .container-login{
-    background-color: var(--Cor2);
+    background: linear-gradient(135deg, var(--AzulC1) 0%, var(--AzulE1) 100%);
     min-height: 100vh;
     align-items: center;
     color: var(--Cor3);
@@ -14,7 +14,7 @@
     justify-content: center;
 }
 .container-card{
-    background-color: var(--Cor6);
+    background-color: var(--BrancoC1);
     width: 375px;
     height: 475px;
     display: flex;

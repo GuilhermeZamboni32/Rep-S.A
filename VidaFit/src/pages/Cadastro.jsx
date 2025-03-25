@@ -10,12 +10,28 @@ function Cadastro() {
   const [confirmPassword, setConfirmPassword] = useState('')
   const [showPassword, setShowPassword] = useState(false)
 
+  //!Esse metodo de verificar o cadastro é bem feio, não repita
   const handleReister = async (e) => {
-    if (confirmPassword != users.password_user){
+    if (users.username == ''){
+      alert('Nome de usuario é obrigatório')
+      return
+    }else if(users.email_user == ''){
+      alert('Email é obrigatório')
+      return
+    }else if(!validarEmail(users.email_user)){
+      alert('Email inválido')
+      return
+    }else if(users.age_user == ''){
+      alert('Idade é obrigatória')
+      return
+    }else if(users.password_user == ''){
+      alert('Senha é obrigatória')
+      return
+    }else if(users.password_user!= confirmPassword){
       alert('Senhas não conferem!')
       return
-    }else if (users.password_user >= 5 ||  !/[A-Z]/.test(users.password_user) || !/[0-9]/.test(users.password_user)) {
-      alert('Senha fraca, adicione letras maiusculas e numeros!')
+    }else if(users.password_user >= 6 ||  !/[A-Z]/.test(users.password_user) || !/[0-9]/.test(users.password_user)) {
+      alert('Senha fraca, adicione letras maiusculas ou numeros!')
       return
     }else{
       e.preventDefault()
@@ -32,6 +48,11 @@ function Cadastro() {
       }
     }
 
+    const validarEmail = (email) => {
+      const regex = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/;
+      return regex.test(email);
+    }
+
   return (
     
     <div className='container-cadastro'>
@@ -41,7 +62,7 @@ function Cadastro() {
         
         <div className='cadas-inf'>
           <div className="cadas-input">
-              <input className='texto-cadas' type="text" placeholder='Nome :' value={users.username} onChange={(e) => setUsers({ ...users, username: e.target.value })}/>
+              <input className='texto-cadas' type="text" placeholder='Nome de usuario:' value={users.username} onChange={(e) => setUsers({ ...users, username: e.target.value })}/>
               <input className='texto-cadas' type="text" placeholder='Data de nascimento :' value={users.age_user} onChange={(e) => setUsers({ ...users, age_user: e.target.value })} />
               <input className='texto-cadas' type="text" placeholder='Email :' value={users.email_user} onChange={(e) => setUsers({ ...users, email_user: e.target.value })} />
               <input className='texto-cadas' type={showPassword ? 'text' : 'password'} placeholder='Senha :' value={users.password_users} onChange={(e) => setUsers({ ...users, password_user: e.target.value })} />

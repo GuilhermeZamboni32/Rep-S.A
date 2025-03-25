@@ -24,9 +24,7 @@ function EditPerfil() {
             <div className="perfil-input">
              
               <input className='texto-inp' type="text" placeholder='Nome :'/>
-              
               <input className='texto-inp' type="text" placeholder='Data de nascimento :'/>
-              
               <input className='texto-inp' type="text" placeholder='Email :'/>
               
              
@@ -47,7 +45,6 @@ function EditPerfil() {
            </div>
 
           <div className='div-inputs2'>
-
             <input type="text" placeholder="Input 6"/>
             <input type="text" placeholder="Input 7"/>
             <input type="text" placeholder="Input 8"/>
