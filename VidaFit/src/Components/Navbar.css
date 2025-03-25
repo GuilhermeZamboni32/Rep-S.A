@@ -1,5 +1,5 @@
 .container-navbar{
-    background-color: var(--Cor1);
+    background-color: var(--VermelhoP2);
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -8,12 +8,12 @@
 }
 
 .texto{
-    color: var(--Cor3);
+    color: var(--BrancoCC1);
     transition: color 0.1s ease; 
 }
 
 .texto:hover{
-    color: var(--Cor5);
+    color: var(--BrancoCC2);
 }
 
 

@@ -1,13 +1,6 @@
-:root{
-    --Cor1: rgb(2, 6, 25);
-    --Cor2: rgb(43, 45, 66);
-    --Cor3: rgb(141, 153, 174);
-    --Cor4: rgb(236, 240, 242);
-    --Cor5: rgb(239, 35, 59);
-    --Cor6: rgb(179, 5, 34);
-  }
+
 .container-cadastro{
-    background-color: var(--Cor2);
+    background: linear-gradient(135deg, var(--AzulC1) 0%, var(--AzulE1) 100%);
     min-height: 100%;
     height: 100%;
     width: 100%;
@@ -24,11 +17,11 @@
     
 }
 .texto-cadas::placeholder {
-    color: var(--Cor1);
+    color: var( --BrancoC2);
     
 }
 .cadas-inf {
-    background: var(--Cor6);
+    background: var(--BrancoC1);
     padding: 15px;
     border-radius: 8px;
     text-align: center;
@@ -41,8 +34,8 @@
 .texto-cadas{
     width: 100%;
     margin: 15px 0;
-    background: var(--Cor4);
-    color: var(--Cor1);
+    background: var(--BrancoE1);
+    color: var(--BrancoCC2);
     border: none;
     padding: 10px;
     border-radius: 5px;
