@@ -19,13 +19,17 @@ function Avaliacao() {
 
           <div className="espaco"></div>
 
-          <div className="perfil-input-Ava">
+          <div className="perfil-input-1-ava">
             <input className='texto-inp' type="text" placeholder='Nome :'/>
-            <input className='texto-inp' type="text" placeholder='Data de nascimento :'/>
-            <input className='texto-inp' type="text" placeholder='Email :'/>
-            
-            <div className="espaco"></div>
           </div> 
+            <div className="perfil-input-2-ava">
+            <input className='texto-inp' type="text" placeholder='email'/>
+           </div> 
+           <div className="perfil-input-3-ava">
+            <input className='texto-inp' type="text" placeholder='Data de nascimento :'/>
+          </div>
+            <div className="espaco"></div>
+          
         </div>
 
        

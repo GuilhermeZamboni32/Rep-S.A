@@ -47,12 +47,24 @@
       height: 50px;
     }
   
-    .perfil-input-Ava{
-      gap: 200px;
-      
-      
+    .perfil-input-1-ava{
+      gap: 40vh;
+      display: inline-block;
+      height: 10vh;
+      width: 28vh;
     }
-    
+    .perfil-input-2-ava{
+      gap: 40vh;
+      display: inline-block;
+      height: 10vh;
+      width: 28vh;
+    }
+    .perfil-input-3-ava{
+      gap: 40vh;
+      display: inline-block;
+      height: 10vh;
+      width: 28vh;
+    }
     .texto-inp{
       width: 100%;
       margin: 5px 0;
@@ -99,6 +111,8 @@
       margin-bottom: 30px;
       background-color: var(--Cor3);
       border-radius: 8px;
+      display: flex;
+      justify-content: center;
     }
     
     .Ava-estrela{
@@ -115,6 +129,10 @@
         border-radius: 8px;
         width: 1166px;
         height: 240px;
+        display: inline-block;
+        text-align: center;
+
+
        
     }
 
