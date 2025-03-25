@@ -125,15 +125,17 @@ Porque ao integrar hábitos saudáveis de forma prática e eficiente no seu dia 
 
 ```bash
 Front-end:
-1-npm install.
-2-npm install axios.
-3-npm install react-router-dom.
-4-npm install reaci-icons.
+1-npm install
+2-npm install axios
+3-npm install react-router-dom
+4-npm install reaci-icons
+5-npm install bcrypt
 
 
 Back-end:
-1-npm install nodemom.
-2-npm install express.
+1-npm install --save-dev nodemon
+2-npm install express
+3-npm install bcrypt
 
 ```
 
