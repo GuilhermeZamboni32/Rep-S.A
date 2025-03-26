@@ -37,7 +37,7 @@
 }
 
 .container-perfil {
-  background: linear-gradient(135deg, var(--AzulC1) 0%, var(--AzulE1) 100%);
+  background: linear-gradient(135deg, var(--AzulCC1) 0%, var(--AzulE1) 100%);
   min-height: 100vh;
   align-items: center;
   justify-content: center; 
@@ -95,8 +95,8 @@
   .texto-inp{
     width: 100%;
     margin: 5px 0;
-    background: var(--AzulC1);
-    color: var(--BrancoCC2);
+    
+    color: var(--BrancoC2);
     border: none;
     padding: 10px;
     border-radius: 5px;
@@ -108,7 +108,7 @@
     
 }
 
-.button{
+.button-perfil{
     background: var(--AzulC1);
     color: var(--BrancoCC2);
     border: none;
@@ -116,8 +116,9 @@
     padding: 10px;
     cursor: pointer;
 }
-button:hover{
-    background-color: var(--AzulC2);
+button-perfil:hover{
+    background-color: var(--AzulCC2);
+    color: var(--AzulC1);
 }
 
   
@@ -156,3 +157,16 @@ button:hover{
     background: var(--AzulC2);
   }
   
+
+
+
+  .texto-perfil{
+    width: 100%;
+    margin: 5px 0;
+    background-color: var(--AzulC1);
+    color: var(--BrancoC2);
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }

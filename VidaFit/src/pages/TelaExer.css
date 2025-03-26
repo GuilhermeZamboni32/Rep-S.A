@@ -1,5 +1,5 @@
 .container-exer{
-    background: linear-gradient(135deg, var(--AzulC1) 0%, var(--AzulE1) 100%);
+    background: linear-gradient(135deg, var(--AzulCC1) 0%, var(--AzulE1) 100%);
     min-height: 100vh;
     align-items: center;
     
@@ -18,7 +18,6 @@
 }
 
 .div-topo{
-    
     width: 1670px;
     height: 100px;
     display: flex;
@@ -72,7 +71,7 @@
 
 .div-baixo{
     background-color: var(--BrancoP2);
-    width: 1670px;
+    min-width: 100vh;
     height: 500px;
     border-radius: 8px;
     

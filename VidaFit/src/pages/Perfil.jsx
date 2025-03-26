@@ -19,14 +19,14 @@ function Perfil() {
             <div className="espaco"></div>
 
             <div className="perfil-input">
-              <input className='texto-inp' type="text" placeholder='Nome :'/>
-              <input className='texto-inp' type="text" placeholder='Data de nascimento :'/>
-              <input className='texto-inp' type="text" placeholder='Email :'/>
-              <input className='texto-inp' type="text" placeholder='Senha :'/>
+              <input className='texto-perfil' type="text" placeholder='Nome :'/>
+              <input className='texto-perfil' type="text" placeholder='Data de nascimento :'/>
+              <input className='texto-perfil' type="text" placeholder='Email :'/>
+              <input className='texto-perfil' type="text" placeholder='Senha :'/>
               <div className="espaco"></div>
             </div>
 
-              <button className='button'>Editar</button>
+              <button className='button-perfil'>Editar</button>
           </div>
 
          
