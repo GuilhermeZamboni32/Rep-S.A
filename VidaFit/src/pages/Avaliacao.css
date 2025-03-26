@@ -1,6 +1,7 @@
 
 .container-Ava {
-  background: linear-gradient(135deg, var(--AzulC1) 0%, var(--AzulE1) 100%);
+ /* background: linear-gradient(135deg, var(--AzulC1) 0%, var(--AzulE1) 100%);*/
+ background-color: rgb(255, 0, 0);
     min-height: 100vh;
     align-items: center;
     justify-content: center; 
@@ -13,7 +14,8 @@
       flex-direction: row;
       gap: 40px;
       padding: 20px;
-      background: var(--BrancoC1);
+      background-image: url('nao.jpg');
+      background-repeat: no-repeat;
       border-radius: 8px;
       justify-content: center; 
      
