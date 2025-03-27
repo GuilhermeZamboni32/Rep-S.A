@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import Navbar from '../Components/Navbar'
 import "./Login.css"
 import axios from 'axios'
@@ -10,34 +10,35 @@ function Login() {
 
   const [form, setForm] = useState({username: '', password_user: ''})
   const [showPassword, setShowPassword] = useState(false)
-  const { setUser } = useUser() || {}
+  const { user, setUser } = useContext(useUser) || 
 
-  const fetchUsuario = async () => {
-    try {
-      const response = await axios.get('http://localhost:3000/users')
-      setFuncionarios(response.data);
-    } catch (error) {
-      console.error('Error fetching funcionarios:', error)
-    }
-  }
 
-  useEffect(() => {
-    fetchUsuario()
-  }, [])
+// TODO: arrumar essa bagaça
+//   *Bucar usuario
+//   const fetchUsuario = async () => {
+//     try {
+//       const response = await axios.get('http://localhost:3000/users')
+//       setFuncionarios(response.data);
+//     } catch (error) {
+//       console.error('Error fetching funcionarios:', error)
+//     }
+//   }
 
-  const handleLogin = () => {
-    const u = users.find((user) => user.username === form.username && user.password_user === form.password_user)
+//   useEffect(() => {
+//     fetchUsuario()
+//   }, [])
 
-    if (!u) {
-      alert('Usuário ou senha inválidos!')
-    } else {
-      alert('Login efetuado com sucesso!')
-      setUser(u); // Atualiza o contexto global
-      navigate('/Home')
-    }
-
-    setUser(u)
-  }
+//  *Verificar o login e atualiza o usuario no user
+//   const handleLogin = () => {
+//     //const u = user.find((user) => user.username === form.username && user.password_user === form.password_user)
+//     if (!u) {
+//       alert('Usuário ou senha inválidos!')
+//     } else {
+//       alert('Login efetuado com sucesso!')
+//       navigate('/Home')
+//     }
+//     setUser(u)
+//   }
 
 
   return (

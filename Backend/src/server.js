@@ -55,6 +55,8 @@ app.get('/users/:id_user', async (req, res) => {
     }
 });
 
+
+
 // Rota para atualizar um usuario
 app.put('/users/:id_user', async (req, res) => {
     const { id_user } = req.params;
