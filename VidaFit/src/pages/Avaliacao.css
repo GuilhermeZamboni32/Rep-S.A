@@ -1,7 +1,7 @@
 
 .container-Ava {
- /* background: linear-gradient(135deg, var(--AzulC1) 0%, var(--AzulE1) 100%);*/
- background-color: rgb(255, 0, 0);
+    background: linear-gradient(135deg, var(--AzulC1) 0%, var(--AzulE1) 100%);
+    background-color: rgb(255, 0, 0);
     min-height: 100vh;
     align-items: center;
     justify-content: center; 
@@ -14,16 +14,13 @@
       flex-direction: row;
       gap: 40px;
       padding: 20px;
-      background-image: url('nao.jpg');
       background-repeat: no-repeat;
       border-radius: 8px;
       justify-content: center; 
-     
+      background-color: var(--BrancoC1);
     }
-    
-   
     .div-grupo-usuario-Ava {
-      background: var(--Cor4);
+      background: var(--BrancoP2);
       padding: 15px;
       border-radius: 8px;
       text-align: center;
@@ -44,7 +41,6 @@
       width: 200px;
       border-radius: 8px;
     }
-  
     .espaco{
       height: 50px;
     }
@@ -66,6 +62,9 @@
       display: inline-block;
       height: 10vh;
       width: 28vh;
+    }
+    .input::placeholder{
+      color: var(--BrancoP);
     }
     .texto-inp{
       width: 100%;

@@ -4,15 +4,15 @@
     align-items: center;
 }
 .button-editar{
-background: var(--Cor6);
-color: var(--Cor4);
+background: var(--AzulP2);
+color: var(--BrancoC2);
 border: none;
 border-radius: 8px;
 padding: 10px;
 cursor: pointer;
 }
 .div-grupo-usuario-1{
-  background: var(--Cor4);
+  background: var(--BrancoC2);
   padding: 15px;
   border-radius: 8px;
   text-align: center;
@@ -21,6 +21,16 @@ cursor: pointer;
   flex-direction: column;
   width: 300px;
   margin: 30px;
+}
+.texto-inp-edit{
+  width: 100%;
+  margin: 5px 0;
+  background: var(--AzulP2);
+  color: var(--BrancoC2);
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 .div-grupo-1 {
   display: flex;
@@ -39,7 +49,7 @@ cursor: pointer;
   transform: translate(-50%, -50%); 
 }
 .container-inputs{
-  background-color: var(--Cor4);
+  background-color: var(--BrancoC2);
   display: flex;
   flex-direction: row;  
   justify-content: center;
@@ -61,8 +71,9 @@ cursor: pointer;
   margin: 20px 0 ;
   height: 600px;
 }
-.div-inputs1 input {
-  background-color: var(--Cor2);
+.div-inputs1 input{
+  color: var(--BrancoC2);
+  background-color: var(--AzulP2);
   width: 90%; 
   padding: 10px;
   border-radius: 10px;
@@ -81,7 +92,7 @@ cursor: pointer;
   height: 600px;
 }
 .div-inputs2 input {
-  background-color: var(--Cor2);
+  background-color: var(--AzulP2);
   width: 90%; 
   padding: 10px;
   border-radius: 10px;
@@ -89,8 +100,11 @@ cursor: pointer;
   box-sizing: border-box;
   margin: 30px;
 }
+input::placeholder{
+  color: var(--BrancoCC2);
+}
 .container-buttom{
-  background-color: var(--Cor2);
+  background-color: var(--AzulP2);
   padding: 23px; 
   border-radius: 8px;
   display: flex;  
@@ -106,7 +120,8 @@ cursor: pointer;
   gap: 10px;
 }
 .butoon-click-1{
-background: var(--Cor3);
+color: var(--AzulP2) ;
+background: var(--BrancoC1);
 border: none;
 border-radius: 10px;
 padding: 10px;
