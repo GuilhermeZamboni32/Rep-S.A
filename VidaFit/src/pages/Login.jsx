@@ -53,7 +53,7 @@ function Login() {
                   <input type="checkbox" checked={showPassword} onChange={(e) => setShowPassword(e.target.checked)}/>
                   <label>Mostrar senha</label>
                 </div>
-              <button className="botao-login" onClick={handleLogin}>Login</button>
+              <button className="botao-login" onClick={handleLogin}><h2>Login</h2></button>
           </div>
         </div>
     </div>

@@ -14,7 +14,7 @@ function Avaliacao() {
         <div className="div-grupo-usuario-Ava">
 
           <div className='div-img'>
-          <img className='img' src="foto-rock.jpg" alt="" />
+          {/*<img className='img' src="foto-rock.jpg" alt="" />*/}
           </div>
 
           <div className="espaco"></div>

@@ -1,18 +1,56 @@
+:root{
+  /**extremo claro*/
+  --AzulCC1: #1A2D87;
+  --AzulCC2: #5E628D;
+  --BrancoCC1: #B9BEC8;
+  --BrancoCC2: #FFFFFF;
+  --VermelhoCC1: #DB808A;
+  --VermelhoCC2: #C8586B;
+  /**Médio claro*/
+  --AzulC1: #0E1848;
+  --AzulC2: #404363;
+  --BrancoC1: #8D99AE;
+  --BrancoC2: #D8F1FD;
+  --VermelhoC1: #EF233B;
+  --VermelhoC2: #B30522;
+  /**Padrão*/
+  --AzulP1: #091136;
+  --AzulP2: #2B2D42;
+  --BrancoP1: #8D99AE;
+  --BrancoP2: #D8F1FD;
+  --VermelhoP1: #EF233B;
+  --VermelhoP2: #B30522;
+  /**Médio escuro*/
+  --AzulE1: #050A1F;
+  --AzulE2: #272836;
+  --BrancoE1: #787F8A;
+  --BrancoE2: #93ACB8;
+  --VermelhoE1: #BE1D30;
+  --VermelhoE2: #88061B;
+  /**Extremo escuro*/
+  --AzulEE1: #030611;
+  --AzulEE2: #1F202C;
+  --BrancoEE1: #6B6F75;
+  --BrancoEE2: #687982;
+  --VermelhoEE1: #811320;
+  --VermelhoEE2: #4E0511;
+}
+
 .container-editperfil{
-    background: linear-gradient(135deg, var(--AzulC1) 0%, var(--AzulE1) 100%);
+    background: linear-gradient(135deg, var(--AzulCC1) 0%, var(--AzulE1) 100%);
     min-height: 100vh;
     align-items: center;
 }
 .button-editar{
-background: var(--Cor6);
-color: var(--Cor4);
+background: var(--AzulP2);
+color: var(--BrancoC2);
 border: none;
 border-radius: 8px;
 padding: 10px;
 cursor: pointer;
 }
 .div-grupo-usuario-1{
-  background: var(--Cor4);
+  background: var(--BrancoC2);
   padding: 15px;
   border-radius: 8px;
   text-align: center;
@@ -21,6 +59,16 @@ cursor: pointer;
   flex-direction: column;
   width: 300px;
   margin: 30px;
+}
+.texto-inp-edit{
+  width: 100%;
+  margin: 5px 0;
+  background: var(--AzulP2);
+  color: var(--BrancoC2);
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 .div-grupo-1 {
   display: flex;
@@ -39,7 +87,7 @@ cursor: pointer;
   transform: translate(-50%, -50%); 
 }
 .container-inputs{
-  background-color: var(--Cor4);
+  background-color: var(--BrancoC2);
   display: flex;
   flex-direction: row;  
   justify-content: center;
@@ -61,8 +109,9 @@ cursor: pointer;
   margin: 20px 0 ;
   height: 600px;
 }
-.div-inputs1 input {
-  background-color: var(--Cor2);
+.div-inputs1 input{
+  color: var(--BrancoC2);
+  background-color: var(--AzulP2);
   width: 90%; 
   padding: 10px;
   border-radius: 10px;
@@ -81,7 +130,7 @@ cursor: pointer;
   height: 600px;
 }
 .div-inputs2 input {
-  background-color: var(--Cor2);
+  background-color: var(--AzulP2);
   width: 90%; 
   padding: 10px;
   border-radius: 10px;
@@ -89,8 +138,11 @@ cursor: pointer;
   box-sizing: border-box;
   margin: 30px;
 }
+input::placeholder{
+  color: var(--BrancoCC2);
+}
 .container-buttom{
-  background-color: var(--Cor2);
+  background-color: var(--AzulP2);
   padding: 23px; 
   border-radius: 8px;
   display: flex;  
@@ -106,7 +158,8 @@ cursor: pointer;
   gap: 10px;
 }
 .butoon-click-1{
-background: var(--Cor3);
+color: var(--AzulP2) ;
+background: var(--BrancoC1);
 border: none;
 border-radius: 10px;
 padding: 10px;

@@ -23,9 +23,9 @@ function EditPerfil() {
 
             <div className="perfil-input">
              
-              <input className='texto-inp' type="text" placeholder='Nome :'/>
-              <input className='texto-inp' type="text" placeholder='Data de nascimento :'/>
-              <input className='texto-inp' type="text" placeholder='Email :'/>
+              <input className='texto-inp-edit' type="text" placeholder='Nome :'/>
+              <input className='texto-inp-edit' type="text" placeholder='Data de nascimento :'/>
+              <input className='texto-inp-edit' type="text" placeholder='Email :'/>
               
              
             <div className="espaco"></div>
@@ -38,10 +38,10 @@ function EditPerfil() {
 
         <div className='container-inputs'>
            <div className='div-inputs1'>
-            <input type="text" placeholder="Input 1"/>
-            <input type="text" placeholder="Input 2"/>
-            <input type="text" placeholder="Input 3"/>
-            <input type="text" placeholder="Input 4"/>
+            <input className='texto-inp-inf' type="text" placeholder="Input 1"/>
+            <input className='texto-inp-inf' type="text" placeholder="Input 2"/>
+            <input className='texto-inp-inf' type="text" placeholder="Input 3"/>
+            <input className='texto-inp-inf' type="text" placeholder="Input 4"/>
            </div>
 
           <div className='div-inputs2'>
