@@ -29,6 +29,8 @@ function Perfil() {
               <button className='button-perfil'>Editar</button>
           </div>
 
+        
+
          
 
           <div className="div-grupo-exercicio">
