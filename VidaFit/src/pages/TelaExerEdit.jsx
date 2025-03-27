@@ -11,7 +11,7 @@ function TelaExerEdit() {
           <div className='div-topo-edit'>
 
             <div className='topo-es-edit'>
-              <h1 className='texto-exer-edit'>Exercícios</h1>
+              <h1 className='texto-exer-edit'>Editar Exercícios</h1>
             </div>
 
             <div className='topo-me-edit'></div>
