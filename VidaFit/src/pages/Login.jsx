@@ -8,7 +8,6 @@ import { useUser } from '../Context/UserContext'
 
 function Login() {
 
-  const [usuario, setUsuario] = useState([])
   const [form, setForm] = useState({username: '', password_user: ''})
   const [showPassword, setShowPassword] = useState(false)
   const { setUser } = useUser() || {}

@@ -7,7 +7,7 @@ const app = express();
 const pool = new Pool({
     user: 'postgres',
     host: 'localhost',
-    database: 'postgres',
+    database: 'VidaFit',
     password: 'senai',
     port: 5432,
 });
