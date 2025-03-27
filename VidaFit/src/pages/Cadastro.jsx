@@ -73,7 +73,8 @@ function Cadastro() {
               <input type="checkbox" checked={showPassword} onChange={(e) => setShowPassword(e.target.checked)}/>
               <label>Mostrar senha</label>
             </div>
-              <button className='button' onClick={handleReister}>cadastrar</button>
+            
+              <button className='button-cadastro' onClick={handleReister}><h2>cadastrar</h2></button>
           
           </div>
         </div>
