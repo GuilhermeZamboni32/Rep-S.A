@@ -69,7 +69,7 @@
     }
   
     .div-img{
-      background-color: var(--Cor1);
+      background-color: var(--AzulEE1);
       width: 210px;
       border-radius: 8px;
       
@@ -102,13 +102,13 @@
       width: 28vh;
     }
     .input::placeholder{
-      color: var(--BrancoP);
+      color: var(--BrancoP1);
     }
     .texto-inp{
       width: 100%;
       margin: 5px 0;
-      background: var(--Cor6);
-      color: var(--Cor4);
+      background: var(--AzulC2);
+      color: var(--BrancoC2);
       border: none;
       padding: 10px;
       border-radius: 5px;
@@ -116,30 +116,31 @@
   }
   
   .texto-inp::placeholder {
-      color: var(--Cor4);
+      color: var(--BrancoC2);
       
   }
   
   .button-Ava{
-      background: var(--Cor6);
-      color: var(--Cor4);
+      background: var(--AzulCC1);
+      color: var(--AzulC2);
       border: none;
       border-radius: 8px;
       padding: 10px;
       cursor: pointer;
   }
   button:hover{
-      background-color: var(--Cor5);
+      background-color: var(--AzulEE1);
   }
   
     
-    .div-grupo-Avaliacao{
-      background: var(--Cor4);
-      padding: 15px;
+     .div-grupo-Avaliacao{
+      background: var(--BrancoC2);
       border-radius: 8px;
       width: 1200px;
-      height: 600px;
+      height: 69vh;
+      display: flex;
       align-items: center;
+      flex-direction: column;
       
       
     }
@@ -148,37 +149,42 @@
       font-size: 1.2rem;
       font-weight: bold;
       margin-bottom: 30px;
-      background-color: var(--Cor3);
-      border-radius: 8px;
+      background-color: var(--AzulC2);
+      border-radius: 5px;
       display: flex;
       justify-content: center;
+      width: 127vh;
+      justify-content: top;
+
     }
     
     .Ava-estrela{
-        background-color: var(--Cor1);
+        background-color: var(--AzulC1);
         border-radius: 8px;
-        width: 1166px;
+        width: 111vh;
         height: 200px;
         margin-bottom: 60px;
+        display:flex;
+        align-items: center;
+        justify-content: space-evenly
         
     }
 
     .Ava-coment{
-        background-color: var(--Cor5);
+        background-color: var(--AzulC2);
         border-radius: 8px;
-        width: 1166px;
-        height: 240px;
-        display: inline-block;
+        width: 111vh;
+        height: 25vh;
+        display: flex;
         text-align: center;
-
-
-       
+        align-items: stretch;
+        flex-direction: column;
     }
 
     .titulo-Ava-coment{
+      color: var(--BrancoCC2);
       font-size: 1.2rem;
       font-weight: bold;
-      margin-bottom: 30px;
-      background-color: var(--Cor6);
-      border-radius: 8px;
+      background-color: var(--VermelhoC1);
+      border-radius: 3px;
     }

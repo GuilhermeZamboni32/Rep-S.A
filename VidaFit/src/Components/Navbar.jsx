@@ -15,6 +15,7 @@ function Navbar() {
         <Link className="texto" to="/teladieta">Tela Dieta</Link>
         <Link className="texto" to="/teladietaedit">Tela Dieta Edit</Link>
         <Link className="texto" to="/Avaliacao">Avaliação</Link>
+        <Link className="texto" to="/Ad_Funci">Ad funci</Link>
 
     </div>
   )
