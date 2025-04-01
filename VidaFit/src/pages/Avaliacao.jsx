@@ -15,7 +15,11 @@ function Avaliacao() {
         <div className="div-grupo-usuario-Ava">
 
           <div className='div-img'>
+<<<<<<< HEAD
           {<img className='img' src="foto-rock.jpg" alt="" />}
+=======
+          <img className='img' src="foto-rock.jpg" alt="" />
+>>>>>>> e25012ee71f3d8c318e49f7c43469516396e319b
           </div>
 
           <div className="espaco"></div>

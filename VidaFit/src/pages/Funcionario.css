@@ -1,0 +1,28 @@
+.container-produto{
+    background-color: var(--BrancoCC2);
+    color: rgb(0, 0, 0);
+    border: 1px solid #ffff;
+    width: 270px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px  rgb(255, 0, 0);
+}
+
+.img-produto{
+    width: 140px;
+    border-radius: 10px;
+}
+
+
+.container-cards, .lista-cards{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+}

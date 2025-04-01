@@ -7,7 +7,7 @@ const app = express();
 const pool = new Pool({
     user: 'postgres',
     host: 'localhost',
-    database: 'postgres',
+    database: 'VidaFit',
     password: 'senai',
     port: 5432,
 });
@@ -54,6 +54,8 @@ app.get('/users/:id_user', async (req, res) => {
         res.status(500).json({ error: 'Erro ao buscar usuario' });
     }
 });
+
+
 
 // Rota para atualizar um usuario
 app.put('/users/:id_user', async (req, res) => {
