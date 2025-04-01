@@ -136,6 +136,7 @@ Back-end:
 1-npm install --save-dev nodemon
 2-npm install express
 3-npm install bcrypt
+4-npm i jsonwebtoken
 
 ```
 
