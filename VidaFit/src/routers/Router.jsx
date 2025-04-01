@@ -9,6 +9,7 @@ import TelaExerEdit from "../pages/TelaExerEdit";
 import Avaliacao from "../pages/Avaliacao";
 import TelaDieta from "../pages/TelaDieta";
 import TelaDietaEdit from "../pages/TelaDietaEdit";
+import Ad_Funci from "../pages/Ad_Funci";
 //import Profissionais from "../pages/Profissionais";
 
 const router = createBrowserRouter([
@@ -23,6 +24,7 @@ const router = createBrowserRouter([
     {path: "/teladietaedit", element: <TelaDietaEdit />},
 //  {path: "/profissionais", element: <Profissionais />},
     {path: "/avaliacao", element: <Avaliacao />},
+    {path: "/ad_funci", element: <Ad_Funci />},
 ])
 
 export default router;

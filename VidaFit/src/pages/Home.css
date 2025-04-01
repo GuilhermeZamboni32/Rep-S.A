@@ -53,9 +53,24 @@
     display: flex;
     flex-direction: column;
     margin: 100px;
-    border-radius: 10px;
-    
-   
+    border-radius: 10px; 
+}
+
+.div-visual-prof{
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.barra-pesquisa{
+    background-color: var(--BrancoCC2);
+    width: 700px;
+    height: 50px;
+    border-radius: 50px;
+    margin-left: 10px;
     
 }
 
+.lupa{
+    width: 40px;
+    
+}
