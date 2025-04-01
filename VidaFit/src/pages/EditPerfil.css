@@ -59,6 +59,7 @@ cursor: pointer;
   flex-direction: column;
   width: 300px;
   margin: 30px;
+  height: 58vh;
 }
 .texto-inp-edit{
   width: 100%;
