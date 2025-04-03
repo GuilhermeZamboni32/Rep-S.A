@@ -1,8 +1,15 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Navbar from '../Components/Navbar'
 import React from 'react'
 
 function TelaDietaEdit() {
+  const navigate = useNavigate()
+
+  function voltar(){
+    //processo da validação do usuario
+    navigate('/perfil');
+  }
+
   return (
     <div className='container-exer-edit'>
     <Navbar />
@@ -16,7 +23,7 @@ function TelaDietaEdit() {
 
        <div className='topo-me-edit'></div>
 
-       <div className='topo-di-edit'>
+       <div className='topo-di-edit' onClick={voltar}>
          <button className='butoon-voltar-edit'>
            <h1 className='texto-exer-edit'>Voltar</h1>
            </button>

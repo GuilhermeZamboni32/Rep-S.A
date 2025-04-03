@@ -40,7 +40,7 @@ function Ad_Funci() {
         {
           id: Date.now() +4,
           nome: "Gustavo Garcia",
-          descricao: "Especialista em alimentação e dietas para saúde e desempenho.",
+          descricao: "Coach de saúde, unindo treino e nutrição para resultados completos. ",
           img: "./edu-fisica-3.jpg"
         }
           
@@ -64,6 +64,8 @@ function Ad_Funci() {
      
 
   return (
+    
+    
     <div className='container-corpo'>
        {/** <Navbar />*/} 
     

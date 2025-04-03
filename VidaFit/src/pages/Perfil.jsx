@@ -1,8 +1,28 @@
 import React from 'react'
 import Navbar from '../Components/Navbar'
 import './Perfil.css'
+//import React, {useState} from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+
 
 function Perfil() {
+const navigate = useNavigate()
+
+  function exercicio(){
+    //processo da validação do usuario
+    navigate('/telaexer');
+  }
+
+  function dieta(){
+    //processo da validação do usuario
+    navigate('/teladieta');
+  }
+
+  function edit(){
+    //processo da validação do usuario
+    navigate('/editperfil');
+  }
+
   return (
    
     <div className="container-perfil">
@@ -26,7 +46,7 @@ function Perfil() {
               <div className="espaco"></div>
             </div>
 
-              <button className='button-perfil'>Editar</button>
+              <button className='button-perfil' onClick={edit}>Editar</button>
           </div>
 
         
@@ -41,10 +61,10 @@ function Perfil() {
             </div>
 
             <div className="exercicios">
-              <button>Treino A</button>
-              <button>Treino B</button>
-              <button>Treino C</button>
-              <button>Treino D</button>
+              <button onClick={exercicio}>Treino A</button>
+              <button onClick={exercicio}>Treino B</button>
+              <button onClick={exercicio}>Treino C</button>
+              <button onClick={exercicio}>Treino D</button>
             </div>
           </div>
 
@@ -57,9 +77,9 @@ function Perfil() {
               </h1>
             </div>
             <div className="dieta">
-              <button>Dieta A</button>
-              <button>Dieta B</button>
-              <button>Dieta C</button>
+              <button onClick={dieta}>Dieta A</button>
+              <button onClick={dieta}>Dieta B</button>
+              <button onClick={dieta}>Dieta C</button>
             </div>
           </div>
 

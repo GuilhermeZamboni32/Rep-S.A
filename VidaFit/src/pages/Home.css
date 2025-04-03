@@ -67,10 +67,22 @@
     height: 50px;
     border-radius: 50px;
     margin-left: 10px;
+    box-shadow: 0 0 10px  var(--AzulC1);
     
 }
 
 .lupa{
+    width: 40px; 
+}
+
+.barra-filtro{
+    background-color: var(--BrancoCC2);
+    width: 100px;
+    height: 50px;
+    border-radius: 50px;
+    margin-left: 10px;
+    box-shadow: 0 0 10px  var(--AzulC1);
+}
+.filtro{
     width: 40px;
-    
 }
