@@ -1,0 +1,180 @@
+:root{
+    /**extremo claro*/
+    --AzulCC1: #1A2D87;
+    --AzulCC2: #5E628D;
+    --BrancoCC1: #B9BEC8;
+    --BrancoCC2: #FFFFFF;
+    --VermelhoCC1: #DB808A;
+    --VermelhoCC2: #C8586B;
+    /**Médio claro*/
+    --AzulC1: #0E1848;
+    --AzulC2: #404363;
+    --BrancoC1: #8D99AE;
+    --BrancoC2: #D8F1FD;
+    --VermelhoC1: #EF233B;
+    --VermelhoC2: #B30522;
+    /**Padrão*/
+    --AzulP1: #091136;
+    --AzulP2: #2B2D42;
+    --BrancoP1: #8D99AE;
+    --BrancoP2: #D8F1FD;
+    --VermelhoP1: #EF233B;
+    --VermelhoP2: #B30522;
+    /**Médio escuro*/
+    --AzulE1: #050A1F;
+    --AzulE2: #272836;
+    --BrancoE1: #787F8A;
+    --BrancoE2: #93ACB8;
+    --VermelhoE1: #BE1D30;
+    --VermelhoE2: #88061B;
+    /**Extremo escuro*/
+    --AzulEE1: #030611;
+    --AzulEE2: #1F202C;
+    --BrancoEE1: #6B6F75;
+    --BrancoEE2: #687982;
+    --VermelhoEE1: #811320;
+    --VermelhoEE2: #4E0511;
+  }
+  
+  .container-perfil {
+    background: linear-gradient(135deg, var(--AzulCC1) 0%, var(--AzulE1) 100%);
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center; 
+    
+    }
+    
+    .div-grupo {
+      margin: 100px;
+      display: flex;
+      flex-direction: row;
+      gap: 40px;
+      padding: 20px;
+      background: var(--BrancoC1);
+      border-radius: 8px;
+      justify-content: center; 
+     
+    }
+    
+   
+    .div-grupo-usuario {
+      background: var(--BrancoP2);
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      width: 400px;
+    }
+  
+    .div-img{
+      background-color: var(--AzulEE1);
+      width: 210px;
+      border-radius: 8px;
+      
+    }
+    
+    .img {
+      width: 200px;
+      border-radius: 8px;
+    }
+  
+    .espaco{
+      height: 50px;
+    }
+  
+    .perfil-input{
+      gap: 200px;
+      
+      
+      
+      
+    }
+    
+    .texto-inp{
+      width: 100%;
+      margin: 5px 0;
+      
+      color: var(--BrancoC2);
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+  }
+  
+  .texto-inp::placeholder {
+      color: var(--AzulC2);
+      
+  }
+  
+  .button-perfil{
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: var(--AzulC1);
+    color: var(--BrancoCC2);
+    cursor: pointer;
+  }
+  .button-perfil:hover{
+    color: var(--BrancoCC2);
+    background-color: var(--AzulCC1);
+  }
+  
+  
+  
+    
+    .div-grupo-exercicio, .div-grupo-dieta {
+      background: var(--BrancoP2);
+      padding: 15px;
+      border-radius: 8px;
+      width: 600px;
+      
+    }
+    
+    .titulo {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+      background-color: var(--AzulC1);
+      color: var(--BrancoCC2);
+      border-radius: 8px;
+    }
+    
+    .exercicios button, .dieta button {
+      display: block;
+      width: 100%;
+      margin: 20px 0;
+      background: var(--AzulC1);
+      color: var(--BrancoCC2);
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    
+   
+    
+    .exercicios button:hover, .dieta button:hover {
+      background: var(--AzulC2);
+    }
+    
+  
+  
+  
+    .texto-perfil{
+      width: 100%;
+      margin: 5px 0;
+      background-color: var(--AzulC1);
+      color: var(--BrancoC2);
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  
+  
+    input::placeholder {
+      color: var(--placeholder-color, var(--BrancoCC1));
+      transition: color 0.3s;
+  }
