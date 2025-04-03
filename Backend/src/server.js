@@ -2,12 +2,13 @@ const express = require('express');
 const cors = require('cors');
 const nodemon = require('nodemon');
 const { Pool } = require('pg');
+const bcrypt = require('bcrypt');
 
 const app = express();
 const pool = new Pool({
     user: 'postgres',
     host: 'localhost',
-    database: 'postgres',
+    database: 'VidaFit',
     password: 'senai',
     port: 5432,
 });
@@ -55,6 +56,8 @@ app.get('/users/:id_user', async (req, res) => {
     }
 });
 
+
+
 // Rota para atualizar um usuario
 app.put('/users/:id_user', async (req, res) => {
     const { id_user } = req.params;
@@ -62,7 +65,7 @@ app.put('/users/:id_user', async (req, res) => {
     try {
         const result = await pool.query(
             'UPDATE users SET username = $1, first_name = $2, last_name = $3, age_user = $4, email_user = $5, password_user = $6, image = $7, gender_user = $8, problems_user = $9, professional_confirm = $10, professional_type = $11, WHERE id_user = $12 RETURNING *',
-            [username, first_name, last_name, age_user, email_user, password_user, image, gender_user, problems_user, professional_confirm, professional_type]
+            [username, first_name, last_name, age_user, email_user, password_user, image, gender_user, problems_user, professional_confirm, professional_type, id_user,]
         );
         if (result.rows.length === 0) {
             return res.status(404).json({ error: 'Ususario não encontrado' });
@@ -89,6 +92,32 @@ app.delete('/users/:id_user', async (req, res) => {
     }
 });
 
+// Rota para verificar login de um usuario
+app.post('/users', async (req, res) => {
+    const { usuario, password_user } = req.body;
+    try {
+        const result = await pool.query(
+            'SELECT * FROM users WHERE email_user = $1 OR username = $1', 
+            [usuario]
+        );
+        
+        if (result.rows.length === 0) {
+            return res.status(401).json({ error: 'Credenciais inválidas' });
+        }
+
+        const user = result.rows[0];
+        const isValid = await bcrypt.compare(password_user, user.password_hash);
+        
+        if (!isValid) {
+            return res.status(401).json({ error: 'Credenciais inválidas' });
+        }
+        
+        res.json(user);
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).json({ error: 'Erro ao fazer login' });
+    }
+});
 app.listen(3000, () => {
     console.log('Servidor rodando na porta 3000');
 });

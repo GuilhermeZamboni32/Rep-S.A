@@ -5,6 +5,7 @@ import Navbar from '../Components/Navbar'
 
 
 function Avaliacao() {
+  
   return (
     <div className="container-Ava">
     <Navbar />
@@ -14,7 +15,7 @@ function Avaliacao() {
         <div className="div-grupo-usuario-Ava">
 
           <div className='div-img'>
-          <img className='img' src="foto-rock.jpg" alt="" />
+          {<img className='img' src="the-rock.jpg" alt="" />}
           </div>
 
           <div className="espaco"></div>
@@ -42,7 +43,21 @@ function Avaliacao() {
           </div>
 
           <div className="Ava-estrela">
-        
+           
+          <button className="butoon-estrela" onClick={() => alert("clicou!!!!!")}>⭐</button>
+
+          <button className="butoon-estrela" onClick={() => alert("clicou!!!!!")}>⭐</button>
+
+          <button className="butoon-estrela" onClick={() => alert("clicou!!!!!")}>⭐</button>
+
+          <button className="butoon-estrela" onClick={() => alert("clicou!!!!!")}>⭐</button>
+
+          <button className="butoon-estrela" onClick={() => alert("clicou!!!!!")}>⭐</button>
+
+        {/**
+         *  <img src="Logo.ico" onClick={() => alert("clicou!!!!!")} alt="" />
+         * 
+         */}  
            
             
           </div>

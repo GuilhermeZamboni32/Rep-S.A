@@ -1,9 +1,8 @@
-import React from 'react'
-import './TelaExer.css'
-import Navbar from '../Components/Navbar'
 import { Link, useNavigate } from 'react-router-dom'
+import Navbar from '../Components/Navbar'
+import React from 'react'
 
-function TelaExer() {
+function TelaDieta() {
   const navigate = useNavigate()
 
   function voltar(){
@@ -19,7 +18,7 @@ function TelaExer() {
           <div className='div-topo'>
 
             <div className='topo-es'>
-              <h1 className='texto-exer'>Exercícios</h1>
+              <h1 className='texto-exer'>Dietas</h1>
             </div>
 
             <div className='topo-me'></div>
@@ -41,4 +40,4 @@ function TelaExer() {
   )
 }
 
-export default TelaExer
+export default TelaDieta
