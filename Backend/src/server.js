@@ -1,123 +1,173 @@
 const express = require('express');
 const cors = require('cors');
-const nodemon = require('nodemon');
 const { Pool } = require('pg');
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+const helmet = require('helmet');
+const rateLimit = require('express-rate-limit');
+require('dotenv').config();
+
 
 const app = express();
-const pool = new Pool({
-    user: 'postgres',
-    host: 'localhost',
-    database: 'VidaFit',
-    password: 'senai',
-    port: 5432,
-});
-app.use(cors());
+
+// Security middleware
+app.use(helmet());
+app.use(cors({
+  origin: process.env.ALLOWED_ORIGINS?.split(',') || '*'
+}));
 app.use(express.json());
 
-// Rota pra criar um usuario
+// Rate limiting
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100 // limit each IP to 100 requests per windowMs
+});
+app.use(limiter);
+
+// Database configuration
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL || 'postgres://postgres:senai@localhost:5432/VidaFit',
+  ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false
+});
+
+const ACCESS_KEY = process.env.ACCESS_KEY;
+
+if (!ACCESS_KEY) {
+  console.error('FATAL ERROR: ACCESS_KEY is not defined.');
+  process.exit(1);
+}
+
+// Authentication middleware
+function authenticateToken(req, res, next) {
+  const authHeader = req.headers['authorization'];
+  const token = authHeader && authHeader.split(' ')[1];
+  
+  if (!token) return res.sendStatus(401);
+
+  jwt.verify(token, ACCESS_KEY, (err, user) => {
+    if (err) {
+      if (err instanceof jwt.TokenExpiredError) {
+        return res.status(401).json({ message: 'Token expired' });
+      }
+      return res.status(403).json({ message: 'Invalid token' });
+    }
+    req.user = user;
+    next();
+  });
+}
+
+// Routes
+// User registration with password hashing
 app.post('/users', async (req, res) => {
-    const { username, email_user, password_user, age_user } = req.body
-    try {
-        const result = await pool.query(
-            'INSERT INTO users (username, email_user, password_user, age_user) VALUES ($1, $2, $3, $4) RETURNING *',
-            [username, email_user, password_user, age_user]
-        )
-        res.status(201).json(result.rows[0])
-    } catch (err) {
-        console.error(err.message)
-        res.status(500).json({ error: 'Erro ao cadastrar usuário!' + err.message})
-    }
-})
+  const { username, email_user, password_user, age_user } = req.body;
+  
+  if (!username || !email_user || !password_user) {
+    return res.status(400).json({ error: 'Missing required fields' });
+  }
 
-// Rota para buscar todos os usuarios
-app.get('/users', async (req, res) => {
-    try {
-        const result = await pool.query('SELECT * FROM users');
-        res.json(result.rows);
-    } catch (err) {
-        console.error(err.message); 
-        res.status(500).json({ error: 'Erro ao buscar usuarios' });
+  try {
+    const hashedPassword = await bcrypt.hash(password_user, 10);
+    const result = await pool.query(
+      'INSERT INTO users (username, email_user, password_user, age_user) VALUES ($1, $2, $3, $4) RETURNING id_user, username, email_user, age_user',
+      [username, email_user, hashedPassword, age_user]
+    );
+    res.status(201).json(result.rows[0]);
+  } catch (err) {
+    if (err.code === '23505') { // Unique violation
+      return res.status(409).json({ error: 'User already exists' });
     }
+    console.error(err.message);
+    res.status(500).json({ error: 'Failed to register user' });
+  }
 });
 
-// Rota para buscar um usuario por ID
-app.get('/users/:id_user', async (req, res) => {
-    const { id_user } = req.params;
-    try {
-        const result = await pool.query('SELECT * FROM users WHERE id = $1', [id_user]);
-        if (result.rows.length === 0) {
-            return res.status(404).json({ error: 'Usuario não encontrado' });
-        }
-        res.json(result.rows[0]);
-    } catch (err) {
-        console.error(err.message);
-        res.status(500).json({ error: 'Erro ao buscar usuario' });
+// Protected user routes
+app.get('/users', authenticateToken, async (req, res) => {
+  try {
+    const result = await pool.query(
+      'SELECT id_user, username, email_user, age_user FROM users'
+    );
+    res.json(result.rows);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).json({ error: 'Failed to fetch users' });
+  }
+});
+
+app.get('/users/:id_user', authenticateToken, async (req, res) => {
+  const { id_user } = req.params;
+  try {
+    const result = await pool.query(
+      'SELECT id_user, username, email_user, age_user FROM users WHERE id_user = $1',
+      [id_user]
+    );
+    if (result.rows.length === 0) {
+      return res.status(404).json({ error: 'User not found' });
     }
+    res.json(result.rows[0]);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).json({ error: 'Failed to fetch user' });
+  }
 });
 
+// TODO: Fazer o Login Handler
 
-
-// Rota para atualizar um usuario
-app.put('/users/:id_user', async (req, res) => {
-    const { id_user } = req.params;
-    const { username, first_name, last_name, age_user, email_user, password_user, image, gender_user, problems_user, professional_confirm, professional_type } = req.body;
-    try {
-        const result = await pool.query(
-            'UPDATE users SET username = $1, first_name = $2, last_name = $3, age_user = $4, email_user = $5, password_user = $6, image = $7, gender_user = $8, problems_user = $9, professional_confirm = $10, professional_type = $11, WHERE id_user = $12 RETURNING *',
-            [username, first_name, last_name, age_user, email_user, password_user, image, gender_user, problems_user, professional_confirm, professional_type, id_user,]
-        );
-        if (result.rows.length === 0) {
-            return res.status(404).json({ error: 'Ususario não encontrado' });
-        }
-        res.json(result.rows[0]);
-    } catch (err) {
-        console.error(err.message);
-        res.status(500).json({ error: 'Erro ao atualizar usuario' });
-    }
+// Error handling middleware
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).json({ error: 'Something went wrong!' });
 });
 
-// Rota para deletar um usuario
-app.delete('/users/:id_user', async (req, res) => {
-    const { id_user } = req.params;
-    try {
-        const result = await pool.query('DELETE FROM users WHERE id_user = $1 RETURNING *', [id_user]);
-        if (result.rows.length === 0) {
-            return res.status(404).json({ error: 'Usuario não encontrado' });
-        }
-        res.json({ message: 'Usuario deletado com sucesso' });
-    } catch (err) {
-        console.error(err.message);
-        res.status(500).json({ error: 'Erro ao deletar usuario' });
-    }
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
 
-// Rota para verificar login de um usuario
-app.post('/users', async (req, res) => {
-    const { usuario, password_user } = req.body;
-    try {
-        const result = await pool.query(
-            'SELECT * FROM users WHERE email_user = $1 OR username = $1', 
-            [usuario]
-        );
-        
-        if (result.rows.length === 0) {
-            return res.status(401).json({ error: 'Credenciais inválidas' });
-        }
+// app.post('/login', async (req, res) => {
+//     const { username, password_user } = req.body;
+    
+//     if (!username || !password_user) {
+//       return res.status(400).json({ error: 'Username and password are required' });
+//     }
 
-        const user = result.rows[0];
-        const isValid = await bcrypt.compare(password_user, user.password_hash);
-        
-        if (!isValid) {
-            return res.status(401).json({ error: 'Credenciais inválidas' });
-        }
-        
-        res.json(user);
-    } catch (err) {
-        console.error(err.message);
-        res.status(500).json({ error: 'Erro ao fazer login' });
-    }
-});
-app.listen(3000, () => {
-    console.log('Servidor rodando na porta 3000');
-});
+//     try {
+//       console.log('Attempting to find user with identifier:', username); // Debug log
+      
+//       const result = await pool.query( 'SELECT * FROM users WHERE email_user = $1 OR username = $1, password_user = $2', 
+//         [username, password_user]
+//       );
+      
+//       console.log('Query result:', result.rows); // Debug log
+      
+//       if (result.rows.length === 0) {
+//         console.log('No user found with identifier:', username); // Debug log
+//         return res.status(401).json({ error: 'Invalid credentials' });
+//       }
+  
+//       const user = result;
+//       console.log('Found user:', user); // Debug log
+      
+//       const isValid = await bcrypt.compare(password_user, user.password_user);
+      
+//       if (!isValid) {
+//         console.log('Password comparison failed'); // Debug log
+//         return res.status(401).json({ error: 'Invalid credentials' });
+//       }
+  
+//       const { password_user: _, ...userData } = user;
+//       const token = jwt.sign(
+//         { id: user.id_user }, 
+//         ACCESS_KEY, 
+//         { expiresIn: '15m' }
+//       );
+      
+//       res.json({ 
+//         user: userData,
+//         token 
+//       });
+//     } catch (err) {
+//       console.error('Login error:', err.message);
+//       res.status(500).json({ error: 'Login failed', details: err.message });
+//     }
+//   });
