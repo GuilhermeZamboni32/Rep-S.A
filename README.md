@@ -139,6 +139,7 @@ Back-end:
 4-npm i jsonwebtoken
 5-npm i helmet
 6-npm install mongodb
+7-npm install dotenv --save
 
 ```
 
