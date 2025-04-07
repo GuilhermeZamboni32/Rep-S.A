@@ -1,9 +1,10 @@
 import React, {useState} from 'react'
 import Navbar from '../Components/Navbar'
 import "./Cadastro.css"
-import { useNavigate, Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom'
 import axios from  'axios'
 import bcrypt from 'bcryptjs';
+
 
 
 function Cadastro() {
@@ -12,6 +13,8 @@ function Cadastro() {
   const [confirmPassword, setConfirmPassword] = useState('')
   const [showPassword, setShowPassword] = useState(false)
   const navigate = useNavigate();
+
+
 
   //!Esse metodo de verificar o cadastro é bem feio, não repita
   const handleReister = async (e) => {
@@ -48,7 +51,7 @@ function Cadastro() {
               localStorage.setItem('token', response.data.token);
               setUsers(response.data) 
               alert('Usuário cadastrado com sucesso!')
-              navigate('/');
+              navigate('/login');
         }
         } catch (error) {
             console.error('Error:', error)
@@ -93,3 +96,35 @@ function Cadastro() {
 }
 
 export default Cadastro
+
+
+
+
+{/**
+  import Navbar from "../components/Navbar"
+import { useContext } from "react"
+import { GlobalContext } from "../contexts/GlobalContext"
+import { useNavigate } from 'react-router-dom';
+function Home() {
+    const {usuarioLogado} = useContext(GlobalContext)
+    const navigate = useNavigate(); // Hook para navegação 
+
+    function logar(){
+      //processo da validação do usuario
+      navigate('/final');
+    }
+
+  return (
+    <div>
+        <Navbar />
+      <h1>Página home do site</h1>
+      <p>Olá {usuarioLogado}</p>
+
+      <button onClick={logar}>Login</button>
+
+    </div>
+  )
+}
+
+export default Home
+ */}

@@ -17,6 +17,10 @@ function Home() {
           <img className='lupa' src="Lupa-2.png" alt="" />
         </div>
 
+        <div className='barra-filtro'>
+          <img className='filtro' src="Filtro-2.png" alt="" />
+        </div>
+
         <Ad_Funci />
         
 

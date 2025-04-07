@@ -13,6 +13,11 @@ function Login() {
   // const { setUser } = useContext(GlobalContext);
   const navigate = useNavigate();
 
+  function IrPerfil(){
+    //processo da validação do usuario
+    navigate('/perfil');
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -74,7 +79,7 @@ function Login() {
               />
               <label>Mostrar senha</label>
             </div>
-            <button className="botao-login" type="submit" disabled={loading}>
+            <button className="botao-login" type="submit" disabled={loading} onClick={IrPerfil}>
               {loading ? 'Carregando...' : <h2>Login</h2>}
             </button>
           </form>

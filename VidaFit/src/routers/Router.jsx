@@ -10,6 +10,8 @@ import Avaliacao from "../pages/Avaliacao";
 import TelaDieta from "../pages/TelaDieta";
 import TelaDietaEdit from "../pages/TelaDietaEdit";
 import Ad_Funci from "../pages/Ad_Funci";
+import PerfilProfissional from "../pages/PerfilProfissional";
+import ProfissionalAluno from "../pages/ProfissionalAluno";
 //import Profissionais from "../pages/Profissionais";
 
 const router = createBrowserRouter([
@@ -25,6 +27,8 @@ const router = createBrowserRouter([
 //  {path: "/profissionais", element: <Profissionais />},
     {path: "/avaliacao", element: <Avaliacao />},
     {path: "/ad_funci", element: <Ad_Funci />},
+    {path: "/perfilprofissional", element: <PerfilProfissional />},
+    {path: "/profissionalaluno", element: <ProfissionalAluno />},
 ])
 
 export default router;
