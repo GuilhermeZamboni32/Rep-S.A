@@ -56,6 +56,13 @@
     border-radius: 10px; 
 }
 
+.div-visual-prof-topo{
+    
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+
 .div-visual-prof{
     gap: 20px;
     margin-top: 20px;
@@ -66,23 +73,41 @@
     width: 700px;
     height: 50px;
     border-radius: 50px;
-    margin-left: 10px;
-    box-shadow: 0 0 10px  var(--AzulC1);
+    margin-left: 50px;
+    box-shadow: 4px 4px 3px  var(--AzulC1);
+    align-items: center;
+    display: flex;
+    flex-direction: row;
     
 }
+.barra-pesquisa:hover {
+    transform: translateY(-1px);
+    box-shadow: 8px 8px 15px var(--AzulC1);
+  }
 
 .lupa{
-    width: 40px; 
+    width: 30px; 
+    margin-left: 10px;
 }
 
 .barra-filtro{
     background-color: var(--BrancoCC2);
-    width: 100px;
+    width: 150px;
     height: 50px;
     border-radius: 50px;
     margin-left: 10px;
-    box-shadow: 0 0 10px  var(--AzulC1);
+    box-shadow: 4px 4px 3px  var(--AzulC1);
+    align-items: center;
+    display: flex;
+    flex-direction: row;
 }
+
+.barra-filtro:hover {
+    transform: translateY(-1px);
+    box-shadow: 8px 8px 15px var(--AzulC1);
+  }
+  
 .filtro{
-    width: 40px;
+    width: 30px; 
+    margin-left: 10px;
 }

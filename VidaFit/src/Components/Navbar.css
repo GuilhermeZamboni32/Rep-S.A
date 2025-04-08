@@ -4,16 +4,20 @@
     justify-content: space-around;
     align-items: center;
     height: 60px;
-     transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease;
 }
+
+
 
 .texto{
     color: var(--BrancoCC1);
     transition: color 0.1s ease; 
+    transition: all 0.3s ease;
 }
 
 .texto:hover{
     color: var(--BrancoCC2);
+    transform: translateY(-5px);
+    box-shadow: 8px 8px 15px var(--VermelhoE2);
 }
-
 

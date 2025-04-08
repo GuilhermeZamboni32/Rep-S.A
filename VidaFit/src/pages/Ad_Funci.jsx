@@ -16,33 +16,38 @@ function Ad_Funci() {
           id: Date.now(),
           nome: "Sauvino da Silva",
           descricao: "Coach de saúde, unindo treino e nutrição para resultados completos. ",
-          img: "./edu-fisica-2.jpg"
+          img: "./fisica-2.jpg"
         },
         {
           id: Date.now() +1,
           nome: "Maria Machado",
           descricao: "Especialista em alimentação e dietas para saúde e desempenho.",
-          img: "./nutri.jpg"
+          img: "./nutri-0.jpg"
         },
         {
           id: Date.now() +2,
-          nome: " Eduardo Varela",
+          nome: "Manuela Gomes",
           descricao: "Personal Trainer, especialista em exercícios físicos e condicionamento. ",
-          img: "./edu-fisica.avif"
+          img: "./fisica-3.jpg"
         },
         {
           id: Date.now() +3,
-          nome: "Thiago das Neves",
+          nome: "Victor das Neves",
           descricao: "Especialista em alimentação e dietas para saúde e desempenho.",
-          img: "./nutri-2.jpg"
+          img: "./nutri-6.jpg"
 
         },
         {
           id: Date.now() +4,
           nome: "Gustavo Garcia",
           descricao: "Coach de saúde, unindo treino e nutrição para resultados completos. ",
-          img: "./edu-fisica-3.jpg"
-        }
+          img: "./fisica-0.jpg"
+        },{
+          id: Date.now() +5,
+          nome: "Julia Machado",
+          descricao: "Coach de saúde, unindo treino e nutrição para resultados completos. ",
+          img: "./fisica-4.jpg"
+        },
           
       ])
 

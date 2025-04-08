@@ -9,6 +9,7 @@ function Funcionario({img, nome, descricao}) {
     <img src={img} className='img-produto'/>
     
     <p>{descricao}</p>
+    
 
 
 
