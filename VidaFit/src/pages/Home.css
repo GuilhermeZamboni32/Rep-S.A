@@ -61,6 +61,7 @@
     align-items: center;
     display: flex;
     flex-direction: row;
+    
 }
 
 .div-visual-prof{
@@ -100,6 +101,7 @@
     align-items: center;
     display: flex;
     flex-direction: row;
+    margin-left: 50px;
 }
 
 .barra-filtro:hover {
