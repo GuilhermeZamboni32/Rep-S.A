@@ -1,4 +1,4 @@
-.container-produto{
+.container-produtos{
     background-color: var(--BrancoCC2);
     color: rgb(0, 0, 0);
     border: 1px solid #ffff;
@@ -11,15 +11,25 @@
     padding: 5px;
     border-radius: 10px;
     box-shadow: 4px 4px 3px  var(--VermelhoC2);
-    
 }
-.container-produto:hover {
+
+.box-ef{
+  box-shadow: 4px 4px 3px  var(--VermelhoC2);;
+}
+.box-nut{
+  box-shadow: 4px 4px 3px  green;;
+}
+.box-amb{
+  box-shadow: 4px 4px 3px  blue;;
+}
+
+.container-produtos:hover {
     transform: translateY(-5px);
     box-shadow: 8px 8px 15px var(--VermelhoC2);
   }
 
 
-  .container-produto::-webkit-scrollbar {
+  .container-produtos::-webkit-scrollbar {
     height: 8px;
   }
   
@@ -45,4 +55,7 @@
     
 }
 
-
+.icones{
+  width: 40px;
+  height: 40px;
+}
