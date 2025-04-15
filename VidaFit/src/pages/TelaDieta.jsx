@@ -7,7 +7,7 @@ function TelaDieta() {
 
   function voltar(){
     //processo da validação do usuario
-    navigate('/perfil');
+    navigate(-1);
   }
 
   return (

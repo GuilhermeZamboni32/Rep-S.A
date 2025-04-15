@@ -2,6 +2,7 @@ import React from 'react'
 import './TelaExer.css'
 import Navbar from '../Components/Navbar'
 import { Link, useNavigate } from 'react-router-dom'
+import Ad_Exer from './TelaExer.css'
 
 function TelaExer() {
   const navigate = useNavigate()
@@ -32,6 +33,7 @@ function TelaExer() {
 
           </div>
           <div className='div-baixo'>
+            <Ad_Exer />
 
           </div>
 

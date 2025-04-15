@@ -1,4 +1,6 @@
 import React from 'react'
+import './Ad_Exer.css'
+import { useState } from 'react'
 
 function Ad_Exer() {
     const [inputNome, setInputNome] = useState('')
@@ -7,16 +9,34 @@ function Ad_Exer() {
 
 
     const [exer, setexer] = useState([
-        {
-          id: Date.now(),
-          nome: "Sauvino da Silva",
-          descricao: "Coach de saúde, unindo treino e nutrição para resultados completos. ",
-          img: "./fisica-2.jpg"
-        },
+      {
+        id: Date.now(),
+        nome: "Supino",
+        descricao: "Coach de saúde focado em performance e bem-estar, integrando estratégias de treino funcional e nutrição personalizada.",
+        img: "./supino.webp",
+      },
+      {
+        id: Date.now() + 1,
+        nome: "Crossover",
+        descricao: "Nutricionista especializada em reeducação alimentar e dietas balanceadas para otimizar a saúde e o rendimento físico.",
+        img: "./crossover.gif",
+      },
+      {
+        id: Date.now() + 2,
+        nome: "Flexão",
+        descricao: "Personal Trainer com foco em condicionamento físico, emagrecimento e fortalecimento muscular.",
+        img: "./flexao.webp",
+      },
+      {
+        id: Date.now() + 3,
+        nome: "crucifixo",
+        descricao: "Nutricionista esportivo, trabalha com dietas específicas para atletas e praticantes de atividade física.",
+        img: "./crucifixo.webp",
+      }
     ])
 
-    function CadastrarFuncionario(){
-        const Funcionario = {
+    function CadastrarExercicio(){
+        const exercicio = {
       
           id: Date.now(),
           nome: inputNome,
@@ -25,25 +45,25 @@ function Ad_Exer() {
       
         }
       
-        setfunci([...funci, Funcionario])
+        setfunci([...exer, exercicio])
       }
 
 return (
     
 
-    <div className='container-corpo'>
+    <div className='container-corpo-exer'>
     
     
-     <div className='lista-cards'>
-       {funci.map((funcionario) => (
-             <Funcionario key={funcionario.id} nome={funcionario.nome} descricao={funcionario.descricao} img={funcionario.img}/>
+     <div className='lista-cards-exer'>
+       {exer.map((exercicio) => (
+             <exercicio key={exercicio.id} nome={exercicio.nome} descricao={exercicio.descricao} img={exercicio.img}/>
     
        ))}
      </div>
     
-    
-     <div className='formCadastro'>
-         <div className="input-contaner">
+   
+     <div className='formCadastro-exer'>
+         <div className="input-contaner-exer">
             <label htmlFor="">Produto:</label>
             <input type="text" 
             value={inputNome}
@@ -52,7 +72,7 @@ return (
          </div>
     
     
-         <div className="input-contaner">
+         <div className="input-contaner-exer">
              <label htmlFor="">Descrição:</label>
              <input type="text" 
             value={inputDescricao}
@@ -60,18 +80,18 @@ return (
             />
          </div>
     
-         <div className="input-contaner">
+         <div className="input-contaner-exer">
              <label htmlFor="">Imagem:</label>
              <input type="text" 
             value={inputImagem}
             onChange={(Event) => setInputImagem(Event.target.value)}
             />
          </div>
-         <button onClick={CadastrarFuncionario}>Cadastrar</button>
-        </div>
+         <button onClick={CadastrarExercicio}>Cadastrar</button>
+            
+        
     
-    
-    
+    </div>
      </div>
       )
 }

@@ -1,6 +1,6 @@
 .container-produtos{
     background-color: var(--BrancoCC2);
-    color: rgb(0, 0, 0);
+    color: var(--AzulEE1);
     border: 1px solid #ffff;
     width: 270px;
     height: 300px;
@@ -10,33 +10,33 @@
     align-items: center;
     padding: 5px;
     border-radius: 10px;
-    box-shadow: 4px 4px 3px  var(--VermelhoC2);
+    
 }
 
 .box-ef{
-  box-shadow: 4px 4px 3px  var(--VermelhoC2);;
+  box-shadow: 4px 4px 3px  var(--VermelhoC2);
 }
+.box-ef:hover {
+  box-shadow: 4px 4px 3px  var(--VermelhoC2);
+  transform: translateY(-5px);
+}
+
 .box-nut{
   box-shadow: 4px 4px 3px  green;;
 }
-.box-amb{
-  box-shadow: 4px 4px 3px  blue;;
+.box-nut:hover {
+  box-shadow: 4px 4px 3px  green;
+  transform: translateY(-5px);
 }
 
-.container-produtos:hover {
-    transform: translateY(-5px);
-    box-shadow: 8px 8px 15px var(--VermelhoC2);
-  }
+.box-amb{
+  box-shadow: 4px 4px 3px  blue;
+}
+.box-amb:hover {
+  box-shadow: 4px 4px 3px  blue;
+  transform: translateY(-5px);
+}
 
-
-  .container-produtos::-webkit-scrollbar {
-    height: 8px;
-  }
-  
-  .container-cards::-webkit-scrollbar-thumb {
-    background-color: var(--AzulC1);
-    border-radius: 10px;
-  }
 
 .img-produto{
     width: 140px;
