@@ -2,10 +2,16 @@ import React from 'react'
 import "./Avaliacao.css"
 import { Link } from 'react-router-dom'
 import Navbar from '../Components/Navbar'
+import {useState} from 'react'
 
 
 function Avaliacao() {
-  
+    const [clicked, setClicked] = useState([false, false, false, false, false]);
+    const handleStarClick = (index) => {
+      const newClicked = clicked.map((_, i) => i <= index); // Atualiza o estado das estrelas
+      setClicked(newClicked);
+    };
+
   return (
     <div className="container-Ava">
     <Navbar />
@@ -33,8 +39,7 @@ function Avaliacao() {
           
         </div>
 
-       
-
+      
         <div className="div-grupo-Avaliacao">
           <div className="titulo-Ava">
             <h1>  
@@ -43,31 +48,28 @@ function Avaliacao() {
           </div>
 
           <div className="Ava-estrela">
-           
-          <button className="butoon-estrela" onClick={() => alert("clicou!!!!!")}>⭐</button>
-
-          <button className="butoon-estrela" onClick={() => alert("clicou!!!!!")}>⭐</button>
-
-          <button className="butoon-estrela" onClick={() => alert("clicou!!!!!")}>⭐</button>
-
-          <button className="butoon-estrela" onClick={() => alert("clicou!!!!!")}>⭐</button>
-
-          <button className="butoon-estrela" onClick={() => alert("clicou!!!!!")}>⭐</button>
-
-        {/**
-         *  <img src="Logo.ico" onClick={() => alert("clicou!!!!!")} alt="" />
-         * 
-         */}  
-           
-            
+          <div className="rating">
+            {clicked.map((star, index) => (
+              <img
+                
+                key={index}
+                src={star ? "/star-inteira.png" : "/star-vazia.png"} // Caminho das imagens
+                alt={`Estrela ${index + 1}`}
+                className="star-img"
+                onClick={() => handleStarClick(index)} // Atualizando o estado
+              />
+            ))}
           </div>
+          </div>
+
           <div className="Ava-coment">
           <div className="titulo-Ava-coment">
             <h2>  
             Adicionar Comentario
             </h2>
-           
             </div>
+            <input className='comentario' ></input>
+
           </div>
         </div>
 
@@ -79,5 +81,6 @@ function Avaliacao() {
     </div>
   )
 }
+
 
 export default Avaliacao

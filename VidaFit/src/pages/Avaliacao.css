@@ -107,7 +107,7 @@
     .texto-inp{
       width: 100%;
       margin: 5px 0;
-      background: var(--AzulC2);
+      background: var(--BrancoC1);
       color: var(--BrancoC2);
       border: none;
       padding: 10px;
@@ -187,4 +187,20 @@
       font-weight: bold;
       background-color: var(--VermelhoC1);
       border-radius: 3px;
+    }
+    .stars {
+      display: flex;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    
+    .star-img {
+      width: 32px;
+      height: 32px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    
+    .star-img:hover {
+      transform: scale(1.1);
     }
