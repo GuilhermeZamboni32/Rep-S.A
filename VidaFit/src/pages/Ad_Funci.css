@@ -37,7 +37,7 @@
   }
   
 
-.container-corpo-exer{
+.container-corpo{
     background-color: var(--BrancoC1);
     align-items: center;
     display: flex;
@@ -46,10 +46,11 @@
     width: 1700px;
 }
 
-.lista-cards-exer{
+.lista-cards{
     background-color:  var(--BrancoC);
     width: 1700px;
     height: 500px;
+    display: flex;
     flex-wrap: wrap;
     overflow-y: auto;
 }

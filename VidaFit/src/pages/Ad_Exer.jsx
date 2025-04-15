@@ -1,6 +1,8 @@
 import React from 'react'
 import './Ad_Exer.css'
 import { useState } from 'react'
+import Exercicio from './Exercicio'
+
 
 function Ad_Exer() {
     const [inputNome, setInputNome] = useState('')
@@ -12,31 +14,31 @@ function Ad_Exer() {
       {
         id: Date.now(),
         nome: "Supino",
-        descricao: "Coach de saúde focado em performance e bem-estar, integrando estratégias de treino funcional e nutrição personalizada.",
+        descricao: "Supino,Supino,Supino,Supino,Supino,Supino",
         img: "./supino.webp",
       },
       {
         id: Date.now() + 1,
         nome: "Crossover",
-        descricao: "Nutricionista especializada em reeducação alimentar e dietas balanceadas para otimizar a saúde e o rendimento físico.",
+        descricao: "Crossover,Crossover,Crossover,Crossover,Crossover",
         img: "./crossover.gif",
       },
       {
         id: Date.now() + 2,
         nome: "Flexão",
-        descricao: "Personal Trainer com foco em condicionamento físico, emagrecimento e fortalecimento muscular.",
+        descricao: "Flexão,Flexão,Flexão,Flexão,Flexão,Flexão",
         img: "./flexao.webp",
       },
       {
         id: Date.now() + 3,
         nome: "crucifixo",
-        descricao: "Nutricionista esportivo, trabalha com dietas específicas para atletas e praticantes de atividade física.",
+        descricao: "crucifixo,crucifixo,crucifixo,crucifixo,crucifixo",
         img: "./crucifixo.webp",
       }
     ])
 
     function CadastrarExercicio(){
-        const exercicio = {
+        const Exercicio = {
       
           id: Date.now(),
           nome: inputNome,
@@ -45,7 +47,7 @@ function Ad_Exer() {
       
         }
       
-        setfunci([...exer, exercicio])
+        setexer([...exer, Exercicio])
       }
 
 return (
@@ -56,7 +58,7 @@ return (
     
      <div className='lista-cards-exer'>
        {exer.map((exercicio) => (
-             <exercicio key={exercicio.id} nome={exercicio.nome} descricao={exercicio.descricao} img={exercicio.img}/>
+             <Exercicio key={exercicio.id} nome={exercicio.nome} descricao={exercicio.descricao} img={exercicio.img}/>
     
        ))}
      </div>
@@ -87,7 +89,7 @@ return (
             onChange={(Event) => setInputImagem(Event.target.value)}
             />
          </div>
-         <button onClick={CadastrarExercicio}>Cadastrar</button>
+         <button onClick={CadastrarExercicio}>Cadastrar Exercicio</button>
             
         
     

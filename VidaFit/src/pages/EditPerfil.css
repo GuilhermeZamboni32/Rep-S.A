@@ -61,6 +61,16 @@ cursor: pointer;
   margin: 30px;
   height: 58vh;
 }
+.selectEditPerfil{
+  width: 100%;
+  margin: 5px 0;
+  background: var(--AzulP2);
+  color: var(--BrancoC2);
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
 .texto-inp-edit{
   width: 100%;
   margin: 5px 0;
@@ -131,6 +141,7 @@ cursor: pointer;
   height: 600px;
 }
 .div-inputs2 input {
+  color: var(--BrancoC2);
   background-color: var(--AzulP2);
   width: 90%; 
   padding: 10px;
@@ -142,8 +153,31 @@ cursor: pointer;
 input::placeholder{
   color: var(--BrancoCC2);
 }
+.div-inputs1 select{
+  color: var(--BrancoC2);
+  background-color: var(--AzulP2);
+  width: 90%; 
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 16px;
+  box-sizing: border-box;
+  margin: 30px;
+}
+.div-inputs2 select{
+  background-color: var(--AzulP2);
+  width: 90%; 
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 16px;
+  box-sizing: border-box;
+  margin: 30px;
+}
+select::placeholder{
+  color: var(--BrancoCC2);
+}
 .container-buttom{
   background-color: var(--AzulP2);
+  color: var(--BrancoC2);
   padding: 23px; 
   border-radius: 8px;
   display: flex;  
@@ -158,6 +192,7 @@ input::placeholder{
   margin-top: 5px;
   gap: 10px;
 }
+
 .butoon-click-1{
 color: var(--AzulP2) ;
 background: var(--BrancoC1);
@@ -168,5 +203,8 @@ cursor: pointer;
 display: block;
 height: 30px;
 }
-
+.butoon-click-1:hover{
+    background-color: var(--VermelhoC1);
+    color: var(--BrancoCC2);
+}
 

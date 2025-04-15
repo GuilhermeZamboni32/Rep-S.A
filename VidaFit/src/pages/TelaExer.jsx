@@ -2,15 +2,15 @@ import React from 'react'
 import './TelaExer.css'
 import Navbar from '../Components/Navbar'
 import { Link, useNavigate } from 'react-router-dom'
-import Ad_Exer from './TelaExer.css'
+import Ad_Exer from './Ad_Exer'
 
 function TelaExer() {
   const navigate = useNavigate()
 
-  function voltar(){
-    //processo da validação do usuario
+  function voltar(){ 
     navigate('/perfil');
   }
+
 
   return (
     <div className='container-exer'>
@@ -33,7 +33,7 @@ function TelaExer() {
 
           </div>
           <div className='div-baixo'>
-            <Ad_Exer />
+           <Ad_Exer />
 
           </div>
 
