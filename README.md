@@ -128,7 +128,7 @@ Front-end:
 1-npm install
 2-npm install axios
 3-npm install react-router-dom
-4-npm install reaci-icons
+4-npm install react-icons
 5-npm install bcrypt
 
 
