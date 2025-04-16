@@ -1,10 +1,18 @@
 import Navbar from '../Components/Navbar'
+import { Link, useNavigate } from 'react-router-dom'
 import './EditPerfil.css'
 import { useState } from 'react'
+
 import Modal from '../Components/modalConfirmProficional'
 function EditPerfil() {
+
+  const navigate = useNavigate()
   const [openModal, setOpenModal] = useState(false)
-  //!helooooooooooooooooooooooooooooo
+  function voltar(){
+    
+    navigate(-1);
+  }
+  
   return (
    <div className='container-editperfil'>
             <Navbar />
@@ -27,7 +35,11 @@ function EditPerfil() {
               <input className='texto-inp-edit' type="text" placeholder='Nome :'/>
               <input className='texto-inp-edit' type="text" placeholder='Data de nascimento :'/>
               <input className='texto-inp-edit' type="text" placeholder='Email :'/>
-              
+              <div className='topo-di'>
+              <button className='butoon-voltar' onClick={voltar}>
+                <h1 className='texto-exer'>Voltar</h1>
+                </button>
+            </div>
              
             <div className="espaco"></div>
 

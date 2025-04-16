@@ -10,22 +10,21 @@
     align-items: center;
     padding: 5px;
     border-radius: 10px;
-    box-shadow: 4px 4px 3px  var(--VermelhoC2);
+    
 }
 
 .box-ef{
-  box-shadow: 4px 4px 3px  var(--VermelhoC2);;
+  box-shadow: 4px 4px 3px  var(--VermelhoC2);
 }
 .box-nut{
-  box-shadow: 4px 4px 3px  green;;
+  box-shadow: 4px 4px 3px  green;
 }
 .box-amb{
-  box-shadow: 4px 4px 3px  blue;;
+  box-shadow: 4px 4px 3px  blue;
 }
 
 .container-produtos:hover {
     transform: translateY(-5px);
-    box-shadow: 8px 8px 15px var(--VermelhoC2);
   }
 
 

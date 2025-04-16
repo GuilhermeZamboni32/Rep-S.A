@@ -50,6 +50,7 @@
     background-color:  var(--BrancoC);
     width: 1700px;
     height: 500px;
+    display: flex;
     flex-wrap: wrap;
     overflow-y: auto;
 }

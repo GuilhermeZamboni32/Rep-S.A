@@ -177,6 +177,7 @@ select::placeholder{
 }
 .container-buttom{
   background-color: var(--AzulP2);
+  color: var(--BrancoC2);
   padding: 23px; 
   border-radius: 8px;
   display: flex;  

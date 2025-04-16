@@ -207,54 +207,6 @@ function Ad_Funci() {
     
     
     <div className='container-corpo'>
-       {/** <Navbar />*/} 
-    
-
- {/*<div className='container-cards'>
-
-        <Produto nome={"Sapato"}  descricao={"A mais bela junção de sapato e carro já vista na historia!!!"} img={"./sapata.webp"}/>
-
-        <Produto nome={"Sela"}  descricao={"A mais bela sela"} img={"./sela 3.jpg"}/>
-
-
-
-
-
-
-   <div className='formCadastro'>
-     <div className="input-contaner">
-        <label htmlFor="">Produto:</label>
-        <input type="text" 
-        value={inputNome}
-        onChange={(Event) => setInputNome(Event.target.value)}
-        />
-     </div>
-
-
-     <div className="input-contaner">
-         <label htmlFor="">Descrição:</label>
-         <input type="text" 
-        value={inputDescricao}
-        onChange={(Event) => setInputDescricao(Event.target.value)}
-        />
-     </div>
-
-     <div className="input-contaner">
-         <label htmlFor="">Imagem:</label>
-         <input type="text" 
-        value={inputImagem}
-        onChange={(Event) => setInputImagem(Event.target.value)}
-        />
-     </div>
-     <button onClick={CadastrarFuncionario}>Cadastrar</button>
-    </div>
-
-
-
-
-   </div>*/}
-
-  
 
 
 
