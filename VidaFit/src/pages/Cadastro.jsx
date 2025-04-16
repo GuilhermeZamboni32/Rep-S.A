@@ -3,46 +3,52 @@ import Navbar from '../Components/Navbar'
 import "./Cadastro.css"
 import { Link, useNavigate } from 'react-router-dom'
 import axios from  'axios'
+import bcrypt from 'bcryptjs';
+
 
 
 function Cadastro() {
 
-  const navigate = useNavigate()
-
-  const [users, setUsers] = useState({username:'', password_user:'', email_user:'', age_user:''})
+  const [user, setUsers] = useState({username:'', password_user:'', email_user:'', age_user:''})
   const [confirmPassword, setConfirmPassword] = useState('')
   const [showPassword, setShowPassword] = useState(false)
+  const navigate = useNavigate();
 
 
 
   //!Esse metodo de verificar o cadastro é bem feio, não repita
   const handleReister = async (e) => {
-    if (users.username === ''){
+    e.preventDefault()
+
+    if (user.username === ''){
       alert('Nome de usuario é obrigatório')
       return
-    }else if(users.email_user === ''){
+    }else if(user.email_user === ''){
       alert('Email é obrigatório')
       return
-    }else if(!validarEmail(users.email_user)){
+    }else if(!validarEmail(user.email_user)){
       alert('Email inválido')
       return
-    }else if(users.age_user === ''){
+    }else if(user.age_user === ''){
       alert('Idade é obrigatória')
       return
-    }else if(users.password_user === ''){
+    }else if(user.password_user === ''){
       alert('Senha é obrigatória')
       return
-    }else if(users.password_user!= confirmPassword){
+    }else if(user.password_user!= confirmPassword){
       alert('Senhas não conferem!')
       return
-    }else if(users.password_user >= 6 ||  !/[A-Z]/.test(users.password_user) || !/[0-9]/.test(users.password_user)) {
+    }else if(user.password_user >= 6 ||  !/[A-Z]/.test(user.password_user) || !/[0-9]/.test(user.password_user)) {
       alert('Senha fraca, adicione letras maiusculas ou numeros!')
       return
     }else{
-      e.preventDefault()
         try {
-          const response = await axios.post('http://localhost:3000/users', users)
+          const salt = await bcrypt.genSalt(10);
+          const hashedPassword = bcrypt.hashSync(user.password_user, 10);
+          const updatedUser = { ...user, password_user: hashedPassword };
+          const response = await axios.post('http://localhost:3000/users', updatedUser)
             if (response.status === 201) {
+              localStorage.setItem('token', response.data.token);
               setUsers(response.data) 
               alert('Usuário cadastrado com sucesso!')
               navigate('/login');
@@ -68,10 +74,10 @@ function Cadastro() {
         
         <div className='cadas-inf'>
           <div className="cadas-input">
-              <input className='texto-cadas' type="text" placeholder='Nome de usuario:' value={users.username} onChange={(e) => setUsers({ ...users, username: e.target.value })}/>
-              <input className='texto-cadas' type="date" placeholder='Data de nascimento :' value={users.age_user} onChange={(e) => setUsers({ ...users, age_user: e.target.value })} />
-              <input className='texto-cadas' type="text" placeholder='Email :' value={users.email_user} onChange={(e) => setUsers({ ...users, email_user: e.target.value })} />
-              <input className='texto-cadas' type={showPassword ? 'text' : 'password'} placeholder='Senha :' value={users.password_users} onChange={(e) => setUsers({ ...users, password_user: e.target.value })} />
+              <input className='texto-cadas' type="text" placeholder='Nome de usuario:' value={user.username} onChange={(e) => setUsers({ ...user, username: e.target.value })}/>
+              <input className='texto-cadas' type="date" placeholder='Data de nascimento :' value={user.age_user} onChange={(e) => setUsers({ ...user, age_user: e.target.value })} />
+              <input className='texto-cadas' type="text" placeholder='Email :' value={user.email_user} onChange={(e) => setUsers({ ...user, email_user: e.target.value })} />
+              <input className='texto-cadas' type={showPassword ? 'text' : 'password'} placeholder='Senha :' value={user.password_users} onChange={(e) => setUsers({ ...user, password_user: e.target.value })} />
               <input className='texto-cadas' type={showPassword ? 'text' : 'password'} placeholder='Comfirmar Senha :' value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
               <div className="espaco"></div>
             </div>

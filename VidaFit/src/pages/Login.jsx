@@ -24,15 +24,11 @@ function Login() {
     setError('');
     
     try {
-      // Send login request to your backend
-      const response = await axios.post('http://localhost:3000/users', form);
-
-      // Store user data in context and local storage
+      // Manda o que ta escrito pro backend para confirmação, atualisa o global context e envia para a pagina inicial
+      const response = await axios.post('http://localhost:3000/login', form);
       //!Atualmente ele não está mandando para o lobal context, atualizar depois pelo rep do Rafa
       // setUser(response.data);
       localStorage.setItem('user', JSON.stringify(response.data));
-
-      // Redirect to home page
       navigate('/');
     } catch (err) {
       setError(err.response?.data?.error || 'Erro ao realizar o login. Por favor, tente novamente.');
@@ -41,6 +37,7 @@ function Login() {
     }
   };
 
+  //  *Verificar o login e atualiza o usuario no user
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm(prev => ({

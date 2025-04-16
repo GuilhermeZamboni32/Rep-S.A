@@ -12,15 +12,7 @@ function ProfissionalAluno() {
       navigate('/telaexer');
     }
   
-    function dieta(){
-      //processo da validação do usuario
-      navigate('/teladieta');
-    }
   
-    function edit(){
-      //processo da validação do usuario
-      navigate('/editperfil');
-    }
   
     return (
      

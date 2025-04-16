@@ -13,13 +13,17 @@ function Home() {
     <div className='div-atras-visual'>
       <div className='div-visual-prof'>
 
-        <div className='barra-pesquisa'>
-          <img className='lupa' src="Lupa-2.png" alt="" />
-        </div>
+        <div className='div-visual-prof-topo'>
 
         <div className='barra-filtro'>
           <img className='filtro' src="Filtro-2.png" alt="" />
         </div>
+        
+        <div className='barra-pesquisa'>
+          <img className='lupa' src="Lupa-2.png" alt="" />
+        </div>
+        </div>
+
 
         <Ad_Funci />
         
