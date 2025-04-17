@@ -122,26 +122,29 @@ Porque ao integrar hábitos saudáveis de forma prática e eficiente no seu dia 
 
 
 ## 💽 Instrução de instalação
+### Instalções Frontend
 
 ```bash
-Front-end:
-1-npm install
-2-npm install axios
-3-npm install react-router-dom
-4-npm install react-icons
-5-npm install bcrypt
-
-
-Back-end:
-1-npm install --save-dev nodemon
-2-npm install express
-3-npm install bcrypt
-4-npm i jsonwebtoken
-5-npm i helmet
-6-npm install mongodb
-7-npm install dotenv --save
-
+npm install
+npm install axios
+npm install react-router-dom
+npm install react-icons
+npm install bcrypt
 ```
+
+### Instalações Backend
+
+```Bash
+npm install --save-dev nodemon
+npm install express
+npm install bcrypt
+npm i jsonwebtoken
+npm i helmet
+npm install mongodb
+npm install dotenv --save
+```
+
+
 
 <br/>
 
