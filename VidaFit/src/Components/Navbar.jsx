@@ -12,7 +12,7 @@ function Navbar() {
         <Link className="texto" to="/editperfil">Edit Perfil</Link>
         <Link className="texto" to="/telaexer">Tela Exerci</Link>
         <Link className="texto" to="/telaexeredit">Tela Exerci edit</Link>
-        <Link className="texto" to="/Avaliacao">Avaliação</Link>
+        <Link className="texto" to="/avaliacao">Avaliação</Link>
 
     </div>
   )
