@@ -26,17 +26,17 @@ useEffect(() => {
          
          {profi == 'Coach de saúde' &&
            <div className='emoji'> 
-           <img src="folha-2.png" className='icones'/><img src="halter-1.png" className='icones'/>
+           <img src="./Icons/folha-2.png" className='icones'/><img src="./Icons/halter-1.png" className='icones'/>
          </div>}
       
          {profi == 'Nutricionista' &&
            <div className='emoji'> 
-           <img src="folha-1.png" className='icones'/><img src="halter-2.png" className='icones'/>
+           <img src="./Icons/folha-1.png" className='icones'/><img src="./Icons/halter-2.png" className='icones'/>
          </div>}
       
          {profi == 'Personal Trainer' &&
            <div className='emoji'> 
-           <img src="folha-1.png" className='icones'/><img src="halter-1.png" className='icones'/>
+           <img src="./Icons/folha-1.png" className='icones'/><img src="./Icons/halter-1.png" className='icones'/>
          </div>}
       
          <p>{descricao}</p>

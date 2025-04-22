@@ -36,67 +36,114 @@
     --VermelhoEE2: #4E0511;
   }
 .container-login{
-    background: linear-gradient(135deg, var(--AzulCC1) 0%, var(--AzulE1) 100%);
+    display: flex;
+    flex-direction: column;
     min-height: 100vh;
-    align-items: center;
-    color: var(--Cor3);
-    justify-content: center;
+    background-color: #f5f5f5;
 }
 .center-site{
-    height: 92vh;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
     justify-content: center;
+    align-items: center;
+    flex: 1;
+    padding: 20px;
 }
 .container-card{
-    background-color: var(--BrancoC1);
-    width: 375px;
-    height: 475px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 20px;
-    border-radius: 10px;
-    align-self: center;
-    padding: 15px;
-}
-
-.inputs{
-    margin: 15px 0;
-    background: var(--AzulC1);
-    color: var(--BrancoCC2);
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.botao-login{
-    padding: 10px 20px;
-    border-radius: 10px;
-    border: none;
-    background-color: var(--AzulC1);
-    color: var(--BrancoCC2);
-    cursor: pointer;
-}
-.botao-login:hover{
-    color: var(--BrancoCC2);
-    background-color: var(--AzulCC1);
-}
-
-.checkbox-container{  
-    font: 1em sans-serif;
-
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
 }
 
 .login-txt{
-    font: 2.2em sans-serif;
-    color: var(--Cor4);
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #333;
 }
 
-.checkbox{
+.input-group{
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.inputs{
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.inputs:focus{
+    outline: none;
+    border-color: #4a90e2;
+}
+
+.input-error{
+    border-color: #ff4444;
+}
+
+.error-text{
+    color: #ff4444;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: block;
+}
+
+.error-message{
+    background-color: #ffebee;
+    color: #ff4444;
+    padding: 0.75rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.checkbox-container{
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.checkbox-container input[type="checkbox"] {
+    margin-right: 0.5rem;
+}
+
+.botao-login{
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
     cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.botao-login:hover{
+    background-color: #357abd;
+}
+
+.botao-login:disabled{
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.register-link{
+    text-align: center;
+    margin-top: 1.5rem;
+    color: #666;
+}
+
+.register-link a{
+    color: #4a90e2;
+    text-decoration: none;
+}
+
+.register-link a:hover{
+    text-decoration: underline;
 }

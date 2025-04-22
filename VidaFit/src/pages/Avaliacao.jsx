@@ -1,6 +1,6 @@
 import React from 'react'
 import "./Avaliacao.css"
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Navbar from '../Components/Navbar'
 import {useState} from 'react'
 
@@ -11,6 +11,10 @@ function Avaliacao() {
       const newClicked = clicked.map((_, i) => i <= index); // Atualiza o estado das estrelas
       setClicked(newClicked);
     };
+    function voltar(){
+    
+      navigate(-1);
+    }
 
   return (
     <div className="container-Ava">
@@ -36,6 +40,9 @@ function Avaliacao() {
             <input className='texto-inp' type="text" placeholder='Data de nascimento :'/>
           </div>
             <div className="espaco"></div>
+            <button className='butoon-voltar' onClick={voltar}>
+                <h1 className='texto-exer'>Voltar</h1>
+                </button>
           
         </div>
 

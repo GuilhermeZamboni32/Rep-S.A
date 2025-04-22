@@ -1,4 +1,7 @@
 import React from 'react'
+import { useState } from 'react';
+import './Ad_Dieta.css'
+import Dieta from './Dieta'
 
 function Ad_Dieta() {
     const [inputNome, setInputNome] = useState('')
@@ -11,19 +14,19 @@ function Ad_Dieta() {
           id: Date.now(),
           nome: "Café da manhã",
           descricao: "1 copo de leite ou iogurte natural.\n2 fatias de pão integral com queijo branco ou cottage.\n1 porção de fruta (banana, mamão ou maçã).\n1 colher de chá de mel ou geleia natural. ",
-          img: "./fisica-2.jpg"
+          img: "./Icons/cafe-colorido.png"
         },
         {
           id: Date.now() + 1,
           nome: "almoço",
           descricao: "1 porção de arroz integral e feijão.\n1 filé de frango grelhado ou peixe assado.\n1 Salada variada com folhas verdes, tomate, cenoura e azeite de oliva.\n1 suco natural sem açúcar.",
-          img: "./fisica-2.jpg"
+          img: "./Icons/almoco-colorido.png"
         },
         {
           id: Date.now() + 2,
           nome: "jantar",
           descricao: "Sopa de legumes com carne magra ou frango desfiado.\n1 fatia de pão integral ou torrada.\nChá de ervas sem açúcar.",
-          img: "./fisica-2.jpg"
+          img: "./Icons/jantar-colorido.png"
         },
     ])
 
@@ -42,19 +45,19 @@ function Ad_Dieta() {
 
 
   return (
-    <div className='container-corpo-exer'>
+    <div className='container-corpo-dieta'>
     
     
-     <div className='lista-cards-exer'>
+     <div className='lista-cards-dieta'>
        {dieta.map((dieta) => (
-             <dieta key={dieta.id} nome={dieta.nome} descricao={dieta.descricao} img={dieta.img}/>
+             <Dieta key={dieta.id} nome={dieta.nome} descricao={dieta.descricao} img={dieta.img}/>
     
        ))}
      </div>
     
-   
-     <div className='formCadastro-exer'>
-         <div className="input-contaner-exer">
+   {/*}
+     <div className='formCadastro-dieta'>
+         <div className="input-contaner-dieta">
             <label htmlFor="">Refeição:</label>
             <input type="text" 
             value={inputNome}
@@ -63,7 +66,7 @@ function Ad_Dieta() {
          </div>
     
     
-         <div className="input-contaner-exer">
+         <div className="input-contaner-dieta">
              <label htmlFor="">Descrição:</label>
              <input type="text" 
             value={inputDescricao}
@@ -71,7 +74,7 @@ function Ad_Dieta() {
             />
          </div>
     
-         <div className="input-contaner-exer">
+         <div className="input-contaner-dieta">
              <label htmlFor="">Imagem:</label>
              <input type="text" 
             value={inputImagem}
@@ -79,10 +82,10 @@ function Ad_Dieta() {
             />
          </div>
          <button onClick={CadastrarDieta}>Cadastrar Exercicio</button>
-            
-        
+         
+         </div>
+        */}
     
-    </div>
      </div>
   )
 }

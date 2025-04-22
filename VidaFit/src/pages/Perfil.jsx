@@ -3,24 +3,28 @@ import Navbar from '../Components/Navbar'
 import './Perfil.css'
 //import React, {useState} from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import { react, createContext, useState, useContext } from 'react';
+import { GlobalContext } from "../Context/GlobalContext"
 
 
 function Perfil() {
+  const { user, setUser,   inputNome, setInputNome,    inputDescricao, setInputDescricao,    inputImagem, setInputImagem} = useContext(GlobalContext)
 const navigate = useNavigate()
 
   function exercicio(){
-    //processo da validação do usuario
     navigate('/telaexer');
   }
 
   function dieta(){
-    //processo da validação do usuario
     navigate('/teladieta');
   }
 
   function edit(){
-    //processo da validação do usuario
     navigate('/editperfil');
+  }
+
+  function avaliar(){
+    navigate('/avaliacao');
   }
 
   return (
@@ -47,6 +51,7 @@ const navigate = useNavigate()
             </div>
 
               <button className='button-perfil' onClick={edit}>Editar</button>
+              <button className='button-perfil' onClick={avaliar}>Avaliar Usuario</button>
           </div>
 
         
@@ -58,6 +63,7 @@ const navigate = useNavigate()
               <h1>  
               Grupo de Exercícios
               </h1>
+              
             </div>
 
             <div className="exercicios">

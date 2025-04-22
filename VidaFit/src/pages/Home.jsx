@@ -16,11 +16,11 @@ function Home() {
         <div className='div-visual-prof-topo'>
 
         <div className='barra-filtro'>
-          <img className='filtro' src="Filtro-2.png" alt="" />
+          <img className='filtro' src="./Icons/Filtro-2.png" alt="" />
         </div>
         
         <div className='barra-pesquisa'>
-          <img className='lupa' src="Lupa-2.png" alt="" />
+          <img className='lupa' src="./Icons/Lupa-2.png" alt="" />
         </div>
         </div>
 

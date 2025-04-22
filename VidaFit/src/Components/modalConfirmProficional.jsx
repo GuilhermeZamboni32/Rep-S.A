@@ -21,7 +21,7 @@ export default function Modal({ isOpen, setModalOpen, children }) {
               <div className='texto-modal'>{children}</div>
             </div>
             <div className='conteudo-modal-baixo'>
-              <button className='button-modal' onClick={setModalOpen}><h2>Fecher</h2></button>
+              <button className='button-modal' onClick={setModalOpen}><h2>Fechar</h2></button>
             </div>
         </div>
       </div>
