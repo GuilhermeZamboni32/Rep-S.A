@@ -73,8 +73,7 @@
 }
 
 .nome-exer-b{
-    background-color: var(--AzulE1);
-    color: var(--BrancoCC2);
+    color: var(--AzulE1);
     height: 50px;
     align-items: center;
     display: flex;
@@ -84,7 +83,6 @@
 }
 
 .descricao-exer{
-    background-color: var(--AzulE1);
-    color: var(--BrancoCC2);
+    color: var(--AzulE1);
     margin-left: 80px;
 }

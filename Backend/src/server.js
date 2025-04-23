@@ -113,6 +113,8 @@ app.get('/users/:id_user', authenticateToken, async (req, res) => {
 
 // TODO: Fazer o Login Handler
 
+
+
 // Error handling middleware
 app.use((err, req, res, next) => {
   console.error(err.stack);
