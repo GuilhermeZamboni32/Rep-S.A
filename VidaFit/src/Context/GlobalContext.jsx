@@ -1,14 +1,18 @@
-import React, { createContext, useState } from 'react';
+import React,  { createContext, useState} from 'react';
+
 
 export const GlobalContext = createContext();
 
 export const GlobalContextProvider = ({ children }) => {
-  const [usuarios, setUsuarios] = useState([]);
-  //const [item, setItem] = useState([]); // Adicionando o estado de items
-
-  return (
-    <GlobalContext.Provider value={{ usuarios, setUsuarios, }}>
-      {children}
-    </GlobalContext.Provider>
-  );
-};
+    const [user, setUser] = useState(null); 
+    
+    const [inputNome, setInputNome] = useState('')
+    const [inputDescricao, setInputDescricao] = useState('')
+    const [inputImagem, setInputImagem] = useState('')
+    
+    return (
+      <GlobalContext.Provider value={{ user, setUser,    inputNome, setInputNome,    inputDescricao, setInputDescricao,    inputImagem, setInputImagem}}>
+        {children}
+      </GlobalContext.Provider>
+    );
+  };

@@ -1,0 +1,56 @@
+:root{
+    /**extremo claro*/
+    --AzulCC1: #1A2D87;
+    --AzulCC2: #5E628D;
+    --BrancoCC1: #B9BEC8;
+    --BrancoCC2: #FFFFFF;
+    --VermelhoCC1: #DB808A;
+    --VermelhoCC2: #C8586B;
+    /**Médio claro*/
+    --AzulC1: #0E1848;
+    --AzulC2: #404363;
+    --BrancoC1: #8D99AE;
+    --BrancoC2: #D8F1FD;
+    --VermelhoC1: #EF233B;
+    --VermelhoC2: #B30522;
+    /**Padrão*/
+    --AzulP1: #091136;
+    --AzulP2: #2B2D42;
+    --BrancoP1: #8D99AE;
+    --BrancoP2: #D8F1FD;
+    --VermelhoP1: #EF233B;
+    --VermelhoP2: #B30522;
+    /**Médio escuro*/
+    --AzulE1: #050A1F;
+    --AzulE2: #272836;
+    --BrancoE1: #787F8A;
+    --BrancoE2: #93ACB8;
+    --VermelhoE1: #BE1D30;
+    --VermelhoE2: #88061B;
+    /**Extremo escuro*/
+    --AzulEE1: #030611;
+    --AzulEE2: #1F202C;
+    --BrancoEE1: #6B6F75;
+    --BrancoEE2: #687982;
+    --VermelhoEE1: #811320;
+    --VermelhoEE2: #4E0511;
+  }
+  
+
+.container-corpo{
+    background-color: var(--BrancoC1);
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 1700px;
+}
+
+.lista-cards{
+    background-color:  var(--BrancoC);
+    width: 1700px;
+    height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: auto;
+}

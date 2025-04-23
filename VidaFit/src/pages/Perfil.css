@@ -37,7 +37,7 @@
 }
 
 .container-perfil {
-  background: linear-gradient(135deg, var(--AzulC1) 0%, var(--AzulE1) 100%);
+  background: linear-gradient(135deg, var(--AzulCC1) 0%, var(--AzulE1) 100%);
   min-height: 100vh;
   align-items: center;
   justify-content: center; 
@@ -95,8 +95,8 @@
   .texto-inp{
     width: 100%;
     margin: 5px 0;
-    background: var(--AzulC1);
-    color: var(--BrancoCC2);
+    
+    color: var(--BrancoC2);
     border: none;
     padding: 10px;
     border-radius: 5px;
@@ -108,17 +108,20 @@
     
 }
 
-.button{
-    background: var(--AzulC1);
-    color: var(--BrancoCC2);
-    border: none;
-    border-radius: 8px;
-    padding: 10px;
-    cursor: pointer;
+.button-perfil{
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  background-color: var(--AzulC1);
+  color: var(--BrancoCC2);
+  cursor: pointer;
 }
-button:hover{
-    background-color: var(--AzulC2);
+.button-perfil:hover{
+  color: var(--BrancoCC2);
+  background-color: var(--AzulCC1);
 }
+
+
 
   
   .div-grupo-exercicio, .div-grupo-dieta {
@@ -156,3 +159,22 @@ button:hover{
     background: var(--AzulC2);
   }
   
+
+
+
+  .texto-perfil{
+    width: 100%;
+    margin: 5px 0;
+    background-color: var(--AzulC1);
+    color: var(--BrancoC2);
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+
+  input::placeholder {
+    color: var(--placeholder-color, var(--BrancoCC1));
+    transition: color 0.3s;
+}

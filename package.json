@@ -3,6 +3,7 @@
     "axios": "^1.8.3",
     "bcrypt": "^5.1.1",
     "express": "^4.21.2",
+    "react-icons": "^5.5.0",
     "react-router-dom": "^7.3.0"
   }
 }
