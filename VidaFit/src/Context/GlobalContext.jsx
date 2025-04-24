@@ -1,20 +1,73 @@
-import React,  { createContext, useState} from 'react';
-
+import React, { createContext, useState, useEffect } from 'react';
+import axios from 'axios';
 
 export const GlobalContext = createContext();
 
-export const GlobalContextProvider = ({ children }) => {
-    const [user, setUser] = useState(null); 
-    
-    const [inputNome, setInputNome] = useState('')
-    const [inputDescricao, setInputDescricao] = useState('')
-    const [inputImagem, setInputImagem] = useState('')
+export const GlobalProvider = ({ children }) => {
+  const [user, setUser] = useState(null);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [loading, setLoading] = useState(true);
 
-    let nome1 = "Dio e seu Bando"
-    
-    return (
-      <GlobalContext.Provider value={{ nome1,  user, setUser,    inputNome, setInputNome,    inputDescricao, setInputDescricao,    inputImagem, setInputImagem}}>
-        {children}
-      </GlobalContext.Provider>
-    );
+  // Inicia usuarios vindo do localstorage
+  useEffect(() => {
+    const initializeAuth = async () => {
+      const storedUser = localStorage.getItem('user');
+      
+      //Verificar token
+      if (storedUser) {
+        try {
+          const parsedUser = JSON.parse(storedUser);
+          setUser(parsedUser);
+          setIsAuthenticated(true);
+          
+          axios.defaults.headers.common['Authorization'] = `Bearer ${parsedUser.token}`;
+        } catch (err) {
+          console.error('Failed to parse stored user', err);
+          logout();
+        }
+      }
+      setLoading(false);
+    };
+
+    initializeAuth();
+  }, []);
+
+  // Login function
+  const login = async (userData) => {
+    localStorage.setItem('user', JSON.stringify(userData));
+    setUser(userData);
+    setIsAuthenticated(true);
+    axios.defaults.headers.common['Authorization'] = `Bearer ${userData.token}`;
   };
+
+  // Logout function
+  const logout = () => {
+    localStorage.removeItem('user');
+    setUser(null);
+    setIsAuthenticated(false);
+    delete axios.defaults.headers.common['Authorization'];
+    // Optional: Make API call to invalidate token on server
+  };
+
+  // Update do usuario
+  const updateUser = (updatedData) => {
+    const newUser = { ...user, ...updatedData };
+    setUser(newUser);
+    localStorage.setItem('user', JSON.stringify(newUser));
+  };
+
+  return (
+    <GlobalContext.Provider
+      value={{
+        user,
+        isAuthenticated,
+        loading,
+        login,
+        logout,
+        updateUser
+      }}
+    >
+      {children}
+    </GlobalContext.Provider>
+  );
+};

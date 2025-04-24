@@ -112,7 +112,56 @@ app.get('/users/:id_user', authenticateToken, async (req, res) => {
 });
 
 // TODO: Fazer o Login Handler
+app.post('/login', async (req, res) => {
+  const { email_user, password_user } = req.body;
+  
+  if (!email_user || !password_user) {
+    return res.status(400).json({ error: 'Email and password are required' });
+  }
 
+  try {
+    const userResult = await pool.query(
+      'SELECT id_user, username, email_user, password_user, age_user FROM users WHERE email_user = $1',
+      [email_user]
+    );
+    
+    if (userResult.rows.length === 0) {
+      return res.status(401).json({ error: 'Invalid credentials' });
+    }
+    
+    const user = userResult.rows[0];
+    
+    const passwordMatch = await bcrypt.compare(password_user, user.password_user);
+    
+    if (!passwordMatch) {
+      return res.status(401).json({ error: 'Invalid credentials' });
+    }
+    
+    const token = jwt.sign(
+      { 
+        id_user: user.id_user,
+        email_user: user.email_user,
+        username: user.username
+      },
+      ACCESS_KEY,
+      { expiresIn: '1h' } 
+    );
+    
+    const userData = {
+      id_user: user.id_user,
+      username: user.username,
+      email_user: user.email_user,
+      age_user: user.age_user,
+      token: token
+    };
+    
+    res.json(userData);
+    
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).json({ error: 'Login failed' });
+  }
+});
 
 
 // Error handling middleware
