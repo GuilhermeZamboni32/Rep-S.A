@@ -7,7 +7,6 @@ function TelaExerEdit() {
   const navigate = useNavigate()
 
   function voltar(){
-    //processo da validação do usuario
     navigate('/perfil');
   }
 

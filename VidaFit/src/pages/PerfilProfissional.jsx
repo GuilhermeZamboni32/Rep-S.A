@@ -8,17 +8,14 @@ function PerfilProfissional() {
     const navigate = useNavigate()
 
     function exercicio(){
-      //processo da validação do usuario
       navigate('/telaexer');
     }
   
     function dieta(){
-      //processo da validação do usuario
       navigate('/teladieta');
     }
   
     function edit(){
-      //processo da validação do usuario
       navigate('/editperfil');
     }
   

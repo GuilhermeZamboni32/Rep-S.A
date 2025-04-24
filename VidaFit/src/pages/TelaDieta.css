@@ -1,0 +1,118 @@
+:root{
+    /**extremo claro*/
+    --AzulCC1: #1A2D87;
+    --AzulCC2: #5E628D;
+    --BrancoCC1: #B9BEC8;
+    --BrancoCC2: #FFFFFF;
+    --VermelhoCC1: #DB808A;
+    --VermelhoCC2: #C8586B;
+    /**Médio claro*/
+    --AzulC1: #0E1848;
+    --AzulC2: #404363;
+    --BrancoC1: #8D99AE;
+    --BrancoC2: #D8F1FD;
+    --VermelhoC1: #EF233B;
+    --VermelhoC2: #B30522;
+    /**Padrão*/
+    --AzulP1: #091136;
+    --AzulP2: #2B2D42;
+    --BrancoP1: #8D99AE;
+    --BrancoP2: #D8F1FD;
+    --VermelhoP1: #EF233B;
+    --VermelhoP2: #B30522;
+    /**Médio escuro*/
+    --AzulE1: #050A1F;
+    --AzulE2: #272836;
+    --BrancoE1: #787F8A;
+    --BrancoE2: #93ACB8;
+    --VermelhoE1: #BE1D30;
+    --VermelhoE2: #88061B;
+    /**Extremo escuro*/
+    --AzulEE1: #030611;
+    --AzulEE2: #1F202C;
+    --BrancoEE1: #6B6F75;
+    --BrancoEE2: #687982;
+    --VermelhoEE1: #811320;
+    --VermelhoEE2: #4E0511;
+  }
+
+.container-dieta{
+    background: linear-gradient(135deg, var(--AzulCC1) 0%, var(--AzulE1) 100%);
+    min-height: 100vh;
+    align-items: center;
+    
+}
+
+.div-grup-dieta{
+    background-color: var(--BrancoC1);
+    margin: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    border-radius: 16px;
+    justify-content: center; 
+   
+}
+
+.div-topo-dieta{
+    width: 1670px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    
+}
+.topo-es-dieta{
+    background-color: var(--BrancoP2);
+    width: 200px;
+    height: 50px;
+    margin: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.texto--dieta{
+    color: var(--Cor4);
+    margin-top: 5px;
+
+}
+.topo-me-dieta{
+    
+    width: 1200px;
+    height: 50px;
+    margin: 10px;
+   
+
+}
+.topo-di-dieta{
+   
+    width: 100px;
+    height: 50px;
+    margin: 10px;
+    border-radius: 8px;
+    align-items: center;
+    
+
+}
+
+.butoon-voltar{
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: var(--VermelhoC1);
+    color: var(--BrancoP2);
+    cursor: pointer;
+}
+
+
+
+.div-baixo-dieta{
+    background-color: var(--BrancoP2);
+    min-width: 100vh;
+    height: 500px;
+    border-radius: 8px;
+    
+
+}
+

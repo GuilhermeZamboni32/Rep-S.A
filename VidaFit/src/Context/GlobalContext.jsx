@@ -9,9 +9,11 @@ export const GlobalContextProvider = ({ children }) => {
     const [inputNome, setInputNome] = useState('')
     const [inputDescricao, setInputDescricao] = useState('')
     const [inputImagem, setInputImagem] = useState('')
+
+    let nome1 = "Dio e seu Bando"
     
     return (
-      <GlobalContext.Provider value={{ user, setUser,    inputNome, setInputNome,    inputDescricao, setInputDescricao,    inputImagem, setInputImagem}}>
+      <GlobalContext.Provider value={{ nome1,  user, setUser,    inputNome, setInputNome,    inputDescricao, setInputDescricao,    inputImagem, setInputImagem}}>
         {children}
       </GlobalContext.Provider>
     );

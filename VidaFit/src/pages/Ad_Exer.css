@@ -38,7 +38,7 @@
   
 
 .container-corpo-exer{
-    background-color: var(--VermelhoC1);
+    background-color: var(--Branco1);
     align-items: center;
     display: flex;
     flex-wrap: wrap;
@@ -48,8 +48,10 @@
 
 .lista-cards-exer{
     background-color:  var(--BrancoC2);
-    width: 1700px;
+    width: 1650px;
     height: 500px;
     flex-wrap: wrap;
     overflow-y: auto;
+    border-radius: 10px;
+    
 }

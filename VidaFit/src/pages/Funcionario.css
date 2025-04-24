@@ -17,10 +17,10 @@
   box-shadow: 4px 4px 3px  var(--VermelhoC2);
 }
 .box-nut{
-  box-shadow: 4px 4px 3px  green;
+  box-shadow: 4px 4px 3px  rgb(3, 189, 3);
 }
 .box-amb{
-  box-shadow: 4px 4px 3px  blue;
+  box-shadow: 4px 4px 3px  rgb(0, 0, 255);
 }
 
 .container-produtos:hover {
@@ -50,7 +50,7 @@
     justify-content: center;
     align-items: flex-start;
     gap: 20px;
-    flex: 0 0 auto; /* impede o card de encolher */
+    flex: 0 0 auto; 
     
 }
 

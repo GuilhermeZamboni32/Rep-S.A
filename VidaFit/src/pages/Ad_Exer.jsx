@@ -63,7 +63,8 @@ return (
        ))}
      </div>
     
-   
+   {/**
+    * 
      <div className='formCadastro-exer'>
          <div className="input-contaner-exer">
             <label htmlFor="">Produto:</label>
@@ -91,9 +92,10 @@ return (
          </div>
          <button onClick={CadastrarExercicio}>Cadastrar Exercicio</button>
             
+    </div>
+    */}
         
     
-    </div>
      </div>
       )
 }

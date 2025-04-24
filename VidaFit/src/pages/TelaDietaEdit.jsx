@@ -6,7 +6,6 @@ function TelaDietaEdit() {
   const navigate = useNavigate()
 
   function voltar(){
-    //processo da validação do usuario
     navigate(-1);
   }
 
@@ -31,6 +30,7 @@ function TelaDietaEdit() {
 
      </div>
      <div className='div-baixo-edit'>
+      
 
      </div>
 

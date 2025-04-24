@@ -8,7 +8,6 @@ function ProfissionalAluno() {
     const navigate = useNavigate()
 
     function exercicio(){
-      //processo da validação do usuario
       navigate('/telaexer');
     }
   
