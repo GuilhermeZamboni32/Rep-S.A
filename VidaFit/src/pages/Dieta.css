@@ -40,8 +40,8 @@
     background-color: var(--BrancoP2);
     color: var(--AzulEE1);
     border: 1px solid #000000;
-    width: 1100px;
-    height: 200px;
+    width: 1200px;
+    height: 300px;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -57,6 +57,7 @@
     border-radius: 10px;
     margin-left: 20px;
     border: 3px solid var(--AzulEE1);
+    background-color: var(--BrancoCC1);
 }
 
 .imaga-dieta{
@@ -73,9 +74,9 @@
 }
 
 .nome-dieta-b{
-   
     color: var(--AzulE1);
     height: 50px;
+    width: 250px;
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -86,4 +87,39 @@
 .descricao-dieta{
     color: var(--AzulE1);
     margin-left: 80px;
+    height: 150px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.button-x{
+    background-color: var(--VermelhoC2);
+    border-radius: 10px;
+    margin-left: 20px;
+}
+
+.button-x:hover{
+    background-color: var(--VermelhoC1);
+}
+
+.icone-x{
+    height: 50px;
+    width: 50px;
+}
+
+.button-l{
+    background-color: rgb(18, 192, 41);
+    border-radius: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.button-l:hover{
+    background-color:  rgb(0, 255, 34);
+}
+
+.icone-l{
+    height: 50px;
+    width: 50px;
 }

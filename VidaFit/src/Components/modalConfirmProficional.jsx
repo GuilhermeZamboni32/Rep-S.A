@@ -13,7 +13,7 @@ export default function Modal({ isOpen, setModalOpen, children }) {
             <div className='topo-modal-es'></div>
             <div className='topo-modal-di'>
               <div className='sair-modal' onClick={setModalOpen}>
-                <img className='X' src="icone-X.png" alt="" />
+                <img className='X' src="./Icons/icone-X.png" alt="" />
               </div>
             </div>
           </div>

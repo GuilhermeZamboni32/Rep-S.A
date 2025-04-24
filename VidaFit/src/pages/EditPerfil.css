@@ -208,3 +208,21 @@ height: 30px;
     color: var(--BrancoCC2);
 }
 
+.Voltar{
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  background-color:var(--AzulP2);
+  color: var(--BrancoCC2);
+  cursor: pointer;
+}
+.Voltar:hover{
+  color: var(--BrancoCC2);
+  background-color: var(--AzulCC1);
+}
+
+.texte-ed{
+  color:  var(--BrancoCC2);
+  width: 1px;
+
+}

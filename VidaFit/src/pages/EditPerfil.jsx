@@ -36,8 +36,8 @@ function EditPerfil() {
               <input className='texto-inp-edit' type="text" placeholder='Data de nascimento :'/>
               <input className='texto-inp-edit' type="text" placeholder='Email :'/>
               <div className='topo-di'>
-              <button className='butoon-voltar' onClick={voltar}>
-                <h1 className='texto-exer'>Voltar</h1>
+              <button className='Voltar' onClick={voltar}>
+                <p className='texto-ed'>Voltar</p>
                 </button>
             </div>
              
