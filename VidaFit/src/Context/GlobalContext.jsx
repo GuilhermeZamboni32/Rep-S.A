@@ -3,7 +3,7 @@ import axios from 'axios';
 
 export const GlobalContext = createContext();
 
-export const GlobalProvider = ({ children }) => {
+export const GlobalContextProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [loading, setLoading] = useState(true);

@@ -1,13 +1,13 @@
 import './App.css'
-import { GlobalProvider } from './Context/GlobalContext'
+import { GlobalContextProvider } from './Context/GlobalContext'
 
 function App() {
  
   return (
     <>
-      <GlobalProvider>
+      <GlobalContextProvider>
         <h1>Router</h1>
-      </GlobalProvider>
+      </GlobalContextProvider>
     </>
   )
 }

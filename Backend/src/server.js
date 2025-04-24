@@ -26,8 +26,11 @@ app.use(limiter);
 
 // Database configuration
 const pool = new Pool({
-  connectionString: process.env.DATABASE_URL || 'postgres://postgres:senai@localhost:5432/VidaFit',
-  ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false
+  user: process.env.DB_USER,
+  host: process.env.DB_HOST,
+  database: process.env.DB_NAME,
+  password: process.env.DB_PASSWORD,
+  port: process.env.DB_PORT,
 });
 
 const ACCESS_KEY = process.env.ACCESS_KEY;
@@ -114,6 +117,9 @@ app.get('/users/:id_user', authenticateToken, async (req, res) => {
 // TODO: Fazer o Login Handler
 app.post('/login', async (req, res) => {
   const { email_user, password_user } = req.body;
+
+  console.log ('Login attempt with email:', email_user);
+  console.log ('Login attempt with password:', password_user);
   
   if (!email_user || !password_user) {
     return res.status(400).json({ error: 'Email and password are required' });
@@ -132,6 +138,11 @@ app.post('/login', async (req, res) => {
     const user = userResult.rows[0];
     
     const passwordMatch = await bcrypt.compare(password_user, user.password_user);
+    console.log('Password from DB w no "Result":', user.password_user);
+    // console.log('Password from DB:', userResult.password_user);
+    console.log('Password from request:', password_user);
+    // const passwordMatch = true;
+    console.log('Password match:', passwordMatch);
     
     if (!passwordMatch) {
       return res.status(401).json({ error: 'Invalid credentials' });

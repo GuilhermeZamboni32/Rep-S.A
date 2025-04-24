@@ -10,22 +10,24 @@ function Login() {
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
-  const { updateUser } = useContext(GlobalContext);
+  // const { updateUser } = useContext(GlobalContext);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setError('');
+
+    console.log('Submitting form:', form)
     
     try {
-      // Send login request to backend
       const response = await axios.post('http://localhost:3000/login', {
         email_user: form.email_user,
         password_user: form.password_user
       });
+
+      console.log('Login response:', response.data)
       
-      // Update global context with user data
       updateUser({
         id: response.data.id_user,
         username: response.data.username,
@@ -34,10 +36,8 @@ function Login() {
         token: response.data.token
       });
       
-      // Redirect to home page
       navigate('/');
     } catch (err) {
-      // Handle error and set error message
       setError(err.response?.data?.message || 'An error occurred. Please try again.');
     } finally {
       setLoading(false);
@@ -86,7 +86,7 @@ function Login() {
             {loading ? 'Logging in...' : 'Login'}
           </button>
           <p>
-            Don't have an account? <Link to="/register">Register</Link>
+            Don't have an account? <Link to="/cadastro">Register</Link>
           </p>
         </form>
       </div>
