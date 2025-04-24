@@ -5,7 +5,7 @@ import './Ad_Funci.css'
 //import Navbar from '../Components/Navbar'
 //import { Link } from 'react-router-dom'
 
-function Ad_Funci() {
+function Ad_Funci({ filter, searchTerm }) {
 
     const [inputNome, setInputNome] = useState('')
     const [inputDescricao, setInputDescricao] = useState('')
@@ -185,6 +185,20 @@ function Ad_Funci() {
           
       ])
 
+      const filteredFuncionarios = funci.filter(funcionario => {
+        // Filtro por categoria
+        const matchesFilter = !filter || 
+            (filter === 'nutricionista' && funcionario.profi === 'Nutricionista') ||
+            (filter === 'educacao_fisica' && funcionario.profi === 'Personal Trainer') ||
+            (filter === 'fitness' && funcionario.profi === 'Coach de saúde');
+
+        // Filtro por nome (case insensitive)
+        const matchesSearch = !searchTerm || 
+            funcionario.nome.toLowerCase().includes(searchTerm.toLowerCase());
+
+        return matchesFilter && matchesSearch;
+    });
+
       function CadastrarFuncionario(){
         const Funcionario = {
       
@@ -211,13 +225,13 @@ function Ad_Funci() {
 
 
  <div className='lista-cards'>
-   {funci.map((funcionario) => (
+   {filteredFuncionarios.map((funcionario) => (
          <Funcionario key={funcionario.id} nome={funcionario.nome} profi={funcionario.profi} descricao={funcionario.descricao} img={funcionario.img} />
 
    ))}
  </div>
 
-
+{/*
  <div className='formCadastro'>
      <div className="input-contaner">
         <label htmlFor="">Nome:</label>
@@ -253,7 +267,7 @@ function Ad_Funci() {
 
      <button onClick={CadastrarFuncionario}>Cadastrar</button>
     </div>
-
+*/}
 
 
  </div>

@@ -37,7 +37,6 @@
   }
 
 .container-home{
-    /*background-color: var(--Cor2);*/
     background: linear-gradient(135deg, var(--AzulCC1) 0%, var(--AzulE1) 100%);
     min-height: 100vh;
     display: flex;
@@ -47,7 +46,7 @@
 .div-atras-visual{
     background-color: var(--BrancoC1);
     width: 90%;
-    max-width: 1700px;
+    max-width: 1800px;
     min-height: 700px;
     margin: 50px auto;
     border-radius: 20px;
@@ -110,7 +109,7 @@
 
 .barra-filtro{
     background-color: var(--BrancoCC2);
-    width: 250px;
+    width: 350px;
     height: 50px;
     border-radius: 25px;
     margin-left: 50px;

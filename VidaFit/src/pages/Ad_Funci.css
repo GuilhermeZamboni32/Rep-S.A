@@ -16,7 +16,7 @@
     /**Padrão*/
     --AzulP1: #091136;
     --AzulP2: #2B2D42;
-    --BrancoP1: #8D99AE;
+    --BrancoP1: #7d8696;
     --BrancoP2: #D8F1FD;
     --VermelhoP1: #EF233B;
     --VermelhoP2: #B30522;
@@ -43,14 +43,39 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    width: 1700px;
+    width: 1500px;
 }
 
-.lista-cards{
-    background-color:  var(--BrancoC);
-    width: 1700px;
-    height: 500px;
-    display: flex;
-    flex-wrap: wrap;
-    overflow-y: auto;
-}
+    .lista-cards{
+        background-color: var(--BrancoE1);
+        border-radius: 8px;
+       border: 10px solid var(--AzulC1);
+       width: 1650px;
+       height: 500px;
+       display: flex;
+       flex-wrap: wrap;
+      overflow-y: auto;
+    }
+
+
+        ::-webkit-scrollbar {
+           width: 12px; 
+           height: 12px; 
+        }
+  
+        ::-webkit-scrollbar-track {
+           background: var(--BrancoP2); 
+           border-radius: 6px;
+        }
+  
+        ::-webkit-scrollbar-thumb {
+          background-color: var(--AzulC1); 
+          border-radius: 6px;
+          border: 2px solid var(--AzulCC1); 
+        }
+  
+        ::-webkit-scrollbar-thumb:hover {
+           background-color: var(--AzulCC1);
+           border: 2px solid var(--VermelhoE2)
+        }
+  

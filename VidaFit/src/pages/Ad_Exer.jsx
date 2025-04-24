@@ -14,26 +14,26 @@ function Ad_Exer() {
       {
         id: Date.now(),
         nome: "Supino",
-        descricao: "Supino,Supino,Supino,Supino,Supino,Supino",
-        img: "./supino.webp",
+        descricao: "3 Series de 12 Repetições",
+        img: "./supino.gif",
       },
       {
         id: Date.now() + 1,
         nome: "Crossover",
-        descricao: "Crossover,Crossover,Crossover,Crossover,Crossover",
+        descricao: "3 Series de 12 Repetições",
         img: "./crossover.gif",
       },
       {
         id: Date.now() + 2,
         nome: "Flexão",
-        descricao: "Flexão,Flexão,Flexão,Flexão,Flexão,Flexão",
+        descricao: "3 Series de 12 Repetições",
         img: "./flexao.webp",
       },
       {
         id: Date.now() + 3,
         nome: "crucifixo",
-        descricao: "crucifixo,crucifixo,crucifixo,crucifixo,crucifixo",
-        img: "./crucifixo.webp",
+        descricao: "3 Series de 12 Repetições",
+        img: "./crusifixo.gif",
       }
     ])
 

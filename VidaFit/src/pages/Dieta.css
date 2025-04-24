@@ -51,75 +51,75 @@
     
 }
 
-.img-produto-dieta{
-    width: 140px;
-    height: 150px;
-    border-radius: 10px;
-    margin-left: 20px;
-    border: 3px solid var(--AzulEE1);
-    background-color: var(--BrancoCC1);
-}
+    .img-produto-dieta{
+        width: 140px;
+        height: 150px;
+        border-radius: 10px;
+        margin-left: 20px;
+        border: 3px solid var(--AzulEE1);
+        background-color: var(--BrancoCC1);
+    }
 
-.imaga-dieta{
-    background-color: #ffffff;
-}
+        .imaga-dieta{
+            background-color: #ffffff;
+        }
 
-.nome-dieta-t{
-    margin-left: 40px;
-    height: 150px;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    border-radius: 8px;
-}
+    .nome-dieta-t{
+        margin-left: 40px;
+        height: 150px;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        border-radius: 8px;
+    }
 
-.nome-dieta-b{
-    color: var(--AzulE1);
-    height: 50px;
-    width: 250px;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    border-radius: 8px;
-    border: 3px solid var(--AzulEE1);
-}
+    .nome-dieta-b{
+        color: var(--AzulE1);
+        height: 50px;
+        width: 250px;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        border-radius: 8px;
+        border: 3px solid var(--AzulEE1);
+    }
 
-.descricao-dieta{
-    color: var(--AzulE1);
-    margin-left: 80px;
-    height: 150px;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-}
+        .descricao-dieta{
+            color: var(--AzulE1);
+            margin-left: 80px;
+            height: 150px;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+        }
 
-.button-x{
-    background-color: var(--VermelhoC2);
-    border-radius: 10px;
-    margin-left: 20px;
-}
+        .button-x{
+            background-color: var(--VermelhoC2);
+            border-radius: 10px;
+            margin-left: 20px;
+        }
 
-.button-x:hover{
-    background-color: var(--VermelhoC1);
-}
+            .button-x:hover{
+                background-color: var(--VermelhoC1);
+            }
 
-.icone-x{
-    height: 50px;
-    width: 50px;
-}
+            .icone-x{
+                height: 50px;
+                width: 50px;
+            }
 
-.button-l{
-    background-color: rgb(18, 192, 41);
-    border-radius: 10px;
-    margin-left: 20px;
-    margin-right: 20px;
-}
+        .button-l{
+            background-color: rgb(18, 192, 41);
+            border-radius: 10px;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
 
-.button-l:hover{
-    background-color:  rgb(0, 255, 34);
-}
+            .button-l:hover{
+                background-color:  rgb(0, 255, 34);
+            }
 
-.icone-l{
-    height: 50px;
-    width: 50px;
-}
+            .icone-l{
+                height: 50px;
+                width: 50px;
+            }

@@ -3,9 +3,7 @@ import './Dieta.css'
 import { useState } from 'react';
 
 function Dieta({img, nome, descricao}) {
-  const [clik, setClik] = useState('')
-  let clik1 = (+1)
-  let clik2 = (-1)
+  
   
 
 
@@ -28,8 +26,8 @@ function Dieta({img, nome, descricao}) {
         <h2>{descricao}</h2>
       </div>
 
-      <button className='button-x'><img className='icone-x' src="./Icons/icone-X.png" alt="" onClick={clik}/></button>
-      <button className='button-l'><img className='icone-l' src="./Icons/icon-L.png" alt="" onClick={clik}/></button>
+      <button className='button-x'><img className='icone-x' src="./Icons/icone-X.png" alt="" /></button>
+      <button className='button-l'><img className='icone-l' src="./Icons/icon-L.png" alt="" /></button>
 
 
         

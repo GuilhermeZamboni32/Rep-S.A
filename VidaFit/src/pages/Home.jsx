@@ -6,10 +6,15 @@ import Ad_Funci from './Ad_Funci'
 
 
 function Home() {
-  const [Filter, setFilter] = useState('');
+  const [filter, setFilter] = useState('')
+  const [pesquisa, setpesquisa] = useState('')
 
   const handleFilterChange = (e) => {
-    setFilter(e.target.value);
+    setFilter(e.target.value)
+  };
+
+  const handlepesquisaChange = (e) => {
+    setpesquisa(e.target.value)
   };
 
   return (
@@ -24,14 +29,14 @@ function Home() {
         <div className='barra-filtro'>
           <img className='filtro' src="./Icons/Filtro-2.png" alt="Filtro" />
           <select 
-            value={Filter}
+            value={filter}
             onChange={handleFilterChange}
             className='select-filtro'
           >
             <option value="">Todos os Profissionais</option>
             <option value="nutricionista">Profissional de Nutrição 🍃</option>
-            <option value="educacao_fisica">Profissional de Educação Física 💪</option>     
-            <option value="fitness">Profissional Fitness 🍃💪</option>         
+            <option value="fitness">Profissional de Educação Física 💪</option>     
+            <option value="educacao_fisica">Profissional Fitness 🍃💪</option>         
           </select>
         </div>
         
@@ -41,12 +46,14 @@ function Home() {
             type="text" 
             placeholder="Pesquisar profissionais..." 
             className='input-pesquisa'
+            value={pesquisa}
+            onChange={handlepesquisaChange}
           />
         </div>
         </div>
 
 
-        <Ad_Funci />
+        <Ad_Funci filter={filter} searchTerm={pesquisa} />
         {/** 
          * ./Icons/folha-2.png
          * ./Icons/folha-1.png

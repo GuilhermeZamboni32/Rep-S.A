@@ -43,69 +43,69 @@
     width: 100%;
     align-items: center;
     
-}
-.espaco{
-    height: 100vh;
-  }
+    }
+    .espaco{
+        height: 100vh;
+    }
 
-.cadas-input{
-    gap: 200px;
-    
-    
-}
-.texto-cadas::placeholder {
-    color: var( --BrancoC2);
-    
-}
-.cadas-inf {
-    background: var(--BrancoC1);
-    padding: 15px;
-    border-radius: 8px;
-    text-align: center;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    height: 50vh;
-    width: 80vh;
-  }
-.texto-cadas{
-    width: 100%;
-    margin: 15px 0;
-    background: var(--AzulC1);
-    color: var(--BrancoCC2);
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-}
+    .cadas-input{
+        gap: 200px;
+        
+        
+    }
+    .texto-cadas::placeholder {
+        color: var( --BrancoC2);
+        
+    }
+    .cadas-inf {
+        background: var(--BrancoC1);
+        padding: 15px;
+        border-radius: 8px;
+        text-align: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        height: 50vh;
+        width: 80vh;
+    }
+        .texto-cadas{
+            width: 100%;
+            margin: 15px 0;
+            background: var(--AzulC1);
+            color: var(--BrancoCC2);
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
 
-.div-cadas{
-    background-color: var(--Cor2);
-    height: 100%;
-    width: 100%;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-}
+        .div-cadas{
+            background-color: var(--Cor2);
+            height: 100%;
+            width: 100%;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+        }
 
-.button-cadastro{
-    padding: 10px 20px;
-    border-radius: 10px;
-    border: none;
-    background-color: var(--AzulC1);
-    color: var(--BrancoCC2);
-    cursor: pointer;
-}
-.button-cadastro:hover{
-    background-color: var(--AzulCC1);
-    color: var(--BrancoCC2);
-}
+            .button-cadastro{
+                padding: 10px 20px;
+                border-radius: 10px;
+                border: none;
+                background-color: var(--AzulC1);
+                color: var(--BrancoCC2);
+                cursor: pointer;
+            }
+            .button-cadastro:hover{
+                background-color: var(--AzulCC1);
+                color: var(--BrancoCC2);
+            }
 
-.checkbox-container{
-    padding: 10px 20px;
-    border-radius: 10px;
-    border: none;
-    background-color: var(--AzulCC1);
-    color: var(--BrancoCC2);
-    cursor: pointer;
-}
+        .checkbox-container{
+            padding: 10px 20px;
+            border-radius: 10px;
+            border: none;
+            background-color: var(--AzulCC1);
+            color: var(--BrancoCC2);
+            cursor: pointer;
+        }

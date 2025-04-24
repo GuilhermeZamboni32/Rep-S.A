@@ -40,7 +40,7 @@
     background-color: var(--BrancoP2);
     color: var(--AzulEE1);
     border: 1px solid #000000;
-    width: 1000px;
+    width: 1100px;
     height: 200px;
     display: flex;
     flex-direction: row;
@@ -51,38 +51,72 @@
     
 }
 
-.img-produto-exer{
-    width: 140px;
-    height: 150px;
-    border-radius: 10px;
-    margin-left: 20px;
-    border: 3px solid var(--AzulEE1);
-}
+    .img-produto-exer{
+        width: 140px;
+        height: 150px;
+        border-radius: 10px;
+        margin-left: 20px;
+        border: 3px solid var(--AzulEE1);
+    }
 
-.imaga-exer{
-    background-color: #ffffff;
-}
+        .imaga-exer{
+            background-color: #ffffff;
+        }
 
-.nome-exer-t{
-    margin-left: 40px;
-    height: 150px;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    border-radius: 8px;
-}
+    .nome-exer-t{
+        margin-left: 40px;
+        height: 150px;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        border-radius: 8px;
+    }
 
-.nome-exer-b{
-    color: var(--AzulE1);
-    height: 50px;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    border-radius: 8px;
-    border: 3px solid var(--AzulEE1);
-}
+    .nome-exer-b{
+        color: var(--AzulE1);
+        height: 50px;
+        width: 250px;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        border-radius: 8px;
+        border: 3px solid var(--AzulEE1);
+    }
 
-.descricao-exer{
-    color: var(--AzulE1);
-    margin-left: 80px;
-}
+        .descricao-exer{
+            color: var(--AzulE1);
+            margin-left: 80px;
+            height: 150px;
+            margin-right: 100px;
+        }
+
+        .button-x{
+            background-color: var(--VermelhoC2);
+            border-radius: 10px;
+            
+        }
+
+            .button-x:hover{
+                background-color: var(--VermelhoC1);
+            }
+
+            .icone-x{
+                height: 50px;
+                width: 50px;
+            }
+
+        .button-l{
+            background-color: rgb(18, 192, 41);
+            border-radius: 10px;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+            .button-l:hover{
+                background-color:  rgb(0, 255, 34);
+            }
+
+            .icone-l{
+                height: 50px;
+                width: 50px;
+            }

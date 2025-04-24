@@ -22,6 +22,10 @@ function Exercicio({img, nome, descricao}) {
         <h2>{descricao}</h2>
       </div>
 
+      <button className='button-x'><img className='icone-x' src="./Icons/icone-X.png" alt="" /></button>
+      <button className='button-l'><img className='icone-l' src="./Icons/icon-L.png" alt="" /></button>
+
+
 
         
         

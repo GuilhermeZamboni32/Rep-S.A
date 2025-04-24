@@ -68,17 +68,17 @@
       width: 400px;
     }
   
-    .div-img{
+      .div-img{
       background-color: var(--AzulEE1);
       width: 210px;
       border-radius: 8px;
-      
-    }
+      }
     
-    .img {
-      width: 200px;
-      border-radius: 8px;
-    }
+        .img {
+          width: 200px;
+          border-radius: 8px;
+        }
+        
     .espaco{
       height: 50px;
     }
