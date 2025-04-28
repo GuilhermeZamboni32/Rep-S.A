@@ -69,7 +69,7 @@ app.post('/users', async (req, res) => {
   }
 
   try {
-    const hashedPassword = await bcrypt.hash(password_user, 10);
+    const hashedPassword = await bcrypt.hash(password_user, 14);
     const result = await pool.query(
       'INSERT INTO users (username, email_user, password_user, age_user) VALUES ($1, $2, $3, $4) RETURNING id_user, username, email_user, age_user',
       [username, email_user, hashedPassword, age_user]
@@ -138,10 +138,7 @@ app.post('/login', async (req, res) => {
     const user = userResult.rows[0];
     
     const passwordMatch = await bcrypt.compare(password_user, user.password_user);
-    console.log('Password from DB w no "Result":', user.password_user);
-    // console.log('Password from DB:', userResult.password_user);
-    console.log('Password from request:', password_user);
-    // const passwordMatch = true;
+    console.log('Password from DB w:', user.password_user);
     console.log('Password match:', passwordMatch);
     
     if (!passwordMatch) {

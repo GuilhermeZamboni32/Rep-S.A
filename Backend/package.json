@@ -19,6 +19,7 @@
     "helmet": "^8.1.0",
     "jsonwebtoken": "^9.0.2",
     "mongodb": "^6.16.0",
+    "node": "^22.15.0",
     "pg": "^8.14.0"
   },
   "devDependencies": {

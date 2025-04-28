@@ -43,10 +43,7 @@ function Cadastro() {
       return
     }else{
         try {
-          const salt = await bcrypt.genSalt(10);
-          const hashedPassword = bcrypt.hashSync(user.password_user, 10);
-          const updatedUser = { ...user, password_user: hashedPassword };
-          const response = await axios.post('http://localhost:3000/users', updatedUser)
+          const response = await axios.post('http://localhost:3000/users', user)
             if (response.status === 201) {
               localStorage.setItem('token', response.data.token);
               setUsers(response.data) 

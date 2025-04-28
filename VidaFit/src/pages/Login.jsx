@@ -10,7 +10,7 @@ function Login() {
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
-  // const { updateUser } = useContext(GlobalContext);
+  const { updateUser } = useContext(GlobalContext);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -37,8 +37,8 @@ function Login() {
       });
       
       navigate('/');
-    } catch (err) {
-      setError(err.response?.data?.message || 'An error occurred. Please try again.');
+    // } catch (err) {
+    //   setError(err.response?.data?.message || 'An error occurred. Please try again.');
     } finally {
       setLoading(false);
     }
