@@ -182,51 +182,5 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
-/*
- app.post('/login', async (req, res) => {
-     const { username, password_user } = req.body;
-    
-     if (!username || !password_user) {
-       return res.status(400).json({ error: 'Username and password are required' });
-     }
 
-     try {
-       console.log('Attempting to find user with identifier:', username); // Debug log
-      
-       const result = await pool.query( 'SELECT * FROM users WHERE email_user = $1 OR username = $1, password_user = $2', 
-         [username, password_user]
-       );
-      
-       console.log('Query result:', result.rows); // Debug log
-      
-       if (result.rows.length === 0) {
-         console.log('No user found with identifier:', username); // Debug log
-         return res.status(401).json({ error: 'Invalid credentials' });
-       }
-  
-       const user = result;
-       console.log('Found user:', user); // Debug log
-      
-       const isValid = await bcrypt.compare(password_user, user.password_user);
-      
-       if (!isValid) {
-         console.log('Password comparison failed'); // Debug log
-         return res.status(401).json({ error: 'Invalid credentials' });
-       }
-  
-       const { password_user: _, ...userData } = user;
-       const token = jwt.sign(
-         { id: user.id_user }, 
-         ACCESS_KEY, 
-         { expiresIn: '15m' }
-       );
-      
-       res.json({ 
-         user: userData,
-         token 
-       });
-     } catch (err) {
-       console.error('Login error:', err.message);
-       res.status(500).json({ error: 'Login failed', details: err.message });
-    }
-   });*/
+// C

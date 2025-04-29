@@ -6,7 +6,7 @@ CREATE TABLE users(
     first_name VARCHAR(555),
     age_user DATE,
     last_name VARCHAR(555),
-    email_user VARCHAR(555),
+    email_user VARCHAR(555) PRIMARY KEY,
     password_user VARCHAR(555),
     image VARCHAR(555),
     gender_user VARCHAR(255),

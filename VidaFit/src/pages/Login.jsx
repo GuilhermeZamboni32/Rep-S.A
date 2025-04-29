@@ -17,8 +17,6 @@ function Login() {
     e.preventDefault();
     setLoading(true);
     setError('');
-
-    console.log('Submitting form:', form)
     
     try {
       const response = await axios.post('http://localhost:3000/login', {
@@ -26,8 +24,6 @@ function Login() {
         password_user: form.password_user
       });
 
-      console.log('Login response:', response.data)
-      
       updateUser({
         id: response.data.id_user,
         username: response.data.username,
@@ -50,45 +46,54 @@ function Login() {
   };
 
   return (
-    <div>
+    <div className="container-login">
       <Navbar />
-      <div className="login-container">
-        <form onSubmit={handleSubmit}>
-          <h2>Login</h2>
-          {error && <p className="error-message">{error}</p>}
-          <div>
-            <label>Email:</label>
-            <input
-              type="email"
-              name="email_user"
-              value={form.email_user}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div>
-            <label>Password:</label>
-            <input
-              type={showPassword ? 'text' : 'password'}
-              name="password_user"
-              value={form.password_user}
-              onChange={handleChange}
-              required
-            />
+      <div className="center-site">
+        <div className="container-card">
+          <form onSubmit={handleSubmit}>
+            <h2 className="login-txt">Login</h2>
+            {error && <p className="error-message">{error}</p>}
+            <div className="input-group">
+              <label>Email:</label>
+              <input
+                type="email"
+                name="email_user"
+                value={form.email_user}
+                onChange={handleChange}
+                className={`inputs ${error ? 'input-error' : ''}`}
+                required
+              />
+            </div>
+            <div className="input-group">
+              <label>Password:</label>
+              <input
+                type={showPassword ? 'text' : 'password'}
+                name="password_user"
+                value={form.password_user}
+                onChange={handleChange}
+                className={`inputs ${error ? 'input-error' : ''}`}
+                required
+              />
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="botao-login"
+              >
+                {showPassword ? 'Hide' : 'Show'}
+              </button>
+            </div>
             <button
-              type="button"
-              onClick={() => setShowPassword(!showPassword)}
+              type="submit"
+              disabled={loading}
+              className="botao-login"
             >
-              {showPassword ? 'Hide' : 'Show'}
+              {loading ? 'Logging in...' : 'Login'}
             </button>
-          </div>
-          <button type="submit" disabled={loading}>
-            {loading ? 'Logging in...' : 'Login'}
-          </button>
-          <p>
-            Don't have an account? <Link to="/cadastro">Register</Link>
-          </p>
-        </form>
+            <p className="register-link">
+              Don't have an account? <Link to="/cadastro">Register</Link>
+            </p>
+          </form>
+        </div>
       </div>
     </div>
   );
