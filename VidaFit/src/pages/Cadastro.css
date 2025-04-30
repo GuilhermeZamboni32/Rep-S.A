@@ -1,4 +1,4 @@
-:root{
+:root {
     /**extremo claro*/
     --AzulCC1: #1A2D87;
     --AzulCC2: #5E628D;
@@ -34,78 +34,98 @@
     --BrancoEE2: #687982;
     --VermelhoEE1: #811320;
     --VermelhoEE2: #4E0511;
-  }
+}
 
-.container-cadastro{
+.container-cadastro {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     background: linear-gradient(135deg, var(--AzulCC1) 0%, var(--AzulE1) 100%);
-    min-height: 100%;
-    height: 100%;
-    width: 100%;
+}
+
+.center-site {
+    display: flex;
+    justify-content: center;
     align-items: center;
-    
-    }
-    .espaco{
-        height: 100vh;
-    }
+    flex: 1;
+    padding: 20px;
+}
 
-    .cadas-input{
-        gap: 200px;
-        
-        
-    }
-    .texto-cadas::placeholder {
-        color: var( --BrancoC2);
-        
-    }
-    .cadas-inf {
-        background: var(--BrancoC1);
-        padding: 15px;
-        border-radius: 8px;
-        text-align: center;
-        align-items: center;
-        display: flex;
-        flex-direction: column;
-        height: 50vh;
-        width: 80vh;
-    }
-        .texto-cadas{
-            width: 100%;
-            margin: 15px 0;
-            background: var(--AzulC1);
-            color: var(--BrancoCC2);
-            border: none;
-            padding: 10px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+.cadas-inf {
+    background-color: var(--BrancoC1);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;;
+    margin-left: 47rem;
+    margin-top: 5rem;
+}
 
-        .div-cadas{
-            background-color: var(--Cor2);
-            height: 100%;
-            width: 100%;
-            align-items: center;
-            display: flex;
-            flex-direction: column;
-        }
+.cadas-input {
+    margin-bottom: 1rem;
+    position: relative;
+}
 
-            .button-cadastro{
-                padding: 10px 20px;
-                border-radius: 10px;
-                border: none;
-                background-color: var(--AzulC1);
-                color: var(--BrancoCC2);
-                cursor: pointer;
-            }
-            .button-cadastro:hover{
-                background-color: var(--AzulCC1);
-                color: var(--BrancoCC2);
-            }
+.texto-cadas {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    background: var(--BrancoC2);
+    color: var(--AzulC1);
+    transition: border-color 0.3s ease;
+    margin-bottom: 1rem;
+}
 
-        .checkbox-container{
-            padding: 10px 20px;
-            border-radius: 10px;
-            border: none;
-            background-color: var(--AzulCC1);
-            color: var(--BrancoCC2);
-            cursor: pointer;
-        }
+.texto-cadas::placeholder {
+    color: var(--BrancoC1);
+}
+
+.texto-cadas:focus {
+    outline: none;
+    border-color: var(--AzulCC1);
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.checkbox-container input[type="checkbox"] {
+    margin-right: 0.5rem;
+}
+
+.button-cadastro {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: var(--AzulC1);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-cadastro:hover {
+    background-color: var(--AzulCC1);
+}
+
+.register-link {
+    text-align: center;
+    margin-top: 1.5rem;
+    color: #666;
+}
+
+.register-link a {
+    color: var(--AzulC1);
+    text-decoration: none;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
