@@ -79,22 +79,18 @@
 
 }
 .topo-me-edit{
-    
     width: 1200px;
     height: 50px;
     margin: 10px;
-   
-
 }
 .topo-di-edit{
-   
-    width: 100px;
+    width: 400px;
     height: 50px;
     margin: 10px;
     border-radius: 8px;
     align-items: center;
-    
-
+    display: flex;
+    gap: 10px;
 }
 
 .butoon-voltar-edit{
@@ -106,6 +102,20 @@
     cursor: pointer;
 }
 
+.butoon-add-edit{
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(18, 192, 41);
+    color: var(--BrancoP2);
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.butoon-add-edit:hover {
+    background-color: rgb(18, 226, 46);
+}
+
 .div-baixo-edit{
     background-color: var(--BrancoP2);
     min-width: 100vh;
@@ -113,5 +123,38 @@
     border-radius: 8px;
     
 
+}
+
+.lista-cards-exer-edit {
+    background-color: var(--BrancoC2);
+    width: 1650px;
+    height: 500px;
+    overflow-y: auto;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--BrancoP2);
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--AzulC1);
+    border-radius: 6px;
+    border: 2px solid var(--AzulCC1);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--AzulCC1);
+    border: 2px solid var(--VermelhoE2);
 }
 
