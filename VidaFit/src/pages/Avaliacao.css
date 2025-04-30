@@ -68,17 +68,18 @@
       width: 400px;
     }
   
-      .div-img{
+    .div-img{
       background-color: var(--AzulEE1);
       width: 210px;
       border-radius: 8px;
-      }
+      
+    }
     
-        .img {
-          width: 200px;
-          border-radius: 8px;
-        }
-        
+    .img {
+      width: 200px;
+      border-radius: 8px;
+      
+    }
     .espaco{
       height: 50px;
     }
@@ -128,11 +129,6 @@
       padding: 10px;
       cursor: pointer;
   }
-  button:hover{
-      background-color: var(--AzulEE1);
-  }
-  
-    
      .div-grupo-Avaliacao{
       background: var(--BrancoC2);
       border-radius: 8px;
@@ -149,7 +145,7 @@
       font-size: 1.2rem;
       font-weight: bold;
       margin-bottom: 30px;
-      background-color: var(--AzulC2);
+      background-color: var(--AzulP2);
       border-radius: 5px;
       display: flex;
       justify-content: center;
@@ -159,7 +155,7 @@
     }
     
     .Ava-estrela{
-        background-color: var(--AzulC1);
+        background-color: var(--AzulP2);
         border-radius: 8px;
         width: 111vh;
         height: 200px;
@@ -171,7 +167,7 @@
     }
 
     .Ava-coment{
-        background-color: var(--AzulC2);
+        background-color: var(--AzulP2);
         border-radius: 8px;
         width: 111vh;
         height: 25vh;
@@ -179,6 +175,15 @@
         text-align: center;
         align-items: stretch;
         flex-direction: column;
+    }
+    .comentario {
+      background-color: var(--AzulP2);
+      color: var(--BrancoCC2);
+      width: 111.0vh; 
+      height:  90vh; 
+      resize: none;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      
     }
 
     .titulo-Ava-coment{
@@ -188,6 +193,14 @@
       background-color: var(--VermelhoC1);
       border-radius: 3px;
     }
+    .btn-star{
+      background-color: var(--AzulP2);
+      background: none;
+      border: none ;
+      padding: 2px ;
+      cursor: pointer; 
+    }
+
     .stars {
       display: flex;
       gap: 8px;
@@ -199,8 +212,4 @@
       height: 32px;
       cursor: pointer;
       transition: transform 0.2s;
-    }
-    
-    .star-img:hover {
-      transform: scale(1.1);
     }
