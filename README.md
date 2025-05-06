@@ -50,7 +50,7 @@ Porque ao integrar hábitos saudáveis de forma prática e eficiente no seu dia 
 
 ### 2- Aba de contatos:  Jonathan Stulp Zoz 
 2.1- O sistema deve permitir acesso ao perfil dos profissionais <br/>
-2.2- O sistema deve permitir contratar o profissional desejado <br/>
+2.2- O sistema deve permitir celecionar o profissional desejado <br/>
 2.3- O sistema deve dar opção de filtrar os profissionais por categorias desejadas <br/>
 2.3.1- Filtro por nota <br/>
 2.3.2- Filtro por disponibilidade <br/>
