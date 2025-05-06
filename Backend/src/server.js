@@ -237,7 +237,7 @@ app.post('/users/:id_user', authenticateToken, async (req, res) => {
 
 // Professional validation route
 app.post('/professional_info', authenticateToken, async (req, res) => {
-  const { id_user } = req.params;
+  const { id_user } = req.body; // Ensure id_user is passed in the request body
   const { professional_confirm, cref_number, cref_card_photo, validator } = req.body;
 
   try {
@@ -251,7 +251,7 @@ app.post('/professional_info', authenticateToken, async (req, res) => {
     }
 
     const professionalResult = await pool.query(
-      'INSERT INTO professional_info (id_professional, cref_number, cref_card_photo, validator) VALUES ($1, $2, $3, $4) RETURNING *',
+      'INSERT INTO professional_info (id_user, cref_number, cref_card_photo, validator) VALUES ($1, $2, $3, $4) RETURNING *',
       [id_user, cref_number, cref_card_photo, validator]
     );
 
