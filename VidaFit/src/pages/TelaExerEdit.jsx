@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './telaExerEdit.css'
+import './TelaExerEdit.css'
 import Navbar from '../Components/Navbar'
 import { useNavigate } from 'react-router-dom'
 import ExercicioEdit from './ExercicioEdit'
@@ -52,7 +52,7 @@ function TelaExerEdit() {
       id: Date.now(),
       nome: "Novo Exercício",
       descricao: "3 Series de 12 Repetições",
-      img: "./supino.gif"
+      img: "./Icons/icon-halter.png"
     };
     setExercicios([...exercicios, newExercicio]);
   };
@@ -66,7 +66,7 @@ function TelaExerEdit() {
             <h1 className='texto-exer-edit'>Editar Exercícios</h1>
           </div>
 
-          <div className='topo-me-edit'></div>
+          <div className='topo-me-exer-edit'></div>
 
           <div className='topo-di-edit'>
             <button className='butoon-add-edit' onClick={handleAdd}>

@@ -49,6 +49,8 @@ function TelaDietaEdit() {
     setDietas(dietas.filter(dieta => dieta.id !== id));
   };
 
+
+
   return (
     <div className='container-dieta-edit'>
       <Navbar />

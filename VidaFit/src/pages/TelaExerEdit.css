@@ -56,16 +56,18 @@
 }
 
 .div-topo-edit{
-    background-color: var(--Cor4);
+    /*background-color: var(--Cor4);*/
+    background-color: #d61414;
     width: 1670px;
     height: 100px;
     display: flex;
-    align-items: center;
+    flex-direction: row;
+    
     border-radius: 8px;
     
 }
 .topo-es-edit{
-    background-color: var(--BrancoP2);
+    background-color: green;
     width: 290px;
     height: 50px;
     margin: 20px;
@@ -78,12 +80,15 @@
     margin-top: 5px;
 
 }
-.topo-me-edit{
-    width: 1200px;
+.topo-me-exer-edit{
+    /*background-color: rgb(218, 22, 185);*/
+    width: 1100px;
     height: 50px;
-    margin: 10px;
+    
 }
+
 .topo-di-edit{
+   /* background-color: rgb(0, 89, 255);*/
     width: 400px;
     height: 50px;
     margin: 10px;
