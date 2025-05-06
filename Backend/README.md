@@ -1,6 +1,12 @@
 Comandos para a tabela no postgreSQL
 
+*Rota de cração do database
+CREATE DATABASE IF NOT EXIST VidaFit;
+
+*Extensão para uuid
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
+*Tabela de usuarios
 CREATE TABLE users(
     username VARCHAR(555),
     first_name VARCHAR(555),
@@ -17,3 +23,10 @@ CREATE TABLE users(
     account_enable BOOLEAN
 );
 
+*Tabela de exercicios
+CREATE TABLE exercises(
+	exercise_id UUID DEFAULT uuid_generate_v4(),
+	exercise_name VARCHAR(555),
+	exercise_exemple VARCHAR(555),
+	exercise_description VARCHAR(555)
+);

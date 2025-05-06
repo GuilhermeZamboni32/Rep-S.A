@@ -62,7 +62,7 @@ function authenticateToken(req, res, next) {
 // Routes
 // User registration with password hashing
 app.post('/users', async (req, res) => {
-  const { username, email_user, password_user, age_user } = req.body;
+  const { username, email_user, password_user, age_user, account_enable } = req.body;
   
   if (!username || !email_user || !password_user) {
     return res.status(400).json({ error: 'Missing required fields' });
@@ -71,8 +71,8 @@ app.post('/users', async (req, res) => {
   try {
     const hashedPassword = await bcrypt.hash(password_user, 14);
     const result = await pool.query(
-      'INSERT INTO users (username, email_user, password_user, age_user) VALUES ($1, $2, $3, $4) RETURNING id_user, username, email_user, age_user',
-      [username, email_user, hashedPassword, age_user]
+      'INSERT INTO users (username, email_user, password_user, age_user, account_enable) VALUES ($1, $2, $3, $4, $5) RETURNING id_user, username, email_user, age_user, account_enable',
+      [username, email_user, hashedPassword, age_user, account_enable]
     );
     res.status(201).json(result.rows[0]);
   } catch (err) {
@@ -114,9 +114,13 @@ app.get('/users/:id_user', authenticateToken, async (req, res) => {
   }
 });
 
-// TODO: Fazer o Login Handler
+// Login Handler
 app.post('/login', async (req, res) => {
-  const { email_user, password_user } = req.body;
+  const { email_user, password_user, account_enable } = req.body;
+
+  if (account_enable === '0') {
+    return res.status(401).json({ error: 'Usuario não existe' });
+  }
 
   console.log ('Login attempt with email:', email_user);
   console.log ('Login attempt with password:', password_user);
@@ -160,6 +164,14 @@ app.post('/login', async (req, res) => {
       username: user.username,
       email_user: user.email_user,
       age_user: user.age_user,
+      account_enable: user.account_enable,
+      first_name: user.first_name,
+      last_name: user.last_name,
+      image: user.image,
+      gender_user: user.gemder_user,
+      problems_user: user.problems_user,
+      professional_confirm: user.profession_confirm,
+      professional_type: user.professional_type,
       token: token
     };
     
@@ -170,6 +182,82 @@ app.post('/login', async (req, res) => {
     res.status(500).json({ error: 'Login failed' });
   }
 });
+
+// "Delete" user account
+
+app.post('/delete', authenticateToken, async (req, res) => {
+  const { id_user } = req.params;
+  
+  try {
+    const result = await pool.query(
+      'UPDATE users SET account_enable = $1 WHERE id_user = $2 RETURNING *',
+      ['0', id_user]
+    );
+    
+    if (result.rows.length === 0) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+    
+    res.json({ message: 'User account deleted successfully' });
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).json({ error: 'Failed to delete user account' });
+  }
+});
+
+// Edit user handler
+
+app.post('/users/:id_user', authenticateToken, async (req, res) => {
+  const { id_user } = req.params;
+  const { username, email_user, password_user, age_user, first_name, last_name, image, gender_user, problems_user } = req.body;
+
+  if (!username || !email_user || !password_user) {
+    return res.status(400).json({ error: 'Missing required fields' });
+  }
+
+  try {
+    const hashedPassword = await bcrypt.hash(password_user, 14);
+    const result = await pool.query(
+      'UPDATE users SET username = $1, email_user = $2, password_user = $3, age_user = $4, first_name = $5, last_name = $6, image = $7, gender_user = $8, problems_user = $9 WHERE id_user = $10 RETURNING *',
+      [username, email_user, hashedPassword, age_user, first_name, last_name, image, gender_user, problems_user, id_user]
+    );
+
+    if (result.rows.length === 0) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    res.json(result.rows[0]);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).json({ error: 'Failed to update user' });
+  }
+});
+
+// Professional confirm route
+
+app.post('/professional_confirm', authenticateToken, async (req, res) => {
+  const { id_user } = req.params;
+  const { professional_confirm, professional_type } = req.body;
+
+  try {
+    const result = await pool.query(
+      'UPDATE users SET professional_confirm = $1, professional_type = $2 WHERE id_user = $3 RETURNING *',
+      [professional_confirm, professional_type, id_user]
+    );
+
+    if (result.rows.length === 0) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    res.json(result.rows[0]);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).json({ error: 'Failed to update user' });
+  }
+});
+
+// Chat handler
+
 
 
 // Error handling middleware
@@ -182,5 +270,3 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
-
-// C
