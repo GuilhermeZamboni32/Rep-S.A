@@ -59,10 +59,10 @@ function authenticateToken(req, res, next) {
   });
 }
 
-// Routes
+// * Routes
 // User registration with password hashing
 app.post('/users', async (req, res) => {
-  const { username, email_user, password_user, age_user, account_enable } = req.body;
+  const { username, email_user, password_user, age_user} = req.body;
   
   if (!username || !email_user || !password_user) {
     return res.status(400).json({ error: 'Missing required fields' });
@@ -71,8 +71,8 @@ app.post('/users', async (req, res) => {
   try {
     const hashedPassword = await bcrypt.hash(password_user, 14);
     const result = await pool.query(
-      'INSERT INTO users (username, email_user, password_user, age_user, account_enable) VALUES ($1, $2, $3, $4, $5) RETURNING id_user, username, email_user, age_user, account_enable',
-      [username, email_user, hashedPassword, age_user, account_enable]
+      'INSERT INTO users (username, email_user, password_user, age_user) VALUES ($1, $2, $3, $4) RETURNING id_user, username, email_user, age_user',
+      [username, email_user, hashedPassword, age_user]
     );
     res.status(201).json(result.rows[0]);
   } catch (err) {
@@ -85,7 +85,7 @@ app.post('/users', async (req, res) => {
 });
 
 // Protected user routes
-app.get('/users', authenticateToken, async (req, res) => {
+app.get('/users', authenticateToken, async (_, res) => {
   try {
     const result = await pool.query(
       'SELECT id_user, username, email_user, age_user FROM users'
@@ -174,6 +174,8 @@ app.post('/login', async (req, res) => {
       professional_type: user.professional_type,
       token: token
     };
+
+    console.log('User data:', userData);
     
     res.json(userData);
     
@@ -185,13 +187,13 @@ app.post('/login', async (req, res) => {
 
 // "Delete" user account
 
-app.post('/delete', authenticateToken, async (req, res) => {
+app.patch('/disable', authenticateToken, async (req, res) => {
   const { id_user } = req.params;
   
   try {
     const result = await pool.query(
-      'UPDATE users SET account_enable = $1 WHERE id_user = $2 RETURNING *',
-      ['0', id_user]
+      'UPDATE users SET account_enable = FALSE WHERE id_user = $1 RETURNING *',
+      [ id_user ]
     );
     
     if (result.rows.length === 0) {
@@ -233,26 +235,33 @@ app.post('/users/:id_user', authenticateToken, async (req, res) => {
   }
 });
 
-// Professional confirm route
-
-app.post('/professional_confirm', authenticateToken, async (req, res) => {
+// Professional validation route
+app.post('/professional_info', authenticateToken, async (req, res) => {
   const { id_user } = req.params;
-  const { professional_confirm, professional_type } = req.body;
+  const { professional_confirm, cref_number, cref_card_photo, validator } = req.body;
 
   try {
-    const result = await pool.query(
-      'UPDATE users SET professional_confirm = $1, professional_type = $2 WHERE id_user = $3 RETURNING *',
-      [professional_confirm, professional_type, id_user]
+    const userResult = await pool.query(
+      'UPDATE users SET professional_confirm = $1 WHERE id_user = $2 RETURNING *',
+      [professional_confirm, id_user]
     );
 
-    if (result.rows.length === 0) {
+    if (userResult.rows.length === 0) {
       return res.status(404).json({ error: 'User not found' });
     }
 
-    res.json(result.rows[0]);
+    const professionalResult = await pool.query(
+      'INSERT INTO professional_info (id_professional, cref_number, cref_card_photo, validator) VALUES ($1, $2, $3, $4) RETURNING *',
+      [id_user, cref_number, cref_card_photo, validator]
+    );
+
+    res.json({
+      user: userResult.rows[0],
+      professionalInfo: professionalResult.rows[0],
+    });
   } catch (err) {
     console.error(err.message);
-    res.status(500).json({ error: 'Failed to update user' });
+    res.status(500).json({ error: 'Failed to update user or insert professional info' });
   }
 });
 
