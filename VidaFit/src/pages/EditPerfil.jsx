@@ -30,6 +30,15 @@ function EditPerfil() {
     }
   }
 
+  async function deleteAccount(deleteAccount) {
+    try {
+      const response = await axios.post(`http://localhost:3000/disable`);
+      console.log('Account deleted successfully:', response.data);
+  }catch (error) {
+      console.error('Error deleting account:', error);
+    }
+  }
+
   function voltar(){
     
     navigate(-1);
