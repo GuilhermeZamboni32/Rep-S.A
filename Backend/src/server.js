@@ -209,7 +209,7 @@ app.patch('/disable', authenticateToken, async (req, res) => {
 
 // Edit user handler
 
-app.post('/users/:id_user', authenticateToken, async (req, res) => {
+app.post('/users/edit', authenticateToken, async (req, res) => {
   const { id_user } = req.params;
   const { username, email_user, password_user, age_user, first_name, last_name, image, gender_user, problems_user } = req.body;
 
@@ -238,11 +238,11 @@ app.post('/users/:id_user', authenticateToken, async (req, res) => {
 // Professional validation route
 app.post('/professional_info', authenticateToken, async (req, res) => {
   const { id_user } = req.body; // Ensure id_user is passed in the request body
-  const { professional_confirm, cref_number, cref_card_photo, validator } = req.body;
+  const { professional_confirm, cref_number, cref_card_photo, validator, professional_type} = req.body;
 
   try {
     const userResult = await pool.query(
-      'UPDATE users SET professional_confirm = $1 WHERE id_user = $2 RETURNING *',
+      'UPDATE users SET professional_confirm = 1 WHERE id_user = $2 RETURNING *',
       [professional_confirm, id_user]
     );
 
@@ -253,6 +253,11 @@ app.post('/professional_info', authenticateToken, async (req, res) => {
     const professionalResult = await pool.query(
       'INSERT INTO professional_info (id_user, cref_number, cref_card_photo, validator) VALUES ($1, $2, $3, $4) RETURNING *',
       [id_user, cref_number, cref_card_photo, validator]
+    );
+    
+    const professional_typeResult = await pool.query(
+      'UPDATE users SET professional_type = $1 WHERE id_user = $2 RETURNING *',
+      [professional_type, id_user]
     );
 
     res.json({

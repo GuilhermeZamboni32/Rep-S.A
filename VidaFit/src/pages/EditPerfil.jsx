@@ -2,12 +2,34 @@ import Navbar from '../Components/Navbar'
 import { Link, useNavigate } from 'react-router-dom'
 import './EditPerfil.css'
 import { useState } from 'react'
+import axios from 'axios'
 
 import Modal from '../Components/modalConfirmProficional'
 function EditPerfil() {
 
   const navigate = useNavigate()
   const [openModal, setOpenModal] = useState(false)
+
+  async function submitEditProfile(form) {
+    try {
+      const response = await axios.post('http://localhost:3000/users/edit', {
+        email_user: form.email_user,
+        username: form.username,
+        hashedPassword: bcrypt.hashSync(form.password_user, 10),
+        age_user: form.age_user,
+        first_name: form.first_name,
+        last_name: form.last_name, 
+        image: form.image,
+        gender_user: form.gender_user,
+        problems_user: form.problems_user,
+        professional_confirm: form.professional_confirm,
+      });
+      console.log('Profile updated successfully:', response.data);
+    }catch (error) {
+      console.error('Error fetching user data:', error);
+    }
+  }
+
   function voltar(){
     
     navigate(-1);

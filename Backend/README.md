@@ -31,6 +31,7 @@ CREATE TABLE professional_info(
     id_user UUID,
     CONSTRAINT fk_user_professional
         FOREIGN KEY (id_user) REFERENCES users(id_user)
+        ON UPDATE CASCADE
         ON DELETE CASCADE
 );
 

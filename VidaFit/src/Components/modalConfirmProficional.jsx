@@ -2,7 +2,20 @@ import React from 'react'
 import './ModalConfirmProficional.css'
 
 
-
+async (form) =>  {
+    try {
+      const response = await axios.post('http://localhost:3000/professional_info', {
+        professional_confirm: form.professional_confirm,
+        cref_number: form.cref_number,
+        cref_card_photo: form.cref_card_photo,
+        validator: form.validator,
+        professional_type: form.professional_type,
+      });
+      console.log('Profissional cadastrado com sucesso:', response.data);
+    }catch (error) {
+      console.error('Erro ao pegar dado do usuario:', error);
+    }
+  }
 
 export default function Modal({ isOpen, setModalOpen, children }) {
   if (isOpen) {
