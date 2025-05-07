@@ -51,7 +51,7 @@
         border-radius: 8px;
        border: 10px solid var(--AzulC1);
        width: 1650px;
-       height: 500px;
+       height: 600px;
        display: flex;
        flex-wrap: wrap;
       overflow-y: auto;

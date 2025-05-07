@@ -90,33 +90,42 @@
             margin-right: 100px;
         }
 
-        .button-x{
+        .button-x-exer{
             background-color: var(--VermelhoC2);
             border-radius: 10px;
             
         }
 
-            .button-x:hover{
+            .button-x-exer:hover{
                 background-color: var(--VermelhoC1);
             }
 
-            .icone-x{
-                height: 50px;
-                width: 50px;
+            .icone-x-exer{
+                height: 40px;
+                width: 40px;
             }
 
-        .button-l{
+        .button-l-exer{
             background-color: rgb(18, 192, 41);
             border-radius: 10px;
             margin-left: 20px;
             margin-right: 20px;
         }
 
-            .button-l:hover{
+            .button-l-exer:hover{
                 background-color:  rgb(0, 255, 34);
             }
 
-            .icone-l{
-                height: 50px;
-                width: 50px;
+            .icone-l-exer{
+                height: 40px;
+                width: 40px;
             }
+
+                    
+
+                    .container-produto-exer.apagado {
+                        filter: blur(3px);
+                        opacity: 0.5;
+                        pointer-events: none;
+                        transition: 0.3s ease;
+                    }

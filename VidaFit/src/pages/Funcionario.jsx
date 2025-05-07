@@ -3,7 +3,7 @@ import './Funcionario.css'
 import { useState } from 'react';
 //import { Link } from 'react-router-dom'
 
-function Funcionario({img, nome, descricao, profi}) {
+function Funcionario({img, nome, descricao, profi, genero}) {
   
 const  [shadow, setShadow] = useState('container-produtos')
 
@@ -21,6 +21,8 @@ useEffect(() => {
     <div  className={shadow}>
       
          <h2>{nome}</h2>
+         {/*<h3>{genero}</h3>*/}
+         
          
          <img src={img} className='img-produto'/>
          

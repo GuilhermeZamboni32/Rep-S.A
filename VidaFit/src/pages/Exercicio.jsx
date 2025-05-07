@@ -3,9 +3,18 @@ import './Exercicio.css'
 import { useState } from 'react';
 
 function Exercicio({img, nome, descricao}) {
+  const [treinoMarcado, setTreinoMarcado] = useState(false);
+
+  const TreinoConcluido = () => {
+    setTreinoMarcado(true);
+  };
+  const treinoNaoConcluido = () => {
+    setTreinoMarcado(false); 
+  };
+
     return (
 
-    <div className='container-produto-exer'>
+    <div className={`container-produto-exer ${treinoMarcado ? 'apagado' : ''}`}>
 
       <div className='imagem-exer'>
         <img src={img} className='img-produto-exer'/>
@@ -22,13 +31,13 @@ function Exercicio({img, nome, descricao}) {
         <h2>{descricao}</h2>
       </div>
 
-      <button className='button-x'><img className='icone-x' src="./Icons/icone-X.png" alt="" /></button>
-      <button className='button-l'><img className='icone-l' src="./Icons/icon-L.png" alt="" /></button>
+      <button className='button-x-exer' onClick={treinoNaoConcluido}> 
+        <img className='icone-x-exer' src="./Icons/icone-X.png" alt="" />
+      </button>
 
-
-
-        
-        
+      <button className='button-l-exer'  onClick={TreinoConcluido}>
+        <img className='icone-l-exer' src="./Icons/icon-L.png" alt="" />
+      </button> 
     
     </div>
   )

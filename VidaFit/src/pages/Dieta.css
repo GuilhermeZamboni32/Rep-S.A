@@ -104,8 +104,8 @@
             }
 
             .icone-x{
-                height: 50px;
-                width: 50px;
+                height: 40px;
+                width: 40px;
             }
 
         .button-l{
@@ -120,6 +120,13 @@
             }
 
             .icone-l{
-                height: 50px;
-                width: 50px;
+                height: 40px;
+                width: 40px;
+            }
+
+            .container-produto-dieta.apagado {
+                filter: blur(3px);
+                opacity: 0.5;
+                pointer-events: none;
+                transition: 0.3s ease;
             }

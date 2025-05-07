@@ -36,7 +36,9 @@ function Home() {
             <option value="">Todos os Profissionais</option>
             <option value="nutricionista">Profissional de Nutrição 🍃</option>
             <option value="fitness">Profissional de Educação Física 💪</option>     
-            <option value="educacao_fisica">Profissional Fitness 🍃💪</option>         
+            <option value="educacao_fisica">Profissional Fitness 🍃💪</option>   
+            <option value="Masculino">Gênero Mascolino ♂️</option>     
+            <option value="Feminino">Gênero feminino ♀️</option>       
           </select>
         </div>
         

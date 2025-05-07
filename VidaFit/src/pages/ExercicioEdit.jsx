@@ -72,6 +72,7 @@ function ExercicioEdit({img, nome, descricao, onSave, onDelete}) {
                     <button className='button-edit' onClick={() => setIsEditing(true)}>
                         <img className='icone-edit' src="./Icons/icon-Edit.png" alt="Editar"/>
                     </button>
+                    
                     <button className='button-delete' onClick={onDelete}>
                         <img className='icone-delete' src="./Icons/icon-deletar.png" alt="Deletar"/>
                     </button>

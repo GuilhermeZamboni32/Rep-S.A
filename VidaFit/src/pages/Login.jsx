@@ -17,6 +17,7 @@ function Login() {
     e.preventDefault();
     setLoading(true);
     setError('');
+
     
     try {
       const response = await axios.post('http://localhost:3000/login', {
@@ -32,9 +33,10 @@ function Login() {
         token: response.data.token
       });
       
-      navigate('/');
-    // } catch (err) {
-    //   setError(err.response?.data?.message || 'An error occurred. Please try again.');
+      navigate('/perfil'); 
+
+    } catch (err) {
+      setError(err.response?.data?.message || 'An error occurred. Please try again.');
     } finally {
       setLoading(false);
     }
