@@ -56,6 +56,8 @@ export const GlobalContextProvider = ({ children }) => {
     localStorage.setItem('user', JSON.stringify(newUser));
   };
 
+  console.log (login)
+
   return (
     <GlobalContext.Provider
       value={{

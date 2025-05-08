@@ -1,7 +1,7 @@
 import Navbar from '../Components/Navbar'
 import { Link, useNavigate } from 'react-router-dom'
 import './EditPerfil.css'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import axios from 'axios'
 
 import Modal from '../Components/modalConfirmProficional'
@@ -9,6 +9,20 @@ function EditPerfil() {
 
   const navigate = useNavigate()
   const [openModal, setOpenModal] = useState(false)
+
+
+  const [user, setUser] = useState({
+    first_name: '',
+    last_name: '',
+    age_user: '',
+    email_user: '',
+    gender_user: '',
+    problems_user: '',
+    endereco: '',
+    cpf: '',
+    horario: '',
+  });
+
 
   async function submitEditProfile(form) {
     try {
@@ -63,12 +77,38 @@ function EditPerfil() {
 
             <div className="perfil-input">
           
-              <input className='texto-inp-edit' type="text" placeholder='Nome :'/>
-              <input className='texto-inp-edit' type="text" placeholder='Data de nascimento :'/>
-              <input className='texto-inp-edit' type="text" placeholder='Email :'/>
+            <input
+                className='texto-inp-edit'
+                type="text"
+                placeholder='Nome :'
+                value={userData.first_name}
+                onChange={(e) => setUserData({ ...userData, first_name: e.target.value })}
+            />
+
+            <input
+                className='texto-inp-edit'
+                type="text"
+                placeholder='Data de nascimento :'
+                value={userData.age_user}
+                onChange={(e) => setUserData({ ...userData, age_user: e.target.value })}
+            />
+
+            <input
+                className='texto-inp-edit'
+                type="text"
+                placeholder='Email :'
+                value={userData.email_user}
+                onChange={(e) => setUserData({ ...userData, email_user: e.target.value })}
+            />
+            
               <div className='topo-di'>
+
               <button className='Voltar' onClick={voltar}>
                 <p className='texto-ed'>Voltar</p>
+                </button>
+
+                <button className='Excluir' onClick={deleteAccount}>
+                <p className='texto-ed'>Excluir conta</p>
                 </button>
             </div>
              

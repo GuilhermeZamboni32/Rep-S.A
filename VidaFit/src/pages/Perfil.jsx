@@ -43,10 +43,28 @@ const navigate = useNavigate()
             <div className="espaco"></div>
 
             <div className="perfil-input">
-              <input className='texto-perfil' type="text" placeholder='Nome :'/>
-              <input className='texto-perfil' type="text" placeholder='Data de nascimento :'/>
-              <input className='texto-perfil' type="text" placeholder='Email :'/>
-              <input className='texto-perfil' type="text" placeholder='Senha :'/>
+            <input
+                className='texto-perfil'
+                type="text"
+                placeholder='Nome :'
+                value={user?.username || ''}
+                readOnly
+            />
+            <input
+                className='texto-perfil'
+                type="text"
+                placeholder='Data de nascimento :'
+                value={user?.age || ''}
+                readOnly
+            />
+            <input
+                className='texto-perfil'
+                type="text"
+                placeholder='Email :'
+                value={user?.email || ''}
+                readOnly
+            />
+            
               <div className="espaco"></div>
             </div>
 
