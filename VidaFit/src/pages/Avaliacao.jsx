@@ -71,7 +71,6 @@ function Avaliacao() {
     <Navbar />
       <div className="div-grupo-Ava">
         
-       
         <div className="div-grupo-usuario-Ava">
 
           <div className='div-img'>
@@ -81,13 +80,13 @@ function Avaliacao() {
           <div className="espaco"></div>
 
           <div className="perfil-input-1-ava">
-            <input className='texto-inp' type="text" placeholder='Nome :'/>
+            <input className='texto-inp' type="text" value="" readonly placeholder='Nome :'/>
           </div> 
             <div className="perfil-input-2-ava">
-            <input className='texto-inp' type="text" placeholder='email'/>
+            <input className='texto-inp' type="text" value="" readonly placeholder='email'/>
            </div> 
            <div className="perfil-input-3-ava">
-            <input className='texto-inp' type="text" placeholder='Data de nascimento :'/>
+            <input className='texto-inp' type="text" value="" readonly placeholder='Data de nascimento :'/>
           </div>
             <div className="espaco"></div>
           

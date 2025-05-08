@@ -1,0 +1,25 @@
+.titulo_av_notas{
+font-size: 1.2rem;
+font-weight: bold;
+margin-bottom: 30px;
+background-color: var(--AzulP2);
+border-radius: 3px;
+display: flex;
+justify-content: center;
+width: 175.4vh;
+justify-content: top;
+}
+.Av_notas{
+background: var(--BrancoC2);
+border-radius: 8px;
+width: 300vh;
+height: 69vh;
+display: flex;
+align-items: center;
+flex-direction: column;    
+}
+.cards_av{
+background-color: black;
+display:flex;
+flex-direction: column;
+}

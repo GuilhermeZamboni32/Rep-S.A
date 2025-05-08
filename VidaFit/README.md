@@ -23,7 +23,7 @@ Porque ao integrar hábitos saudáveis de forma prática e eficiente no seu dia 
 [1.Guilherme Zamboni Menegacio](  https://github.com/GuilhermeZamboni32) <br/>
 [2.Vitor Danielli de Oliveira](  https://github.com/CafeinaC4) <br/>
 [3.Jonathan Stulp Zoz](  https://github.com/Jow-Sky) <br/>
-[4.Thiago Quadra Arnol](  https://github.com/thpixel-dev) <br/>
+[4.Thiago Quadra Arnold](  https://github.com/thpixel-dev) <br/>
 
 
 <br/>
