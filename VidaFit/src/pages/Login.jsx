@@ -29,8 +29,16 @@ function Login() {
       updateUser({
         id: response.data.id_user,
         username: response.data.username,
-        email: response.data.email_user,
-        age: response.data.age_user,
+        email_user: response.data.email_user,
+        age_user: response.data.age_user,
+        account_enable: response.data.account_enable,
+        first_name: response.data.first_name,
+        last_name: response.data.last_name, 
+        image: response.data.image,
+        gender_user: response.data.gender_user,
+        problems_user: response.data.problems_user,
+        professional_confirm: response.data.professional_confirm,
+        professional_type: response.data.professional_type,
         token: response.data.token
       });
       

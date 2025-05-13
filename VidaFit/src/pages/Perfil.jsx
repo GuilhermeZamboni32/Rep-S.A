@@ -3,7 +3,7 @@ import Navbar from '../Components/Navbar'
 import './Perfil.css'
 //import React, {useState} from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { react, createContext, useState, useContext } from 'react';
+import { react, useContext } from 'react';
 import { GlobalContext } from "../Context/GlobalContext"
 
 
