@@ -3,12 +3,12 @@ import Navbar from '../Components/Navbar'
 import './Perfil.css'
 //import React, {useState} from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { react, createContext, useState, useContext } from 'react';
+import { react, useContext } from 'react';
 import { GlobalContext } from "../Context/GlobalContext"
 
 
 function Perfil() {
-  const { user, setUser,   inputNome, setInputNome,    inputDescricao, setInputDescricao,    inputImagem, setInputImagem} = useContext(GlobalContext)
+const { user, setUser} = useContext(GlobalContext)
 const navigate = useNavigate()
 
   function exercicio(){
