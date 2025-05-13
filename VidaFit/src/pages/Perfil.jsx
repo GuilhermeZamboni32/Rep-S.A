@@ -8,7 +8,7 @@ import { GlobalContext } from "../Context/GlobalContext"
 
 
 function Perfil() {
-  const { user, setUser,   inputNome, setInputNome,    inputDescricao, setInputDescricao,    inputImagem, setInputImagem} = useContext(GlobalContext)
+  const { user, setUser} = useContext(GlobalContext)
 const navigate = useNavigate()
 
   function exercicio(){
@@ -50,6 +50,7 @@ const navigate = useNavigate()
                 value={user?.username || ''}
                 readOnly
             />
+
             <input
                 className='texto-perfil'
                 type="text"
