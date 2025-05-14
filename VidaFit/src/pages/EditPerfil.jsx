@@ -36,7 +36,11 @@ function EditPerfil() {
         first_name: form.first_name,
         last_name: form.last_name, 
         image: form.image,
-        gender_user: form.gender_user,
+        gender_user: form.gender_user, 
+        horario_disponivel: form.horario_disponivel, 
+        comorbidades: form.comorbidades, 
+        endereco: form.endereco, 
+        cpf: form.cpf, 
         problems_user: form.problems_user,
         professional_confirm: form.professional_confirm,
       });
@@ -54,6 +58,12 @@ function EditPerfil() {
       console.error('Error deleting account:', error);
     }
   }
+
+
+
+
+ 
+
 
   function voltar(){
     
@@ -103,21 +113,31 @@ function EditPerfil() {
                 onChange={(e) => setUserData({ ...UserData, email_user: e.target.value })}
             />
             
-              <div className='topo-di'>
-
-              <button className='Voltar' onClick={voltar}>
-                <p className='texto-ed'>Voltar</p>
-                </button>
-
-                <button className='Excluir' onClick={deleteAccount}>
-                <p className='texto-ed'>Excluir conta</p>
-                </button>
-            </div>
              
             <div className="espaco"></div>
 
             </div>
           
+              <div className='botoes-edit'>
+
+              <button className="Salvar" onClick={() => submitEditProfile(userData)}>
+                Salvar
+              </button>
+
+              <button className='Voltar' onClick={voltar}>
+                <p className='texto-ed'>Voltar</p>
+                </button>
+
+                 
+                <button className='Excluir'onClick={() => {
+                  const confirmDelete = window.confirm('Deseja mesmo excluir a sua conta ?');
+                  if (confirmDelete) {
+                    deleteAccount();
+                  }
+                }}>
+                <p className='texto-ed'>Excluir conta</p>
+                </button>
+            </div>
               
 
             </div>
@@ -160,7 +180,7 @@ function EditPerfil() {
             <button className="butoon-click-1" onClick={() => setOpenModal(true)}>clique aqui</button>
             </div>
             <Modal isOpen={openModal} setModalOpen={() => setOpenModal(!openModal)}>
-        Conteúdo do modal
+        <img  className='imagemfeliz' src="carafeliz.webp" alt="" />
       </Modal>
       
           </div>
