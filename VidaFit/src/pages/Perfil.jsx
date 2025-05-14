@@ -5,11 +5,23 @@ import './Perfil.css'
 import { Link, useNavigate } from 'react-router-dom'
 import { react, useContext } from 'react';
 import { GlobalContext } from "../Context/GlobalContext"
-
+import bcrypt from 'bcryptjs';
 
 function Perfil() {
-  const { user, setUser} = useContext(GlobalContext)
+const { user, setUser} = useContext(GlobalContext)
+const { updateUser } = useContext(GlobalContext)
+const { logout } = useContext(GlobalContext)
 const navigate = useNavigate()
+  
+
+const formatDate = (date) => {
+    if (!date) return '';
+    const parsedDate = new Date(date); 
+    const day = String(parsedDate.getDate()).padStart(2, '0'); 
+    const month = String(parsedDate.getMonth() + 1).padStart(2, '0'); 
+    const year = parsedDate.getFullYear(); 
+    return `${day}/${month}/${year}`; 
+};
 
   function exercicio(){
     navigate('/telaexer');
@@ -55,14 +67,14 @@ const navigate = useNavigate()
                 className='texto-perfil'
                 type="text"
                 placeholder='Data de nascimento :'
-                value={user?.age || ''}
+                value={formatDate(user?.age_user)}
                 readOnly
             />
             <input
                 className='texto-perfil'
                 type="text"
                 placeholder='Email :'
-                value={user?.email || ''}
+                value={user?.email_user || ''}
                 readOnly
             />
             
@@ -71,6 +83,7 @@ const navigate = useNavigate()
 
               <button className='button-perfil' onClick={edit}>Editar</button>
               <button className='button-perfil' onClick={avaliar}>Avaliar Usuario</button>
+              <button className='button-perfil' onClick={logout}>Sair</button>
           </div>
 
         

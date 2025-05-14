@@ -6,7 +6,7 @@ const jwt = require('jsonwebtoken');
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 require('dotenv').config();
-import { app, analytics } from './firebase.js';
+// import { app, analytics } from './firebase.js';
 
 
 const app = express();

@@ -91,7 +91,7 @@ function EditPerfil() {
                 className='texto-inp-edit'
                 type="text"
                 placeholder='Data de nascimento :'
-                value={formatDate(user?.age)}
+                value={formatDate(user?.age_user)}
                 onChange={(e) => setUserData({ ...UserData, age_user: e.target.value })}
             />
 
@@ -99,7 +99,7 @@ function EditPerfil() {
                 className='texto-inp-edit'
                 type="text"
                 placeholder='Email :'
-                value={user?.email}
+                value={user?.email_user}
                 onChange={(e) => setUserData({ ...UserData, email_user: e.target.value })}
             />
             
