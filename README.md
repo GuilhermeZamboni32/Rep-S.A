@@ -52,11 +52,7 @@ Porque ao integrar hábitos saudáveis de forma prática e eficiente no seu dia 
 2.1- O sistema deve permitir acesso ao perfil dos profissionais <br/>
 2.2- O sistema deve permitir celecionar o profissional desejado <br/>
 2.3- O sistema deve dar opção de filtrar os profissionais por categorias desejadas <br/>
-2.3.1- Filtro por nota <br/>
-2.3.2- Filtro por disponibilidade <br/>
-2.3.3- Filtro por experiência <br/>
-2.3.4- Filtro por gênero <br/>
-2.3.5- Filtro por região  <br/><br/>
+
 
 ### 3- Catálogo de treinos e dietas:  Guilherme Zamboni Menegacio 
 3.1- O sistema deve mostrar os treinos e dietas dados pelos profissionais <br/>
