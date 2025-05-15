@@ -108,6 +108,16 @@
     
 }
 
+.botoes-perfil{
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-block: 10px;
+}
+
 .button-perfil{
   padding: 10px 20px;
   border-radius: 10px;

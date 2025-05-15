@@ -81,9 +81,13 @@ const formatDate = (date) => {
               <div className="espaco"></div>
             </div>
 
+            <div className='botoes-perfil'>
+
               <button className='button-perfil' onClick={edit}>Editar</button>
               <button className='button-perfil' onClick={avaliar}>Avaliar Usuario</button>
               <button className='button-perfil' onClick={logout}>Sair</button>
+            </div>
+
           </div>
 
         

@@ -107,13 +107,52 @@
     .texto-inp{
       width: 100%;
       margin: 5px 0;
-      background: var(--BrancoC1);
+      background: var(--AzulE1);
       color: var(--BrancoC2);
       border: none;
       padding: 10px;
       border-radius: 5px;
       cursor: pointer;
   }
+
+  .botoes-av{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-block: 10px;
+  }
+
+
+  .avaliar-usuario{
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: var(--AzulC1);
+    color: var(--BrancoCC2);
+    cursor: pointer;
+  }
+  .avaliar-usuario:hover{
+    color: var(--AzulEE1);
+    background-color: rgb(192, 192, 26);
+  }
+
+  .voltar{
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: var(--AzulC1);
+    color: var(--BrancoCC2);
+    cursor: pointer;
+  }
+
+  .voltar:hover{
+    color: var(--BrancoC2);
+    background-color: var(--AzulCC1);
+  }
+
   
   .texto-inp::placeholder {
       color: var(--BrancoC2);

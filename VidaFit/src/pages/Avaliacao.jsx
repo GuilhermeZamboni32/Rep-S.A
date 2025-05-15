@@ -1,11 +1,35 @@
 import React from 'react'
-import "./Avaliacao.css"
-import { Link } from 'react-router-dom'
 import Navbar from '../Components/Navbar'
+import "./Avaliacao.css"
+import { Link, useNavigate } from 'react-router-dom'
+import { react, useContext } from 'react';
+import { GlobalContext } from "../Context/GlobalContext"
+import bcrypt from 'bcryptjs';
 import {useState} from 'react'
 
 
 function Avaliacao() {
+
+  const navigate = useNavigate()
+
+  function voltar(){
+    
+    navigate(-1);
+  }
+
+  const { user, setUser} = useContext(GlobalContext)
+  const { updateUser } = useContext(GlobalContext)
+  const { logout } = useContext(GlobalContext)
+
+
+  const formatDate = (date) => {
+    if (!date) return '';
+    const parsedDate = new Date(date); 
+    const day = String(parsedDate.getDate()).padStart(2, '0'); 
+    const month = String(parsedDate.getMonth() + 1).padStart(2, '0'); 
+    const year = parsedDate.getFullYear(); 
+    return `${day}/${month}/${year}`; 
+};
 
   const [rating, setRating] = useState(0)
   const [hoverRating, setHoverRating] = useState(0)
@@ -80,15 +104,47 @@ function Avaliacao() {
           <div className="espaco"></div>
 
           <div className="perfil-input-1-ava">
-            <input className='texto-inp' type="text" value="" readonly placeholder='Nome :'/>
+          <input
+                className='texto-inp'
+                type="text"
+                placeholder='Nome :'
+                value={user?.username || ''}
+                readOnly
+            />
           </div> 
+
             <div className="perfil-input-2-ava">
-            <input className='texto-inp' type="text" value="" readonly placeholder='email'/>
+            <input
+                className='texto-inp'
+                type="text"
+                placeholder='Data de nascimento :'
+                value={formatDate(user?.age_user)}
+                readOnly
+            />
            </div> 
+
            <div className="perfil-input-3-ava">
-            <input className='texto-inp' type="text" value="" readonly placeholder='Data de nascimento :'/>
+             <input
+                className='texto-inp'
+                type="text"
+                placeholder='Email :'
+                value={user?.email_user || ''}
+                readOnly
+            />
           </div>
             <div className="espaco"></div>
+
+
+            <div className='botoes-av'>
+            <button className='avaliar-usuario'>
+            <p className='texto-ed'>Avaliar usuario</p>
+            </button>
+
+            <button className='voltar' onClick={voltar}>
+                <p className='texto-ed'>Voltar</p>
+            </button>
+            </div>
+
           
         </div>
 
