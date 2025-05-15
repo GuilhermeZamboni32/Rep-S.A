@@ -16,6 +16,9 @@ function Avaliacao() {
     
     navigate(-1);
   }
+  function avaliacoes(){
+    navigate('/Av_notas')
+  }
 
   const { user, setUser} = useContext(GlobalContext)
   const { updateUser } = useContext(GlobalContext)
@@ -31,7 +34,7 @@ function Avaliacao() {
     return `${day}/${month}/${year}`; 
 };
 
-  const [rating, setRating] = useState(0)
+ /* const [rating, setRating] = useState(0)
   const [hoverRating, setHoverRating] = useState(0)
 
   const handleStarClick = (index) => {
@@ -88,7 +91,7 @@ function Avaliacao() {
       // Estrela vazia nos outros casos
       return "/star-vazia.png" // Ajuste o caminho se necessário
     }
-  };
+  }*/
 
   return (
     <div className="container-Ava">
@@ -136,13 +139,8 @@ function Avaliacao() {
 
 
             <div className='botoes-av'>
-            <button className='avaliar-usuario'>
-            <p className='texto-ed'>Avaliar usuario</p>
-            </button>
-
-            <button className='voltar' onClick={voltar}>
-                <p className='texto-ed'>Voltar</p>
-            </button>
+            <button className='avaliar-usuario' onClick={avaliacoes}>avaliaçoes</button>
+            <button className='voltar' onClick={voltar}>voltar</button>
             </div>
 
           
@@ -157,22 +155,7 @@ function Avaliacao() {
           </div>
 
           <div className="Ava-estrela">
-          <div className="rating" onMouseLeave={handleLeave}>
-              {[...Array(5)].map((_, index) => (
-                <button
-                  className='btn-star'
-                  key={index}
-                  onClick={() => handleStarClick(index)}
-                  onMouseEnter={() => handleHover(index)}
-                >
-                  <img
-                    className="star-img" // Certifique-se que esta classe define o tamanho da imagem
-                    src={getStarImage(index)} // Usa a função para obter a imagem correta
-                    alt={`Avaliação ${index + 1} de 5 estrelas`}
-                  />
-                </button>
-              ))}
-    </div>
+
           </div>
 
           <div className="Ava-coment">
@@ -189,6 +172,7 @@ function Avaliacao() {
 
             ></textarea>
           </div>
+         <button classname=".botoes-av">enviar</button>
         </div>
 
        
@@ -201,4 +185,26 @@ function Avaliacao() {
 }
 
 
-export default Avaliacao
+export default Avaliacao ;
+
+
+
+
+
+
+//*<div className="rating" onMouseLeave={handleLeave}>
+             //* {[...Array(5)].map((_, index) => (
+              //*  <button
+                 /* className='btn-star'
+                  key={index}
+                  onClick={() => handleStarClick(index)}
+                  onMouseEnter={() => handleHover(index)}
+                /*
+                  <img
+                    className="star-img" // Certifique-se que esta classe define o tamanho da imagem
+                    src={getStarImage(index)} // Usa a função para obter a imagem correta
+                    alt={`Avaliação ${index + 1} de 5 estrelas`}
+                  />
+                </button>
+              ))}
+    </div>*/
