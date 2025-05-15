@@ -6,10 +6,27 @@ const jwt = require('jsonwebtoken');
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 require('dotenv').config();
-// import { app, analytics } from './firebase.js';
-
-
+import { appFire, analytics } from './firebase.js';
 const app = express();
+const admin = require('firebase-admin');
+const serviceAccount = require('./vidafit-c410e-firebase-adminsdk-4j8g3-0f2a5b1c7d.json');
+const multer = require('multer'); // For handling file uploads
+
+// Initialize Firebase Admin SDK
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+  storageBucket: 'vidafit-c410e.firebasestorage.app', // Replace with your Firebase Storage bucket
+});
+
+const bucket = admin.storage().bucket();
+
+// Multer setup for file uploads
+const upload = multer({
+  storage: multer.memoryStorage(),
+  limits: { fileSize: 5 * 1024 * 1024 }, // Limit file size to 5MB
+});
+
+//___________________________________________________________________________________________________________________________
 
 // Security middleware
 app.use(helmet());
@@ -271,6 +288,53 @@ app.post('/professional_info', authenticateToken, async (req, res) => {
   }
 });
 
+// Image upload route
+app.post('/upload', authenticateToken, upload.single('image'), async (req, res) => {
+  try {
+    const { id_user } = req.body; // Assuming `id_user` is sent in the request body
+    const file = req.file;
+
+    if (!file) {
+      return res.status(400).json({ error: 'No file uploaded' });
+    }
+
+    // Generate a unique file name
+    const fileName = `users/${id_user}/${Date.now()}_${file.originalname}`;
+    const fileUpload = bucket.file(fileName);
+
+    // Upload the file to Firebase Storage
+    const stream = fileUpload.createWriteStream({
+      metadata: {
+        contentType: file.mimetype,
+      },
+    });
+
+    stream.on('error', (err) => {
+      console.error(err);
+      res.status(500).json({ error: 'Failed to upload image' });
+    });
+
+    stream.on('finish', async () => {
+      // Make the file publicly accessible
+      await fileUpload.makePublic();
+
+      // Get the public URL
+      const publicUrl = `https://storage.googleapis.com/${bucket.name}/${fileUpload.name}`;
+
+      // Save the URL to the database (if needed)
+      // Example: await pool.query('UPDATE users SET profile_image = $1 WHERE id_user = $2', [publicUrl, id_user]);
+
+      res.status(200).json({ message: 'File uploaded successfully', url: publicUrl });
+    });
+
+    stream.end(file.buffer);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).json({ error: 'Failed to upload image' });
+  }
+});
+
+//__________________________________________________________________________________________________________________________
 // Chat handler
 
 
@@ -280,7 +344,9 @@ app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).json({ error: 'Something went wrong!' });
 });
+//__________________________________________________________________________________________________________________________
 
+//Start server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);

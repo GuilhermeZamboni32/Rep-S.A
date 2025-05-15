@@ -136,8 +136,9 @@ npm install express
 npm install bcrypt
 npm i jsonwebtoken
 npm i helmet
-npm install mongodb
 npm install dotenv --save
+npm i firebase-admin
+npm i multer
 ```
 
 
