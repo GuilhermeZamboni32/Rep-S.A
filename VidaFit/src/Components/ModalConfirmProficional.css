@@ -42,13 +42,13 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: #050a1fc4;
+  background-color: #050a1fb2;
   z-index: 1000;
-  border-radius: 10px;
+  border-radius: 7px;
 }
 
 .conteudo-modal{
-    background-color: var(--BrancoCC1);
+    background-color: #050a1fbd;
     width: 500px;
     height: 500px;
     position: fixed;
@@ -63,7 +63,7 @@
     border-radius: 10px;
 }
 .conteudo-modal-topo{
-    background-color:  var(--BrancoCC1);
+    background-color:  #050a1f00;
     width: 500px;
     height: 50px;
     align-items: center;
@@ -72,19 +72,19 @@
     border-radius: 10px;
 }
 .topo-modal-di{
-    background-color:  var(--BrancoCC1) ;
+    background-color:  #050a1f00 ;
     width: 50px;
     height: 50px;
 }
 
 .topo-modal-es{
-    background-color:  var(--BrancoCC1);
+    background-color:  #050a1f00;
     width: 440px;
     height: 50px;
     border-radius: 10px;
 }
 .conteudo-modal-meio{
-    background-color:  var(--BrancoCC1);
+    background-color:  #050a1f00;
     width: 500px;
     height: 350px;
     margin-top: 10px; 
@@ -106,7 +106,7 @@
 }
 
 .texto-modal{
-   background-color: var(--BrancoCC2);
+   background-color: #050a1f00;
     width: 500px;
     height: 350px;
     border-radius: 10px;
@@ -126,6 +126,7 @@
     height: 50px;
     border-radius: 10px;
     margin-top: 20px;
+    border-color: var(--VermelhoC1) ;
 }
 
 .button-modal:hover{

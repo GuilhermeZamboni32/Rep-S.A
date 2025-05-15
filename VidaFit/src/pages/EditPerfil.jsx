@@ -180,7 +180,6 @@ function EditPerfil() {
             <button className="butoon-click-1" onClick={() => setOpenModal(true)}>clique aqui</button>
             </div>
             <Modal isOpen={openModal} setModalOpen={() => setOpenModal(!openModal)}>
-        <img  className='imagemfeliz' src="carafeliz.webp" alt="" />
       </Modal>
       
           </div>
