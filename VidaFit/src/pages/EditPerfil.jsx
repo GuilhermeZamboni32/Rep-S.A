@@ -1,7 +1,7 @@
 import Navbar from '../Components/Navbar'
 import { Link, useNavigate } from 'react-router-dom'
 import './EditPerfil.css'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, userData } from 'react'
 import axios from 'axios'
 
 import Modal from '../Components/modalConfirmProficional'
