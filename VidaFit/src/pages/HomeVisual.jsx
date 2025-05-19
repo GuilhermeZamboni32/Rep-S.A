@@ -16,11 +16,6 @@ function HomeVisual() {
        {/** <Navbar />*/} 
       <header className="header">
         <div className="logo">Vida+Fit</div>
-        <nav className="nav">
-          <a href="#sobre">Sobre</a>
-          <a href="#equipe">Equipe</a>
-          <a href="#contato">Contato</a>
-        </nav>
         <a href="#cadastro" className="btn-header" onClick={cadastro}>Cadastre-se</a>
       </header>
 
@@ -94,7 +89,8 @@ function HomeVisual() {
       
 
       <footer className="footer">
-        <p>&copy; 2025 Vida+Fit. Todos os direitos reservados.</p>
+      <h2>Vida+Fit</h2>
+      <p>Cuidar do corpo é cuidar da vida. Comece hoje com o Vida+Fit.</p>
       </footer>
     </div>
   );
