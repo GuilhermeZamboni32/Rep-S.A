@@ -81,13 +81,115 @@
   
 
         .modal-test{
-            background-color: var(--BrancoC1);
-            width: 500px;
-            height: 500px;
+            width: 200px;
+            height: 400px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             border-radius: 10px;
-            border: 2px solid var(--AzulC1);
         }
+
+        .modal-overlay {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.5);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          z-index: 1000;
+        }
+        
+        .modal-content {
+          background: white;
+          padding: 20px;
+          border-radius: 8px;
+          width: 400px;
+          max-width: 90%;
+          text-align: center;
+        }
+        
+        .close-modal {
+          background: red;
+          color: white;
+          border: none;
+          padding: 10px 20px;
+          border-radius: 5px;
+          cursor: pointer;
+          margin-top: 10px;
+        }
+
+
+        .container-produtos{
+          background-color: var(--BrancoCC2);
+          color: rgb(0, 0, 0);
+          border: 1px solid #ffff;
+          width: 270px;
+          height: 350px;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: center;
+          padding: 5px;
+          border-radius: 10px;
+          
+      }
+      
+      .box-ef{
+        box-shadow: 4px 4px 3px  rgb(233, 5, 5);
+      }
+      .box-nut{
+        box-shadow: 4px 4px 3px  rgb(7, 223, 7);
+      }
+      .box-amb{
+        box-shadow: 4px 4px 3px  rgb(5, 83, 250);
+      }
+      
+      .container-produtos:hover {
+          transform: translateY(-5px);
+        }
+      
+      
+        .container-produtos::-webkit-scrollbar {
+          height: 8px;
+        }
+        
+        .container-cards::-webkit-scrollbar-thumb {
+          background-color: var(--AzulC1);
+          border-radius: 10px;
+        }
+      
+      .img-produto{
+          width: 140px;
+          height: 150px;
+          border-radius: 10px;
+          border: 3px solid var(--AzulEE1);
+      }
+      
+      
+      .container-cards{
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 20px;
+        flex: 0 0 auto; 
+          
+      }
+      .lista-cards{
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 20px;
+        flex: 0 0 auto; 
+        
+      
+      }
+      .icones{
+        width: 40px;
+        height: 40px;
+      }

@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState , useEffect} from 'react';
 import React from 'react'
-import Funcionario from './Funcionario'
+//import Funcionario from './Funcionario'
 import './Ad_Funci.css'
 //import Navbar from '../Components/Navbar'
 //import { Link } from 'react-router-dom'
@@ -220,6 +220,75 @@ function Ad_Funci({ filter, searchTerm }) {
     
       return matchesFilter && matchesSearch;
     });
+
+    function Funcionario({ img, nome, descricao, profi, genero }) {
+  const [shadow, setShadow] = useState('container-produtos');
+  const [isModalOpen, setIsModalOpen] = useState(false); // Estado para controlar o modal
+
+  useEffect(() => {
+    if (profi === 'Coach de saúde') {
+      setShadow('container-produtos box-ef');
+    } else if (profi === 'Nutricionista') {
+      setShadow('container-produtos box-nut');
+    } else if (profi === 'Personal Trainer') {
+      setShadow('container-produtos box-amb');
+    }
+  }, [profi]);
+
+  function AbreModal() {
+    setIsModalOpen(true); // Abre o modal
+  }
+
+  function FechaModal() {
+    setIsModalOpen(false); // Fecha o modal
+  }
+
+  return (
+    <>
+      <div className={shadow} onClick={AbreModal}>
+        <div className="modal-test">
+          <h2>{nome}</h2>
+          <img src={img} className="img-produto" />
+          {profi === 'Coach de saúde' && (
+            <div className="emoji">
+              <img src="./Icons/folha-2.png" className="icones" />
+              <img src="./Icons/halter-1.png" className="icones" />
+            </div>
+          )}
+          {profi === 'Nutricionista' && (
+            <div className="emoji">
+              <img src="./Icons/folha-1.png" className="icones" />
+              <img src="./Icons/halter-2.png" className="icones" />
+            </div>
+          )}
+          {profi === 'Personal Trainer' && (
+            <div className="emoji">
+              <img src="./Icons/folha-1.png" className="icones" />
+              <img src="./Icons/halter-1.png" className="icones" />
+            </div>
+          )}
+          <p>{descricao}</p>
+        </div>
+      </div>
+
+      {/* Modal */}
+      {isModalOpen && (
+        <div className="modal-overlay">
+          <div className="modal-content">
+            <h2>{nome}</h2>
+            <img src={img} className="img-produto" />
+            <p><strong>Profissão:</strong> {profi}</p>
+            <p><strong>Gênero:</strong> {genero}</p>
+            <p>{descricao}</p>
+            <button className="close-modal" onClick={FechaModal}>
+              Fechar
+            </button>
+          </div>
+        </div>
+      )}
+    </>
+  );
+}
     
 
    /* const filteredFunci = funci.filter((f) => {
