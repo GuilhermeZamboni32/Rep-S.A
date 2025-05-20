@@ -49,7 +49,7 @@ Porque ao integrar hábitos saudáveis de forma prática e eficiente no seu dia 
 1.4- O sistema deve permitir que o usuário se cadastre como profissional desejado  <br/><br/>
 
 ### 2- Aba de contatos:  Jonathan Stulp Zoz 
-2.1- O sistema deve permitir acesso ao perfil dos profissionais <br/>
+2.1- O sistema deve mostrar o profissionai que foi selecionado no perfil do aluno<br/>
 2.2- O sistema deve permitir celecionar o profissional desejado <br/>
 2.3- O sistema deve dar opção de filtrar os profissionais por categorias desejadas <br/>
 
