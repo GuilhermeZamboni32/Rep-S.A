@@ -112,14 +112,37 @@
           text-align: center;
         }
         
-        .close-modal {
-          background: red;
+        .fecha-modal {
+          background: rgb(201, 10, 10);
           color: white;
           border: none;
-          padding: 10px 20px;
-          border-radius: 5px;
+          height: 40px;
+          width: 40px;
+          border-radius: 8px;
           cursor: pointer;
-          margin-top: 10px;
+          margin-left: 80%;
+        }
+        .fecha-modal:hover {
+          background: rgb(243, 6, 6);
+          color: white;
+        }
+
+        .iconemodal{
+          width: 30px;
+          height: 30px;
+        }
+
+        .seleciona-profissional {
+          background: rgb(10, 175, 24);
+          color: rgb(0, 0, 0);
+          border: none;
+          padding: 10px 20px;
+          border-radius: 8px;
+          cursor: pointer;
+        }
+        .seleciona-profissional:hover {
+          background: rgb(6, 243, 46);
+          color: rgb(0, 0, 0);
         }
 
 

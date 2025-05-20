@@ -1,11 +1,14 @@
 import { useState , useEffect} from 'react';
 import React from 'react'
-//import Funcionario from './Funcionario'
+import { Link, useNavigate } from 'react-router-dom'
 import './Ad_Funci.css'
+//import Funcionario from './Funcionario'
 //import Navbar from '../Components/Navbar'
 //import { Link } from 'react-router-dom'
 
 function Ad_Funci({ filter, searchTerm }) {
+
+    
 
     const [inputNome, setInputNome] = useState('')
     const [inputDescricao, setInputDescricao] = useState('')
@@ -224,6 +227,11 @@ function Ad_Funci({ filter, searchTerm }) {
     function Funcionario({ img, nome, descricao, profi, genero }) {
   const [shadow, setShadow] = useState('container-produtos');
   const [isModalOpen, setIsModalOpen] = useState(false); // Estado para controlar o modal
+  const navigate = useNavigate()
+
+  function perfil(){
+    navigate('/perfil');
+  }
 
   useEffect(() => {
     if (profi === 'Coach de saúde') {
@@ -234,6 +242,11 @@ function Ad_Funci({ filter, searchTerm }) {
       setShadow('container-produtos box-amb');
     }
   }, [profi]);
+
+  function ProfessionalSelecionado() {
+    localStorage.setItem('selectedProfessional', nome); // Salva o nome do profissional no localStorage
+    navigate('/perfil'); // Redireciona para o perfil
+  }
 
   function AbreModal() {
     setIsModalOpen(true); // Abre o modal
@@ -275,13 +288,16 @@ function Ad_Funci({ filter, searchTerm }) {
       {isModalOpen && (
         <div className="modal-overlay">
           <div className="modal-content">
+          <button className="fecha-modal" onClick={FechaModal}>
+              <img src="./Icons/icone-X.png"  className='iconemodal' alt="" />
+            </button>
             <h2>{nome}</h2>
             <img src={img} className="img-produto" />
             <p><strong>Profissão:</strong> {profi}</p>
-            <p><strong>Gênero:</strong> {genero}</p>
+            {/*<p><strong>Gênero:</strong> {genero}</p>*/}
             <p>{descricao}</p>
-            <button className="close-modal" onClick={FechaModal}>
-              Fechar
+            <button className="seleciona-profissional" onClick={ProfessionalSelecionado}>
+              Selecionar Profissional
             </button>
           </div>
         </div>
