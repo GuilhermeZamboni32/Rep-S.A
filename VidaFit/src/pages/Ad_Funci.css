@@ -139,6 +139,7 @@
           padding: 10px 20px;
           border-radius: 8px;
           cursor: pointer;
+          margin-top: 15px;
         }
         .seleciona-profissional:hover {
           background: rgb(6, 243, 46);
