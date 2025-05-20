@@ -79,3 +79,15 @@
            border: 2px solid var(--VermelhoE2)
         }
   
+
+        .modal-test{
+            background-color: var(--BrancoC1);
+            width: 500px;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            border: 2px solid var(--AzulC1);
+        }
