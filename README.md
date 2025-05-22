@@ -2,7 +2,7 @@
 
 <br/>
 <p align="center">
-  <img width="500" height="300" src="https://github.com/GuilhermeZamboni32/Rep-S.A/blob/main/VidaFit/public/simbolo_VF.png?raw=true">
+  <img width="700" height="300" src="https://github.com/GuilhermeZamboni32/Rep-S.A/blob/main/VidaFit/public/aaaaaa.png?raw=true">
 </p>
 
 <br/>
