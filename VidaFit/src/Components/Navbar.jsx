@@ -20,7 +20,6 @@ function Navbar() {
         <Link className="texto" to="/Ad_Funci">Ad funci</Link>
         <Link className="texto" to="/Av_notas">notas_avaliaçao</Link>
         <Link className="texto" to="/Avaliacao">Avaliação</Link>
-        <Link className="texto" to="/Ad_notas">Adnotas</Link>
        
     </div>
   )

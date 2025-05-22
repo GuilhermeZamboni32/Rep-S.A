@@ -22,6 +22,7 @@ function Avaliacao() {
     navigate('/Av_notas')
   }
 
+  const [comentario, setComentario] = useState('')
   const { user, setUser} = useContext(GlobalContext)
   const { updateUser } = useContext(GlobalContext)
   const { logout } = useContext(GlobalContext)
@@ -34,7 +35,26 @@ function Avaliacao() {
     const month = String(parsedDate.getMonth() + 1).padStart(2, '0'); 
     const year = parsedDate.getFullYear(); 
     return `${day}/${month}/${year}`; 
-};
+}
+
+  const enviarAvaliacao = async () => {
+    try {
+      await fetch('http://localhost:3000/avaliacao', {
+        method: 'POST',
+        headers: { 'Content-Type' : 'application/json'},
+        body: JSON.stringify({
+          nota: rating,
+          comentario: comentario,
+          usuarioID: user?.id
+        })
+      });
+      alert('Avaliação enviada com sucesso!');
+      setRating(0);
+      setComentario('');
+    } catch (error) {
+      alert('Erro ao enviar avaliaçao');
+    }
+  };
 
 const [rating, setRating] = useState(0);
 
