@@ -6,19 +6,10 @@ const jwt = require('jsonwebtoken');
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 require('dotenv').config();
-import { appFire, analytics } from './firebase.js';
 const app = express();
-const admin = require('firebase-admin');
-const serviceAccount = require('./vidafit-c410e-firebase-adminsdk-4j8g3-0f2a5b1c7d.json');
 const multer = require('multer'); // For handling file uploads
-
-// Initialize Firebase Admin SDK
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
-  storageBucket: 'vidafit-c410e.firebasestorage.app', // Replace with your Firebase Storage bucket
-});
-
-const bucket = admin.storage().bucket();
+const path = require('path');
+// const mongo = require('./MongoFiles/mongoSetup'); 
 
 // Multer setup for file uploads
 const upload = multer({
@@ -140,43 +131,43 @@ app.post('/login', async (req, res) => {
     return res.status(401).json({ error: 'Usuario não existe' });
   }
 
-  console.log ('Login attempt with email:', email_user);
-  console.log ('Login attempt with password:', password_user);
-  
+  console.log('Login attempt with email:', email_user);
+  console.log('Login attempt with password:', password_user);
+
   if (!email_user || !password_user) {
     return res.status(400).json({ error: 'Email and password are required' });
   }
 
   try {
     const userResult = await pool.query(
-      'SELECT id_user, username, email_user, password_user, age_user FROM users WHERE email_user = $1',
+      'SELECT id_user, username, email_user, password_user, age_user, image FROM users WHERE email_user = $1',
       [email_user]
     );
-    
+
     if (userResult.rows.length === 0) {
       return res.status(401).json({ error: 'Invalid credentials' });
     }
-    
+
     const user = userResult.rows[0];
-    
+
     const passwordMatch = await bcrypt.compare(password_user, user.password_user);
-    console.log('Password from DB w:', user.password_user);
+    console.log('Password from DB:', user.password_user);
     console.log('Password match:', passwordMatch);
-    
+
     if (!passwordMatch) {
       return res.status(401).json({ error: 'Invalid credentials' });
     }
-    
+
     const token = jwt.sign(
-      { 
+      {
         id_user: user.id_user,
         email_user: user.email_user,
-        username: user.username
+        username: user.username,
       },
       ACCESS_KEY,
-      { expiresIn: '1h' } 
+      { expiresIn: '1h' }
     );
-    
+
     const userData = {
       id_user: user.id_user,
       username: user.username,
@@ -185,18 +176,17 @@ app.post('/login', async (req, res) => {
       account_enable: user.account_enable,
       first_name: user.first_name,
       last_name: user.last_name,
-      image: user.image,
-      gender_user: user.gemder_user,
+      image: imageUrl,
+      gender_user: user.gender_user,
       problems_user: user.problems_user,
-      professional_confirm: user.profession_confirm,
+      professional_confirm: user.professional_confirm,
       professional_type: user.professional_type,
-      token: token
+      token: token,
     };
 
     console.log('User data:', userData);
-    
+
     res.json(userData);
-    
   } catch (err) {
     console.error(err.message);
     res.status(500).json({ error: 'Login failed' });
@@ -204,7 +194,6 @@ app.post('/login', async (req, res) => {
 });
 
 // "Delete" user account
-
 app.patch('/disable', authenticateToken, async (req, res) => {
   const { id_user } = req.params;
   
@@ -226,7 +215,6 @@ app.patch('/disable', authenticateToken, async (req, res) => {
 });
 
 // Edit user handler
-
 app.post('/users/edit', authenticateToken, async (req, res) => {
   const { id_user } = req.params;
   const { username, email_user, password_user, age_user, first_name, last_name, image, gender_user, problems_user } = req.body;
@@ -288,51 +276,27 @@ app.post('/professional_info', authenticateToken, async (req, res) => {
   }
 });
 
-// Image upload route
-app.post('/upload', authenticateToken, upload.single('image'), async (req, res) => {
+// Professional card route
+app.get('/professional_card', authenticateToken, async (req, res) => {
+  const { id_user } = req.body; // Ensure id_user is passed in the request body
+  const { username, professional_type, image, description } = req.body;
+
   try {
-    const { id_user } = req.body; // Assuming `id_user` is sent in the request body
-    const file = req.file;
-
-    if (!file) {
-      return res.status(400).json({ error: 'No file uploaded' });
-    }
-
-    // Generate a unique file name
-    const fileName = `users/${id_user}/${Date.now()}_${file.originalname}`;
-    const fileUpload = bucket.file(fileName);
-
-    // Upload the file to Firebase Storage
-    const stream = fileUpload.createWriteStream({
-      metadata: {
-        contentType: file.mimetype,
-      },
-    });
-
-    stream.on('error', (err) => {
-      console.error(err);
-      res.status(500).json({ error: 'Failed to upload image' });
-    });
-
-    stream.on('finish', async () => {
-      // Make the file publicly accessible
-      await fileUpload.makePublic();
-
-      // Get the public URL
-      const publicUrl = `https://storage.googleapis.com/${bucket.name}/${fileUpload.name}`;
-
-      // Save the URL to the database (if needed)
-      // Example: await pool.query('UPDATE users SET profile_image = $1 WHERE id_user = $2', [publicUrl, id_user]);
-
-      res.status(200).json({ message: 'File uploaded successfully', url: publicUrl });
-    });
-
-    stream.end(file.buffer);
+    const result = await pool.query(
+      'INSERT INTO professional_info (id_user, cref_number, cref_card_photo, validator) VALUES ($1, $2, $3, $4) RETURNING *',
+      [id_user, cref_number, cref_card_photo, validator]
+    );
+    res.json(result.rows[0]);
   } catch (err) {
     console.error(err.message);
-    res.status(500).json({ error: 'Failed to upload image' });
+    res.status(500).json({ error: 'Failed to insert professional info' });
   }
 });
+
+// Image upload route
+
+// Image retrieval route
+
 
 //__________________________________________________________________________________________________________________________
 // Chat handler
