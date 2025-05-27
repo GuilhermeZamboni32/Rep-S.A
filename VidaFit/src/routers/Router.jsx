@@ -14,7 +14,6 @@ import PerfilProfissional from "../pages/PerfilProfissional";
 import ProfissionalAluno from "../pages/ProfissionalAluno";
 import Avaliacao from "../pages/Avaliacao";
 import Av_notas from "../pages/Av_notas";
-import Ad_notas from "../pages/Ad_notas"
 //import Profissionais from "../pages/Profissionais";
 
 const router = createBrowserRouter([
@@ -34,7 +33,7 @@ const router = createBrowserRouter([
     {path: "/profissionalaluno", element: <ProfissionalAluno />},
     {path: "/avaliacao", element: <Avaliacao />},
     {path: "/av_notas", element: <Av_notas />},
-    {path: "/ad_notas", element: <Ad_notas />},
+ 
 ])
 
 export default router;

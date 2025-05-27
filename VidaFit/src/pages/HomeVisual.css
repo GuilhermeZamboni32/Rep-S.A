@@ -32,6 +32,7 @@
     --VermelhoEE2: #4E0511;
   }
   
+  
   /* Reset básico */
   * {
     margin: 0;
@@ -91,8 +92,16 @@
     background: linear-gradient(135deg, var(--AzulCC1) 0%, var(--AzulE1) 100%);
     color: var(--BrancoC2);
     text-align: center;
-    padding: 15rem 2rem;
+    padding: 1px 3rem;
     box-shadow: inset 0 10px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .hero-img{
+    background-image: url('musculacao.png');
+    height: 500px;
+    margin-top: 100px;
+    background-repeat: no-repeat;
+    
   }
   
   .hero h1 {
@@ -149,6 +158,7 @@
   
   .team li:hover {
     transform: translateY(-5px);
+    background-color: var(--BrancoE2);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
   }
   
@@ -195,25 +205,127 @@
     box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.15);
   }
   
+.sobre-M{
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  margin-left: 7%;
+  margin-top: 100px;
 
+}
 
-  .sobre-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 2rem;
-    margin-top: 2rem;
+  .sobre-1 {
+    gap: 20px;
+    margin-top: 10px;
+    width: 600px;
+    height: 500px;
+  }
+
+  .sobre-2 {
+    gap: 20px;
+    margin-top: 10px;
+    width: 600px;
+    height: 500px;
+  }
+
+  .sobre-3 {
+    gap: 20px;
+    margin-top: 10px;
+    width: 600px;
+    height: 500px;
   }
   
-  .sobre-box {
+  .sobre-propósito {
     background: var(--BrancoE2);
-    padding: 2rem;
+    padding: 20px;
     border-radius: 12px;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
     width: 500px;
+    gap: 20px;
   }
   
-  .sobre-box:hover {
+  .sobre-propósito:hover {
     transform: translateY(-10px);
+    background-color: var(--BrancoE1);
   }
   
+  .sobre-contribui {
+    background: var(--BrancoE2);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    width: 500px;
+    margin-top: 50px;
+  }
+
+  .sobre-contribui:hover {
+    transform: translateY(-10px);
+    background-color: var(--BrancoE1);
+  }
+
+  .sobre-relevante {
+    background: var(--BrancoE2);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    width: 500px;
+    height: 230px;
+    
+  }
+
+  .sobre-relevante:hover {
+    transform: translateY(-10px);
+    background-color: var(--BrancoE1);
+  }
+
+  .sobre-diferencia2 {
+    background: var(--BrancoE2);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    width: 500px;
+    height: 230px;
+    margin-top: 50px;
+  }
+
+  .sobre-diferencia2:hover {
+    transform: translateY(-10px);
+    background-color: var(--BrancoE1);
+  }
+
+  .sobre-diferencia {
+    background: var(--BrancoE2);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    width: 500px;
+    height: 230px;
+    
+  }
+
+  .sobre-diferencia:hover {
+    transform: translateY(-10px);
+    background-color: var(--BrancoE1);
+  }
+
+
+  .sobre-futuros {
+    background: var(--BrancoE2);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    width: 500px;
+    height: 230px;
+    margin-top: 50px;
+  }
+
+  .sobre-futuros:hover {
+    transform: translateY(-10px);
+    background-color: var(--BrancoE1);
+  }

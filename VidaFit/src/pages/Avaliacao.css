@@ -46,11 +46,11 @@
     }
     
     .div-grupo-Ava {
-      margin: 100px;
+      margin: 10vh;
       display: flex;
       flex-direction: row;
-      gap: 40px;
-      padding: 20px;
+      gap: 5vh;
+      padding: 3vh;
       background-repeat: no-repeat;
       border-radius: 8px;
       justify-content: center; 
@@ -58,15 +58,24 @@
     }
     .div-grupo-usuario-Ava {
       background: var(--BrancoP2);
-      padding: 15px;
+      padding: 1vh;
       border-radius: 8px;
       text-align: center;
       align-items: center;
       display: flex;
       flex-direction: column;
-      width: 400px;
+      width: 39vh;
+      height: 69.1vh;
     }
-  
+      .div-grupo-Avaliacao{
+      background: var(--BrancoC2);
+      border-radius: 8px;
+      width: 117vh;
+      height: 69.1vh;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
     .div-img{
       background-color: var(--AzulEE1);
       width: 210px;
@@ -105,7 +114,7 @@
       color: var(--BrancoP1);
     }
     .texto-inp{
-      width: 100%;
+      width: 30vh;
       margin: 5px 0;
       background: var(--AzulE1);
       color: var(--BrancoC2);
@@ -135,8 +144,8 @@
     cursor: pointer;
   }
   .avaliar-usuario:hover{
-    color: var(--AzulEE1);
-    background-color: rgb(192, 192, 26);
+    color: var(--BrancoCC2);
+    background-color: var(--AzulCC1);
   }
 
   .voltar{
@@ -158,36 +167,17 @@
       color: var(--BrancoC2);
       
   }
-  
-  .button-Ava{
-      background: var(--AzulCC1);
-      color: var(--AzulC2);
-      border: none;
-      border-radius: 8px;
-      padding: 10px;
-      cursor: pointer;
-  }
-     .div-grupo-Avaliacao{
-      background: var(--BrancoC2);
-      border-radius: 8px;
-      width: 1200px;
-      height: 69vh;
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-      
-      
-    }
+
     
     .titulo-Ava {
       font-size: 1.2rem;
       font-weight: bold;
-      margin-bottom: 30px;
+      margin-bottom: 3vh;
       background-color: var(--AzulP2);
-      border-radius: 5px;
+      border-radius: 3px;
       display: flex;
       justify-content: center;
-      width: 127vh;
+      width: 117vh;
       justify-content: top;
 
     }
@@ -231,9 +221,19 @@
       background-color: var(--VermelhoC1);
       border-radius: 3px;
     }
+    .btn-av{
+      background-color: var(--AzulP2);
+      background: var(--BrancoCC2);
+      display: flex;
+      justify-content: center;
+      align-items: center;;
+      border: none ;
+      padding: 2px ;
+      cursor: pointer; 
+    }
     .btn-star{
       background-color: var(--AzulP2);
-      background: none;
+      background: var(--BrancoCC2);
       border: none ;
       padding: 2px ;
       cursor: pointer; 
@@ -244,10 +244,47 @@
       gap: 8px;
       margin-top: 10px;
     }
-    
-    .star-img {
-      width: 32px;
-      height: 32px;
+  
+    .spaçoBorda{
+      width: 100vh;
+    }
+
+    .star-rating {
+      display: flex;
+      gap: 0.2em;
+    }
+
+    .star-button {
+      position: relative;
+      background: none;
+      border: none;
+      width: 2.5em;
+      height: 2.5em;
+      padding: 0;
       cursor: pointer;
-      transition: transform 0.2s;
+    }
+
+    .star-img {
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+      position: relative;
+      display: block;
+    }
+
+    .star-half {
+      position: absolute;
+      width: 50%;
+      height: 100%;
+      top: 0;
+      z-index: 1;
+    }
+
+    .star-half.left {
+      left: 0;
+    }
+
+    .star-half.right {
+      right: 0;
     }

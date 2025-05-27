@@ -10,62 +10,70 @@ function HomeVisual() {
         navigate('/Cadastro');
       }
 
+
   return (
     <div>
-        <Navbar />
+       {/** <Navbar />*/} 
       <header className="header">
         <div className="logo">Vida+Fit</div>
-        <nav className="nav">
-          <a href="#sobre">Sobre</a>
-          <a href="#equipe">Equipe</a>
-          <a href="#contato">Contato</a>
-        </nav>
         <a href="#cadastro" className="btn-header" onClick={cadastro}>Cadastre-se</a>
       </header>
 
       <section className="hero">
+        <div className='hero-img'>
         <div className="hero-content">
           <h1>Transforme sua vida com hábitos saudáveis</h1>
           <p>Dicas práticas de exercícios e dietas balanceadas para você.</p>
           <a href="#cadastro" className="btn-main" onClick={cadastro}>Comece Agora</a>
         </div>
+        </div>
       </section>
 
-      <section id="sobre" className="section">
-  <div className="sobre-container">
-    <div className="sobre-box">
+    { /*  <section id="sobre" className="section">*/}
+<div className='sobre-M'>
+  <div className="sobre-1">
+    <div className="sobre-propósito">
       <h1>Qual é o propósito do projeto?</h1>
       <p>O Vida+Fit tem como propósito promover a adoção de um estilo de vida saudável por meio de orientações práticas e acessíveis. 
       A plataforma oferece conteúdos sobre exercícios físicos e dietas balanceadas, desenvolvidos para atender às necessidades de diferentes perfis de usuários.</p>
     </div>
-    <div className="sobre-box">
+    <div className="sobre-contribui">
       <h1>De que forma o projeto contribui?</h1>
       <p>A iniciativa contribui significativamente para a melhoria da saúde física e mental, incentivando a prática regular de atividades físicas e hábitos alimentares equilibrados. 
       Com isso, favorece a redução do estresse, o aumento da disposição diária e o fortalecimento do bem-estar geral.</p>
     </div>
-    <div className="sobre-box">
+  </div>
+
+
+  <div className='sobre-2'>
+    <div className="sobre-relevante">
       <h1>Por que esse projeto é relevante?</h1>
       <p>Porque integrar práticas saudáveis ao cotidiano é fundamental para uma vida mais longa e com qualidade. 
       O Vida+Fit oferece suporte confiável e orientações claras, tornando a transformação de hábitos mais simples, eficaz e sustentável.</p>
     </div>
-    <div className="sobre-box">
+    <div className="sobre-diferencia2">
       <h1>Como o projeto se diferencia?</h1>
       <p>O Vida+Fit se destaca por unir tecnologia, acessibilidade e orientação personalizada em um só lugar. 
       Diferente de outras plataformas, ele conecta usuários a profissionais qualificados e oferece recomendações adaptadas aos objetivos individuais de cada pessoa.</p>
     </div>
-    <div className="sobre-box">
+  </div>
+
+
+  <div className='sobre-3'>
+    <div className="sobre-diferencia">
       <h1>Como o projeto se diferencia?</h1>
       <p>O Vida+Fit se destaca por unir tecnologia, acessibilidade e orientação personalizada em um só lugar. 
       Diferente de outras plataformas, ele conecta usuários a profissionais qualificados e oferece recomendações adaptadas aos objetivos individuais de cada pessoa.</p>
     </div>
-    <div className="sobre-box">
+    <div className="sobre-futuros">
     <h1>Quais são os planos futuros?</h1>
     <p>O projeto planeja expandir suas funcionalidades com novos recursos, como acompanhamento personalizado, integração com wearables e fóruns interativos, 
     visando oferecer uma experiência ainda mais completa e engajadora aos usuários.</p>
     </div>
   </div>
+</div>
   
-</section>
+{/*</section>*/}
 
 
       <section id="equipe" className="section">
@@ -81,7 +89,8 @@ function HomeVisual() {
       
 
       <footer className="footer">
-        <p>&copy; 2025 Vida+Fit. Todos os direitos reservados.</p>
+      <h2>Vida+Fit</h2>
+      <p>Cuidar do corpo é cuidar da vida. Comece hoje com o Vida+Fit.</p>
       </footer>
     </div>
   );

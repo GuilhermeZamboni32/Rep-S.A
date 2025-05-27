@@ -17,7 +17,7 @@
 
 .texto:hover{
     color: var(--BrancoCC2);
-    transform: translateY(-5px);
+    border-radius: 8px;
     box-shadow: 8px 8px 15px var(--VermelhoE2);
 }
 
