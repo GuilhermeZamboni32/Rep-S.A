@@ -60,11 +60,12 @@ const formatDate = (date) => {
           <div className="div-grupo-usuario">
 
             <div className='div-img'>
-            <img 
+            {/*<img 
               className='img'
               src={user?.image || 'the-glock.png'}
               alt="Profile"
-            />
+            />*/}
+            <img className='imagem-teste' src="./Icons/perfil-branco.png" alt="" />
             </div>
 
             <div className="espaco"></div>

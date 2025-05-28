@@ -80,6 +80,13 @@
     border-radius: 8px;
   }
 
+  .imagem-teste{
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+
   .espaco{
     height: 50px;
   }

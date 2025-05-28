@@ -7,6 +7,7 @@ import bcrypt from 'bcryptjs';
 
 
 
+
 function Cadastro() {
 
   const [user, setUsers] = useState({username:'', password_user:'', email_user:'', age_user:''})
@@ -65,28 +66,38 @@ function Cadastro() {
   return (
     
     <div className='container-cadastro'>
-      <Navbar />
-        <div className='div-cadas'>
-        <div className="espaco"></div>
+     {/**<Navbar /> */}
+      <div className='container-cadastro-2'>
+
+      <div className='div-cadas-esquerda'>
+        <div className='espaco-0'></div>
+        <img className='titulo-logo' src="logomarca_VF.png" alt="" />
+        <p></p>
+      </div>
+        <div className='div-cadas-direita'>
+        <div className="espaco-1"></div>
         
         <div className='cadas-inf'>
+          <div className='titulo-cadas'><img className='logomarca' src="logotipo_VF_2.png" alt="" /></div>
           <div className="cadas-input">
               <input className='texto-cadas' type="text" placeholder='Nome de usuario:' value={user.username} onChange={(e) => setUsers({ ...user, username: e.target.value })}/>
               <input className='texto-cadas' type="date" placeholder='Data de nascimento :' value={user.age_user} onChange={(e) => setUsers({ ...user, age_user: e.target.value })} />
               <input className='texto-cadas' type="text" placeholder='Email :' value={user.email_user} onChange={(e) => setUsers({ ...user, email_user: e.target.value })} />
               <input className='texto-cadas' type={showPassword ? 'text' : 'password'} placeholder='Senha :' value={user.password_users} onChange={(e) => setUsers({ ...user, password_user: e.target.value })} />
               <input className='texto-cadas' type={showPassword ? 'text' : 'password'} placeholder='Comfirmar Senha :' value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
-              <div className="espaco"></div>
+              <div className="espaco-2"></div>
             </div>
             <div className="checkbox-container">
               <input type="checkbox" checked={showPassword} onChange={(e) => setShowPassword(e.target.checked)}/>
               <label>Mostrar senha</label>
             </div>
-            
-              <button className='button-cadastro' onClick={handleReister}><h2>cadastrar</h2></button>
+
+            <div className="espaco-3"></div>
+              <button className='button-cadastro' onClick={handleReister}><h1>Cadastrar</h1></button>
           
           </div>
         </div>
+      </div>
       </div>
     
   )
