@@ -1,0 +1,17 @@
+{
+    "_id": "uuid",
+    "username": "string",
+    "first_name": "string",
+    "last_name": "string",
+    "age_user": "date",
+    "email_user": "string",
+    "password_user": "string",
+    "image": "string",
+    "gender_user": "string",
+    "problems_user": "string",
+    "professional_confirm": "boolean",
+    "professional_type": "string",
+    "account_enable": "boolean",
+    "comments": "string",
+    "user_rating": "number"
+  }

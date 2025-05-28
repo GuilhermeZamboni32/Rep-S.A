@@ -69,6 +69,19 @@ function authenticateToken(req, res, next) {
   });
 }
 
+//Multer storage images
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, './public'); 
+  },
+  filename: (req, file, cb) => {
+    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
+    cb(null, file.fieldname + '-' + uniqueSuffix + '-' + file.originalname);
+  }
+});
+
+const uploadImage = multer({ storage: storage });
+
 // * Routes
 // User registration with password hashing
 app.post('/users', async (req, res) => {
@@ -169,6 +182,10 @@ app.post('/login', async (req, res) => {
       { expiresIn: '1h' }
     );
 
+    const imageUrl = user.image 
+  ? `${req.protocol}://${req.get('host')}/public/${user.image}` 
+  : null;
+
     const userData = {
       id_user: user.id_user,
       username: user.username,
@@ -184,6 +201,8 @@ app.post('/login', async (req, res) => {
       professional_type: user.professional_type,
       token: token,
     };
+
+   
 
     console.log('User data:', userData);
 
@@ -295,8 +314,24 @@ app.get('/professional_card', authenticateToken, async (req, res) => {
 });
 
 // Image upload route
+app.post('/upload', authenticateToken, uploadImage.single('image'), (req, res) => {
+  try {
+    if (!req.file || !req.file.filename) {
+      return res.status(400).json({ error: 'No file uploaded or invalid file data' });
+    }
+
+    const imageUrl = `${req.protocol}://${req.get('host')}/public/${req.file.filename}`;
+
+    // Here you would typically save the image URL to the user's profile in the database
+    res.json({ message: 'Image uploaded successfully', imageUrl });
+  } catch (error) {
+    console.error('Error during file upload:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
 
 // Image retrieval route
+
 
 
 //__________________________________________________________________________________________________________________________

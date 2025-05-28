@@ -36,7 +36,7 @@ function EditPerfil() {
         age_user: form.age_user,
         first_name: form.first_name,
         last_name: form.last_name, 
-        gender_user: form.gender_user, 
+        gender_user: form.gender_user,
         horario_disponivel: form.horario_disponivel, 
         comorbidades: form.comorbidades, 
         endereco: form.endereco, 
@@ -95,13 +95,17 @@ function EditPerfil() {
           <div className="div-grupo-usuario-1">
 
             <div className='div-img'>
+              <form>
+                <input type="file" name="file" value={user?.image}
+                onChange={(e) => setUserData({ ... UserData, })}/>
+                <button>Upload</button>
+              </form>
 
             <img 
               className='img' 
               type="file"
               src={user?.image || 'the-rock.png'} 
-              alt="Profile" 
-              onClick={updateProfileImage(user?.image)}
+              alt="Profile"
               />
             </div>
 
