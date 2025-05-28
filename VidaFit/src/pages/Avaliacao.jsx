@@ -9,7 +9,7 @@ import {useState} from 'react'
 function Avaliacao() {
 
    function enviar(){
-    alert("Avaliação enviada com sucesso!"); // Exibe um alerta de sucesso
+    alert("Avaliação enviada com sucesso!"); 
    }
 
   const navigate = useNavigate()
@@ -60,7 +60,11 @@ const [rating, setRating] = useState(0);
 
 const handleStarClick = (index, isLeft) => {
   const newRating = isLeft ? index + 0.5 : index + 1;
-  setRating(newRating === rating ? 0 : newRating);
+  if (index === 0 && newRating === rating) {
+    setRating(0);
+  } else {
+    setRating(newRating);
+  }
 };
 
 const getStarImage = (index) => {
