@@ -34,7 +34,7 @@ function Login() {
         account_enable: response.data.account_enable,
         first_name: response.data.first_name,
         last_name: response.data.last_name, 
-        image: response.data.image,
+       // image: response.data.image,
         gender_user: response.data.gender_user,
         problems_user: response.data.problems_user,
         professional_confirm: response.data.professional_confirm,

@@ -177,7 +177,7 @@ app.post('/login', async (req, res) => {
       account_enable: user.account_enable,
       first_name: user.first_name,
       last_name: user.last_name,
-      image: imageUrl,
+      // image: imageUrl,
       gender_user: user.gender_user,
       problems_user: user.problems_user,
       professional_confirm: user.professional_confirm,
