@@ -201,21 +201,33 @@ function Ad_Funci({ filter, searchTerm }) {
       }
     ])
 
-      const filteredFuncionarios = funci.filter(funcionario => {
-        // Filtro por categoria
-        const matchesFilter = !filter || 
-            (filter === 'nutricionista' && funcionario.profi === 'Nutricionista') ||
-            (filter === 'educacao_fisica' && funcionario.profi === 'Personal Trainer') ||
-            (filter === 'fitness' && funcionario.profi === 'Coach de saúde') ||
-            (filter === 'masculino' && funcionario.genero === 'masculino') ||
-            (filter === 'feminino' && funcionario.genero === 'feminino');
-
-        // Filtro por nome (case insensitive)
-        const matchesSearch = !searchTerm || 
-            funcionario.nome.toLowerCase().includes(searchTerm.toLowerCase());
-
-        return matchesFilter && matchesSearch;
+    const filterfunci = funci.filter(funcionario => {
+      const genero = funcionario.genero.toLowerCase();
+      const profi = funcionario.profi.toLowerCase();
+      const filtro = (filter || '').toLowerCase();
+      const busca = (searchTerm || '').toLowerCase();
+    
+      const matchesFilter =
+        !filtro ||
+        (filtro === 'nutricionista' && profi === 'nutricionista') ||
+        (filtro === 'educacao_fisica' && profi === 'personal trainer') ||
+        (filtro === 'fitness' && profi === 'coach de saúde') ||
+        (filtro === 'masculino' && genero === 'masculino') ||
+        (filtro === 'feminino' && genero === 'feminino');
+    
+      const matchesSearch =
+        !busca || funcionario.nome.toLowerCase().includes(busca);
+    
+      return matchesFilter && matchesSearch;
     });
+    
+
+   /* const filteredFunci = funci.filter((f) => {
+      const matchesFilter =! filter || f.profi.toLowerCase().includes(filter.toLowerCase()) || f.genero === filter;
+      const matchesSearchTerm =! searchTerm || f.nome.toLowerCase().includes(searchTerm.toLowerCase());
+      return matchesFilter && matchesSearchTerm;
+    });*/
+    
 
    /* const resultadosFiltrados = funci.filter(funcionario => {
       const filtroLower = filter.toLowerCase()
@@ -263,8 +275,14 @@ function Ad_Funci({ filter, searchTerm }) {
 
 
  <div className='lista-cards'>
-   {filteredFuncionarios.map((funcionario) => (
-         <Funcionario key={funcionario.id} nome={funcionario.nome} profi={funcionario.profi} descricao={funcionario.descricao} img={funcionario.img} genero={funcionario.genero}/>
+   {filterfunci.map((f) => (
+         <Funcionario 
+         key={f.id} 
+         nome={f.nome} 
+         profi={f.profi} 
+         descricao={f.descricao} 
+         img={f.img} 
+         genero={f.genero}/>
 
    ))}
  </div>

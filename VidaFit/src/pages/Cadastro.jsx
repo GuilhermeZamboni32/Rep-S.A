@@ -66,8 +66,12 @@ function Cadastro() {
     
     <div className='container-cadastro'>
       <Navbar />
-        <div className='div-cadas'>
+        <div className='div-container'>
         <div className="espaco"></div>
+
+        <div className='div-descricao'>
+          <img src="" alt="" />
+        </div>
         
         <div className='cadas-inf'>
           <div className="cadas-input">

@@ -1,7 +1,8 @@
 import Navbar from '../Components/Navbar'
 import { Link, useNavigate } from 'react-router-dom'
 import './EditPerfil.css'
-import { useState, useEffect, userData } from 'react'
+import { useState, useEffect, userData, useContext} from 'react'
+import { GlobalContext } from "../Context/GlobalContext"
 import axios from 'axios'
 
 import Modal from '../Components/modalConfirmProficional'
@@ -9,19 +10,20 @@ function EditPerfil() {
 
   const navigate = useNavigate()
   const [openModal, setOpenModal] = useState(false)
+  const { user, setUser} = useContext(GlobalContext)
+  const [UserData, setUserData] = useState({})
 
 
-  const [user, setUser] = useState({
-    first_name: '',
-    last_name: '',
-    age_user: '',
-    email_user: '',
-    gender_user: '',
-    problems_user: '',
-    endereco: '',
-    cpf: '',
-    horario: '',
-  });
+
+  // data para formato BR 
+  const formatDate = (date) => {
+    if (!date) return '';
+    const parsedDate = new Date(date); 
+    const day = String(parsedDate.getDate()).padStart(2, '0'); 
+    const month = String(parsedDate.getMonth() + 1).padStart(2, '0'); 
+    const year = parsedDate.getFullYear(); 
+    return `${day}/${month}/${year}`; 
+};
 
 
   async function submitEditProfile(form) {
@@ -34,7 +36,11 @@ function EditPerfil() {
         first_name: form.first_name,
         last_name: form.last_name, 
         image: form.image,
-        gender_user: form.gender_user,
+        gender_user: form.gender_user, 
+        horario_disponivel: form.horario_disponivel, 
+        comorbidades: form.comorbidades, 
+        endereco: form.endereco, 
+        cpf: form.cpf, 
         problems_user: form.problems_user,
         professional_confirm: form.professional_confirm,
       });
@@ -52,6 +58,12 @@ function EditPerfil() {
       console.error('Error deleting account:', error);
     }
   }
+
+
+
+
+ 
+
 
   function voltar(){
     
@@ -81,41 +93,51 @@ function EditPerfil() {
                 className='texto-inp-edit'
                 type="text"
                 placeholder='Nome :'
-                value={userData.first_name}
-                onChange={(e) => setUserData({ ...userData, first_name: e.target.value })}
+                value={user?.username}
+                onChange={(e) => setUserData({ ...UserData, username: e.target.value })}
             />
 
             <input
                 className='texto-inp-edit'
                 type="text"
                 placeholder='Data de nascimento :'
-                value={userData.age_user}
-                onChange={(e) => setUserData({ ...userData, age_user: e.target.value })}
+                value={formatDate(user?.age_user)}
+                onChange={(e) => setUserData({ ...UserData, age_user: e.target.value })}
             />
 
             <input
                 className='texto-inp-edit'
                 type="text"
                 placeholder='Email :'
-                value={userData.email_user}
-                onChange={(e) => setUserData({ ...userData, email_user: e.target.value })}
+                value={user?.email_user}
+                onChange={(e) => setUserData({ ...UserData, email_user: e.target.value })}
             />
             
-              <div className='topo-di'>
-
-              <button className='Voltar' onClick={voltar}>
-                <p className='texto-ed'>Voltar</p>
-                </button>
-
-                <button className='Excluir' onClick={deleteAccount}>
-                <p className='texto-ed'>Excluir conta</p>
-                </button>
-            </div>
              
             <div className="espaco"></div>
 
             </div>
           
+              <div className='botoes-edit'>
+
+              <button className="Salvar" onClick={() => submitEditProfile(userData)}>
+                Salvar
+              </button>
+
+              <button className='Voltar' onClick={voltar}>
+                <p className='texto-ed'>Voltar</p>
+                </button>
+
+                 
+                <button className='Excluir'onClick={() => {
+                  const confirmDelete = window.confirm('Deseja mesmo excluir a sua conta ?');
+                  if (confirmDelete) {
+                    deleteAccount();
+                  }
+                }}>
+                <p className='texto-ed'>Excluir conta</p>
+                </button>
+            </div>
               
 
             </div>
@@ -158,7 +180,6 @@ function EditPerfil() {
             <button className="butoon-click-1" onClick={() => setOpenModal(true)}>clique aqui</button>
             </div>
             <Modal isOpen={openModal} setModalOpen={() => setOpenModal(!openModal)}>
-        Conteúdo do modal
       </Modal>
       
           </div>

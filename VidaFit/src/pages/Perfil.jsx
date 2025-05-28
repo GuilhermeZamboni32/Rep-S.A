@@ -3,13 +3,25 @@ import Navbar from '../Components/Navbar'
 import './Perfil.css'
 //import React, {useState} from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { react, createContext, useState, useContext } from 'react';
+import { react, useContext } from 'react';
 import { GlobalContext } from "../Context/GlobalContext"
-
+import bcrypt from 'bcryptjs';
 
 function Perfil() {
-  const { user, setUser,   inputNome, setInputNome,    inputDescricao, setInputDescricao,    inputImagem, setInputImagem} = useContext(GlobalContext)
+const { user, setUser} = useContext(GlobalContext)
+const { updateUser } = useContext(GlobalContext)
+const { logout } = useContext(GlobalContext)
 const navigate = useNavigate()
+  
+
+const formatDate = (date) => {
+    if (!date) return '';
+    const parsedDate = new Date(date); 
+    const day = String(parsedDate.getDate()).padStart(2, '0'); 
+    const month = String(parsedDate.getMonth() + 1).padStart(2, '0'); 
+    const year = parsedDate.getFullYear(); 
+    return `${day}/${month}/${year}`; 
+};
 
   function exercicio(){
     navigate('/telaexer');
@@ -50,26 +62,32 @@ const navigate = useNavigate()
                 value={user?.username || ''}
                 readOnly
             />
+
             <input
                 className='texto-perfil'
                 type="text"
                 placeholder='Data de nascimento :'
-                value={user?.age || ''}
+                value={formatDate(user?.age_user)}
                 readOnly
             />
             <input
                 className='texto-perfil'
                 type="text"
                 placeholder='Email :'
-                value={user?.email || ''}
+                value={user?.email_user || ''}
                 readOnly
             />
             
               <div className="espaco"></div>
             </div>
 
+            <div className='botoes-perfil'>
+
               <button className='button-perfil' onClick={edit}>Editar</button>
               <button className='button-perfil' onClick={avaliar}>Avaliar Usuario</button>
+              <button className='button-perfil' onClick={logout}>Sair</button>
+            </div>
+
           </div>
 
         
