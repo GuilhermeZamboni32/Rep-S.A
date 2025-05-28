@@ -1,4 +1,4 @@
-:root{
+:root {
     /**extremo claro*/
     --AzulCC1: #1A2D87;
     --AzulCC2: #5E628D;
@@ -34,116 +34,138 @@
     --BrancoEE2: #687982;
     --VermelhoEE1: #811320;
     --VermelhoEE2: #4E0511;
-  }
-.container-login{
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background: linear-gradient(135deg, var(--AzulCC1) 0%, var(--AzulE1) 100%);
 }
-.center-site{
+  
+
+  
+  .container-login {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    background: linear-gradient(135deg, var(--AzulCC1) 0%, var(--AzulE1) 100%);
+  }
+  
+  .container-login-2 {
+    display: flex;
+    width: 100%;
+  }
+  
+  .div-login-esquerda {
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--AzulCC1) 0%, var(--AzulE1) 100%);
     display: flex;
     justify-content: center;
     align-items: center;
-    flex: 1;
-    padding: 20px;
-}
-.container-card{
-    background-color: var(--BrancoC1);
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
-}
-
-.login-txt{
-    text-align: center;
-    margin-bottom: 1.5rem;
-    color: #333;
-}
-
-.input-group{
-    margin-bottom: 1rem;
-    position: relative;
-}
-
-.inputs{
-    width: 100%;
-    padding: 0.75rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 1rem;
-    transition: border-color 0.3s ease;
-}
-
-.inputs:focus{
-    outline: none;
-    border-color: var(--AzulCC1);
-}
-
-.input-error{
-    border-color: var(--VermelhoC1);
-}
-
-.error-text{
-    color: var(--VermelhoC1);
-    font-size: 0.875rem;
-    margin-top: 0.25rem;
-    display: block;
-}
-
-.error-message{
-    background-color: var(--BrancoC2);
-    color: var(--VermelhoC1);
-    padding: 0.75rem;
-    border-radius: 4px;
-    margin-bottom: 1rem;
-    text-align: center;
-}
-
-.checkbox-container{
+    flex-direction: column;
+  }
+  
+  .espaco-0-l {
+    height: 50px;
+  }
+  
+  .titulo-logo-l {
+    width: 60%;
+    max-width: 500px;
+  }
+  
+  .div-login-dirita {
+    width: 50%;
+    height: 100%;
+    background-color: var(--AzulE2);
     display: flex;
+    justify-content: center;
     align-items: center;
-    margin-bottom: 1.5rem;
-}
-
-.checkbox-container input[type="checkbox"] {
-    margin-right: 0.5rem;
-}
-
-.botao-login{
-    width: 100%;
-    padding: 0.75rem;
-    background-color: var(--AzulC1);
-    color: white;
-    border: none;
-    border-radius: 4px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.botao-login:hover{
-    background-color: var(--AzulCC1);
-}
-
-.botao-login:disabled{
-    background-color: #cccccc;
-    cursor: not-allowed;
-}
-
-.register-link{
+  }
+  
+  .cadas-inf-l {
+    width: 400px;
+    padding: 40px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .titulo-cadas {
+    color: var(--BrancoCC1);
+    font-size: 32px;
     text-align: center;
-    margin-top: 1.5rem;
-    color: #666;
-}
-
-.register-link a{
+  }
+  
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  label {
+    color: var(--BrancoCC1);
+    font-weight: 600;
+  }
+  
+  .inputs {
+    padding: 10px;
+    border: 1px solid var(--BrancoCC1);
     color: var(--AzulC1);
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+  
+  .inputs:focus {
+    border-color: var(--AzulCC1);
+  }
+  
+  .input-error {
+    border-color: var(--VermelhoC1);
+  }
+  
+  .botao-login {
+    background-color: var(--AzulCC1);
+    color: var(--BrancoCC2);
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+  }
+  
+  .botao-login:hover {
+    background-color: var(--AzulE1);
+  }
+  
+  .register-link {
+    text-align: center;
+    color: var(--BrancoCC2);
+  }
+  .register-link:hover {
+    color: var(--BrancoC2);
+  }
+  
+  .register-link a {
+    color: var(--BrancoCC2);
+    font-weight: bold;
     text-decoration: none;
-}
+  }
 
-.register-link a:hover{
+  .register-link a:hover {
+    color: var(--BrancoC2);
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  .register-link a:hover {
     text-decoration: underline;
-}
+  }
+  
+  .error-message {
+    color: var(--VermelhoC1);
+    padding: 8px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+  }
+  
