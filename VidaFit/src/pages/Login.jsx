@@ -34,11 +34,15 @@ function Login() {
         account_enable: response.data.account_enable,
         first_name: response.data.first_name,
         last_name: response.data.last_name, 
-       // image: response.data.image,
+        image: response.data.image,
         gender_user: response.data.gender_user,
         problems_user: response.data.problems_user,
         professional_confirm: response.data.professional_confirm,
         professional_type: response.data.professional_type,
+        comments_user: response.data.comments_user,
+        user_rating: response.data.user_rating,
+        avaliability: response.data.avaliability,
+        address: response.data.address,
         token: response.data.token
       });
       
@@ -60,7 +64,7 @@ function Login() {
     <div className="container-login">
       <div className='container-login-2'>
       {/**<Navbar /> */}
-     <Navbar />
+     
 
       <div className='div-login-esquerda'>
         <div className='espaco-0-l'></div>
@@ -108,7 +112,7 @@ function Login() {
               {loading ? 'Logging in...' : 'Login'}
             </button>
             <p className="register-link">
-              Não tem uma conta? <Link to="/cadastro">Registrese</Link>
+              Não tem uma conta? <Link to="/cadastro">Registre-se</Link>
             </p>
             </div>
             

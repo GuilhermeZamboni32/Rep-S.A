@@ -61,9 +61,9 @@ function HomeVisual() {
 
   <div className='sobre-3'>
     <div className="sobre-diferencia">
-      <h1>Como o projeto se diferencia?</h1>
-      <p>O Vida+Fit se destaca por unir tecnologia, acessibilidade e orientação personalizada em um só lugar. 
-      Diferente de outras plataformas, ele conecta usuários a profissionais qualificados e oferece recomendações adaptadas aos objetivos individuais de cada pessoa.</p>
+      <h1>Quem são os responsáveis pelo projeto?</h1>
+       <p>O Vida+Fit é desenvolvido por uma equipe comprometida e multidisciplinar, composta por profissionais das áreas de tecnologia,
+         saúde e design. Juntos, trabalham para garantir que a plataforma seja intuitiva, eficiente e capaz de gerar um impacto positivo na vida dos usuários.</p>
     </div>
     <div className="sobre-futuros">
     <h1>Quais são os planos futuros?</h1>

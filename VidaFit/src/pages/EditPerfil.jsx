@@ -2,17 +2,35 @@ import Navbar from '../Components/Navbar'
 import { Link, useNavigate } from 'react-router-dom'
 import './EditPerfil.css'
 import { useState, useEffect, userData, useContext} from 'react'
-import { GlobalContext } from "../Context/GlobalContext"
+import { GlobalContext } from "../Context/GlobalContext" 
 import axios from 'axios'
-
 import Modal from '../Components/modalConfirmProficional'
+
 function EditPerfil() {
 
   const navigate = useNavigate()
   const [openModal, setOpenModal] = useState(false)
   const { user, setUser} = useContext(GlobalContext)
-  const [UserData, setUserData] = useState({})
-  const [form, setForm] = useState({})
+  const [form, setForm] = useState({        
+    email_user:'',
+    username:'',
+    password_user:'',
+    age_user:'',
+    first_name:'',
+    last_name:'',
+    gender_user:'',
+    horario_disponivel:'',
+    comorbidades:'',
+    endereco:'',
+    cpf:'',
+    problems_user:'',
+    professional_confirm:'',
+    profile_image:''
+  });
+  
+
+  useEffect(() => {console.log('user', user);
+  }, [user]);
 
 
 
@@ -32,17 +50,18 @@ function EditPerfil() {
       const response = await axios.post('http://localhost:3000/users/edit', {
         email_user: form.email_user,
         username: form.username,
-        hashedPassword: bcrypt.hashSync(form.password_user, 10),
+        hashedPassword: form.password_user,
         age_user: form.age_user,
         first_name: form.first_name,
         last_name: form.last_name, 
         gender_user: form.gender_user,
         horario_disponivel: form.horario_disponivel, 
-        comorbidades: form.comorbidades, 
-        endereco: form.endereco, 
-        cpf: form.cpf, 
         problems_user: form.problems_user,
         professional_confirm: form.professional_confirm,
+        comments_user: form.comments_user,
+        user_rating: form.user_rating,
+        avaliability: form.avaliability,
+        address: form.address
       });
       console.log('Profile updated successfully:', response.data);
     }catch (error) {
@@ -74,6 +93,7 @@ function EditPerfil() {
     try {
       const response = await axios.post(`http://localhost:3000/disable`);
       console.log('Account deleted successfully:', response.data);
+      navigate('/');
   }catch (error) {
       console.error('Error deleting account:', error);
     }
@@ -97,14 +117,14 @@ function EditPerfil() {
             <div className='div-img'>
               <form>
                 <input type="file" name="file" value={user?.image}
-                onChange={(e) => setUserData({ ... UserData, })}/>
-                <button>Upload</button>
+                onChange={(e) => setForm({ ... form, image: e.target.value })}/>
+                <button onClick={updateProfileImage}>Upload</button>
               </form>
 
             <img 
               className='img' 
               type="file"
-              src={user?.image || 'the-rock.png'} 
+              src={user?.image || './Icons/perfil-branco.png'} 
               alt="Profile"
               />
             </div>
@@ -118,7 +138,7 @@ function EditPerfil() {
                 type="text"
                 placeholder='Nome :'
                 value={user?.username}
-                onChange={(e) => setUserData({ ...UserData, username: e.target.value })}
+                onChange={(e) => setForm({ ...form, username: e.target.value })}
             />
 
             <input
@@ -126,7 +146,7 @@ function EditPerfil() {
                 type="text"
                 placeholder='Data de nascimento :'
                 value={formatDate(user?.age_user)}
-                onChange={(e) => setUserData({ ...UserData, age_user: e.target.value })}
+                onChange={(e) => setForm({ ...form, age_user: e.target.value })}
             />
 
             <input
@@ -134,7 +154,7 @@ function EditPerfil() {
                 type="text"
                 placeholder='Email :'
                 value={user?.email_user}
-                onChange={(e) => setUserData({ ...UserData, email_user: e.target.value })}
+                onChange={(e) => setForm({ ...form, email_user: e.target.value })}
             />
             
              
@@ -155,8 +175,8 @@ function EditPerfil() {
                  
                 <button className='Excluir'onClick={() => {
                   const confirmDelete = window.confirm('Deseja mesmo excluir a sua conta ?');
-                  if (confirmDelete) {
-                    deleteAccount();
+                  if (confirmDelete === true) {
+                    deleteAccount(deleteAccount);
                   }
                 }}>
                 <p className='texto-ed'>Excluir conta</p>
@@ -172,7 +192,8 @@ function EditPerfil() {
               <option value="">Horários Disponiveis</option>
               <option value="1">Manhã</option>
               <option value="2">Tarde</option>     
-              <option value="3">Noite</option>         
+              <option value="3">Noite</option>      
+              <option value="4">Variado</option>   
             </select>
 
             <select className='selectEditPerfil'>

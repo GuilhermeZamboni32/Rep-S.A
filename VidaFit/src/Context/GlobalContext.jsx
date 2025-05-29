@@ -49,7 +49,7 @@ export const GlobalContextProvider = ({ children }) => {
     setUser(null);
     setIsAuthenticated(false);
     delete axios.defaults.headers.common['Authorization'];
-    // Optional: Make API call to invalidate token on server
+    navigate('/');
   };
 
   // Update do usuario

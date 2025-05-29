@@ -34,9 +34,10 @@ const formatDate = (date) => {
     return `${day}/${month}/${year}`; 
 };
 
-  function exercicio(){
-    navigate('/telaexer');
-  }
+
+ function exercicio(categoria) {
+  navigate('/telaexer', { state: { categoria } });
+}
 
   function dieta(){
     navigate('/teladieta');
@@ -123,10 +124,10 @@ const formatDate = (date) => {
             </div>
 
             <div className="exercicios">
-              <button onClick={exercicio}>Treino A</button>
-              <button onClick={exercicio}>Treino B</button>
-              <button onClick={exercicio}>Treino C</button>
-              <button onClick={exercicio}>Treino D</button>
+              <button onClick={() => exercicio('peito')}>treino de peito</button>
+              <button onClick={() => exercicio('costas')}>treino de costas</button>
+              <button onClick={() => exercicio('perna')}>treino de pernas</button>
+              {/*<button onClick={exercicio}>Treino D</button>*/}
             </div>
           </div>
 
@@ -140,8 +141,8 @@ const formatDate = (date) => {
             </div>
             <div className="dieta">
               <button onClick={dieta}>Dieta A</button>
-              <button onClick={dieta}>Dieta B</button>
-              <button onClick={dieta}>Dieta C</button>
+              {/*<button onClick={dieta}>Dieta B</button>
+              <button onClick={dieta}>Dieta C</button>*/}
             </div>
           </div>
 

@@ -184,7 +184,7 @@ app.post('/login', async (req, res) => {
 
     const imageUrl = user.image 
   ? `${req.protocol}://${req.get('host')}/public/${user.image}` 
-  : null;
+  : "";
 
     const userData = {
       id_user: user.id_user,
@@ -194,11 +194,15 @@ app.post('/login', async (req, res) => {
       account_enable: user.account_enable,
       first_name: user.first_name,
       last_name: user.last_name,
-      // image: imageUrl,
+      image: imageUrl,
       gender_user: user.gender_user,
       problems_user: user.problems_user,
       professional_confirm: user.professional_confirm,
       professional_type: user.professional_type,
+      comments_user: user.comments_user,
+      user_rating: user.user_rating,
+      avaliability: user.avaliability,
+      address: user.address,
       token: token,
     };
 
@@ -237,7 +241,7 @@ app.patch('/disable', authenticateToken, async (req, res) => {
 // Edit user handler
 app.post('/users/edit', authenticateToken, async (req, res) => {
   const { id_user } = req.params;
-  const { username, email_user, password_user, age_user, first_name, last_name, image, gender_user, problems_user } = req.body;
+  const { username, email_user, password_user, age_user, first_name, last_name, image, gender_user, problems_user, avaliability, address} = req.body;
 
   if (!username || !email_user || !password_user) {
     return res.status(400).json({ error: 'Missing required fields' });
@@ -246,8 +250,8 @@ app.post('/users/edit', authenticateToken, async (req, res) => {
   try {
     const hashedPassword = await bcrypt.hash(password_user, 14);
     const result = await pool.query(
-      'UPDATE users SET username = $1, email_user = $2, password_user = $3, age_user = $4, first_name = $5, last_name = $6, image = $7, gender_user = $8, problems_user = $9 WHERE id_user = $10 RETURNING *',
-      [username, email_user, hashedPassword, age_user, first_name, last_name, image, gender_user, problems_user, id_user]
+      'UPDATE users SET username = $1, email_user = $2, password_user = $3, age_user = $4, first_name = $5, last_name = $6, image = $7, gender_user = $8, problems_user = $9, avaliability = $10, address = $11 WHERE id_user = $12 RETURNING *',
+      [username, email_user, hashedPassword, age_user, first_name, last_name, image, gender_user, problems_user, avaliability, address, id_user]
     );
 
     if (result.rows.length === 0) {
@@ -263,7 +267,7 @@ app.post('/users/edit', authenticateToken, async (req, res) => {
 
 // Professional validation route
 app.post('/professional_info', authenticateToken, async (req, res) => {
-  const { id_user } = req.body; // Ensure id_user is passed in the request body
+  const { id_user } = req.body; 
   const { professional_confirm, cref_number, cref_card_photo, validator, professional_type} = req.body;
 
   try {
@@ -298,7 +302,7 @@ app.post('/professional_info', authenticateToken, async (req, res) => {
 
 // Professional card route
 app.get('/professional_card', authenticateToken, async (req, res) => {
-  const { id_user } = req.body; // Ensure id_user is passed in the request body
+  const { id_user } = req.body; 
   const { username, professional_type, image, description } = req.body;
 
   try {
@@ -322,7 +326,6 @@ app.post('/upload', authenticateToken, uploadImage.single('image'), (req, res) =
 
     const imageUrl = `${req.protocol}://${req.get('host')}/public/${req.file.filename}`;
 
-    // Here you would typically save the image URL to the user's profile in the database
     res.json({ message: 'Image uploaded successfully', imageUrl });
   } catch (error) {
     console.error('Error during file upload:', error);
@@ -331,6 +334,24 @@ app.post('/upload', authenticateToken, uploadImage.single('image'), (req, res) =
 });
 
 // Image retrieval route
+// app.post('/profile_image', authenticateToken, (req, res) => {
+//   const { id_user } = req.body; // Ensure id_user is passed in the request body
+
+//   pool.query('SELECT image FROM users WHERE id_user = $1', [id_user])
+//     .then(result => {
+//       if (result.rows.length === 0) {
+//         return res.status(404).json({ error: 'User not found' });
+//       }
+//       const imageUrl = result.rows[0].image 
+//         ? `${req.protocol}://${req.get('host')}/public/${result.rows[0].image}` 
+//         : "";
+//       res.json({ imageUrl });
+//     })
+//     .catch(err => {
+//       console.error(err.message);
+//       res.status(500).json({ error: 'Failed to retrieve profile image' });
+//     });
+// });
 
 
 
