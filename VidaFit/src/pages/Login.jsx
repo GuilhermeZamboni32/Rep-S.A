@@ -59,6 +59,8 @@ function Login() {
   return (
     <div className="container-login">
       <div className='container-login-2'>
+      {/**<Navbar /> */}
+     <Navbar />
 
       <div className='div-login-esquerda'>
         <div className='espaco-0-l'></div>
@@ -106,7 +108,7 @@ function Login() {
               {loading ? 'Logging in...' : 'Login'}
             </button>
             <p className="register-link">
-              Don't have an account? <Link to="/cadastro">Register</Link>
+              Não tem uma conta? <Link to="/cadastro">Registrese</Link>
             </p>
             </div>
             
