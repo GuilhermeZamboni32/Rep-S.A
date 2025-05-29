@@ -9,12 +9,23 @@
 <br/>
 
 ## 🧾 Descrição
-O que projeto faz?<br/>
-Nosso site tem como objetivo ajudar você a adotar uma vida mais saudável, oferecendo dicas práticas de exercícios físicos e sugestões de dietas balanceadas.<br/><br/>
-Com oque contribui?<br/>
-Contribui para a melhoria da saúde geral, promovendo uma rotina mais ativa e equilibrada, ajuda a melhorar a qualidade de vida, reduzindo o estresse e aumentando a energia <br/><br/>
-porque? <br/>
-Porque ao integrar hábitos saudáveis de forma prática e eficiente no seu dia a dia, nosso site apoia você na busca por uma vida mais ativa, com mais disposição e  saude. <br/><br/>
+Qual é o propósito do projeto?<br/>
+O Vida+Fit tem como propósito promover a adoção de um estilo de vida saudável por meio de orientações práticas e acessíveis. A plataforma oferece conteúdos sobre exercícios físicos e dietas balanceadas, desenvolvidos para atender às necessidades de diferentes perfis de usuários.<br/><br/>
+
+De que forma o projeto contribui?<br/>
+A iniciativa contribui significativamente para a melhoria da saúde física e mental, incentivando a prática regular de atividades físicas e hábitos alimentares equilibrados. Com isso, favorece a redução do estresse, o aumento da disposição diária e o fortalecimento do bem-estar geral.<br/><br/>
+
+Por que esse projeto é relevante?<br/>
+Porque integrar práticas saudáveis ao cotidiano é fundamental para uma vida mais longa e com qualidade. O Vida+Fit oferece suporte confiável e orientações claras, tornando a transformação de hábitos mais simples, eficaz e sustentável.<br/><br/>
+
+Como o projeto se diferencia?<br/>
+O Vida+Fit se destaca por unir tecnologia, acessibilidade e orientação personalizada em um só lugar. Diferente de outras plataformas, ele conecta usuários a profissionais qualificados e oferece recomendações adaptadas aos objetivos individuais de cada pessoa.<br/><br/>
+
+Quais são os planos futuros?<br/>
+O projeto planeja expandir suas funcionalidades com novos recursos, como acompanhamento personalizado, integração com wearables e fóruns interativos, visando oferecer uma experiência ainda mais completa e engajadora aos usuários.<br/><br/>
+
+Quem são os responsáveis pelo projeto?<br/>
+O Vida+Fit é desenvolvido por uma equipe comprometida e multidisciplinar, composta por profissionais das áreas de tecnologia, saúde e design. Juntos, trabalham para garantir que a plataforma seja intuitiva, eficiente e capaz de gerar um impacto positivo na vida dos usuários.<br/><br/>
 
 <br/>
 
