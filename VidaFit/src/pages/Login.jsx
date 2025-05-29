@@ -60,7 +60,7 @@ function Login() {
     <div className="container-login">
       <div className='container-login-2'>
       {/**<Navbar /> */}
-     <Navbar />
+     
 
       <div className='div-login-esquerda'>
         <div className='espaco-0-l'></div>

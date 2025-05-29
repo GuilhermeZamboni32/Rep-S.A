@@ -67,7 +67,7 @@ function Cadastro() {
     
     <div className='container-cadastro'>
      {/**<Navbar /> */}
-     <Navbar />
+     
       <div className='container-cadastro-2'>
 
       <div className='div-cadas-esquerda'>
