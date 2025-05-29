@@ -39,6 +39,10 @@ function Login() {
         problems_user: response.data.problems_user,
         professional_confirm: response.data.professional_confirm,
         professional_type: response.data.professional_type,
+        comments_user: response.data.comments_user,
+        user_rating: response.data.user_rating,
+        avaliability: response.data.avaliability,
+        address: response.data.address,
         token: response.data.token
       });
       

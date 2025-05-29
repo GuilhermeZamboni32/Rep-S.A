@@ -1,4 +1,4 @@
-Comandos para a tabela no postgreSQL
+-- Comandos para a tabela no postgreSQL
 
 -- Rota de cração do database
 CREATE DATABASE IF NOT EXIST VidaFit;
@@ -20,13 +20,15 @@ CREATE TABLE users(
     professional_confirm BOOLEAN,
     professional_type VARCHAR (555) CHECK (professional_type IN('personal trainer', 'nutricionista', 'ambos')),
     id_user UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
-    account_enable BOOLEAN DEFAULT TRUE
-    comments VARCHAR(555)
-    user_rating NUMBER(2)
+    account_enable BOOLEAN DEFAULT TRUE,
+    comments_user VARCHAR(255),
+    user_rating NUMERIC(5,2),
+    avaliability VARCHAR (255) CHECK (avaliability IN ('Manhã','Tarde','Noite', 'Variada')),
+    address VARCHAR (255)
 );
 
 -- Tabela de profissionais
-CREATE TABLE professional_info(
+CREATE TABLE IF NOT EXIST professional_info(
     cref_number VARCHAR(255),
     cref_card_photo VARCHAR(255),
     validator VARCHAR(255),
@@ -38,7 +40,7 @@ CREATE TABLE professional_info(
 );
 
 -- Tabela de exercicios
-CREATE TABLE exercises(
+CREATE TABLE IF NOT EXIST exercises(
 	exercise_id UUID DEFAULT uuid_generate_v4(),
 	exercise_name VARCHAR(555),
 	exercise_exemple VARCHAR(555),

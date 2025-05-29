@@ -199,6 +199,10 @@ app.post('/login', async (req, res) => {
       problems_user: user.problems_user,
       professional_confirm: user.professional_confirm,
       professional_type: user.professional_type,
+      comments_user: user.comments_user,
+      user_rating: user.user_rating,
+      avaliability: user.avaliability,
+      address: user.address,
       token: token,
     };
 
@@ -237,7 +241,7 @@ app.patch('/disable', authenticateToken, async (req, res) => {
 // Edit user handler
 app.post('/users/edit', authenticateToken, async (req, res) => {
   const { id_user } = req.params;
-  const { username, email_user, password_user, age_user, first_name, last_name, image, gender_user, problems_user } = req.body;
+  const { username, email_user, password_user, age_user, first_name, last_name, image, gender_user, problems_user, avaliability, address} = req.body;
 
   if (!username || !email_user || !password_user) {
     return res.status(400).json({ error: 'Missing required fields' });
@@ -246,8 +250,8 @@ app.post('/users/edit', authenticateToken, async (req, res) => {
   try {
     const hashedPassword = await bcrypt.hash(password_user, 14);
     const result = await pool.query(
-      'UPDATE users SET username = $1, email_user = $2, password_user = $3, age_user = $4, first_name = $5, last_name = $6, image = $7, gender_user = $8, problems_user = $9 WHERE id_user = $10 RETURNING *',
-      [username, email_user, hashedPassword, age_user, first_name, last_name, image, gender_user, problems_user, id_user]
+      'UPDATE users SET username = $1, email_user = $2, password_user = $3, age_user = $4, first_name = $5, last_name = $6, image = $7, gender_user = $8, problems_user = $9, avaliability = $10, address = $11 WHERE id_user = $12 RETURNING *',
+      [username, email_user, hashedPassword, age_user, first_name, last_name, image, gender_user, problems_user, avaliability, address, id_user]
     );
 
     if (result.rows.length === 0) {
@@ -263,7 +267,7 @@ app.post('/users/edit', authenticateToken, async (req, res) => {
 
 // Professional validation route
 app.post('/professional_info', authenticateToken, async (req, res) => {
-  const { id_user } = req.body; // Ensure id_user is passed in the request body
+  const { id_user } = req.body; 
   const { professional_confirm, cref_number, cref_card_photo, validator, professional_type} = req.body;
 
   try {
@@ -298,7 +302,7 @@ app.post('/professional_info', authenticateToken, async (req, res) => {
 
 // Professional card route
 app.get('/professional_card', authenticateToken, async (req, res) => {
-  const { id_user } = req.body; // Ensure id_user is passed in the request body
+  const { id_user } = req.body; 
   const { username, professional_type, image, description } = req.body;
 
   try {

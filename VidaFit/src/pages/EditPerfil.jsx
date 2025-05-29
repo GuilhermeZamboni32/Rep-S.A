@@ -2,16 +2,15 @@ import Navbar from '../Components/Navbar'
 import { Link, useNavigate } from 'react-router-dom'
 import './EditPerfil.css'
 import { useState, useEffect, userData, useContext} from 'react'
-import { GlobalContext } from "../Context/GlobalContext"
+import { GlobalContext } from "../Context/GlobalContext" 
 import axios from 'axios'
-
 import Modal from '../Components/modalConfirmProficional'
+
 function EditPerfil() {
 
   const navigate = useNavigate()
   const [openModal, setOpenModal] = useState(false)
   const { user, setUser} = useContext(GlobalContext)
-  const [UserData, setUserData] = useState({})
   const [form, setForm] = useState({        
     email_user:'',
     username:'',
@@ -57,11 +56,12 @@ function EditPerfil() {
         last_name: form.last_name, 
         gender_user: form.gender_user,
         horario_disponivel: form.horario_disponivel, 
-        comorbidades: form.comorbidades, 
-        endereco: form.endereco, 
-        cpf: form.cpf, 
         problems_user: form.problems_user,
         professional_confirm: form.professional_confirm,
+        comments_user: form.comments_user,
+        user_rating: form.user_rating,
+        avaliability: form.avaliability,
+        address: form.address
       });
       console.log('Profile updated successfully:', response.data);
     }catch (error) {
@@ -93,6 +93,7 @@ function EditPerfil() {
     try {
       const response = await axios.post(`http://localhost:3000/disable`);
       console.log('Account deleted successfully:', response.data);
+      navigate('/');
   }catch (error) {
       console.error('Error deleting account:', error);
     }
@@ -174,8 +175,8 @@ function EditPerfil() {
                  
                 <button className='Excluir'onClick={() => {
                   const confirmDelete = window.confirm('Deseja mesmo excluir a sua conta ?');
-                  if (confirmDelete) {
-                    deleteAccount();
+                  if (confirmDelete === true) {
+                    deleteAccount(deleteAccount);
                   }
                 }}>
                 <p className='texto-ed'>Excluir conta</p>
@@ -191,7 +192,8 @@ function EditPerfil() {
               <option value="">Horários Disponiveis</option>
               <option value="1">Manhã</option>
               <option value="2">Tarde</option>     
-              <option value="3">Noite</option>         
+              <option value="3">Noite</option>      
+              <option value="4">Variado</option>   
             </select>
 
             <select className='selectEditPerfil'>
