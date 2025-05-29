@@ -184,7 +184,7 @@ app.post('/login', async (req, res) => {
 
     const imageUrl = user.image 
   ? `${req.protocol}://${req.get('host')}/public/${user.image}` 
-  : null;
+  : "";
 
     const userData = {
       id_user: user.id_user,
@@ -194,7 +194,7 @@ app.post('/login', async (req, res) => {
       account_enable: user.account_enable,
       first_name: user.first_name,
       last_name: user.last_name,
-      // image: imageUrl,
+      image: imageUrl,
       gender_user: user.gender_user,
       problems_user: user.problems_user,
       professional_confirm: user.professional_confirm,
@@ -322,7 +322,6 @@ app.post('/upload', authenticateToken, uploadImage.single('image'), (req, res) =
 
     const imageUrl = `${req.protocol}://${req.get('host')}/public/${req.file.filename}`;
 
-    // Here you would typically save the image URL to the user's profile in the database
     res.json({ message: 'Image uploaded successfully', imageUrl });
   } catch (error) {
     console.error('Error during file upload:', error);
@@ -331,6 +330,24 @@ app.post('/upload', authenticateToken, uploadImage.single('image'), (req, res) =
 });
 
 // Image retrieval route
+// app.post('/profile_image', authenticateToken, (req, res) => {
+//   const { id_user } = req.body; // Ensure id_user is passed in the request body
+
+//   pool.query('SELECT image FROM users WHERE id_user = $1', [id_user])
+//     .then(result => {
+//       if (result.rows.length === 0) {
+//         return res.status(404).json({ error: 'User not found' });
+//       }
+//       const imageUrl = result.rows[0].image 
+//         ? `${req.protocol}://${req.get('host')}/public/${result.rows[0].image}` 
+//         : "";
+//       res.json({ imageUrl });
+//     })
+//     .catch(err => {
+//       console.error(err.message);
+//       res.status(500).json({ error: 'Failed to retrieve profile image' });
+//     });
+// });
 
 
 

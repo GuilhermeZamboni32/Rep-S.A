@@ -12,7 +12,26 @@ function EditPerfil() {
   const [openModal, setOpenModal] = useState(false)
   const { user, setUser} = useContext(GlobalContext)
   const [UserData, setUserData] = useState({})
-  const [form, setForm] = useState({})
+  const [form, setForm] = useState({        
+    email_user:'',
+    username:'',
+    password_user:'',
+    age_user:'',
+    first_name:'',
+    last_name:'',
+    gender_user:'',
+    horario_disponivel:'',
+    comorbidades:'',
+    endereco:'',
+    cpf:'',
+    problems_user:'',
+    professional_confirm:'',
+    profile_image:''
+  });
+  
+
+  useEffect(() => {console.log('user', user);
+  }, [user]);
 
 
 
@@ -32,7 +51,7 @@ function EditPerfil() {
       const response = await axios.post('http://localhost:3000/users/edit', {
         email_user: form.email_user,
         username: form.username,
-        hashedPassword: bcrypt.hashSync(form.password_user, 10),
+        hashedPassword: form.password_user,
         age_user: form.age_user,
         first_name: form.first_name,
         last_name: form.last_name, 
@@ -97,14 +116,14 @@ function EditPerfil() {
             <div className='div-img'>
               <form>
                 <input type="file" name="file" value={user?.image}
-                onChange={(e) => setUserData({ ... UserData, })}/>
-                <button>Upload</button>
+                onChange={(e) => setForm({ ... form, image: e.target.value })}/>
+                <button onClick={updateProfileImage}>Upload</button>
               </form>
 
             <img 
               className='img' 
               type="file"
-              src={user?.image || 'the-rock.png'} 
+              src={user?.image || './Icons/perfil-branco.png'} 
               alt="Profile"
               />
             </div>
@@ -118,7 +137,7 @@ function EditPerfil() {
                 type="text"
                 placeholder='Nome :'
                 value={user?.username}
-                onChange={(e) => setUserData({ ...UserData, username: e.target.value })}
+                onChange={(e) => setForm({ ...form, username: e.target.value })}
             />
 
             <input
@@ -126,7 +145,7 @@ function EditPerfil() {
                 type="text"
                 placeholder='Data de nascimento :'
                 value={formatDate(user?.age_user)}
-                onChange={(e) => setUserData({ ...UserData, age_user: e.target.value })}
+                onChange={(e) => setForm({ ...form, age_user: e.target.value })}
             />
 
             <input
@@ -134,7 +153,7 @@ function EditPerfil() {
                 type="text"
                 placeholder='Email :'
                 value={user?.email_user}
-                onChange={(e) => setUserData({ ...UserData, email_user: e.target.value })}
+                onChange={(e) => setForm({ ...form, email_user: e.target.value })}
             />
             
              
