@@ -68,7 +68,7 @@ const handleStarClick = (index, isLeft) => {
 };
 
 const getStarImage = (index) => {
-  if (rating >= index + 1) return '/star-inteira.png';
+  if (rating >= index + 1) return '/star-cheia.png';
   if (rating >= index + 0.5) return '/star-meia.png';
   return '/star-vazia.png';
 };
@@ -172,10 +172,8 @@ const getStarImage = (index) => {
             </div>
             <textarea className='comentario' 
             placeholder='escreva de comentario aqui'
-            oninput="autoRisize(this)"
-            spellcheck="true"
-            required = "true"
-
+            cols="100" 
+            rows="100" 
             ></textarea>
           </div>
          <button className='btn-av' onClick={enviar}>enviar</button>

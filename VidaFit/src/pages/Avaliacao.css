@@ -116,7 +116,7 @@
     .texto-inp{
       width: 30vh;
       margin: 5px 0;
-      background: var(--AzulE1);
+      background: var(--AzulC1);
       color: var(--BrancoC2);
       border: none;
       padding: 10px;
@@ -183,7 +183,7 @@
     }
     
     .Ava-estrela{
-        background-color: var(--AzulP2);
+        background-color: var(--AzulC1);
         border-radius: 8px;
         width: 111vh;
         height: 200px;
@@ -195,7 +195,7 @@
     }
 
     .Ava-coment{
-        background-color: var(--AzulP2);
+        background-color: var(--AzulC1);
         border-radius: 8px;
         width: 111vh;
         height: 25vh;
@@ -205,7 +205,7 @@
         flex-direction: column;
     }
     .comentario {
-      background-color: var(--AzulP2);
+      background-color: var(--AzulC1);
       color: var(--BrancoCC2);
       width: 111.0vh; 
       height:  90vh; 
@@ -283,11 +283,8 @@
 
     .star-half.left {
       left: 0.1vh;
-      background: red;
     }
 
     .star-half.right {
       right: 0.1vh;
-
-      background: black;
     }
