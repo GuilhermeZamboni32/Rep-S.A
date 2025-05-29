@@ -108,7 +108,7 @@ function Login() {
               {loading ? 'Logging in...' : 'Login'}
             </button>
             <p className="register-link">
-              Não tem uma conta? <Link to="/cadastro">Registrese</Link>
+              Não tem uma conta? <Link to="/cadastro">Registre-se</Link>
             </p>
             </div>
             

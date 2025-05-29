@@ -66,7 +66,7 @@ function Cadastro() {
   return (
     
     <div className='container-cadastro'>
-     {/**<Navbar /> */}
+     <Navbar /> 
      
       <div className='container-cadastro-2'>
 
@@ -95,7 +95,9 @@ function Cadastro() {
 
             <div className="espaco-3"></div>
               <button className='button-cadastro' onClick={handleReister}><h1>Cadastrar</h1></button>
-          
+              <p className="register-link">
+              Já tem uma conta? <Link to="/login">Entre</Link>
+              </p>
           </div>
         </div>
       </div>
