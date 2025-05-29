@@ -89,7 +89,8 @@ function HomeVisual() {
       
 
       <footer className="footer">
-        <p> 2025 Vida+Fit. Todos os direitos reservados.</p>
+      <h2>Vida+Fit</h2>
+      <p>Cuidar do corpo é cuidar da vida. Comece hoje com o Vida+Fit.</p>
       </footer>
     </div>
   );

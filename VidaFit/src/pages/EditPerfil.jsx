@@ -12,6 +12,7 @@ function EditPerfil() {
   const [openModal, setOpenModal] = useState(false)
   const { user, setUser} = useContext(GlobalContext)
   const [UserData, setUserData] = useState({})
+  const [form, setForm] = useState({})
 
 
 
@@ -35,8 +36,7 @@ function EditPerfil() {
         age_user: form.age_user,
         first_name: form.first_name,
         last_name: form.last_name, 
-        image: form.image,
-        gender_user: form.gender_user, 
+        gender_user: form.gender_user,
         horario_disponivel: form.horario_disponivel, 
         comorbidades: form.comorbidades, 
         endereco: form.endereco, 
@@ -50,6 +50,26 @@ function EditPerfil() {
     }
   }
 
+  async function updateProfileImage(form) {
+    try {
+      const response = await axios.post('http://localhost:3000/upload', {
+        image: form.profile_image,
+      });
+      console.log('Profile image updated successfully:', response.data);
+    }catch (error) {
+      console.error('Error updating profile image:', error);
+    }
+  }
+
+  async function profileImage() {
+    try {
+      const response = await axios.get('http://localhost:3000/profile_image');
+      console.log('Profile image fetched successfully:', response.data);
+    }catch (error) {
+      console.error('Error fetching profile image:', error);
+    }
+  }
+
   async function deleteAccount(deleteAccount) {
     try {
       const response = await axios.post(`http://localhost:3000/disable`);
@@ -58,11 +78,6 @@ function EditPerfil() {
       console.error('Error deleting account:', error);
     }
   }
-
-
-
-
- 
 
 
   function voltar(){
@@ -80,9 +95,18 @@ function EditPerfil() {
           <div className="div-grupo-usuario-1">
 
             <div className='div-img'>
+              <form>
+                <input type="file" name="file" value={user?.image}
+                onChange={(e) => setUserData({ ... UserData, })}/>
+                <button>Upload</button>
+              </form>
 
-            <img className='img' src="the-glock.jpeg" alt="" />
-            
+            <img 
+              className='img' 
+              type="file"
+              src={user?.image || 'the-rock.png'} 
+              alt="Profile"
+              />
             </div>
 
             <div className="espaco"></div>

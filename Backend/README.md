@@ -21,6 +21,8 @@ CREATE TABLE users(
     professional_type VARCHAR (555) CHECK (professional_type IN('personal trainer', 'nutricionista', 'ambos')),
     id_user UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
     account_enable BOOLEAN DEFAULT TRUE
+    comments VARCHAR(555)
+    user_rating NUMBER(2)
 );
 
 -- Tabela de profissionais

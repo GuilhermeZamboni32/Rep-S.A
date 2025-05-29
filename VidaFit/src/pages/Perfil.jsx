@@ -2,12 +2,23 @@ import React from 'react'
 import Navbar from '../Components/Navbar'
 import './Perfil.css'
 //import React, {useState} from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { useState , useEffect} from 'react';
+import { Link, useNavigate} from 'react-router-dom'
 import { react, useContext } from 'react';
 import { GlobalContext } from "../Context/GlobalContext"
 import bcrypt from 'bcryptjs';
 
 function Perfil() {
+
+  const [selectedProfessional, setSelectedProfessional] = useState('');
+  useEffect(() => {
+    const professional = localStorage.getItem('selectedProfessional'); // Recupera o nome do profissional do localStorage
+    if (professional) {
+      setSelectedProfessional(professional);
+    }
+  }, []);
+
+
 const { user, setUser} = useContext(GlobalContext)
 const { updateUser } = useContext(GlobalContext)
 const { logout } = useContext(GlobalContext)
@@ -49,7 +60,12 @@ const formatDate = (date) => {
           <div className="div-grupo-usuario">
 
             <div className='div-img'>
-            <img className='img' src="the-rok.jpg" alt="" />
+            {/*<img 
+              className='img'
+              src={user?.image || 'the-glock.png'}
+              alt="Profile"
+            />*/}
+            <img className='imagem-teste' src="./Icons/perfil-branco.png" alt="" />
             </div>
 
             <div className="espaco"></div>
@@ -79,6 +95,10 @@ const formatDate = (date) => {
             />
             
               <div className="espaco"></div>
+            </div>
+            <div className='profisional-selecionado'>
+              <h4>Profissional selecionado</h4>
+              <p>{selectedProfessional || 'Nenhum profissional selecionado'}</p>
             </div>
 
             <div className='botoes-perfil'>

@@ -159,6 +159,7 @@
   
   .team li:hover {
     transform: translateY(-5px);
+    background-color: var(--BrancoE2);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
   }
   
@@ -209,7 +210,7 @@
   align-items: center;
   display: flex;
   flex-direction: row;
-  margin-left: 15px;
+  margin-left: 7%;
   margin-top: 100px;
 
 }
@@ -247,6 +248,7 @@
   
   .sobre-propósito:hover {
     transform: translateY(-10px);
+    background-color: var(--BrancoE1);
   }
   
   .sobre-contribui {
@@ -259,8 +261,9 @@
     margin-top: 50px;
   }
 
-  .sobre-contribui:hover{
+  .sobre-contribui:hover {
     transform: translateY(-10px);
+    background-color: var(--BrancoE1);
   }
 
   .sobre-relevante {
@@ -277,6 +280,11 @@
     transform: translateY(-10px);
   }
 
+  .sobre-relevante:hover {
+    transform: translateY(-10px);
+    background-color: var(--BrancoE1);
+  }
+
   .sobre-diferencia2 {
     background: var(--BrancoE2);
     padding: 20px;
@@ -288,8 +296,9 @@
     margin-top: 50px;
   }
 
-  .sobre-diferencia2:hover{
+  .sobre-diferencia2:hover {
     transform: translateY(-10px);
+    background-color: var(--BrancoE1);
   }
 
   .sobre-diferencia {
@@ -306,6 +315,12 @@
     transform: translateY(-10px);
   }
 
+  .sobre-diferencia:hover {
+    transform: translateY(-10px);
+    background-color: var(--BrancoE1);
+  }
+
+
   .sobre-futuros {
     background: var(--BrancoE2);
     padding: 20px;
@@ -317,6 +332,7 @@
     margin-top: 50px;
   }
 
-  .sobre-futuros:hover{
+  .sobre-futuros:hover {
     transform: translateY(-10px);
+    background-color: var(--BrancoE1);
   }

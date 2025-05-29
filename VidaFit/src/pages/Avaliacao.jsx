@@ -2,13 +2,15 @@ import React from 'react'
 import Navbar from '../Components/Navbar'
 import "./Avaliacao.css"
 import { Link, useNavigate } from 'react-router-dom'
-import { react, useContext } from 'react';
+import { react, useContext } from 'react'
 import { GlobalContext } from "../Context/GlobalContext"
-import bcrypt from 'bcryptjs';
 import {useState} from 'react'
 
-
 function Avaliacao() {
+
+   function enviar(){
+    alert("Avaliação enviada com sucesso!"); 
+   }
 
   const navigate = useNavigate()
 
@@ -20,6 +22,7 @@ function Avaliacao() {
     navigate('/Av_notas')
   }
 
+  const [comentario, setComentario] = useState('')
   const { user, setUser} = useContext(GlobalContext)
   const { updateUser } = useContext(GlobalContext)
   const { logout } = useContext(GlobalContext)
@@ -32,66 +35,43 @@ function Avaliacao() {
     const month = String(parsedDate.getMonth() + 1).padStart(2, '0'); 
     const year = parsedDate.getFullYear(); 
     return `${day}/${month}/${year}`; 
+}
+
+  const enviarAvaliacao = async () => {
+    try {
+      await fetch('http://localhost:3000/avaliacao', {
+        method: 'POST',
+        headers: { 'Content-Type' : 'application/json'},
+        body: JSON.stringify({
+          nota: rating,
+          comentario: comentario,
+          usuarioID: user?.id
+        })
+      });
+      alert('Avaliação enviada com sucesso!');
+      setRating(0);
+      setComentario('');
+    } catch (error) {
+      alert('Erro ao enviar avaliaçao');
+    }
+  };
+
+const [rating, setRating] = useState(0);
+
+const handleStarClick = (index, isLeft) => {
+  const newRating = isLeft ? index + 0.5 : index + 1;
+  if (index === 0 && newRating === rating) {
+    setRating(0);
+  } else {
+    setRating(newRating);
+  }
 };
 
- /* const [rating, setRating] = useState(0)
-  const [hoverRating, setHoverRating] = useState(0)
-
-  const handleStarClick = (index) => {
-    const clickedValue = index + 1; // Valor correspondente à estrela clicada (1 a 5)
-    const halfStarValue = index + 0.5; // Valor de meia estrela
-
-    if (index === 0) { // Lógica especial para a primeira estrela (index 0)
-      if (rating === 1) { // Se a primeira estrela está cheia (nota 1)
-        setRating(0);   // Torna vazia (nota 0)
-      } else if (rating === 0.5) { // Se a primeira estrela está meia (nota 0.5)
-        setRating(1);   // Torna cheia (nota 1)
-      } else { // Se está vazia (0) ou outra nota > 1 foi selecionada
-        setRating(0.5); // Torna meia (nota 0.5)
-      }
-    } else { // Lógica para as estrelas 2 a 5 (index 1 a 4)
-      // Se clicar na estrela que já representa a meia avaliação atual, torna-a cheia
-      if (rating === halfStarValue) {
-        setRating(clickedValue);
-      } else {
-        // Caso contrário (clicar em nova estrela ou em uma já cheia/vazia), define como meia estrela
-        setRating(halfStarValue);
-      }
-    }
-  };
-
-  // Define o valor de hover baseado no índice da estrela (0 a 4) -> valor (1 a 5)
-  const handleHover = (index) => {
-    setHoverRating(index + 1)
-  };
-
-  // Reseta o hover quando o mouse sai da área das estrelas
-  const handleLeave = () => {
-    setHoverRating(0)
-  };
-
-  // Função auxiliar para determinar qual imagem de estrela mostrar
-  const getStarImage = (index) => {
-    const starValue = index + 1 // Valor da estrela atual (1 a 5)
-
-    // O estado de hover tem prioridade para feedback visual imediato
-    if (hoverRating >= starValue) {
-      // Mostra estrela cheia se o hover estiver nesta estrela ou à direita dela
-      return "/star-inteira.png" // Ajuste o caminho se necessário
-    }
-
-    // Determina a estrela com base na avaliação permanente (rating)
-    if (rating >= starValue) {
-      // Estrela cheia se a avaliação for maior ou igual ao valor cheio desta estrela
-      return "/star-inteira.png" // Ajuste o caminho se necessário
-    } else if (rating === index + 0.5) {
-      // Meia estrela se a avaliação for exatamente o valor meio desta estrela
-      return "/star-meia.png" // Ajuste o caminho se necessário
-    } else {
-      // Estrela vazia nos outros casos
-      return "/star-vazia.png" // Ajuste o caminho se necessário
-    }
-  }*/
+const getStarImage = (index) => {
+  if (rating >= index + 1) return '/star-inteira.png';
+  if (rating >= index + 0.5) return '/star-meia.png';
+  return '/star-vazia.png';
+};
 
   return (
     <div className="container-Ava">
@@ -155,7 +135,33 @@ function Avaliacao() {
           </div>
 
           <div className="Ava-estrela">
-
+            <div className="star-rating">
+              <button className="star-button">
+                <span className="star-half left" onClick={() => handleStarClick(0, true)} />
+                <span className="star-half right" onClick={() => handleStarClick(0, false)} />
+                <img src={getStarImage(0)} alt="star" className="star-img" />
+              </button>
+              <button className="star-button">
+                <span className="star-half left" onClick={() => handleStarClick(1, true)} />
+                <span className="star-half right" onClick={() => handleStarClick(1, false)} />
+                <img src={getStarImage(1)} alt="star" className="star-img" />
+              </button>
+              <button className="star-button">
+                <span className="star-half left" onClick={() => handleStarClick(2, true)} />
+                <span className="star-half right" onClick={() => handleStarClick(2, false)} />
+                <img src={getStarImage(2)} alt="star" className="star-img" />
+              </button>
+              <button className="star-button">
+                <span className="star-half left" onClick={() => handleStarClick(3, true)} />
+                <span className="star-half right" onClick={() => handleStarClick(3, false)} />
+                <img src={getStarImage(3)} alt="star" className="star-img" />
+              </button>
+              <button className="star-button">
+                <span className="star-half left" onClick={() => handleStarClick(4, true)} />
+                <span className="star-half right" onClick={() => handleStarClick(4, false)} />
+                <img src={getStarImage(4)} alt="star" className="star-img" />
+              </button>
+            </div>
           </div>
 
           <div className="Ava-coment">
@@ -172,7 +178,7 @@ function Avaliacao() {
 
             ></textarea>
           </div>
-         <button classname=".botoes-av">enviar</button>
+         <button className='btn-av' onClick={enviar}>enviar</button>
         </div>
 
        
@@ -184,27 +190,4 @@ function Avaliacao() {
   )
 }
 
-
 export default Avaliacao ;
-
-
-
-
-
-
-//*<div className="rating" onMouseLeave={handleLeave}>
-             //* {[...Array(5)].map((_, index) => (
-              //*  <button
-                 /* className='btn-star'
-                  key={index}
-                  onClick={() => handleStarClick(index)}
-                  onMouseEnter={() => handleHover(index)}
-                /*
-                  <img
-                    className="star-img" // Certifique-se que esta classe define o tamanho da imagem
-                    src={getStarImage(index)} // Usa a função para obter a imagem correta
-                    alt={`Avaliação ${index + 1} de 5 estrelas`}
-                  />
-                </button>
-              ))}
-    </div>*/

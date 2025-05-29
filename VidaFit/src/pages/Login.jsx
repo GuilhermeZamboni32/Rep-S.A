@@ -34,7 +34,7 @@ function Login() {
         account_enable: response.data.account_enable,
         first_name: response.data.first_name,
         last_name: response.data.last_name, 
-        image: response.data.image,
+       // image: response.data.image,
         gender_user: response.data.gender_user,
         problems_user: response.data.problems_user,
         professional_confirm: response.data.professional_confirm,
@@ -45,7 +45,7 @@ function Login() {
       navigate('/perfil'); 
 
     } catch (err) {
-      setError(err.response?.data?.message || 'An error occurred. Please try again.');
+      setError(err.response?.data?.message || 'Ocorreu um erro. Tente novamente');
     } finally {
       setLoading(false);
     }
@@ -58,11 +58,18 @@ function Login() {
 
   return (
     <div className="container-login">
-      <Navbar />
-      <div className="center-site">
-        <div className="container-card">
+      <div className='container-login-2'>
+
+      <div className='div-login-esquerda'>
+        <div className='espaco-0-l'></div>
+        <img className='titulo-logo-l' src="logomarca_VF.png" alt="" />
+        <p></p>
+      </div>
+
+      <div className='div-login-dirita'>
+        <div className="cadas-inf-l">
           <form onSubmit={handleSubmit}>
-            <h2 className="login-txt">Login</h2>
+            <h2 className="titulo-cadas">Login</h2>
             {error && <p className="error-message">{error}</p>}
             <div className="input-group">
               <label>Email:</label>
@@ -74,8 +81,6 @@ function Login() {
                 className={`inputs ${error ? 'input-error' : ''}`}
                 required
               />
-            </div>
-            <div className="input-group">
               <label>Password:</label>
               <input
                 type={showPassword ? 'text' : 'password'}
@@ -92,7 +97,7 @@ function Login() {
               >
                 {showPassword ? 'Hide' : 'Show'}
               </button>
-            </div>
+           
             <button
               type="submit"
               disabled={loading}
@@ -103,8 +108,14 @@ function Login() {
             <p className="register-link">
               Don't have an account? <Link to="/cadastro">Register</Link>
             </p>
+            </div>
+            
           </form>
         </div>
+      </div>
+
+      
+      
       </div>
     </div>
   );

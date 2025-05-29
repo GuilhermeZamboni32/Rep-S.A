@@ -8,6 +8,9 @@ export const GlobalContextProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [loading, setLoading] = useState(true);
 
+
+
+
   // Inicia usuarios vindo do localstorage
   useEffect(() => {
     const initializeAuth = async () => {
