@@ -7,6 +7,8 @@ import { Link, useNavigate } from 'react-router-dom'
 function PerfilProfissional() {
     const navigate = useNavigate()
 
+    const profissional = JSON.parse(localStorage.getItem('profissionalSelecionado')) || {};
+
     function exercicio(){
       navigate('/telaexer');
     }
@@ -35,9 +37,9 @@ function PerfilProfissional() {
               <div className="espaco-prof"></div>
   
               <div className="perfil-input-prof">
-                <input className='texto-perfil-prof' type="text" placeholder='Nome :'/>
-                <input className='texto-perfil-prof' type="text" placeholder='Data de nascimento :'/>
-                <input className='texto-perfil-prof' type="text" placeholder='Email :'/>
+                <input className='texto-perfil-prof' type="text" placeholder='Nome :' value={profissional.nome || ''} readOnly />
+                <input className='texto-perfil-prof' type="text" placeholder='Data de nascimento :' value={profissional.nascimento || ''} readOnly />
+                <input className='texto-perfil-prof' type="text" placeholder='Email :' value={profissional.email || ''} readOnly />
                 
                 <div className="espaco-prof"></div>
               </div>

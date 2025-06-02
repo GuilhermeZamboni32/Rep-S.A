@@ -97,10 +97,27 @@ const formatDate = (date) => {
             
               <div className="espaco"></div>
             </div>
-            <div className='profisional-selecionado'>
-              <h4>Profissional selecionado</h4>
-              <p>{selectedProfessional || 'Nenhum profissional selecionado'}</p>
-            </div>
+           <div className='profisional-selecionado'>
+            <h4>Profissional selecionado</h4>
+            {selectedProfessional ? (
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <p style={{ margin: 0 }}>{selectedProfessional}</p>
+                <button
+                  className="button-perfil"
+                  onClick={() => navigate('/perfilprofissional')}
+                >
+                  Perfil Profissional
+                </button>
+              </div>
+            ) : (
+              <button
+                className="button-perfil"
+                onClick={() => navigate('/home')}
+              >
+                Escolher Profissional
+              </button>
+            )}
+          </div>
 
             <div className='botoes-perfil'>
 
