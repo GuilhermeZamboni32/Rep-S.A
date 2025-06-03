@@ -17,9 +17,14 @@ function PerfilProfissional() {
       navigate('/teladieta');
     }
   
-    function edit(){
-      navigate('/editperfil');
-    }
+    function avaliar(){
+    navigate('/avaliacao');
+  }
+
+    function voltar(){
+    //navigate(-1);
+    navigate('/perfil');
+  }
   
     return (
      
@@ -42,6 +47,8 @@ function PerfilProfissional() {
                 <input className='texto-perfil-prof' type="text" placeholder='Email :' value={profissional.email || ''} readOnly />
                 
                 <div className="espaco-prof"></div>
+                 <button className='button-perfil' onClick={avaliar}>Avaliar Usuario</button>
+                 <button className='voltar' onClick={voltar}>voltar</button>
               </div>
   
                 

@@ -100,8 +100,8 @@ const formatDate = (date) => {
            <div className='profisional-selecionado'>
             <h4>Profissional selecionado</h4>
             {selectedProfessional ? (
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <p style={{ margin: 0 }}>{selectedProfessional}</p>
+              <div>
+                <p >{selectedProfessional}</p>
                 <button
                   className="button-perfil"
                   onClick={() => navigate('/perfilprofissional')}
