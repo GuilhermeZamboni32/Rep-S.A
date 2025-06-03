@@ -7,7 +7,7 @@ export const GlobalContextProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [loading, setLoading] = useState(true);
-
+  
 
 
 
@@ -58,8 +58,6 @@ export const GlobalContextProvider = ({ children }) => {
     setUser(newUser);
     localStorage.setItem('user', JSON.stringify(newUser));
   };
-
-  console.log (login)
 
   return (
     <GlobalContext.Provider

@@ -9,6 +9,7 @@ import Modal from '../Components/modalConfirmProficional'
 function EditPerfil() {
 
   const navigate = useNavigate()
+  const [userData, setUserData] = useState(null)
   const [openModal, setOpenModal] = useState(false)
   const { user, setUser} = useContext(GlobalContext)
   const [form, setForm] = useState({        
@@ -22,17 +23,10 @@ function EditPerfil() {
     horario_disponivel:'',
     comorbidades:'',
     endereco:'',
-    cpf:'',
     problems_user:'',
     professional_confirm:'',
     profile_image:''
   });
-  
-
-  useEffect(() => {console.log('user', user);
-  }, [user]);
-
-
 
   // data para formato BR 
   const formatDate = (date) => {
@@ -44,11 +38,39 @@ function EditPerfil() {
     return `${day}/${month}/${year}`; 
 };
 
+  async function fetchUserData() {
+    try {
+      const response = await axios.get('http://localhost:3000/users/profile');
+      const userData = response.data;
+      setUserData(userData);
+    } catch (error) {
+      console.error('Error fetching user data:', error);
+    }
+  }
+
 
   async function submitEditProfile(form) {
     try {
-      const response = await axios.post('http://localhost:3000/users/edit', {
-        email_user: form.email_user,
+      if (!form.email_user || !form.username || !form.age_user || !form.first_name || !form.last_name) {
+        setForm({
+          ...form, email_user: user.email_user,
+          username: user.username,
+          hashedPassword: user.password_user,
+          age_user: user.age_user,
+          first_name: user.first_name,
+          last_name: user.last_name, 
+          gender_user: user.gender_user,
+          horario_disponivel: user.horario_disponivel, 
+          problems_user: user.problems_user,
+          professional_confirm: user.professional_confirm,
+          comments_user: user.comments_user,
+          user_rating: user.user_rating,
+          avaliability: user.avaliability,
+          address: form.address 
+        })
+      }
+      const response = await axios.put('http://localhost:3000/users/edit/${clienteSelecionado.id}', {
+        email_user: form.email_user, 
         username: form.username,
         hashedPassword: form.password_user,
         age_user: form.age_user,
@@ -69,11 +91,17 @@ function EditPerfil() {
     }
   }
 
+  console.dir(user)
+  console.dir(form)
+
   async function updateProfileImage(form) {
     try {
+      const formData = new FormData();
+      formData.append('profile_image', form.profile_image);
       const response = await axios.post('http://localhost:3000/upload', {
         image: form.profile_image,
       });
+      console.dir(response.data);
       console.log('Profile image updated successfully:', response.data);
     }catch (error) {
       console.error('Error updating profile image:', error);
@@ -116,7 +144,7 @@ function EditPerfil() {
 
             <div className='div-img'>
               <form>
-                <input type="file" name="file" value={user?.image}
+                 <input type="file" name="file" /*value={form.image}*/
                 onChange={(e) => setForm({ ... form, image: e.target.value })}/>
                 <button onClick={updateProfileImage}>Upload</button>
               </form>
@@ -133,27 +161,30 @@ function EditPerfil() {
 
             <div className="perfil-input">
           
+            <p>Nome novo</p>
             <input
                 className='texto-inp-edit'
                 type="text"
                 placeholder='Nome :'
-                value={user?.username}
+                // value={user?.username}
                 onChange={(e) => setForm({ ...form, username: e.target.value })}
             />
 
+            <p>Nascimento novo</p>
             <input
                 className='texto-inp-edit'
-                type="text"
+                type="date"
                 placeholder='Data de nascimento :'
-                value={formatDate(user?.age_user)}
+                // value={formatDate(user?.age_user)}
                 onChange={(e) => setForm({ ...form, age_user: e.target.value })}
             />
 
+            <p>Email novo</p>
             <input
                 className='texto-inp-edit'
                 type="text"
                 placeholder='Email :'
-                value={user?.email_user}
+                // value={user?.email_user}
                 onChange={(e) => setForm({ ...form, email_user: e.target.value })}
             />
             
@@ -164,7 +195,7 @@ function EditPerfil() {
           
               <div className='botoes-edit'>
 
-              <button className="Salvar" onClick={() => submitEditProfile(userData)}>
+              <button className="Salvar" onClick={() => submitEditProfile(form)}>
                 Salvar
               </button>
 
@@ -218,7 +249,6 @@ function EditPerfil() {
             <input className='texto-inp-inf' type="text" placeholder="Endereço:"/>
             <input className='texto-inp-inf' type="text" placeholder="CPF:"/>
            
-          
             <div className='container-buttom'>
             <h2>deseja ser um profisional ?</h2>
             
