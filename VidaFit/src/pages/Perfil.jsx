@@ -141,9 +141,9 @@ const formatDate = (date) => {
             </div>
 
             <div className="exercicios">
-              <button onClick={() => exercicio('peito')}>treino de peito</button>
-              <button onClick={() => exercicio('costas')}>treino de costas</button>
-              <button onClick={() => exercicio('perna')}>treino de pernas</button>
+              <button className='button-exer-perfil-0' onClick={() => exercicio('peito')}>treino de peito</button>
+              <button className='button-exer-perfil-0' onClick={() => exercicio('costas')}>treino de costas</button>
+              <button className='button-exer-perfil-0' onClick={() => exercicio('perna')}>treino de pernas</button>
               {/*<button onClick={exercicio}>Treino D</button>*/}
             </div>
           </div>
@@ -157,7 +157,7 @@ const formatDate = (date) => {
               </h1>
             </div>
             <div className="dieta">
-              <button onClick={dieta}>Dieta A</button>
+              <button className='button-dieta-perfil-1' onClick={dieta}>Dieta A</button>
               {/*<button onClick={dieta}>Dieta B</button>
               <button onClick={dieta}>Dieta C</button>*/}
             </div>

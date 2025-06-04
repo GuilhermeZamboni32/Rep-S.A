@@ -238,15 +238,15 @@ app.patch('/disable', authenticateToken, async (req, res) => {
   }
 });
 
+
 // Edit user handler
-app.put('/users/edit', authenticateToken, async (req, res) => {
+app.patch('/users/edit/:id_user', authenticateToken, async (req, res) => {
   const { id_user } = req.params;
   const { username, email_user, password_user, age_user, first_name, last_name, image, gender_user, problems_user, avaliability, address} = req.body;
 
   if (!username || !email_user || !password_user) {
     return res.status(400).json({ error: 'Missing required fields' });
   }
-
   try {
     const hashedPassword = await bcrypt.hash(password_user, 14);
     const result = await pool.query(

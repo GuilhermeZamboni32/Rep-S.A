@@ -182,7 +182,7 @@
   .texto-perfil{
     width: 100%;
     margin: 5px 0;
-    background-color: var(--AzulC1);
+    background-color: var(--AzulCC2);
     color: var(--BrancoC2);
     border: none;
     padding: 10px;
@@ -194,4 +194,22 @@
   input::placeholder {
     color: var(--placeholder-color, var(--BrancoCC1));
     transition: color 0.3s;
+}
+
+.button-exer-perfil-0{
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  background-color: var(--AzulCC2);
+  color: var(--BrancoCC2);
+  cursor: pointer;
+}
+
+.button-dieta-perfil-1{
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  background-color: var(--AzulCC2);
+  color: var(--BrancoCC2);
+  cursor: pointer;
 }
