@@ -28,7 +28,7 @@ CREATE TABLE users(
 );
 
 -- Tabela de profissionais
-CREATE TABLE IF NOT EXIST professional_info(
+CREATE TABLE professional_info(
     cref_number VARCHAR(255),
     cref_card_photo VARCHAR(255),
     validator VARCHAR(255),
@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXIST professional_info(
 );
 
 -- Tabela de exercicios
-CREATE TABLE IF NOT EXIST exercises(
+CREATE TABLE exercises(
 	exercise_id UUID DEFAULT uuid_generate_v4(),
 	exercise_name VARCHAR(555),
 	exercise_exemple VARCHAR(555),
