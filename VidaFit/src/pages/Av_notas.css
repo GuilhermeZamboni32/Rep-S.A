@@ -1,3 +1,14 @@
+.div-grupo-Ava-3{
+ margin: 10vh;
+ display: flex;
+ flex-direction: row;
+ gap: 5vh;
+ padding: 3vh;
+ background-repeat: no-repeat;
+border-radius: 8px;
+ justify-content: center; 
+ background-color: var(--BrancoC1);
+  }
 .titulo_av_notas{
 font-size: 1.2rem;
 font-weight: bold;
@@ -6,14 +17,14 @@ background-color: var(--AzulP2);
 border-radius: 3px;
 display: flex;
 justify-content: center;
-width: 175.4vh;
+width: 163vh;
 justify-content: top;
 }
 .Av_notas{
 background: var(--BrancoC2);
 border-radius: 8px;
-width: 300vh;
-height: 69vh;
+width: 172vh;
+height: 74vh;
 display: flex;
 align-items: center;
 flex-direction: column;    
