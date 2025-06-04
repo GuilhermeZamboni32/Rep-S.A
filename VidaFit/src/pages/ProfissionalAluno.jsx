@@ -15,24 +15,24 @@ function ProfissionalAluno() {
   
     return (
      
-      <div className="container-perfil">
+      <div className="container-prof-aluno">
         <Navbar />
-          <div className="div-grupo">
+          <div className="div-grupo-prof-aluno">
             
            
-            <div className="div-grupo-usuario">
+            <div className="div-grupo-usuario-prof-aluno">
   
-              <div className='div-img'>
-              <img className='img' src="the-crock.jpeg" alt="" />
+              <div className='div-img-prof-aluno'>
+              <img className='img-prof-aluno' src="the-crock.jpeg" alt="" />
               </div>
   
-              <div className="espaco"></div>
+              <div className="espaco-prof-aluno"></div>
   
-              <div className="perfil-input">
-                <input className='texto-perfil' type="text" placeholder='Nome :'/>
-                <input className='texto-perfil' type="text" placeholder='Data de nascimento :'/>
-                <input className='texto-perfil' type="text" placeholder='Email :'/>
-                <div className="espaco"></div>
+              <div className="perfil-input-prof-aluno">
+                <input className='texto-perfil-prof-aluno' type="text" placeholder='Nome :'/>
+                <input className='texto-perfil-prof-aluno' type="text" placeholder='Data de nascimento :'/>
+                <input className='texto-perfil-prof-aluno' type="text" placeholder='Email :'/>
+                <div className="espaco-prof-aluno"></div>
               </div>
   
                 
@@ -42,14 +42,14 @@ function ProfissionalAluno() {
   
            
   
-            <div className="div-grupo-exercicio">
-              <div className="titulo">
+            <div className="div-grupo-exercicio-prof-aluno">
+              <div className="titulo-prof-aluno">
                 <h1>  
                 Nome do aluno
                 </h1>
               </div>
   
-              <div className="exercicios">
+              <div className="exercicios-prof-aluno">
                 <button onClick={exercicio}>Treino A</button>
                 <button onClick={exercicio}>Treino B</button>
                 <button onClick={exercicio}>Treino C</button>

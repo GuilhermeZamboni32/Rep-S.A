@@ -36,7 +36,7 @@
     --VermelhoEE2: #4E0511;
   }
   
-  .container-perfil {
+  .container-prof-aluno {
     background: linear-gradient(135deg, var(--AzulCC1) 0%, var(--AzulE1) 100%);
     min-height: 100vh;
     align-items: center;
@@ -44,7 +44,7 @@
     
     }
     
-    .div-grupo {
+    .div-grupo-prof-aluno {
       margin: 100px;
       display: flex;
       flex-direction: row;
@@ -57,7 +57,7 @@
     }
     
    
-    .div-grupo-usuario {
+    .div-grupo-usuario-prof-aluno {
       background: var(--BrancoP2);
       padding: 15px;
       border-radius: 8px;
@@ -68,23 +68,23 @@
       width: 400px;
     }
   
-    .div-img{
+    .div-img-prof-aluno{
       background-color: var(--AzulEE1);
       width: 210px;
       border-radius: 8px;
       
     }
     
-    .img {
+    .img-prof-aluno {
       width: 200px;
       border-radius: 8px;
     }
   
-    .espaco{
+    .espaco-prof-aluno{
       height: 50px;
     }
   
-    .perfil-input{
+    .perfil-input-prof-aluno{
       gap: 200px;
       
       
@@ -92,7 +92,7 @@
       
     }
     
-    .texto-inp{
+    .texto-inp-prof-aluno{
       width: 100%;
       margin: 5px 0;
       
@@ -103,12 +103,12 @@
       cursor: pointer;
   }
   
-  .texto-inp::placeholder {
+  .texto-inp-prof-aluno::placeholder {
       color: var(--AzulC2);
       
   }
   
-  .button-perfil{
+  .button-perfil-prof-aluno{
     padding: 10px 20px;
     border-radius: 10px;
     border: none;
@@ -116,7 +116,7 @@
     color: var(--BrancoCC2);
     cursor: pointer;
   }
-  .button-perfil:hover{
+  .button-perfil-prof-aluno:hover{
     color: var(--BrancoCC2);
     background-color: var(--AzulCC1);
   }
@@ -124,7 +124,7 @@
   
   
     
-    .div-grupo-exercicio {
+    .div-grupo-exercicio-prof-aluno {
       background: var(--BrancoP2);
       padding: 15px;
       border-radius: 8px;
@@ -132,7 +132,7 @@
       
     }
     
-    .titulo {
+    .titulo-prof-aluno {
       font-size: 1.2rem;
       font-weight: bold;
       margin-bottom: 10px;
@@ -141,7 +141,7 @@
       border-radius: 8px;
     }
     
-    .exercicios button, .dieta button {
+    .exercicios-prof-aluno button, .dieta-prof-aluno button {
       display: block;
       width: 100%;
       margin: 20px 0;
@@ -155,14 +155,14 @@
     
    
     
-    .exercicios button:hover, .dieta button:hover {
+    .exercicios-prof-aluno button:hover, .dieta-prof-aluno button:hover {
       background: var(--AzulC2);
     }
     
   
   
   
-    .texto-perfil{
+    .texto-perfil-prof-aluno{
       width: 100%;
       margin: 5px 0;
       background-color: var(--AzulC1);
@@ -174,7 +174,7 @@
     }
   
   
-    input::placeholder {
+    input-prof-aluno::placeholder {
       color: var(--placeholder-color, var(--BrancoCC1));
       transition: color 0.3s;
   }

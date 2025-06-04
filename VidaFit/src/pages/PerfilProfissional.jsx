@@ -35,7 +35,7 @@ function PerfilProfissional() {
            
             <div className="div-grupo-usuario-prof">
   
-              <div className='div-img'>
+              <div className='div-img-prof'>
               <img className='img' src="the-log.jpg" alt="" />
               </div>
   
@@ -48,7 +48,7 @@ function PerfilProfissional() {
                 
                 <div className="espaco-prof"></div>
                  <button className='button-perfil' onClick={avaliar}>Avaliar Usuario</button>
-                 <button className='voltar' onClick={voltar}>voltar</button>
+                 <button className='voltar-prof' onClick={voltar}>voltar</button>
               </div>
   
                 
