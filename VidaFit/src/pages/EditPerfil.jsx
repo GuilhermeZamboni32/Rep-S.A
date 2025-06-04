@@ -38,41 +38,29 @@ function EditPerfil() {
     return `${day}/${month}/${year}`; 
 };
 
-  async function fetchUserData() {
-    try {
-      const response = await axios.get('http://localhost:3000/users/profile');
-      const userData = response.data;
-      setUserData(userData);
-    } catch (error) {
-      console.error('Error fetching user data:', error);
-    }
-  }
-
+console.log(user);
 
   async function submitEditProfile(form) {
+    // Validate required fields
+    if (!form.email_user || !form.username || !form.password_user) {
+      console.error('Missing required fields: email_user, username, or password_user');
+      return;
+    }
+
+    // Check if user ID exists
+    if (!user?.id_user) {
+      console.error('User ID is missing');
+      return;
+    }
+
     try {
-      if (!form.email_user || !form.username || !form.age_user || !form.first_name || !form.last_name) {
-        setForm({
-          ...form, email_user: user.email_user,
-          username: user.username,
-          hashedPassword: user.password_user,
-          age_user: user.age_user,
-          first_name: user.first_name,
-          last_name: user.last_name, 
-          gender_user: user.gender_user,
-          horario_disponivel: user.horario_disponivel, 
-          problems_user: user.problems_user,
-          professional_confirm: user.professional_confirm,
-          comments_user: user.comments_user,
-          user_rating: user.user_rating,
-          avaliability: user.avaliability,
-          address: form.address 
-        })
-      }
-      const response = await axios.put('http://localhost:3000/users/edit/${clienteSelecionado.id}', {
+      // Log the request payload for debugging
+      console.log('Submitting profile update with data:', form);
+
+      const response = await axios.patch(`http://localhost:3000/users/edit/${user.id_user}`, {
         email_user: form.email_user, 
         username: form.username,
-        hashedPassword: form.password_user,
+        password_user: form.password_user,
         age_user: form.age_user,
         first_name: form.first_name,
         last_name: form.last_name, 
@@ -80,19 +68,16 @@ function EditPerfil() {
         horario_disponivel: form.horario_disponivel, 
         problems_user: form.problems_user,
         professional_confirm: form.professional_confirm,
-        comments_user: form.comments_user,
-        user_rating: form.user_rating,
         avaliability: form.avaliability,
         address: form.address
       });
+
       console.log('Profile updated successfully:', response.data);
-    }catch (error) {
-      console.error('Error fetching user data:', error);
+    } catch (error) {
+      console.error('Error updating profile:', error.response?.data || error.message);
+      console.log('Form data:', form);
     }
   }
-
-  console.dir(user)
-  console.dir(form)
 
   async function updateProfileImage(form) {
     try {
@@ -101,7 +86,8 @@ function EditPerfil() {
       const response = await axios.post('http://localhost:3000/upload', {
         image: form.profile_image,
       });
-      console.dir(response.data);
+
+      console.log(response.data);
       console.log('Profile image updated successfully:', response.data);
     }catch (error) {
       console.error('Error updating profile image:', error);
