@@ -5,7 +5,9 @@ import Navbar from '../Components/Navbar';
 
 function HomeVisual() {
     const navigate = useNavigate()
-
+    const redirectVitor = () => {
+        navigate('/CadastroVitor');
+    }
     function cadastro(){
         navigate('/Cadastro');
       }
@@ -80,7 +82,7 @@ function HomeVisual() {
         <h2>Nossa Equipe</h2>
         <ul className="team">
           <li>Guilherme Zamboni Menegacio - Treinos e Dietas</li>
-          <li>Vitor Danielli de Oliveira - Cadastro</li>
+          <li >Vitor Danielli de Oliveira - Cadastro</li>
           <li>Jonathan Stulp Zoz - Contatos</li>
           <li>Thiago Quadra Arnold - Avaliações</li>
         </ul>

@@ -13,19 +13,17 @@ function EditPerfil() {
   const [openModal, setOpenModal] = useState(false)
   const { user, setUser} = useContext(GlobalContext)
   const [form, setForm] = useState({        
-    email_user:'',
-    username:'',
-    password_user:'',
-    age_user:'',
-    first_name:'',
-    last_name:'',
-    gender_user:'',
-    horario_disponivel:'',
-    comorbidades:'',
-    endereco:'',
-    problems_user:'',
-    professional_confirm:'',
-    profile_image:''
+    email_user: '', 
+    username: '',
+    password_user: '',
+    age_user: '',
+    first_name: '',
+    last_name: '', 
+    gender_user: '',
+    problems_user: '',
+    professional_confirm: '',
+    avaliability: '',
+    address: ''
   });
 
   // data para formato BR 
