@@ -136,7 +136,6 @@ npm install
 npm install axios
 npm install react-router-dom
 npm install react-icons
-npm install bcrypt
 ```
 
 ### Instalações Backend
@@ -148,7 +147,6 @@ npm install bcrypt
 npm i jsonwebtoken
 npm i helmet
 npm install dotenv --save
-npm i firebase-admin
 npm i multer
 ```
 
