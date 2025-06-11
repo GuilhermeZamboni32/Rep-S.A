@@ -65,8 +65,8 @@ justify-content: top;
  font-weight: bold;
  margin-bottom: 30px;
  border-radius: 3px;
-  display: flex;
-  justify-content: center;
+ display: flex;
+ justify-content: center;
   width: 172vh;
   justify-content: top;
 }

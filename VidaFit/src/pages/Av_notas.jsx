@@ -53,8 +53,12 @@ function Av_notas () {
         <div className='card'>
             <p>nome</p>
            <h2>comentario</h2>
-          
-
+        
+      </div>
+      <div className='card'>
+            <p>nome</p>
+           <h2>comentario</h2>
+        
       </div>
      
       
