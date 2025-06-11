@@ -117,7 +117,7 @@ console.log(user);
     navigate(-1);
   }
   
-
+console.log(form)
   return (
    <div className='container-editperfil'>
             <Navbar />
@@ -197,46 +197,46 @@ console.log(user);
                 }}>
                 <p className='texto-ed'>Excluir conta</p>
                 </button>
-            </div>
-              
-
+            </div>   
+   
             </div>
 
         <div className='container-inputs'>
         <div className='container-de-inputs-12'>
               <div className='div-inputs1'>
-                  <select className='selectEditPerfil'>
-                      <option value="">Horários Disponiveis</option>
-                      <option value="1">Manhã</option>
-                      <option value="2">Tarde</option>     
-                      <option value="3">Noite</option>      
-                      <option value="4">Variado</option>   
-                    </select>
-
-                    <select className='selectEditPerfil'>
-                      <option value="">comorbidades</option>
-                      <option value="1">Sim</option>
-                      <option value="2">Não</option>              
-                    </select>
-
-                    <select className='selectEditPerfil'>
-                      <option value="">Genero</option>
-                      <option value="1">Masculino</option>
-                      <option value="2">Femimino</option>     
-                      <option value="3">Croissant</option>  
-                      <option value="4">Outro</option>  
-                      <option value="5">Prefiro não responder</option>           
-                    </select>
+                    <input className='texto-inp-inf' type="text" placeholder='primeiro nome' onChange={(e) => setForm({ ...form, first_name: e.target.value })}/>
+                    <input className='texto-inp-inf' type="text" placeholder='sobre nome' onChange={(e) => setForm({ ...form, last_name: e.target.value })}/>
+                    <input className='texto-inp-inf' type="text" placeholder="Senha Atual:"/>
+                    <input className='texto-inp-inf' type="text" placeholder="Nova Senha:"/>
+                  
               </div>  
 
 
               <div className='div-inputs2'>
-                    <input className='texto-inp-inf' type="text" placeholder="Endereço:"/>
-                    
-                    <input className='texto-inp-inf' type="text" placeholder="Senha Atual:"/>
-                    <input className='texto-inp-inf' type="text" placeholder="Nova Senha:"/>
                   
-          
+                    <select className='selectEditPerfil'onChange={(e) => setForm({ ...form, avaliability: e.target.value })}>
+                      <option value="">Horários Disponiveis</option>
+                      <option value="Manhã">Manhã</option>
+                      <option value="Tarde">Tarde</option>     
+                      <option value="Noite">Noite</option>      
+                      <option value="Variado">Variado</option>   
+                    </select>
+
+                    <select className='selectEditPerfil' onChange={(e) => setForm({ ...form,  eproblems_user: e.target.value })}>
+                      <option value="">comorbidades</option>
+                      <option value="1">Sim</option>
+                      <option value="2">Não</option>              
+                    </select>
+                    
+                    <select className='selectEditPerfil' onChange={(e) => setForm({ ...form,  gender_user: e.target.value })}>
+                      <option value="">Genero</option>
+                      <option value="Masculino">Masculino</option>
+                      <option value="Femimino">Femimino</option>     
+                      <option value="Croissant">Croissant</option>  
+                      <option value="Outro">Outro</option>  
+                      <option value="Prefiro não responder">Prefiro não responder</option>           
+                    </select> 
+                    <input className='texto-inp-inf' type="text" placeholder="Endereço:" onChange={(e) => setForm({ ...form,  address: e.target.value })}/>
               </div>
         </div>
                     <div className='container-buttom'>
