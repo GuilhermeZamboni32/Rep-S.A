@@ -27,7 +27,8 @@ function Av_notas () {
             Avaliaçoes
             </h1>
           </div>
-          <div className='barra-filtro'>
+          <div className='filtro-Av'>
+          <div className='barra-filtro-Av'>
           <img className='filtro' src="./Icons/Filtro-2.png" alt="Filtro" />
           <select 
             value={filter} 
@@ -47,16 +48,18 @@ function Av_notas () {
             <option value="5 estrela">5 estrela inteira </option>       
           </select>
         </div>
-        
-     
-      
-       
         </div>
 
-       
+        <div className='card'>
+            <p>nome</p>
+           <h2>comentario</h2>
+          
 
-       
+      </div>
+     
+      
 
+        </div>
       </div>
     </div>
   )
