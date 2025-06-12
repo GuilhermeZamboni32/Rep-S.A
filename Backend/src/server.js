@@ -187,7 +187,7 @@ app.post('/login', async (req, res) => {
   : "";
 
     const userData = {
-      id_user: user.id_user,
+      id: user.id_user,
       username: user.username,
       email_user: user.email_user,
       age_user: user.age_user,
@@ -240,13 +240,15 @@ app.patch('/disable', authenticateToken, async (req, res) => {
 
 
 // Edit user handler
-app.patch('/users/edit/:id_user', authenticateToken, async (req, res) => {
+app.patch('/usersEdit', authenticateToken, async (req, res) => {
   const { id_user } = req.params;
   const { username, email_user, password_user, age_user, first_name, last_name, image, gender_user, problems_user, avaliability, address} = req.body;
 
   if (!username || !email_user || !password_user) {
     return res.status(400).json({ error: 'Missing required fields' });
   }
+  console.log(id_user)
+
   try {
     const hashedPassword = await bcrypt.hash(password_user, 14);
     const result = await pool.query(

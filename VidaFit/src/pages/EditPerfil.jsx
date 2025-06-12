@@ -9,6 +9,7 @@ import Modal from '../Components/modalConfirmProficional'
 function EditPerfil() {
 
   const navigate = useNavigate()
+  const [showPassword, setShowPassword] = useState(false)
   const [userData, setUserData] = useState(null)
   const [openModal, setOpenModal] = useState(false)
   const { user, setUser} = useContext(GlobalContext)
@@ -36,40 +37,43 @@ function EditPerfil() {
     return `${day}/${month}/${year}`; 
 };
 
-console.log(user);
-
   async function submitEditProfile(form) {
     // Validate required fields
     if (!form.email_user || !form.username || !form.password_user) {
       console.error('Missing required fields: email_user, username, or password_user');
       return;
     }
-
+      
     // Check if user ID exists
-    if (!user?.id_user) {
+    /*if (!user?.id) {
       console.error('User ID is missing');
       return;
-    }
-
+    }*/
+    console.log(user.id)
     try {
       // Log the request payload for debugging
       console.log('Submitting profile update with data:', form);
 
-      const response = await axios.patch(`http://localhost:3000/users/edit/${user.id_user}`, {
-        email_user: form.email_user, 
+      const response = await axios.patch('http://localhost:3000/usersEdit', {
         username: form.username,
-        password_user: form.password_user,
+        email_user: form.email_user,
         age_user: form.age_user,
         first_name: form.first_name,
-        last_name: form.last_name, 
+        last_name: form.last_name,
         gender_user: form.gender_user,
-        horario_disponivel: form.horario_disponivel, 
         problems_user: form.problems_user,
-        professional_confirm: form.professional_confirm,
         avaliability: form.avaliability,
-        address: form.address
-      });
-
+        horario_disponivel: form.horario_disponivel, 
+        password_user: form.password_user,
+        address: form.address,
+        professional_confirm: form.professional_confirm,     
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${user?.token}`,
+        },
+      }
+    );
       console.log('Profile updated successfully:', response.data);
     } catch (error) {
       console.error('Error updating profile:', error.response?.data || error.message);
@@ -77,20 +81,29 @@ console.log(user);
     }
   }
 
+  //---------------------------------------------------------------------------
+
   async function updateProfileImage(form) {
     try {
       const formData = new FormData();
       formData.append('profile_image', form.profile_image);
       const response = await axios.post('http://localhost:3000/upload', {
         image: form.profile_image,
-      });
-
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${user?.token}`,
+        },
+      }
+    );
       console.log(response.data);
-      console.log('Profile image updated successfully:', response.data);
+      console.log('Profile ima?,ge updated successfully:', response.data);
     }catch (error) {
       console.error('Error updating profile image:', error);
     }
   }
+
+  //--------------------------------------------------------------------------
 
   async function profileImage() {
     try {
@@ -101,9 +114,17 @@ console.log(user);
     }
   }
 
+  //---------------------------------------------------------------------------
+
   async function deleteAccount(deleteAccount) {
     try {
-      const response = await axios.post(`http://localhost:3000/disable`);
+      const response = await axios.post(`http://localhost:3000/disable`, {},
+      {
+        headers: { 
+          Authorization: `Bearer ${user?.token}`,
+        },
+      }
+      );
       console.log('Account deleted successfully:', response.data);
       navigate('/');
   }catch (error) {
@@ -111,9 +132,7 @@ console.log(user);
     }
   }
 
-
   function voltar(){
-    
     navigate(-1);
   }
   
@@ -206,9 +225,11 @@ console.log(form)
               <div className='div-inputs1'>
                     <input className='texto-inp-inf' type="text" placeholder='primeiro nome' onChange={(e) => setForm({ ...form, first_name: e.target.value })}/>
                     <input className='texto-inp-inf' type="text" placeholder='sobre nome' onChange={(e) => setForm({ ...form, last_name: e.target.value })}/>
-                    <input className='texto-inp-inf' type="text" placeholder="Senha Atual:"/>
-                    <input className='texto-inp-inf' type="text" placeholder="Nova Senha:"/>
-                  
+                    <input className='texto-inp-inf' type={showPassword ? 'text' : 'password'} placeholder="Senha Atual:"onChange={(e) => setForm({ ...form, password_user: e.target.value })}/>
+                    <input className='texto-inp-inf' type={showPassword ? 'text' : 'password'} placeholder="Nova Senha:"/>
+                    <input type="checkbox" checked={showPassword} onChange={(e) => setShowPassword(e.target.checked)}/>
+                    
+                    
               </div>  
 
 
@@ -222,10 +243,10 @@ console.log(form)
                       <option value="Variado">Variado</option>   
                     </select>
 
-                    <select className='selectEditPerfil' onChange={(e) => setForm({ ...form,  eproblems_user: e.target.value })}>
+                    <select className='selectEditPerfil' onChange={(e) => setForm({ ...form,  problems_user: e.target.value })}>
                       <option value="">comorbidades</option>
-                      <option value="1">Sim</option>
-                      <option value="2">Não</option>              
+                      <option value="Sim">Sim</option>
+                      <option value="Não">Não</option>              
                     </select>
                     
                     <select className='selectEditPerfil' onChange={(e) => setForm({ ...form,  gender_user: e.target.value })}>
