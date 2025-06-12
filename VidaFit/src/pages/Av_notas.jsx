@@ -21,12 +21,6 @@ function Av_notas () {
     <div className="container-Ava">
     <Navbar />
       <div className="div-grupo-Ava-3">
-        <div className="Av_notas">
-          <div className="titulo_av_notas">
-            <h1>  
-            Avaliaçoes
-            </h1>
-          </div>
           <div className='filtro-Av'>
           <div className='barra-filtro-Av'>
           <img className='filtro' src="./Icons/Filtro-2.png" alt="Filtro" />
@@ -49,20 +43,80 @@ function Av_notas () {
           </select>
         </div>
         </div>
-
-        <div className='card'>
+        <div className='container_Av'>
+         <div className="Av_notas">
+          <div className='card'>
             <p>nome</p>
            <h2>comentario</h2>
-        
-      </div>
-      <div className='card'>
+          </div>
+          <div className='card'>
             <p>nome</p>
            <h2>comentario</h2>
-        
-      </div>
-     
-      
-
+          </div>
+          <div className='card'>
+            <p>nome</p>
+           <h2>comentario</h2>
+          </div>
+          <div className='card'>
+            <p>nome</p>
+           <h2>comentario</h2>
+         </div>
+          <div className='card'>
+            <p>nome</p>
+           <h2>comentario</h2>
+         </div>
+         <div className='card'>
+            <p>nome</p>
+           <h2>comentario</h2>
+         </div>
+         <div className='card'>
+            <p>nome</p>
+           <h2>comentario</h2>
+         </div>
+         <div className='card'>
+            <p>nome</p>
+           <h2>comentario</h2>
+         </div>
+         <div className='card'>
+            <p>nome</p>
+           <h2>comentario</h2>
+         </div>
+         <div className='card'>
+            <p>nome</p>
+           <h2>comentario</h2>
+         </div>
+         <div className='card'>
+            <p>nome</p>
+           <h2>comentario</h2>
+         </div>
+         <div className='card'>
+            <p>nome</p>
+           <h2>comentario</h2>
+         </div>
+         <div className='card'>
+            <p>nome</p>
+           <h2>comentario</h2>
+         </div>
+         <div className='card'>
+            <p>nome</p>
+           <h2>comentario</h2>
+         </div>
+         <div className='card'>
+            <p>nome</p>
+           <h2>comentario</h2>
+         </div>
+          <div className='card'>
+            <p>nome</p>
+           <h2>comentario</h2>
+         </div>    <div className='card'>
+            <p>nome</p>
+           <h2>comentario</h2>
+         </div>
+          <div className='card'>
+            <p>nome</p>
+           <h2>comentario</h2>
+           </div>
+          </div>
         </div>
       </div>
     </div>
