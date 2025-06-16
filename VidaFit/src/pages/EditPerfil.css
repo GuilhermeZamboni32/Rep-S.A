@@ -165,7 +165,7 @@ cursor: pointer;
   margin: 30px;
 }
 input::placeholder{
-  color: var(--BrancoCC2);
+  color: var(--BrancoEE1);
 }
 .div-inputs1 select{
   color: var(--BrancoC2);

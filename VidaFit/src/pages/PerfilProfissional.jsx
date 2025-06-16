@@ -36,15 +36,18 @@ function PerfilProfissional() {
             <div className="div-grupo-usuario-prof">
   
               <div className='div-img-prof'>
-              <img className='img' src="the-log.jpg" alt="" />
+              <img
+                    className='img'
+                    src={profissional.img || '/default-image.jpg'}
+                    alt={profissional.nome || 'Imagem do profissional'}
+                  />
               </div>
   
               <div className="espaco-prof"></div>
   
               <div className="perfil-input-prof">
-                <input className='texto-perfil-prof' type="text" placeholder='Nome :' value={profissional.nome || ''} readOnly />
-                <input className='texto-perfil-prof' type="text" placeholder='Data de nascimento :' value={profissional.nascimento || ''} readOnly />
-                <input className='texto-perfil-prof' type="text" placeholder='Email :' value={profissional.email || ''} readOnly />
+              <input className='texto-perfil-prof' type="text" placeholder='Nome :' value={profissional.nome || ''} readOnly />
+              <input className='texto-perfil-prof' type="text" placeholder='Email :' value={profissional.email || ''} readOnly />
                 
                 <div className="espaco-prof"></div>
                  <button className='button-perfil' onClick={avaliar}>Avaliar Usuario</button>
