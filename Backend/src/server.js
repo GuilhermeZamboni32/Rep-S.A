@@ -99,7 +99,7 @@ app.post('/users', async (req, res) => {
     );
     res.status(201).json(result.rows[0]);
   } catch (err) {
-    if (err.code === '23505') { // Unique violation
+    if (err.code === '23505') {
       return res.status(409).json({ error: 'User already exists' });
     }
     console.error(err.message);
@@ -171,6 +171,8 @@ app.post('/login', async (req, res) => {
     if (!passwordMatch) {
       return res.status(401).json({ error: 'Invalid credentials' });
     }
+    
+    console.log('User from DB:', user)
 
     const token = jwt.sign(
       {
@@ -205,9 +207,6 @@ app.post('/login', async (req, res) => {
       address: user.address,
       token: token,
     };
-
-   
-
     console.log('User data:', userData);
 
     res.json(userData);
@@ -240,14 +239,13 @@ app.patch('/disable', authenticateToken, async (req, res) => {
 
 
 // Edit user handler
-app.patch('/usersEdit', authenticateToken, async (req, res) => {
+app.patch('/usersEdit/:id', authenticateToken, async (req, res) => {
   const { id_user } = req.params;
-  const { username, email_user, password_user, age_user, first_name, last_name, image, gender_user, problems_user, avaliability, address} = req.body;
+  const { username, email_user, password_user, age_user, first_name, last_name, image, gender_user, problems_user, avaliability, address } = req.body;
 
   if (!username || !email_user || !password_user) {
     return res.status(400).json({ error: 'Missing required fields' });
   }
-  console.log(id_user)
 
   try {
     const hashedPassword = await bcrypt.hash(password_user, 14);

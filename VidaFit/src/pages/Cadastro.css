@@ -38,7 +38,6 @@
     --VermelhoEE2: #4E0511;
 }
 
-
 .container-cadastro {
     width: 100vw;
     height: 100vh;
@@ -164,3 +163,4 @@
             background-color: var(--BrancoCC1);
             color: var(--AzulCC2);
         }
+
