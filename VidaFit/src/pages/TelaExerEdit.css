@@ -47,8 +47,8 @@
     background-color: var(--BrancoC1);
     margin: 100px;
     display: flex;
-    flex-direction: row;
-    gap: 50px;
+    flex-direction: column;
+    gap: 10px;
     padding: 20px;
     border-radius: 16px;
     justify-content: center; 
@@ -121,20 +121,13 @@
     background-color: rgb(18, 226, 46);
 }
 
-.div-baixo-edit-1{
+.div-baixo-edit{
     background-color: var(--BrancoP2);
-    width: 50vh;
+    min-width: 100vh;
     height: 500px;
     border-radius: 8px;
-    border: #222326 8px solid;
-}
+    
 
-.div-baixo-edit-2{
-    background-color: var(--BrancoP2);
-    width: 150vh;
-    height: 500px;
-    border-radius: 8px;
-    border: #222326 8px solid;
 }
 
 .lista-cards-exer-edit {
@@ -170,189 +163,3 @@
     border: 2px solid var(--VermelhoE2);
 }
 
-
-
-
-
-
-
-
-
-/*** 
-////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////
- ***/
-
-
-
- .container-exercicio {
-  background: #e6e7ea;
-  border-radius: 24px;
-  padding: 0 24px 32px 24px;
-  min-width: 350;
-  max-width: 400px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.titulo-exercicio{
-  width: 100%;
-  color: #000000;
-}
-
-.form-exercicio {
-  width: 100%;
-  margin-top: 18px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.input-container-exercicio {
-  width: 100%;
-  margin-bottom: 24px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.input-container-exercicio label {
-  font-weight: bold;
-  color: #555;
-  margin-bottom: 6px;
-  font-size: 1.15rem;
-  margin-left: 8px;
-}
-
-.input-container-exercicio input,
-.input-container-exercicio textarea {
-  width: 95%;
-  padding: 10px 18px;
-  border: none;
-  border-radius: 24px;
-  background: #bdbdbd;
-  font-size: 1.1rem;
-  margin-top: 2px;
-  outline: none;
-  color: #333;
-  resize: none;
-}
-
-button[type="button-exercicio"] {
-  width: 80%;
-  margin: 18px auto 0 auto;
-  padding: 10px 0;
-  background: #5c85ea;
-  color: #222326;
-  font-weight: bold;
-  font-size: 1.15rem;
-  border: none;
-  border-radius: 24px;
-  cursor: pointer;
-  transition: background 0.2s;
-  display: block;
-}
-
-button[type="button-exercicio"]:hover {
-  background: #3d5bbf;
-  color: #fff;
-}
-
-/*///////////////////////////////////////////////////////////////*/
-
-
-
-.exercicios-container {
-  width: 100%;
-  max-height: 470px;
-  overflow-y: auto;
-  padding-right: 8px;
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  border-radius: 10px;
-}
-
-/* Barra de rolagem personalizada */
-.exercicios-container::-webkit-scrollbar {
-  width: 10px;
-}
-.exercicios-container::-webkit-scrollbar-thumb {
-  background: #e57373;
-  border-radius: 8px;
-}
-.exercicios-container::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.exercicio {
-  background: #a0a0a0;
-  border-radius: 28px;
-  padding: 18px 18px 14px 18px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin-bottom: 0;
-}
-
-.exercicio h2,
-.exercicio p {
-  background: #bdbdbd;
-  color: #fff;
-  font-weight: bold;
-  border-radius: 16px;
-  padding: 4px 14px;
-  margin: 0 0 6px 0;
-  display: inline-block;
-  font-size: 1.05rem;
-}
-
-.exercicio h2 {
-  font-size: 1.1rem;
-  margin-bottom: 2px;
-}
-
-.exercicio p {
-  font-size: 1rem;
-}
-
-.exercicio button {
-  margin-top: 8px;
-  margin-right: 10px;
-  padding: 8px 0;
-  width: 44%;
-  border: none;
-  border-radius: 16px;
-  font-weight: bold;
-  font-size: 1.05rem;
-  color: #fff;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-
-.exercicio button:first-of-type {
-  background: #4a74e6;
-}
-
-.exercicio button:first-of-type:hover {
-  background: #2d4fa2;
-}
-
-.exercicio button:last-of-type {
-  background: #d32d2d;
-}
-
-.exercicio button:last-of-type:hover {
-  background: #a51c1c;
-}
-
-.exercicio button + button {
-  margin-left: 8%;
-}
-
-@media (max-width: 600px) {
-  .exercicios-container {
-    max-height: 220px;
-  }
-}

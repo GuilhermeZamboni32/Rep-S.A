@@ -10,12 +10,9 @@ import bcrypt from 'bcryptjs';
 
 function Perfil() {
 
-  const profissional = JSON.parse(localStorage.getItem('profissionalSelecionado')) || {};
-  const nomeProfissional = profissional.nome || 'Nenhum profissional selecionado';
-
   const [selectedProfessional, setSelectedProfessional] = useState('');
   useEffect(() => {
-    const professional = localStorage.getItem('profissionalSelecionado'); // Recupera o nome do profissional do localStorage
+    const professional = localStorage.getItem('selectedProfessional'); // Recupera o nome do profissional do localStorage
     if (professional) {
       setSelectedProfessional(professional);
     }
@@ -104,7 +101,7 @@ const formatDate = (date) => {
             <h4>Profissional selecionado</h4>
             {selectedProfessional ? (
               <div>
-                <p >{nomeProfissional}</p>
+                <p >{selectedProfessional}</p>
                 <button
                   className="button-perfil"
                   onClick={() => navigate('/perfilprofissional')}

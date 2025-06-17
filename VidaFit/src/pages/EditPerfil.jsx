@@ -6,13 +6,14 @@ import { GlobalContext } from "../Context/GlobalContext"
 import axios from 'axios'
 import Modal from '../Components/modalConfirmProficional'
 
+
+
 function EditPerfil() {
 
   const navigate = useNavigate()
   const [showPassword, setShowPassword] = useState(false)
-  const [userData, setUserData] = useState(null)
   const [openModal, setOpenModal] = useState(false)
-  const { user, setUser} = useContext(GlobalContext)
+  const {user, setUser} = useContext(GlobalContext)
   const [form, setForm] = useState({        
     email_user: '', 
     username: '',
@@ -24,57 +25,80 @@ function EditPerfil() {
     problems_user: '',
     professional_confirm: '',
     avaliability: '',
-    address: ''
+    address: '',
+//    id: user?.id
   });
+
+  // console.log('user aaa======>>>>>>', user.id)
+  // let new_id = user.id
+  // console.log('user bbbb======>>>>>>', new_id)
+
+  // async function testing_id() {
+  //   let new_id2 = user.id
+  //   console.log('new_id new_id======>>>>>>', new_id2)
+  //   try {
+  //     const response = await fetch(`http://localhost:3000/usersEdit/${new_id2}`, {
+  //       method: 'PATCH',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //         Authorization: `Bearer ${localStorage.getItem('token')}`, 
+  //       },
+  //       body: JSON.stringify(form),
+  //     });
+  
+  //     if (!response.ok) {
+  //       const errorData = await response.json();
+  //       console.error('Error updating profile:', errorData.error);
+  //       alert('Failed to update profile');
+  //       return;
+  //     }
+  
+  //     const updatedUser = await response.json();
+  //     console.log('Profile updated successfully:', updatedUser);
+  //     alert('Profile updated successfully');
+  //   } catch (error) {
+  //     console.error('Error:', error);
+  //     alert('An error occurred while updating the profile');
+  //   }
+  // }
 
   // data para formato BR 
   const formatDate = (date) => {
-    if (!date) return '';
-    const parsedDate = new Date(date); 
-    const day = String(parsedDate.getDate()).padStart(2, '0'); 
-    const month = String(parsedDate.getMonth() + 1).padStart(2, '0'); 
-    const year = parsedDate.getFullYear(); 
-    return `${day}/${month}/${year}`; 
+    const d = new Date(date);
+    const year = d.getFullYear();
+    const month = String(d.getMonth() + 1).padStart(2, '0');
+    const day = String(d.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
 };
 
-  async function submitEditProfile(form) {
-      
-    // Check if user ID exists
-    /*if (!user?.id) {
-      console.error('User ID is missing');
-      return;
-    }*/
-    console.log(user.id)
-    try {
-      // Log the request payload for debugging
-      console.log('Submitting profile update with data:', form);
-
-      const response = await axios.patch('http://localhost:3000/usersEdit', {
-        username: form.username,
-        email_user: form.email_user,
-        age_user: form.age_user,
-        first_name: form.first_name,
-        last_name: form.last_name,
-        gender_user: form.gender_user,
-        problems_user: form.problems_user,
-        avaliability: form.avaliability,
-        horario_disponivel: form.horario_disponivel, 
-        password_user: form.password_user,
-        address: form.address,
-        professional_confirm: form.professional_confirm,     
+const submitEditProfile = async (id, form) => {
+  console.dir("id no front======>>>> ", new_id)
+  testing_id()
+  try {
+    const response = await fetch(`http://localhost:3000/usersEdit/${id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${localStorage.getItem('token')}`, 
       },
-      {
-        headers: {
-          Authorization: `Bearer ${user?.token}`,
-        },
-      }
-    );
-      console.log('Profile updated successfully:', response.data);
-    } catch (error) {
-      console.error('Error updating profile:', error.response?.data || error.message);
-      console.log('Form data:', form);
+      body: JSON.stringify(form),
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      console.error('Error updating profile:', errorData.error);
+      alert('Failed to update profile');
+      return;
     }
+
+    const updatedUser = await response.json();
+    console.log('Profile updated successfully:', updatedUser);
+    alert('Profile updated successfully');
+  } catch (error) {
+    console.error('Error:', error);
+    alert('An error occurred while updating the profile');
   }
+};
 
   //---------------------------------------------------------------------------
 
@@ -164,26 +188,25 @@ console.log(form)
             <input
                 className='texto-inp-edit'
                 type="text"
-                placeholder='Nome :'
-                // value={user?.username}
+                placeholder={user?.username}
+
                 onChange={(e) => setForm({ ...form, username: e.target.value })}
             />
 
             <p>Nascimento novo</p>
             <input
-                className='texto-inp-edit'
-                type="date"
-                placeholder='Data de nascimento :'
-                // value={formatDate(user?.age_user)}
-                onChange={(e) => setForm({ ...form, age_user: e.target.value })}
+                  className='texto-inp-edit'
+                  type="date"
+                  value={user?.age_user ? formatDate(user?.age_user) : ''}
+                  onChange={(e) => setForm({ ...form, age_user: e.target.value })}
             />
 
             <p>Email novo</p>
             <input
                 className='texto-inp-edit'
                 type="text"
-                placeholder='Email :'
-                // value={user?.email_user}
+                placeholder={user?.email_user}
+
                 onChange={(e) => setForm({ ...form, email_user: e.target.value })}
             />
             
@@ -194,7 +217,7 @@ console.log(form)
           
               <div className='botoes-edit'>
 
-              <button className="Salvar" onClick={() => submitEditProfile(form)}>
+              <button className="Salvar" onClick={() =>testing_id() }>
                 Salvar
               </button>
 

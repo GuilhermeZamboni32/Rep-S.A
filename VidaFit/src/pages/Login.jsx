@@ -27,7 +27,7 @@ function Login() {
       });
 
       updateUser({
-        id: response.data.id_user,
+        id: response.data.id,
         username: response.data.username,
         email_user: response.data.email_user,
         age_user: response.data.age_user,
@@ -59,6 +59,8 @@ function Login() {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
   };
+  
+
 
   return (
     <div className="container-login">

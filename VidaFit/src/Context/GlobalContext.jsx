@@ -9,7 +9,7 @@ export const GlobalContextProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   
 
-
+  console.log(user)
 
   // Inicia usuarios vindo do localstorage
   useEffect(() => {
@@ -35,6 +35,8 @@ export const GlobalContextProvider = ({ children }) => {
     initializeAuth();
   }, []);
 
+  console.log('GlobalContext initialized with user:', user);
+
   // Login function
   const login = async (userData) => {
     localStorage.setItem('user', JSON.stringify(userData));
@@ -58,6 +60,7 @@ export const GlobalContextProvider = ({ children }) => {
     setUser(newUser);
     localStorage.setItem('user', JSON.stringify(newUser));
   };
+
 
   return (
     <GlobalContext.Provider
