@@ -70,6 +70,17 @@
     border-radius: 8px;
     border: #222326 8px solid;
 }
+.div-baixo-edit-2-cima{
+    background-color: green;
+    width: 150vh;
+    height: 100px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+}
 
 .lista-cards-exer-edit {
     background-color: var(--BrancoC2);
@@ -195,6 +206,64 @@ button[type="button-exercicio"]:hover {
 
 /*///////////////////////////////////////////////////////////////*/
 
+.barra-pesquisa-edit {
+  background-color: var(--BrancoCC2);
+    width: 400px;
+    height: 50px;
+    border-radius: 25px;
+    margin-left: 20px;
+    box-shadow: 4px 4px 3px var(--AzulC1);
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    transition: all 0.3s ease;
+}
+.barra-pesquisa-edit:hover {
+  transform: translateY(-2px);
+    box-shadow: 6px 6px 8px var(--AzulC1);
+}
+
+.barra-filtro-edit {
+  background-color: var(--BrancoCC2);
+    width: 350px;
+    height: 50px;
+    border-radius: 25px;
+    margin-left: 50px;
+    box-shadow: 4px 4px 3px var(--AzulC1);
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    transition: all 0.3s ease;
+}
+.barra-filtro-edit:hover {
+  transform: translateY(-2px);
+    box-shadow: 6px 6px 8px var(--AzulC1);
+}
+
+.filtro{
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+.select-filtro {
+  flex: 1;
+  height: 100%;
+  border: none;
+  background: transparent;
+  font-size: 1rem;
+  color: var(--AzulC1);
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+  padding-right: 20px;
+}
+
+.select-filtro option {
+  background-color: var(--BrancoCC2);
+  color: var(--AzulC1);
+  padding: 10px;
+}
 
 
 .exercicios-container {

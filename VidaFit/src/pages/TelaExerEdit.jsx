@@ -6,13 +6,24 @@ import './TelaExerEdit.css'
 import axios from 'axios'
 
 function TelaExerEdit() {
-  const navigate = useNavigate()
-  const [exercicios, setExercicios] = useState([]);
+    const navigate = useNavigate()
+    const [exercicios, setExercicios] = useState([]);
+
     const [exercicioSelecionado, setExercicioSelecionado] = useState(null);
     const [inputCategoriaExer, setInputCategoriaExer] = useState('');
     const [inputNomeExer, setInputNomeExer] = useState('');
     const [inputRepeticoesExer, setInputRepeticoesExer] = useState('');
     const [inputDescricaoExer, setInputDescricaoExer] = useState('');
+    
+    
+    const [searchTerm, setSearchTerm] = useState('');
+    const [filtroCategoria, setFiltroCategoria] = useState('');
+
+    const exerciciosFiltrados = exercicios.filter((exercicio) => {
+        const nomeMatch = exercicio.nome_exer.toLowerCase().includes(searchTerm.toLowerCase());
+        const categoriaMatch = filtroCategoria ? exercicio.categoria_exer === filtroCategoria : true;
+        return nomeMatch && categoriaMatch;
+      });
 
     function voltar(){ 
     navigate('/perfil');
@@ -185,6 +196,43 @@ function TelaExerEdit() {
         </div>
 
         <div className='div-baixo-edit-2'>
+            <div className='div-baixo-edit-2-cima'>
+
+       
+            
+            <div className='barra-pesquisa-edit'>
+            <img className='lupa' src="./Icons/Lupa-2.png" alt="Pesquisar" />
+            <input
+            type="text"
+            placeholder="Buscar por nome"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="input-pesquisa"
+            />
+            </div>
+            <div className='barra-filtro-edit'>
+            <img className='filtro' src="./Icons/Filtro-2.png" alt="Filtro" />
+
+            <select
+            value={filtroCategoria}
+            placeholder="Buscar por nome"
+            onChange={(e) => setFiltroCategoria(e.target.value)}
+            className='select-filtro'
+            >
+            <option value="">Todas as categorias</option>
+            <option value="peito">Peito </option>
+            <option value="ombro">Ombro</option>
+            <option value="braco">Braço</option>
+            <option value="costas">Costas</option>
+            <option value="abdomen">Abdômen</option>
+            <option value="perna">Perna</option>
+            </select>
+            </div>
+        
+            </div>
+            <div className='div-baixo-edit-2-baixo'>
+
+
             <section className='exercicios-container'>
                 {exercicios.map((exercicio) => (
                     <div key={exercicio.id_exer} className='exercicio'>
@@ -198,6 +246,11 @@ function TelaExerEdit() {
                     </div>
                 ))}
             </section>
+            </div>
+
+
+
+
 
         </div>
       </div>

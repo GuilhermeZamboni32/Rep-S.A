@@ -42,6 +42,7 @@ function Home() {
           </select>
         </div>
         
+        
         <div className='barra-pesquisa'>
           <img className='lupa' src="./Icons/Lupa-2.png" alt="Pesquisar" />
           <input 
