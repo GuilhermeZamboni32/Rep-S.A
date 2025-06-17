@@ -9,16 +9,14 @@ function TelaExerEdit() {
   const navigate = useNavigate()
   const [exercicios, setExercicios] = useState([]);
     const [exercicioSelecionado, setExercicioSelecionado] = useState(null);
+    const [inputCategoriaExer, setInputCategoriaExer] = useState('');
+    const [inputNomeExer, setInputNomeExer] = useState('');
+    const [inputRepeticoesExer, setInputRepeticoesExer] = useState('');
+    const [inputDescricaoExer, setInputDescricaoExer] = useState('');
 
     function voltar(){ 
     navigate('/perfil');
   }
-
-
-
-    const [inputNomeExer, setInputNomeExer] = useState('');
-    const [inputRepeticoesExer, setInputRepeticoesExer] = useState('');
-    const [inputDescricaoExer, setInputDescricaoExer] = useState('');
 
     const fetchExercicios = async () => {
         try {
@@ -38,11 +36,15 @@ function TelaExerEdit() {
     }, [exercicios]);
 
     const cadastrarExercicio = async () => {
-        try {
+        if (!inputNomeExer || !inputRepeticoesExer || !inputDescricaoExer || !inputCategoriaExer) {
+            alert('Por favor, preencha todos os campos.');
+            return;
+        } try {
             const exercicio = {
                 nome_exer: inputNomeExer,
                 repeticoes_exer: inputRepeticoesExer,
-                descricao_exer: inputDescricaoExer
+                descricao_exer: inputDescricaoExer,
+                categoria_exer: inputCategoriaExer,
             };
             const response = await axios.post('http://localhost:3000/exercicios', exercicio);
             if (response.status === 201) {
@@ -56,11 +58,15 @@ function TelaExerEdit() {
     };
 
     const salvarExercicio = async () => {
-        try {
+        if (!inputNomeExer || !inputRepeticoesExer || !inputDescricaoExer || !inputCategoriaExer) {
+            alert('Por favor, preencha todos os campos.');
+            return;
+        }try {
             const exercicio = {
                 nome_exer: inputNomeExer,
                 repeticoes_exer: inputRepeticoesExer,
-                descricao_exer: inputDescricaoExer
+                descricao_exer: inputDescricaoExer,
+                categoria_exer: inputCategoriaExer,
             };
             const response = await axios.put(`http://localhost:3000/exercicios/${exercicioSelecionado.id_exer}`, exercicio);
             if (response.status === 200) {
@@ -100,12 +106,14 @@ function TelaExerEdit() {
         setInputNomeExer('');
         setInputRepeticoesExer('');
         setInputDescricaoExer('');
+        setInputCategoriaExer('');
     }
 
     function exibirExercicio(exercicio) {
         setInputNomeExer(exercicio.nome_exer || '');
         setInputRepeticoesExer(exercicio.repeticoes_exer || '');
         setInputDescricaoExer(exercicio.descricao_exer || '');
+        setInputCategoriaExer(exercicio.categoria_exer || '');
     }
 
   return (
@@ -149,8 +157,26 @@ function TelaExerEdit() {
                         onChange={(event) => setInputDescricaoExer(event.target.value)}
                     />
                 </div>
-                {exercicioSelecionado && <button type="button-exercicio" onClick={salvarExercicio}>Salvar Alterações</button>}
-                {!exercicioSelecionado && <button type="button-exercicio" onClick={cadastrarExercicio}>Cadastrar Exercício</button>}
+                
+                <div className="input-container-exercicio">
+                <label htmlFor="categoria_exer">Categoria</label>
+                <select
+                    value={inputCategoriaExer}
+                    onChange={(e) => setInputCategoriaExer(e.target.value)}
+                    required
+                    >
+                    <option value="">Selecione uma categoria</option>
+                    <option value="peito">Peito</option>
+                    <option value="ombro">Ombro</option>
+                    <option value="braco">Braço</option>
+                    <option value="costas">Costas</option>
+                    <option value="abdomen">Abdômen</option>
+                    <option value="perna">Perna</option>
+                </select>
+                </div>
+                    {exercicioSelecionado && <button type="button-exercicio" onClick={salvarExercicio}>Salvar Alterações</button>}
+                    {!exercicioSelecionado && <button type="button-exercicio" onClick={cadastrarExercicio}>Cadastrar Exercício</button>}
+
             </div>
 
         </div>
@@ -166,6 +192,7 @@ function TelaExerEdit() {
                         <p>Repetições: {exercicio.repeticoes_exer}</p>
                         <p>Descrição: {exercicio.descricao_exer}</p>
                         <p>ID: {exercicio.id_exer}</p>
+                        <p>Categoria: {exercicio.categoria_exer}</p>
                         <button onClick={() => buscarExercicioPorId(exercicio.id_exer)}>Editar</button>
                         <button onClick={() => deletarExercicio(exercicio.id_exer)}>Deletar</button>
                     </div>

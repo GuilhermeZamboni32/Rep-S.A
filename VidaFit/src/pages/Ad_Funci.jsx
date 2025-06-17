@@ -444,6 +444,9 @@ function Ad_Funci({ filter, searchTerm }) {
      </div>
 
 
+
+
+
      <button onClick={CadastrarFuncionario}>Cadastrar</button>
     </div>
 */}

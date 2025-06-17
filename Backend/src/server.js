@@ -277,30 +277,30 @@ app.get('/exercicios/:id', async (req, res) => {
 });
 
 app.post('/exercicios', async (req, res) => {
-    const { nome_exer, repeticoes_exer, descricao_exer } = req.body;
-    try {
-        const result = await pool.query(
-            'INSERT INTO exercicios (nome_exer, repeticoes_exer, descricao_exer) VALUES ($1, $2, $3) RETURNING *',
-            [nome_exer, repeticoes_exer, descricao_exer]
-        );
-        res.status(201).json(result.rows[0]);
-    } catch (err) {
-        res.status(500).send('Erro ao adicionar exercício');
-    }
+  const { nome_exer, repeticoes_exer, descricao_exer, categoria_exer } = req.body;
+  try {
+      const result = await pool.query(
+          'INSERT INTO exercicios (nome_exer, repeticoes_exer, descricao_exer, categoria_exer) VALUES ($1, $2, $3, $4) RETURNING *',
+          [nome_exer, repeticoes_exer, descricao_exer, categoria_exer]
+      );
+      res.status(201).json(result.rows[0]);
+  } catch (err) {
+      res.status(500).send('Erro ao adicionar exercício');
+  }
 });
 
 app.put('/exercicios/:id', async (req, res) => {
-    const { nome_exer, repeticoes_exer, descricao_exer } = req.body;
-    try {
-        const result = await pool.query(
-            'UPDATE exercicios SET nome_exer = $1, repeticoes_exer = $2, descricao_exer = $3 WHERE id_exer = $4 RETURNING *',
-            [nome_exer, repeticoes_exer, descricao_exer, req.params.id]
-        );
-        if (result.rows.length === 0) return res.status(404).send('Exercício não encontrado');
-        res.json(result.rows[0]);
-    } catch (err) {
-        res.status(500).send('Erro ao atualizar exercício');
-    }
+  const { nome_exer, repeticoes_exer, descricao_exer, categoria_exer } = req.body;
+  try {
+      const result = await pool.query(
+          'UPDATE exercicios SET nome_exer = $1, repeticoes_exer = $2, descricao_exer = $3, categoria_exer = $4 WHERE id_exer = $5 RETURNING *',
+          [nome_exer, repeticoes_exer, descricao_exer, categoria_exer, req.params.id]
+      );
+      if (result.rows.length === 0) return res.status(404).send('Exercício não encontrado');
+      res.json(result.rows[0]);
+  } catch (err) {
+      res.status(500).send('Erro ao atualizar exercício');
+  }
 });
 
 app.delete('/exercicios/:id', async (req, res) => {

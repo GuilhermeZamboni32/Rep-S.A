@@ -40,9 +40,12 @@ CREATE TABLE professional_info(
 );
 
 -- Tabela de exercicios
-CREATE TABLE exercises(
-	exercise_id UUID DEFAULT uuid_generate_v4(),
-	exercise_name VARCHAR(555),
-	exercise_exemple VARCHAR(555),
-	exercise_description VARCHAR(555)
+CREATE TABLE exercicios (
+    id_exer SERIAL PRIMARY KEY,
+    nome_exer VARCHAR(100) NOT NULL,
+    repeticoes_exer INTEGER NOT NULL,
+    descricao_exer TEXT,
+	categoria_exer VARCHAR(20) NOT NULL CHECK (
+        categoria_exer IN ('peito', 'ombro', 'braco', 'costas', 'abdomen', 'perna')
+    )
 );
