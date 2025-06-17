@@ -38,11 +38,6 @@ function EditPerfil() {
 };
 
   async function submitEditProfile(form) {
-    // Validate required fields
-    if (!form.email_user || !form.username || !form.password_user) {
-      console.error('Missing required fields: email_user, username, or password_user');
-      return;
-    }
       
     // Check if user ID exists
     /*if (!user?.id) {
