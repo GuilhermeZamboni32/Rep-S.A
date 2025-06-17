@@ -47,8 +47,8 @@
     background-color: var(--BrancoC1);
     margin: 100px;
     display: flex;
-    flex-direction: column;
-    gap: 10px;
+    flex-direction: row;
+    gap: 50px;
     padding: 20px;
     border-radius: 16px;
     justify-content: center; 
@@ -121,13 +121,20 @@
     background-color: rgb(18, 226, 46);
 }
 
-.div-baixo-edit{
+.div-baixo-edit-1{
     background-color: var(--BrancoP2);
-    min-width: 100vh;
+    width: 50vh;
     height: 500px;
     border-radius: 8px;
-    
+    border: #222326 8px solid;
+}
 
+.div-baixo-edit-2{
+    background-color: var(--BrancoP2);
+    width: 150vh;
+    height: 500px;
+    border-radius: 8px;
+    border: #222326 8px solid;
 }
 
 .lista-cards-exer-edit {
@@ -181,10 +188,8 @@
  .container-exercicio {
   background: #e6e7ea;
   border-radius: 24px;
-  border: 4px solid #222326;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
   padding: 0 24px 32px 24px;
-  min-width: 350px;
+  min-width: 350;
   max-width: 400px;
   display: flex;
   flex-direction: column;
@@ -260,15 +265,13 @@ button[type="button-exercicio"]:hover {
 
 .exercicios-container {
   width: 100%;
-  max-height: 380px;
+  max-height: 470px;
   overflow-y: auto;
-  margin-top: 18px;
   padding-right: 8px;
   display: flex;
   flex-direction: column;
   gap: 18px;
   border-radius: 10px;
-  border: #222326 4px solid;
 }
 
 /* Barra de rolagem personalizada */

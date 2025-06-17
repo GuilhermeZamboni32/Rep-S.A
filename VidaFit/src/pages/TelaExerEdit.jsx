@@ -10,12 +10,6 @@ function TelaExerEdit() {
   const [exercicios, setExercicios] = useState([]);
     const [exercicioSelecionado, setExercicioSelecionado] = useState(null);
 
-
-    function handleAdd() {
-    limparForm();
-    setExercicioSelecionado(null);
-  }
-
     function voltar(){ 
     navigate('/perfil');
   }
@@ -118,28 +112,13 @@ function TelaExerEdit() {
     <div className='container-exer-edit'>
       <Navbar />
       <div className='div-grup-exer-edit'>
-        <div className='div-topo-edit'>
-          <div className='topo-es-edit'>
-            <h1 className='texto-exer-edit'>Editar Exercícios</h1>
-          </div>
+        
 
-          <div className='topo-me-exer-edit'></div>
-
-          <div className='topo-di-edit'>
-            <button className='butoon-add-edit' onClick={handleAdd}>
-              <h1 className='texto-exer-edit'>+</h1>
-            </button>
-            <button className='butoon-voltar-edit' onClick={voltar}>
-              <h1 className='texto-exer-edit'>Voltar</h1>
-            </button>
-          </div>
-        </div>
-
-        <div className='div-baixo-edit'>
+        <div className='div-baixo-edit-1'>
           
 
           <div className='container-exercicio'>
-            <h1 className='titulo-exercicio'>CRUD de Exercícios</h1>
+            <h1 className='titulo-exercicio'>Cadastro de exercicios</h1>
 
             <div className='form-exercicio'>
                 <div className="input-container-exercicio">
@@ -174,6 +153,12 @@ function TelaExerEdit() {
                 {!exercicioSelecionado && <button type="button-exercicio" onClick={cadastrarExercicio}>Cadastrar Exercício</button>}
             </div>
 
+        </div>
+
+         
+        </div>
+
+        <div className='div-baixo-edit-2'>
             <section className='exercicios-container'>
                 {exercicios.map((exercicio) => (
                     <div key={exercicio.id_exer} className='exercicio'>
@@ -186,13 +171,17 @@ function TelaExerEdit() {
                     </div>
                 ))}
             </section>
-        </div>
 
-         
         </div>
       </div>
     </div>
   )
 }
+
+
+
+{/**<button className='butoon-voltar-edit' onClick={voltar}>
+              <h1 className='texto-exer-edit'>Voltar</h1>
+            </button> */}
 
 export default TelaExerEdit
