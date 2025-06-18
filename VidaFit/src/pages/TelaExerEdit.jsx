@@ -186,8 +186,8 @@ function TelaExerEdit() {
                     <option value="perna">Perna</option>
                 </select>
                 </div>
-                    {exercicioSelecionado && <button type="button-exercicio" onClick={salvarExercicio}>Salvar Alterações</button>}
-                    {!exercicioSelecionado && <button type="button-exercicio" onClick={cadastrarExercicio}>Cadastrar Exercício</button>}
+                    {exercicioSelecionado && <button className="button-exercicio" onClick={salvarExercicio}>Salvar Alterações</button>}
+                    {!exercicioSelecionado && <button className="button-exercicio" onClick={cadastrarExercicio}>Cadastrar Exercício</button>}
 
             </div>
 
@@ -234,7 +234,7 @@ function TelaExerEdit() {
             <div className='div-baixo-edit-2-baixo'>
 
 
-            <section className='exercicios-container'>
+            <section className='exercicios-container-2'>
                 {exerciciosFiltrados.map((exercicio) => (
                     <div key={exercicio.id_exer} className='exercicio'>
                         <h2>{exercicio.nome_exer}</h2>
