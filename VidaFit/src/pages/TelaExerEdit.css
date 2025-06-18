@@ -52,13 +52,14 @@
     padding: 20px;
     border-radius: 16px;
     justify-content: center; 
+    height: 700px;
 
 }
 
 .div-baixo-edit-1{
     background-color: var(--BrancoP2);
     width: 50vh;
-    height: 500px;
+    height: 650px;
     border-radius: 8px;
     border: #222326 8px solid;
 }
@@ -66,7 +67,7 @@
 .div-baixo-edit-2{
     background-color: var(--BrancoP2);
     width: 150vh;
-    height: 500px;
+    height: 650px;
     border-radius: 8px;
     border: #222326 8px solid;
 }
@@ -79,13 +80,23 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+}
 
+.div-baixo-edit-2-baixo{
+    background-color: rgb(128, 4, 0);
+    width: 150vh;
+    height: 500px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
 .lista-cards-exer-edit {
     background-color: var(--BrancoC2);
     width: 1650px;
-    height: 500px;
+    height: 650px;
     overflow-y: auto;
     border-radius: 10px;
     display: flex;
@@ -160,11 +171,15 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  
 }
+
+
+
 
 .input-container-exercicio label {
   font-weight: bold;
-  color: #555;
+  color: var(--AzulE2);
   margin-bottom: 6px;
   font-size: 1.15rem;
   margin-left: 8px;
@@ -176,11 +191,11 @@
   padding: 10px 18px;
   border: none;
   border-radius: 24px;
-  background: #bdbdbd;
+  background: var(--BrancoE1);
   font-size: 1.1rem;
   margin-top: 2px;
   outline: none;
-  color: #333;
+  color: var(--BrancoCC2);
   resize: none;
 }
 
@@ -297,6 +312,8 @@ button[type="button-exercicio"]:hover {
   flex-direction: column;
   gap: 8px;
   margin-bottom: 0;
+  width: 400px;
+  height: 300px;
 }
 
 .exercicio h2,
@@ -358,3 +375,16 @@ button[type="button-exercicio"]:hover {
   .exercicios-container {
     max-height: 220px;
   }}
+
+
+
+  .aaaaaaa{
+    width: 100%;
+    margin: 5px 0;
+    background: var(--BrancoEE1);
+    color: var(--BrancoC2);
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }

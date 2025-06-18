@@ -170,8 +170,9 @@ function TelaExerEdit() {
                 </div>
 
                 <div className="input-container-exercicio">
-                <label htmlFor="categoria_exer">Categoria</label>
+                <label  htmlFor="categoria_exer">Categoria</label>
                 <select
+                    className="aaaaaaa"
                     value={inputCategoriaExer}
                     onChange={(e) => setInputCategoriaExer(e.target.value)}
                     required
@@ -234,7 +235,7 @@ function TelaExerEdit() {
 
 
             <section className='exercicios-container'>
-                {exercicios.map((exercicio) => (
+                {exerciciosFiltrados.map((exercicio) => (
                     <div key={exercicio.id_exer} className='exercicio'>
                         <h2>{exercicio.nome_exer}</h2>
                         <p>Repetições: {exercicio.repeticoes_exer}</p>
