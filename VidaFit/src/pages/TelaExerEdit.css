@@ -36,6 +36,7 @@
     --VermelhoEE2: #4E0511;
   }
 
+
 .container-exer-edit{
     background: linear-gradient(135deg, var(--AzulCC1) 0%, var(--AzulE1) 100%);
     min-height: 100vh;
@@ -58,7 +59,7 @@
 
 .div-baixo-edit-1{
     background-color: var(--BrancoP2);
-    width: 50vh;
+    width: 400px;
     height: 650px;
     border-radius: 8px;
     border: #222326 8px solid;
@@ -66,14 +67,14 @@
 
 .div-baixo-edit-2{
     background-color: var(--BrancoP2);
-    width: 150vh;
+    width: 1800px;
     height: 650px;
     border-radius: 8px;
     border: #222326 8px solid;
 }
 .div-baixo-edit-2-cima{
     background-color: green;
-    width: 150vh;
+    width: 100;
     height: 100px;
     border-radius: 8px;
     display: flex;
@@ -84,13 +85,14 @@
 
 .div-baixo-edit-2-baixo{
     background-color: rgb(128, 4, 0);
-    width: 150vh;
+    width: 100%;
     height: 500px;
     border-radius: 8px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    
 }
 
 .lista-cards-exer-edit {
@@ -141,15 +143,18 @@
 
 
 
- .container-exercicio {
-  background: #e6e7ea;
-  border-radius: 24px;
-  padding: 0 24px 32px 24px;
-  min-width: 350;
-  max-width: 400px;
+ .exercicios-container {
+  width: 100%;
+  max-height: 470px;
+  overflow-y: auto;
+  padding-right: 8px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
+  gap: 18px;
+  border-radius: 10px;
+  flex-wrap: wrap;
+    align-content: flex-start;
+  
 }
 
 .titulo-exercicio{
@@ -335,6 +340,12 @@ button[type="button-exercicio"]:hover {
 
 .exercicio p {
   font-size: 1rem;
+}
+
+.buttons-cards-exercicio{
+  align-items: center;
+  display: flex;
+  flex-direction: row;
 }
 
 .exercicio button {

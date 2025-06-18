@@ -5,6 +5,7 @@ import ExercicioEdit from './ExercicioEdit'
 import './TelaExerEdit.css'
 import axios from 'axios'
 
+
 function TelaExerEdit() {
     const navigate = useNavigate()
     const [exercicios, setExercicios] = useState([]);
@@ -137,7 +138,6 @@ function TelaExerEdit() {
 
 
           <div className='container-exercicio'>
-            <h1 className='titulo-exercicio'>Cadastro de exercicios</h1>
 
             <div className='form-exercicio'>
                 <div className="input-container-exercicio">
@@ -242,8 +242,10 @@ function TelaExerEdit() {
                         <p>Descrição: {exercicio.descricao_exer}</p>
                         <p>ID: {exercicio.id_exer}</p>
                         <p>Categoria: {exercicio.categoria_exer}</p>
+                        <div className='buttons-cards-exercicio'>
                         <button onClick={() => buscarExercicioPorId(exercicio.id_exer)}>Editar</button>
                         <button onClick={() => deletarExercicio(exercicio.id_exer)}>Deletar</button>
+                        </div>
                     </div>
                 ))}
             </section>

@@ -39,7 +39,7 @@ CREATE TABLE professional_info(
         ON DELETE CASCADE
 );
 
-CREATE TABLE exercicios (Add commentMore actions
+CREATE TABLE exercicios (
     id_exer SERIAL PRIMARY KEY,
     nome_exer VARCHAR(100) NOT NULL,
     repeticoes_exer INTEGER NOT NULL,

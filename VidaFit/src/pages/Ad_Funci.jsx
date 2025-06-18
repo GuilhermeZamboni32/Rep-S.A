@@ -284,6 +284,7 @@ function Ad_Funci({ filter, searchTerm }) {
         </div>
       </div>
 
+
       {/* Modal */}
       {isModalOpen && (
         <div className="modal-overlay">
