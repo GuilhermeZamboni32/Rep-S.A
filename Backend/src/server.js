@@ -328,6 +328,67 @@ app.delete('/exercicios/:id', async (req, res) => {
 });
 
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+//                                      ROTAS DE DIETAS                                             //
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+app.get('/dietas', async (req, res) => {
+  try {
+      const result = await pool.query('SELECT * FROM dietas ORDER BY id_dieta ASC');
+      res.json(result.rows);
+  } catch (err) {
+      res.status(500).send('Erro ao listar dietas');
+  }
+});
+
+app.get('/dietas/:id', async (req, res) => {
+  try {
+      const result = await pool.query('SELECT * FROM dietas WHERE id_dieta = $1', [req.params.id]);
+      if (result.rows.length === 0) return res.status(404).send('Dieta não encontrada');
+      res.json(result.rows[0]);
+  } catch (err) {
+      res.status(500).send('Erro ao buscar dieta');
+  }
+});
+
+app.post('/dietas', async (req, res) => {
+  const { nome_dieta, calorias_dieta, descricao_dieta, categoria_dieta } = req.body;
+  try {
+      const result = await pool.query(
+          'INSERT INTO dietas (nome_dieta, calorias_dieta, descricao_dieta, categoria_dieta) VALUES ($1, $2, $3, $4) RETURNING *',
+          [nome_dieta, calorias_dieta, descricao_dieta, categoria_dieta]
+      );
+      res.status(201).json(result.rows[0]);
+  } catch (err) {
+      res.status(500).send('Erro ao adicionar dieta');
+  }
+});
+
+app.put('/dietas/:id', async (req, res) => {
+  const { nome_dieta, calorias_dieta, descricao_dieta, categoria_dieta } = req.body;
+  try {
+      const result = await pool.query(
+          'UPDATE dietas SET nome_dieta = $1, calorias_dieta = $2, descricao_dieta = $3, categoria_dieta = $4 WHERE id_dieta = $5 RETURNING *',
+          [nome_dieta, calorias_dieta, descricao_dieta, categoria_dieta, req.params.id]
+      );
+      if (result.rows.length === 0) return res.status(404).send('Dieta não encontrada');
+      res.json(result.rows[0]);
+  } catch (err) {
+      res.status(500).send('Erro ao atualizar dieta');
+  }
+});
+
+app.delete('/dietas/:id', async (req, res) => {
+  try {
+      const result = await pool.query('DELETE FROM dietas WHERE id_dieta = $1 RETURNING *', [req.params.id]);
+      if (result.rows.length === 0) return res.status(404).send('Dieta não encontrada');
+      res.status(200).send('Dieta deletada');
+  } catch (err) {
+      res.status(500).send('Erro ao deletar dieta');
+  }
+});
+
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 //                                     UPLOAD DE IMAGENS                                          //
 /////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -360,6 +421,6 @@ app.use((err, req, res, next) => {
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`Server Rodando Na Porta ${PORT}`);
 });
 

@@ -1,140 +1,294 @@
 :root{
-    /**extremo claro*/
-    --AzulCC1: #1A2D87;
-    --AzulCC2: #5E628D;
-    --BrancoCC1: #B9BEC8;
-    --BrancoCC2: #FFFFFF;
-    --VermelhoCC1: #DB808A;
-    --VermelhoCC2: #C8586B;
-    /**Médio claro*/
-    --AzulC1: #0E1848;
-    --AzulC2: #404363;
-    --BrancoC1: #8D99AE;
-    --BrancoC2: #D8F1FD;
-    --VermelhoC1: #EF233B;
-    --VermelhoC2: #B30522;
-    /**Padrão*/
-    --AzulP1: #091136;
-    --AzulP2: #2B2D42;
-    --BrancoP1: #8D99AE;
-    --BrancoP2: #D8F1FD;
-    --VermelhoP1: #EF233B;
-    --VermelhoP2: #B30522;
-    /**Médio escuro*/
-    --AzulE1: #050A1F;
-    --AzulE2: #272836;
-    --BrancoE1: #787F8A;
-    --BrancoE2: #93ACB8;
-    --VermelhoE1: #BE1D30;
-    --VermelhoE2: #88061B;
-    /**Extremo escuro*/
-    --AzulEE1: #030611;
-    --AzulEE2: #1F202C;
-    --BrancoEE1: #6B6F75;
-    --BrancoEE2: #687982;
-    --VermelhoEE1: #811320;
-    --VermelhoEE2: #4E0511;
+  /**extremo claro*/
+  --AzulCC1: #1A2D87;
+  --AzulCC2: #5E628D;
+  --BrancoCC1: #B9BEC8;
+  --BrancoCC2: #FFFFFF;
+  --VermelhoCC1: #DB808A;
+  --VermelhoCC2: #C8586B;
+  /**Médio claro*/
+  --AzulC1: #0E1848;
+  --AzulC2: #404363;
+  --BrancoC1: #8D99AE;
+  --BrancoC2: #D8F1FD;
+  --VermelhoC1: #EF233B;
+  --VermelhoC2: #B30522;
+  /**Padrão*/
+  --AzulP1: #091136;
+  --AzulP2: #2B2D42;
+  --BrancoP1: #8D99AE;
+  --BrancoP2: #D8F1FD;
+  --VermelhoP1: #EF233B;
+  --VermelhoP2: #B30522;
+  /**Médio escuro*/
+  --AzulE1: #050A1F;
+  --AzulE2: #272836;
+  --BrancoE1: #787F8A;
+  --BrancoE2: #93ACB8;
+  --VermelhoE1: #BE1D30;
+  --VermelhoE2: #88061B;
+  /**Extremo escuro*/
+  --AzulEE1: #030611;
+  --AzulEE2: #1F202C;
+  --BrancoEE1: #6B6F75;
+  --BrancoEE2: #687982;
+  --VermelhoEE1: #811320;
+  --VermelhoEE2: #4E0511;
 }
 
-.container-dieta-edit{
-    background: linear-gradient(135deg, var(--AzulCC1) 0%, var(--AzulE1) 100%);
-    min-height: 100vh;
-    align-items: center;
+.container-dieta-edit {
+  background: linear-gradient(135deg, var(--AzulCC1) 0%, var(--AzulE1) 100%);
+  min-height: 100vh;
+  align-items: center;
 }
 
-.div-grup-dieta-edit{
-    background-color: var(--BrancoC1);
-    margin: 100px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 20px;
-    border-radius: 16px;
-    justify-content: center;
+.div-grup-dieta-edit {
+  background-color: var(--BrancoC1);
+  margin: 100px;
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  padding: 20px;
+  border-radius: 16px;
+  justify-content: center;
+  height: 700px;
 }
 
-.div-topo-edit{
-    background-color: var(--Cor4);
-    width: 1670px;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    border-radius: 8px;
+.div-baixo-edit-1,
+.div-baixo-edit-2 {
+  background-color: var(--BrancoP2);
+  border: #222326 8px solid;
+  border-radius: 8px;
 }
 
-.topo-es-edit{
-    background-color: var(--BrancoP2);
-    width: 290px;
-    height: 50px;
-    margin: 20px;
-    border-radius: 8px;
-    text-align: center;
+.div-baixo-edit-1 {
+  width: 400px;
+  height: 650px;
 }
 
-.texto-dieta-edit{
-    color: var(--Cor4);
-    margin-top: 5px;
+.div-baixo-edit-2 {
+  width: 1800px;
+  height: 650px;
 }
 
-.topo-me-edit{
-    width: 1200px;
-    height: 50px;
-    margin: 10px;
+.div-baixo-edit-2-cima {
+  background-color: green;
+  width: 100%;
+  height: 100px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
-.topo-di-edit{
-    width: 100px;
-    height: 50px;
-    margin: 10px;
-    border-radius: 8px;
-    align-items: center;
+.div-baixo-edit-2-baixo {
+  background-color: rgb(128, 4, 0);
+  width: 100%;
+  height: 500px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.butoon-voltar-edit{
-    padding: 10px 20px;
-    border-radius: 10px;
-    border: none;
-    background-color: var(--VermelhoC1);
-    color: var(--BrancoP2);
-    cursor: pointer;
+.dietas-container-2 {
+  border-radius: 10px;
+  max-height: 470px;
+  width: 100%;
+  gap: 18px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  overflow-y: auto;
 }
 
-.div-baixo-edit{
-    background-color: var(--BrancoP2);
-    min-width: 100vh;
-    height: 500px;
-    border-radius: 8px;
+.titulo-dieta {
+  width: 100%;
+  color: #000000;
 }
 
-.lista-cards-dieta-edit {
-    background-color: var(--BrancoC2);
-    width: 1650px;
-    height: 500px;
-    overflow-y: auto;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
+.form-dieta {
+  width: 100%;
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-::-webkit-scrollbar {
-    width: 12px;
-    height: 12px;
+.input-container-dieta {
+  width: 100%;
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-::-webkit-scrollbar-track {
-    background: var(--BrancoP2);
-    border-radius: 6px;
+.input-container-dieta label {
+  font-weight: bold;
+  color: var(--AzulE2);
+  margin-bottom: 6px;
+  font-size: 1.15rem;
+  margin-left: 8px;
 }
 
-::-webkit-scrollbar-thumb {
-    background-color: var(--AzulC1);
-    border-radius: 6px;
-    border: 2px solid var(--AzulCC1);
+.input-container-dieta input,
+.input-container-dieta textarea,
+.input-container-dieta select {
+  width: 95%;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 24px;
+  background: var(--BrancoCC2);
+  font-size: 1.1rem;
+  margin-top: 2px;
+  outline: none;
+  color: var(--AzulE1);
+  resize: none;
 }
 
-::-webkit-scrollbar-thumb:hover {
-    background-color: var(--AzulCC1);
-    border: 2px solid var(--VermelhoE2);
+.button-dieta {
+  width: 80%;
+  margin: 18px auto 0 auto;
+  padding: 10px 0;
+  background: #5c85ea;
+  color: #222326;
+  font-weight: bold;
+  font-size: 1.15rem;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  transition: background 0.2s;
+  display: block;
+}
+
+.button-dieta:hover {
+  background: #3d5bbf;
+  color: #fff;
+}
+
+.barra-pesquisa-edit,
+.barra-filtro-edit {
+  background-color: var(--BrancoCC2);
+  height: 50px;
+  border-radius: 25px;
+  box-shadow: 4px 4px 3px var(--AzulC1);
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  transition: all 0.3s ease;
+}
+
+.barra-pesquisa-edit {
+  width: 400px;
+  margin-left: 20px;
+}
+
+.barra-filtro-edit {
+  width: 350px;
+  margin-left: 50px;
+}
+
+.barra-pesquisa-edit:hover,
+.barra-filtro-edit:hover {
+  transform: translateY(-2px);
+  box-shadow: 6px 6px 8px var(--AzulC1);
+}
+
+.select-filtro {
+  flex: 1;
+  height: 100%;
+  border: none;
+  background: transparent;
+  font-size: 1rem;
+  color: var(--AzulC1);
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+  padding-right: 20px;
+}
+
+.select-filtro option {
+  background-color: var(--BrancoCC2);
+  color: var(--AzulC1);
+  padding: 10px;
+}
+
+.dieta {
+  background: #a0a0a0;
+  border-radius: 28px;
+  padding: 18px 18px 14px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 0;
+  width: 400px;
+  height: 300px;
+}
+
+.dieta h2,
+.dieta p {
+  background: #bdbdbd;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 16px;
+  padding: 4px 14px;
+  margin: 0 0 6px 0;
+  display: inline-block;
+  font-size: 1.05rem;
+}
+
+.dieta h2 {
+  font-size: 1.1rem;
+  margin-bottom: 2px;
+}
+
+.dieta p {
+  font-size: 1rem;
+}
+
+.buttons-cards-dieta {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.dieta button {
+  margin-top: 8px;
+  margin-right: 10px;
+  padding: 8px 0;
+  width: 44%;
+  border: none;
+  border-radius: 16px;
+  font-weight: bold;
+  font-size: 1.05rem;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.dieta button:first-of-type {
+  background: #4a74e6;
+}
+
+.dieta button:first-of-type:hover {
+  background: #2d4fa2;
+}
+
+.dieta button:last-of-type {
+  background: #d32d2d;
+}
+
+.dieta button:last-of-type:hover {
+  background: #a51c1c;
+}
+
+.dieta button + button {
+  margin-left: 8%;
+}
+
+@media (max-width: 600px) {
+  .dietas-container-2 {
+      max-height: 220px;
+  }
 }
