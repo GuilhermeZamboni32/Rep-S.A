@@ -79,6 +79,7 @@ flex-direction: row;
 justify-content: flex-start;
 align-items: flex-start;
 flex-wrap: wrap;
+overflow-y: auto;
 }
 .card{
   background-color: var(--BrancoCC2);

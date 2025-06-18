@@ -116,6 +116,51 @@ function Av_notas () {
             <p>nome</p>
            <h2>comentario</h2>
            </div>
+           <div className='card'>
+            <p>nome</p>
+           <h2>comentario</h2>
+         </div>
+         <div className='card'>
+            <p>nome</p>
+           <h2>comentario</h2>
+         </div>
+         <div className='card'>
+            <p>nome</p>
+           <h2>comentario</h2>
+         </div>
+         <div className='card'>
+            <p>nome</p>
+           <h2>comentario</h2>
+         </div>
+         <div className='card'>
+            <p>nome</p>
+           <h2>comentario</h2>
+         </div>
+         <div className='card'>
+            <p>nome</p>
+           <h2>comentario</h2>
+         </div>
+         <div className='card'>
+            <p>nome</p>
+           <h2>comentario</h2>
+         </div>
+         <div className='card'>
+            <p>nome</p>
+           <h2>comentario</h2>
+         </div>
+         <div className='card'>
+            <p>nome</p>
+           <h2>comentario</h2>
+         </div>
+         <div className='card'>
+            <p>nome</p>
+           <h2>comentario</h2>
+         </div>
+         <div className='card'>
+            <p>nome</p>
+           <h2>comentario</h2>
+         </div>
+
           </div>
         </div>
       </div>

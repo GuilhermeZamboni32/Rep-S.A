@@ -7,10 +7,8 @@ import { GlobalContext } from "../Context/GlobalContext"
 import {useState} from 'react'
 
 function Avaliacao() {
-
-   function enviar(){
-    alert("Avaliação enviada com sucesso!"); 
-   }
+const [avaliacao, setAvaliacao] = useState(0);
+const [rating, setRating] = useState(0);
 
   const navigate = useNavigate()
 
@@ -22,7 +20,7 @@ function Avaliacao() {
     navigate('/Av_notas')
   }
 
-  const [comentario, setComentario] = useState('')
+  
   const { user, setUser} = useContext(GlobalContext)
   const { updateUser } = useContext(GlobalContext)
   const { logout } = useContext(GlobalContext)
@@ -37,26 +35,39 @@ function Avaliacao() {
     return `${day}/${month}/${year}`; 
 }
 
+  // Função para enviar a avaliação ao backend
   const enviarAvaliacao = async () => {
+    const dados = {
+      nota: avaliacao, // Nota da avaliação
+      comentario, // Comentário do usuário
+    };
+
     try {
-      await fetch('http://localhost:3000/avaliacao', {
+      const response = await fetch('http://localhost:5000/avaliacoes', {
         method: 'POST',
-        headers: { 'Content-Type' : 'application/json'},
-        body: JSON.stringify({
-          nota: rating,
-          comentario: comentario,
-          usuarioID: user?.id
-        })
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${localStorage.getItem('token')}`, // Token JWT do usuário
+        },
+        body: JSON.stringify(dados),
       });
-      alert('Avaliação enviada com sucesso!');
-      setRating(0);
-      setComentario('');
+
+      if (response.ok) {
+        alert('Avaliação enviada com sucesso!');
+      } else {
+        const errorData = await response.json();
+        alert(`Erro: ${errorData.error}`);
+      }
     } catch (error) {
-      alert('Erro ao enviar avaliaçao');
+      console.error('Erro ao enviar avaliação:', error);
+      alert('Erro ao conectar com o servidor.');
     }
   };
 
-const [rating, setRating] = useState(0);
+  
+  const Starclick = (index) => {
+    setAvaliacao(index); // Atualiza a nota com base no clique
+  };
 
 const handleStarClick = (index, isLeft) => {
   const newRating = isLeft ? index + 0.5 : index + 1;
@@ -136,31 +147,23 @@ const getStarImage = (index) => {
 
           <div className="Ava-estrela">
             <div className="star-rating">
-              <button className="star-button">
-                <span className="star-half left" onClick={() => handleStarClick(0, true)} />
-                <span className="star-half right" onClick={() => handleStarClick(0, false)} />
-                <img src={getStarImage(0)} alt="star" className="star-img" />
+            {[0, 1, 2, 3, 4].map((index) => (
+              <button key={index} className="star-button">
+                <span
+                  className="star-half left"
+                  onClick={() => handleStarClick(index, true)} // Clique na metade esquerda (meia estrela)
+                />
+                <span
+                  className="star-half right"
+                  onClick={() => handleStarClick(index, false)} // Clique na metade direita (estrela inteira)
+                />
+                <img
+                  src={getStarImage(index)} // Obtém a imagem da estrela com base na nota
+                  alt="star"
+                  className="star-img"
+                />
               </button>
-              <button className="star-button">
-                <span className="star-half left" onClick={() => handleStarClick(1, true)} />
-                <span className="star-half right" onClick={() => handleStarClick(1, false)} />
-                <img src={getStarImage(1)} alt="star" className="star-img" />
-              </button>
-              <button className="star-button">
-                <span className="star-half left" onClick={() => handleStarClick(2, true)} />
-                <span className="star-half right" onClick={() => handleStarClick(2, false)} />
-                <img src={getStarImage(2)} alt="star" className="star-img" />
-              </button>
-              <button className="star-button">
-                <span className="star-half left" onClick={() => handleStarClick(3, true)} />
-                <span className="star-half right" onClick={() => handleStarClick(3, false)} />
-                <img src={getStarImage(3)} alt="star" className="star-img" />
-              </button>
-              <button className="star-button">
-                <span className="star-half left" onClick={() => handleStarClick(4, true)} />
-                <span className="star-half right" onClick={() => handleStarClick(4, false)} />
-                <img src={getStarImage(4)} alt="star" className="star-img" />
-              </button>
+            ))}
             </div>
           </div>
 
@@ -176,7 +179,7 @@ const getStarImage = (index) => {
             rows="100" 
             ></textarea>
           </div>
-         <button className='btn-av' onClick={enviar}>enviar</button>
+         <button className='btn-av' onClick={enviarAvaliacao}>enviar</button>
         </div>
 
        
