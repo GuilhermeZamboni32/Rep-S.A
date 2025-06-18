@@ -138,13 +138,10 @@ app.get('/users/:id_user', authenticateToken, async (req, res) => {
 });
 
 // Atualizar usuário
-app.patch('/usersEdit', authenticateToken, async (req, res) => {
+app.patch('/usersEdit/id_user', authenticateToken, async (req, res) => {
   const { id_user } = req.params;
   const { username, email_user, password_user, age_user, first_name, last_name, image, gender_user, problems_user, avaliability, address } = req.body;
 
-  if (!username || !email_user || !password_user) {
-    return res.status(400).json({ error: 'Missing required fields' });
-  }
 
   try {
     const hashedPassword = await bcrypt.hash(password_user, 14);
@@ -198,19 +195,37 @@ app.post('/login', async (req, res) => {
     const passwordMatch = await bcrypt.compare(password_user, user.password_user);
     if (!passwordMatch) return res.status(401).json({ error: 'Invalid credentials' });
 
+
     const token = jwt.sign({
       id_user: user.id_user,
       email_user: user.email_user,
       username: user.username,
     }, ACCESS_KEY, { expiresIn: '1h' });
 
-    const imageUrl = user.image ? `${req.protocol}://${req.get('host')}/public/${user.image}` : "";
+    const imageUrl = user.image 
+  ? `${req.protocol}://${req.get('host')}/public/${user.image}` 
+  : "";
 
     const userData = {
-      ...user,
-      image: imageUrl,
-      token,
+      username: user.username,
+      email_user: user.email_user,
+      age_user: user.age_user,
+      account_enable: user.account_enable,
+      first_name: user.first_name,
+      last_name: user.last_name,
+      image: imageUrl, 
+      id: user.id_user,
+      gender_user: user.gender_user,
+      problems_user: user.problems_user,
+      professional_confirm: user.professional_confirm,
+      professional_type: user.professional_type,
+      comments_user: user.comments_user,
+      user_rating: user.user_rating,
+      avaliability: user.avaliability,
+      address: user.address,
+      token: token,
     };
+    console.log('User data:', userData);
 
     res.json(userData);
   } catch (err) {

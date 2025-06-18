@@ -26,41 +26,41 @@ function EditPerfil() {
     professional_confirm: '',
     avaliability: '',
     address: '',
-//    id: user?.id
+    id: user?.id
   });
 
-  // console.log('user aaa======>>>>>>', user.id)
-  // let new_id = user.id
-  // console.log('user bbbb======>>>>>>', new_id)
+  console.log('user aaa======>>>>>>', user.id)
+  let new_id = user.id
+  console.log('user bbbb======>>>>>>', new_id)
 
-  // async function testing_id() {
-  //   let new_id2 = user.id
-  //   console.log('new_id new_id======>>>>>>', new_id2)
-  //   try {
-  //     const response = await fetch(`http://localhost:3000/usersEdit/${new_id2}`, {
-  //       method: 'PATCH',
-  //       headers: {
-  //         'Content-Type': 'application/json',
-  //         Authorization: `Bearer ${localStorage.getItem('token')}`, 
-  //       },
-  //       body: JSON.stringify(form),
-  //     });
+  async function testing_id() {
+    let id_user = user.id
+    console.log('new_id new_id======>>>>>', id_user)
+    try {
+      const response = await fetch(`http://localhost:3000/usersEdit/${id_user}`, {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${localStorage.getItem('token')}`, 
+        },
+        body: JSON.stringify(form),
+      });
   
-  //     if (!response.ok) {
-  //       const errorData = await response.json();
-  //       console.error('Error updating profile:', errorData.error);
-  //       alert('Failed to update profile');
-  //       return;
-  //     }
+      if (!response.ok) {
+        const errorData = await response.json();
+        console.error('Error updating profile:', errorData.error);
+        alert('Failed to update profile');
+        return;
+      }
   
-  //     const updatedUser = await response.json();
-  //     console.log('Profile updated successfully:', updatedUser);
-  //     alert('Profile updated successfully');
-  //   } catch (error) {
-  //     console.error('Error:', error);
-  //     alert('An error occurred while updating the profile');
-  //   }
-  // }
+      const updatedUser = await response.json();
+      console.log('Profile updated successfully:', updatedUser);
+      alert('Profile updated successfully');
+    } catch (error) {
+      console.error('Error:', error);
+      alert('An error occurred while updating the profile');
+    }
+  }
 
   // data para formato BR 
   const formatDate = (date) => {

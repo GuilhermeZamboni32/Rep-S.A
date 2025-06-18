@@ -45,7 +45,7 @@ function Login() {
         address: response.data.address,
         token: response.data.token
       });
-      
+      console.log('Login successful:', response.data);
       navigate('/perfil'); 
 
     } catch (err) {

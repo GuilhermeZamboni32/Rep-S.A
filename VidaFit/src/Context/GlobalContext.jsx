@@ -7,9 +7,6 @@ export const GlobalContextProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [loading, setLoading] = useState(true);
-  
-
-  console.log(user)
 
   // Inicia usuarios vindo do localstorage
   useEffect(() => {
