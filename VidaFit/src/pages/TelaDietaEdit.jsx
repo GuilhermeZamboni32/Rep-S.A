@@ -163,10 +163,12 @@ function TelaDietaEdit() {
                 <div className='div-baixo-edit-2'>
                     <div className='div-baixo-edit-2-cima'>
                         <div className='barra-pesquisa-edit'>
-                            <input type="text" placeholder="Buscar por nome" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
+                        <img className='lupa' src="./Icons/Lupa-2.png" alt="Pesquisar" />
+                            <input className='input-pesquisa' type="text" placeholder="Buscar por nome" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
                         </div>
                         <div className='barra-filtro-edit'>
-                            <select value={filtroCategoria} onChange={(e) => setFiltroCategoria(e.target.value)}>
+                        <img className='filtro' src="./Icons/Filtro-2.png" alt="Filtro" />
+                            <select className='select-filtro' value={filtroCategoria} onChange={(e) => setFiltroCategoria(e.target.value)}>
                                 <option value="">Todas as categorias</option>
                                 <option value="emagrecimento">Emagrecimento</option>
                                 <option value="ganho de massa">Ganho de massa</option>
